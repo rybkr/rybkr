@@ -1,0 +1,11 @@
+---
+title: C++ Build Pipeline Demystified
+image: thumbnail.webp
+author: Ryan Baker
+date: "2025-04-06"
+toc: true
+links:
+  - url: https://youtu.be/-oYG-_cyAsI
+    icon: youtube
+    name: Watch
+---

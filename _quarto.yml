@@ -1,0 +1,15 @@
+project:
+  type: website
+
+website:
+  title: "Ryan Baker"
+  page-footer: "Copyright © 2025 Ryan Baker"
+  navbar:
+    title: Ryan Baker
+    left:
+      - href: teaching/
+        text: Teaching
+      
+format:
+  html:
+    theme: [united, styles.scss]

@@ -1,0 +1,11 @@
+---
+title: C++ Introduction and Setup
+image: thumbnail.webp
+author: Ryan Baker
+date: "2025-02-09"
+toc: true
+links:
+  - url: https://youtu.be/Z0h32eOQZpg
+    icon: youtube
+    name: Watch
+---

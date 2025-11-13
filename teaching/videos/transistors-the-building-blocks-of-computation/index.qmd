@@ -1,0 +1,11 @@
+---
+title: Transistors - The Building Blocks of Computation
+image: thumbnail.jpg
+author: Ryan Baker
+date: "2024-08-27"
+toc: true
+links:
+  - url: https://youtu.be/4YaJB-k5E7U
+    icon: youtube
+    name: Watch
+---

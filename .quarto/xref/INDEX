@@ -1,0 +1,74 @@
+{
+  "projects/index.qmd": {
+    "index.html": "3b8ee446"
+  },
+  "index.qmd": {
+    "index.html": "653193f0"
+  },
+  "blog/third-post/index.ipynb": {
+    "index.html": "4820bbd6"
+  },
+  "blog/first-post/index.qmd": {
+    "index.html": "4c4cc21a"
+  },
+  "blog/second-post/index.qmd": {
+    "index.html": "45112495"
+  },
+  "talks.qmd": {
+    "talks.html": "3427c72f"
+  },
+  "talks/index.qmd": {
+    "index.html": "f0f636d7"
+  },
+  "videos/index.qmd": {
+    "index.html": "cb1623a4"
+  },
+  "videos/cpp-build-pipeline-demystified/index.qmd": {
+    "index.html": "279a2d3d"
+  },
+  "videos/cpp-programming-basics/index.qmd": {
+    "index.html": "90e2d63c"
+  },
+  "videos/how-to-install-gpp-and-vscode-on-windows/index.qmd": {
+    "index.html": "eddec6ed"
+  },
+  "videos/cpp-introduction-and-setup/index.qmd": {
+    "index.html": "cf839476"
+  },
+  "videos/transistors-the-building-blocks-of-computation/index.qmd": {
+    "index.html": "bf8b638e"
+  },
+  "videos/memory-segments-in-c-cpp/index.qmd": {
+    "index.html": "bd019c35"
+  },
+  "videos/understanding-static-in-cpp/index.qmd": {
+    "index.html": "b0c854fe"
+  },
+  "teaching/index.qmd": {
+    "index.html": "1f34918c"
+  },
+  "teaching/videos/cpp-introduction-and-setup/index.qmd": {
+    "index.html": "6931e4c8"
+  },
+  "teaching/videos/cpp-build-pipeline-demystified/index.qmd": {
+    "index.html": "c473b2d7"
+  },
+  "teaching/videos/cpp-programming-basics/index.qmd": {
+    "index.html": "b8fd841a"
+  },
+  "teaching/videos/transistors-the-building-blocks-of-computation/index.qmd": {
+    "index.html": "bd9a7860"
+  },
+  "teaching/videos/memory-segments-in-c-cpp/index.qmd": {
+    "index.html": "4a40170b"
+  },
+  "teaching/videos/how-to-install-gpp-and-vscode-on-windows/index.qmd": {
+    "index.html": "6b2f2be9"
+  },
+  "teaching/videos/understanding-static-in-cpp/index.qmd": {
+    "index.html": "6b558582"
+  },
+  "teaching/talks/messing-with-floating-point/index.qmd": {
+    "index.html": "58352916"
+  }
+}

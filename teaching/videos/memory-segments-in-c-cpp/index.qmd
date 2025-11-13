@@ -1,0 +1,11 @@
+---
+title: Memory Segments in C/C++
+image: thumbnail.jpg
+author: Ryan Baker
+date: "2024-04-11"
+toc: true
+links:
+  - url: https://youtu.be/2htbIR2QpaM
+    icon: youtube
+    name: Watch
+---

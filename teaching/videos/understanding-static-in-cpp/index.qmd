@@ -1,0 +1,11 @@
+---
+title: Understanding Static in C++
+image: thumbnail.jpg
+author: Ryan Baker
+date: "2024-02-26"
+toc: true
+links:
+  - url: https://youtu.be/g4Dn2cwSrC4
+    icon: youtube
+    name: Watch
+---

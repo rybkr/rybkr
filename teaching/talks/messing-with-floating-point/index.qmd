@@ -1,0 +1,7 @@
+---
+title: Messing with Floating Point
+image: thumbnail.png
+author: Ryan Baker
+date: "2024-11-28"
+toc: true
+---

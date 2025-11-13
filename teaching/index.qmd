@@ -1,0 +1,32 @@
+---
+title: Teaching
+listing:
+  - id: talks
+    contents: "talks/**/index.qmd"
+    type: grid
+    sort: "date desc"
+    sort-ui: true
+    filter-ui: true
+  - id: videos
+    contents: "videos/**/index.qmd"
+    type: grid
+    sort: "date desc"
+    sort-ui: true
+    filter-ui: true
+toc: true
+---
+
+> In learning you will teach, and in teaching you will learn.
+> *-Phil Collins*
+
+## Conference Talks
+
+::: {#talks}
+:::
+
+## YouTube Videos
+
+::: {#videos}
+:::
+
+## Written Material

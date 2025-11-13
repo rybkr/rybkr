@@ -1,0 +1,27 @@
+---
+title: "Ryan Baker"
+subtitle: Ideas are bulletproof
+image: rybkr.png 
+about:
+  template: solana
+  image-shape: round
+  links:
+    - icon: github
+      text: Github
+      href: https://github.com/rybkr
+    - icon: linkedin
+      text: LinkedIn
+      href: https://linkedin.com/in/ryanbaker1228
+---
+
+Howdy! I am Ryan.
+
+## Education
+
+**Bachelor of Science in Computer Engineering**  
+Purdue University  
+West Lafayette, Indiana | Aug 2023 - May 2026
+
+## Experience
+
+Workplace \| Job title \| April 20XX - present
