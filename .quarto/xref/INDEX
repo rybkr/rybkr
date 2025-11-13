@@ -70,5 +70,9 @@
   },
   "teaching/talks/messing-with-floating-point/index.qmd": {
     "index.html": "58352916"
+  },
+  "resume.qmd": {
+    "resume.html": "fbf08d98",
+    "resume.tex": "c043cba3"
   }
 }

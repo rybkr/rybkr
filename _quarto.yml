@@ -9,6 +9,8 @@ website:
     left:
       - href: teaching/
         text: Teaching
+      - href: projects/
+        text: Projects
       
 format:
   html:
