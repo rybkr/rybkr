@@ -1,0 +1,7 @@
+---
+title: 3. Intro to Modern C++ - How C++ Works
+date: "2025-02-22"
+author: Ryan Baker
+---
+
+{{< pdf Lecture3.pdf width=100% height=800 >}}

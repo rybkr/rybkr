@@ -1,0 +1,7 @@
+---
+title: 2. Intro to Modern C++ - C++ Programming Basics
+author: Ryan Baker
+date: "2025-02-15"
+---
+
+{{< pdf Lecture2.pdf width=100% height=800 >}}

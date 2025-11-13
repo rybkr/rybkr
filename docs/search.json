@@ -32,7 +32,7 @@
     "href": "projects/index.html",
     "title": "Projects",
     "section": "",
-    "text": "Real Time Git Visualization\n\n\n\nGo\n\nJavaScript\n\nGit\n\nWebSockets\n\nVisualization\n\n\n\nThis project visualizes a Git repository in real time for Git learning and repository exploration.\n\n\n\nNov 10, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGo\n\nMarkdown\n\nCompilers\n\n\n\nA Markdown parser written in Go.\n\n\n\nOct 26, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nOnevim\n\n\n\nNeoVim\n\nLua\n\n\n\nNeovim configuration with installs and documentation.\n\n\n\nNov 3, 2025\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nReal Time Git Visualization\n\n\n\nGo\n\nJavaScript\n\nGit\n\nWebSockets\n\nData\n\nVisualization\n\nDev Tools\n\n\n\nInteractive visualization tool that renders Git repository structure and history in real time, designed for learning Git concepts and exploring repository evolution.\n\n\n\nNov 10, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe Objectively Correct Neovim Config\n\n\n\nNeovim\n\nLua\n\nDeveloper Tools\n\nConfiguration\n\n\n\nComprehensive Neovim configuration with automated plugin installation, custom keybindings, and detailed documentation for rapid setup.\n\n\n\nNov 3, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nLightweight Markdown Processor\n\n\n\nGo\n\nMarkdown\n\nParsing\n\nCompilers\n\nDeveloper Tools\n\n\n\nLightweight Markdown parser and renderer implemented in Go, featuring a custom lexer and parser for converting Markdown to HTML.\n\n\n\nOct 26, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nSudoku Puzzle Generator and Solver\n\n\n\nGo\n\nCLI\n\nAlgorithms\n\n\n\nCommand-line Sudoku toolkit featuring puzzle generation, solving algorithms, and validation utilities.\n\n\n\nOct 16, 2025\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "blog/third-post/index.html",
@@ -74,6 +74,55 @@
     "href": "teaching/index.html#written-material",
     "title": "Teaching",
     "section": "Written Material",
-    "text": "Written Material"
+    "text": "Written Material\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n1. Intro to Modern C++ - Introduction and Setup\n\n\n\n\n\n\n\n\nFeb 8, 2025\n\n\nRyan Baker\n\n\n\n\n\n\n\n\n\n\n\n\n2. Intro to Modern C++ - C++ Programming Basics\n\n\n\n\n\n\n\n\nFeb 15, 2025\n\n\nRyan Baker\n\n\n\n\n\n\n\n\n\n\n\n\n3. Intro to Modern C++ - How C++ Works\n\n\n\n\n\n\n\n\nFeb 22, 2025\n\n\nRyan Baker\n\n\n\n\n\n\n\n\n\n\n\n\n4. Intro to Modern C++ - OOP in C++\n\n\n\n\n\n\n\n\nMar 1, 2025\n\n\nRyan Baker\n\n\n\n\n\n\n\n\n\n\n\n\n5. Intro to Modern C++ - Advanced OOP\n\n\n\n\n\n\n\n\nMar 8, 2025\n\n\nRyan Baker\n\n\n\n\n\n\n\n\n\n\n\n\n6. Intro to Modern C++ - Templates\n\n\n\n\n\n\n\n\nMar 15, 2025\n\n\nRyan Baker\n\n\n\n\n\n\n\n\n\n\n\n\n7. Intro to Modern C++ - Safety in C++\n\n\n\n\n\n\n\n\nMar 29, 2025\n\n\nRyan Baker\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "teaching/documents/intro-to-modern-cpp-week-1/index.html",
+    "href": "teaching/documents/intro-to-modern-cpp-week-1/index.html",
+    "title": "1. Intro to Modern C++ - Introduction and Setup",
+    "section": "",
+    "text": "Download PDF file."
+  },
+  {
+    "objectID": "teaching/documents/intro-to-modern-cpp-week-2/index.html",
+    "href": "teaching/documents/intro-to-modern-cpp-week-2/index.html",
+    "title": "2. Intro to Modern C++ - C++ Programming Basics",
+    "section": "",
+    "text": "Download PDF file."
+  },
+  {
+    "objectID": "teaching/documents/intro-to-modern-cpp-week-3/index.html",
+    "href": "teaching/documents/intro-to-modern-cpp-week-3/index.html",
+    "title": "3. Intro to Modern C++ - How C++ Works",
+    "section": "",
+    "text": "Download PDF file."
+  },
+  {
+    "objectID": "teaching/documents/intro-to-modern-cpp-week-5/index.html",
+    "href": "teaching/documents/intro-to-modern-cpp-week-5/index.html",
+    "title": "5. Intro to Modern C++ - Advanced OOP",
+    "section": "",
+    "text": "Download PDF file."
+  },
+  {
+    "objectID": "teaching/documents/intro-to-modern-cpp-week-4/index.html",
+    "href": "teaching/documents/intro-to-modern-cpp-week-4/index.html",
+    "title": "4. Intro to Modern C++ - OOP in C++",
+    "section": "",
+    "text": "Download PDF file."
+  },
+  {
+    "objectID": "teaching/documents/intro-to-modern-cpp-week-7/index.html",
+    "href": "teaching/documents/intro-to-modern-cpp-week-7/index.html",
+    "title": "7. Intro to Modern C++ - Safety in C++",
+    "section": "",
+    "text": "Download PDF file."
+  },
+  {
+    "objectID": "teaching/documents/intro-to-modern-cpp-week-6/index.html",
+    "href": "teaching/documents/intro-to-modern-cpp-week-6/index.html",
+    "title": "6. Intro to Modern C++ - Templates",
+    "section": "",
+    "text": "Download PDF file."
   }
 ]

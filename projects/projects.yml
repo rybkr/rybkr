@@ -2,22 +2,34 @@
   path: https://github.com/rybkr/gitvista
   image: images/gitvista.png
   description: >
-    This project visualizes a Git repository in real time for Git learning and repository exploration.
-  categories: [Go, JavaScript, Git, WebSockets, Visualization]
+    Interactive visualization tool that renders Git repository structure and history in real time, 
+    designed for learning Git concepts and exploring repository evolution.
+  categories: [Go, JavaScript, Git, WebSockets, Data, Visualization, Dev Tools]
   date: 2025-11-10
 
-- title: 
+- title: Lightweight Markdown Processor
   path: https://github.com/rybkr/markee
   image: images/markee.png
   description: >
-    A Markdown parser written in Go.
-  categories: [Go, Markdown, Compilers]
+    Lightweight Markdown parser and renderer implemented in Go, featuring a custom lexer 
+    and parser for converting Markdown to HTML.
+  categories: [Go, Markdown, Parsing, Compilers, Developer Tools]
   date: 2025-10-26
 
-- title: Onevim
+- title: The Objectively Correct Neovim Config
   path: https://github.com/rybkr/onevim
   image: images/onevim.png
   description: >
-    Neovim configuration with installs and documentation.
-  categories: [NeoVim, Lua]
+    Comprehensive Neovim configuration with automated plugin installation, custom keybindings, 
+    and detailed documentation for rapid setup.
+  categories: [Neovim, Lua, Developer Tools, Configuration]
   date: 2025-11-03
+
+- title: Sudoku Puzzle Generator and Solver
+  path: https://github.com/rybkr/sudoku
+  image: images/sudoku.png
+  description: >
+    Command-line Sudoku toolkit featuring puzzle generation, solving algorithms, 
+    and validation utilities.
+  categories: [Go, CLI, Algorithms]
+  date: 2025-10-16

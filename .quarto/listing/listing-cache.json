@@ -5,7 +5,9 @@
     ],
     "teaching/index.qmd": [
       "talks/**/index.qmd",
-      "videos/**/index.qmd"
+      "videos/**/index.qmd",
+      "B3049D40",
+      "documents/**/index.qmd"
     ]
   }
 }

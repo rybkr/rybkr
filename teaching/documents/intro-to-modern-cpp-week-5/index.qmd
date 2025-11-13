@@ -1,0 +1,7 @@
+---
+title: 5. Intro to Modern C++ - Advanced OOP
+date: "2025-03-08"
+author: Ryan Baker
+---
+
+{{< pdf Lecture5.pdf width=100% height=800 >}}

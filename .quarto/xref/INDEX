@@ -74,5 +74,26 @@
   "resume.qmd": {
     "resume.html": "fbf08d98",
     "resume.tex": "c043cba3"
+  },
+  "teaching/documents/intro-to-modern-cpp-week-1/index.qmd": {
+    "index.html": "d11b6eef"
+  },
+  "teaching/documents/intro-to-modern-cpp-week-2/index.qmd": {
+    "index.html": "c210e330"
+  },
+  "teaching/documents/intro-to-modern-cpp-week-3/index.qmd": {
+    "index.html": "b7ecbbdb"
+  },
+  "teaching/documents/intro-to-modern-cpp-week-5/index.qmd": {
+    "index.html": "b342a010"
+  },
+  "teaching/documents/intro-to-modern-cpp-week-4/index.qmd": {
+    "index.html": "ec9957a0"
+  },
+  "teaching/documents/intro-to-modern-cpp-week-7/index.qmd": {
+    "index.html": "c5512ac1"
+  },
+  "teaching/documents/intro-to-modern-cpp-week-6/index.qmd": {
+    "index.html": "8b408f68"
   }
 }

@@ -1,0 +1,7 @@
+---
+title: 7. Intro to Modern C++ - Safety in C++
+date: "2025-03-29"
+author: Ryan Baker
+---
+
+{{< pdf Lecture7.pdf width=100% height=800 >}}

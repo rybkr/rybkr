@@ -126,6 +126,35 @@ ul.task-list li input[type="checkbox"] {
       window['quarto-listing-loaded']();
     }
   })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-documents .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      page: 6,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-documents'] = new List('listing-documents', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
   </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
@@ -320,7 +349,7 @@ Nov 28, 2024
     </div>
 </div>
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-date-sort="1743912000000" data-listing-file-modified-sort="1763048002493" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<div class="g-col-1" data-index="0" data-listing-date-sort="1743912000000" data-listing-file-modified-sort="1763051566027" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
 <a href="../teaching/videos/cpp-build-pipeline-demystified/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -494,6 +523,214 @@ Feb 26, 2024
 </section>
 <section id="written-material" class="level2">
 <h2 class="anchored" data-anchor-id="written-material">Written Material</h2>
+<div id="listing-documents" class="quarto-listing quarto-listing-container-default">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+    <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+    <select id="listing-documents-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-documents'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+      <option value="" disabled="" selected="" hidden="">Order By</option>
+      <option value="index" data-direction="asc">Default</option>
+      <option value="listing-title" data-direction="asc">
+        Title
+      </option>
+      <option value="listing-date-sort" data-direction="asc">
+        Date - Oldest
+      </option>
+      <option value="listing-date-sort" data-direction="desc">
+        Date - Newest
+      </option>
+      <option value="listing-author" data-direction="asc">
+        Author
+      </option>
+    </select>
+  </div>
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1738990800000" data-listing-file-modified-sort="1763053342073" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="6">
+<div class="thumbnail"><a href="../teaching/documents/intro-to-modern-cpp-week-1/index.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../teaching/documents/intro-to-modern-cpp-week-1/index.html" class="no-external">1. Intro to Modern C++ - Introduction and Setup</a>
+</h3>
+<div class="delink listing-description"><a href="../teaching/documents/intro-to-modern-cpp-week-1/index.html" class="no-external">
+<object data="Lecture1.pdf" type="application/pdf" width="100%" height="800">Download PDF file.</object>
+</a></div>
+</div>
+<div class="metadata">
+<a href="../teaching/documents/intro-to-modern-cpp-week-1/index.html" class="no-external">
+<div class="listing-date">
+Feb 8, 2025
+</div>
+<div class="listing-author">
+Ryan Baker
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1739595600000" data-listing-file-modified-sort="1763052435127" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="6">
+<div class="thumbnail"><a href="../teaching/documents/intro-to-modern-cpp-week-2/index.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../teaching/documents/intro-to-modern-cpp-week-2/index.html" class="no-external">2. Intro to Modern C++ - C++ Programming Basics</a>
+</h3>
+<div class="delink listing-description"><a href="../teaching/documents/intro-to-modern-cpp-week-2/index.html" class="no-external">
+<object data="Lecture2.pdf" type="application/pdf" width="100%" height="800">Download PDF file.</object>
+</a></div>
+</div>
+<div class="metadata">
+<a href="../teaching/documents/intro-to-modern-cpp-week-2/index.html" class="no-external">
+<div class="listing-date">
+Feb 15, 2025
+</div>
+<div class="listing-author">
+Ryan Baker
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1740200400000" data-listing-file-modified-sort="1763052537919" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="6">
+<div class="thumbnail"><a href="../teaching/documents/intro-to-modern-cpp-week-3/index.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../teaching/documents/intro-to-modern-cpp-week-3/index.html" class="no-external">3. Intro to Modern C++ - How C++ Works</a>
+</h3>
+<div class="delink listing-description"><a href="../teaching/documents/intro-to-modern-cpp-week-3/index.html" class="no-external">
+<object data="Lecture3.pdf" type="application/pdf" width="100%" height="800">Download PDF file.</object>
+</a></div>
+</div>
+<div class="metadata">
+<a href="../teaching/documents/intro-to-modern-cpp-week-3/index.html" class="no-external">
+<div class="listing-date">
+Feb 22, 2025
+</div>
+<div class="listing-author">
+Ryan Baker
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="3" data-listing-date-sort="1740805200000" data-listing-file-modified-sort="1763052574308" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="6">
+<div class="thumbnail"><a href="../teaching/documents/intro-to-modern-cpp-week-4/index.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../teaching/documents/intro-to-modern-cpp-week-4/index.html" class="no-external">4. Intro to Modern C++ - OOP in C++</a>
+</h3>
+<div class="delink listing-description"><a href="../teaching/documents/intro-to-modern-cpp-week-4/index.html" class="no-external">
+<object data="Lecture4.pdf" type="application/pdf" width="100%" height="800">Download PDF file.</object>
+</a></div>
+</div>
+<div class="metadata">
+<a href="../teaching/documents/intro-to-modern-cpp-week-4/index.html" class="no-external">
+<div class="listing-date">
+Mar 1, 2025
+</div>
+<div class="listing-author">
+Ryan Baker
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="4" data-listing-date-sort="1741410000000" data-listing-file-modified-sort="1763052669280" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="6">
+<div class="thumbnail"><a href="../teaching/documents/intro-to-modern-cpp-week-5/index.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../teaching/documents/intro-to-modern-cpp-week-5/index.html" class="no-external">5. Intro to Modern C++ - Advanced OOP</a>
+</h3>
+<div class="delink listing-description"><a href="../teaching/documents/intro-to-modern-cpp-week-5/index.html" class="no-external">
+<object data="Lecture5.pdf" type="application/pdf" width="100%" height="800">Download PDF file.</object>
+</a></div>
+</div>
+<div class="metadata">
+<a href="../teaching/documents/intro-to-modern-cpp-week-5/index.html" class="no-external">
+<div class="listing-date">
+Mar 8, 2025
+</div>
+<div class="listing-author">
+Ryan Baker
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="5" data-listing-date-sort="1742011200000" data-listing-file-modified-sort="1763052947485" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="6">
+<div class="thumbnail"><a href="../teaching/documents/intro-to-modern-cpp-week-6/index.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../teaching/documents/intro-to-modern-cpp-week-6/index.html" class="no-external">6. Intro to Modern C++ - Templates</a>
+</h3>
+<div class="delink listing-description"><a href="../teaching/documents/intro-to-modern-cpp-week-6/index.html" class="no-external">
+<object data="Lecture6.pdf" type="application/pdf" width="100%" height="800">Download PDF file.</object>
+</a></div>
+</div>
+<div class="metadata">
+<a href="../teaching/documents/intro-to-modern-cpp-week-6/index.html" class="no-external">
+<div class="listing-date">
+Mar 15, 2025
+</div>
+<div class="listing-author">
+Ryan Baker
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="6" data-listing-date-sort="1743220800000" data-listing-file-modified-sort="1763052967749" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="6">
+<div class="thumbnail"><a href="../teaching/documents/intro-to-modern-cpp-week-7/index.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../teaching/documents/intro-to-modern-cpp-week-7/index.html" class="no-external">7. Intro to Modern C++ - Safety in C++</a>
+</h3>
+<div class="delink listing-description"><a href="../teaching/documents/intro-to-modern-cpp-week-7/index.html" class="no-external">
+<object data="Lecture7.pdf" type="application/pdf" width="100%" height="800">Download PDF file.</object>
+</a></div>
+</div>
+<div class="metadata">
+<a href="../teaching/documents/intro-to-modern-cpp-week-7/index.html" class="no-external">
+<div class="listing-date">
+Mar 29, 2025
+</div>
+<div class="listing-author">
+Ryan Baker
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+<nav id="documents-pagination" class="listing-pagination" aria-label="Page Navigation">
+  <ul class="pagination"></ul>
+</nav>
+</div>
 
 
 

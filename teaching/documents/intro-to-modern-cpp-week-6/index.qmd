@@ -1,0 +1,7 @@
+---
+title: 6. Intro to Modern C++ - Templates
+date: "2025-03-15"
+author: Ryan Baker
+---
+
+{{< pdf Lecture6.pdf width=100% height=800 >}}

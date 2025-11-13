@@ -1,0 +1,7 @@
+---
+title: 1. Intro to Modern C++ - Introduction and Setup
+date: "2025-02-08"
+author: Ryan Baker
+---
+
+{{< pdf Lecture1.pdf width=100% height=800 >}}
