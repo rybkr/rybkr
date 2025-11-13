@@ -3,13 +3,9 @@
     "projects/index.qmd": [
       "projects.yml"
     ],
-    "videos/index.qmd": [
-      "**/*.yaml",
-      "**/index.qmd"
-    ],
     "teaching/index.qmd": [
-      "videos/**/index.qmd",
-      "talks/**/index.qmd"
+      "talks/**/index.qmd",
+      "videos/**/index.qmd"
     ]
   }
 }
