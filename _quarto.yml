@@ -15,4 +15,6 @@ website:
       
 format:
   html:
+    include-after-body:
+      - include.html
     theme: [united, styles.scss]

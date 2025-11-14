@@ -1,1 +1,20 @@
 /*-- scss:defaults --*/
+
+.quote-author {
+    font-size: 0.8em;
+    opacity: 0.7;
+}
+
+.quote-line {
+    font-style: italic;
+}
+
+.quote-fade {
+    opacity: 0;
+    animation: fadeInQuote 0.8s ease forwards;
+}
+
+@keyframes fadeInQuote {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
