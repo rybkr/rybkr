@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "Ryan Baker",
     "section": "",
-    "text": "Howdy! I am Ryan."
+    "text": "Howdy! I am Ryan.\nI am a computer engineering student at Purdue University. At Purdue, I balance coursework with teaching (both formally and informally), serving on the IEEE executive board, and working on projects that help people.\nWhen I’m offline, you can find me playing chess, training Brazilian Jiu-Jitsu, or playing guitar."
   },
   {
     "objectID": "index.html#education",
@@ -25,7 +25,7 @@
     "href": "index.html#experience",
     "title": "Ryan Baker",
     "section": "Experience",
-    "text": "Experience\nWorkplace | Job title | April 20XX - present"
+    "text": "Experience\nCourse Instructor | Purdue University | Jan 2025 - Present - Developing accessible curricula and delivering lectures in a unique style\nEmbedded Software Engineering Intern | Matrix Design Group | May 2025 - Aug 2025 - Designed and implemented a space-efficient logging system for embedded platforms - Improved developer workflows with lightweight visualization and analysis tools\nTeaching Assistant | Purdue University | Aug 2024 - Dec 2024 - Assisted students in completing programming assignments on Linux and bash scripting - Hosted weekly office hours to provide support and guidance to students"
   },
   {
     "objectID": "projects/index.html",
