@@ -1,0 +1,26 @@
+.landing {
+  max-width: 720px;
+  margin: 22vh auto 0;
+  padding: 0 1.5rem;
+}
+
+.landing h1 {
+  font-size: 3rem;
+  margin-bottom: 0.25rem;
+}
+
+.landing .role {
+  font-size: 1.1rem;
+  opacity: 0.7;
+  margin-bottom: 1.5rem;
+}
+
+.landing .tagline {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.landing .links a {
+  margin-right: 1.5rem;
+  font-weight: 600;
+}

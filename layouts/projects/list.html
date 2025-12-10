@@ -1,0 +1,18 @@
+{{ define "main" }}
+<h1>Projects</h1>
+<p>Selected systems and software projects.</p>
+
+{{ if .Pages }}
+  {{ range .Pages }}
+    <article style="margin-bottom: 2.5rem;">
+      <h2>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </h2>
+      <p>{{ .Summary }}</p>
+    </article>
+  {{ end }}
+{{ else }}
+  <p>No projects found.</p>
+{{ end }}
+
+{{ end }}

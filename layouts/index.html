@@ -1,0 +1,21 @@
+{{ define "main" }}
+<main class="landing">
+  <h1>{{ .Site.Params.name }}</h1>
+
+  <p class="role">
+    {{ .Site.Params.role }}
+  </p>
+
+  <p class="tagline">
+    {{ .Site.Params.tagline }}
+  </p>
+
+  <nav class="links">
+    <a href="/projects/">Projects</a>
+    <a href="/talks/">Talks</a>
+    <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">GitHub</a>
+    <a href="mailto:{{ .Site.Params.email }}">Contact</a>
+  </nav>
+</main>
+{{ end }}
+
