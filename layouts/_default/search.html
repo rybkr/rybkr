@@ -1,0 +1,13 @@
+{{ define "main" }}
+<main id="search-page">
+    <input
+        id="live-search"
+        type="search"
+        placeholder="Filter results…"
+        aria-label="Filter results"
+        class="search-filter"
+    />
+    {{ .Content }}
+</main>
+<script src="/js/search-filter.js"></script>
+{{ end }}

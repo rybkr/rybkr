@@ -27,8 +27,10 @@
 }
 
 .project-card {
-    margin-bottom: 2rem;
-    padding-bottom: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr auto;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
     border-bottom: 1px solid var(--border);
 }
 
@@ -91,4 +93,55 @@
     max-width: 320px;
     margin: 1rem 0 0.5rem;
     padding: 0.4rem 0.6rem;
+}
+
+.project-thumb {
+    width: 96px;
+    height: 96px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.project-card h2,
+.project-card p,
+.project-card .stack-row {
+    flex: 1;
+}
+
+.card-left h2 {
+    margin: 0 0 0.25rem 0;
+}
+
+.project-card-subtitle {
+    margin: 0 0 0.5rem 0;
+    color: var(--secondary);
+}
+
+.tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+}
+
+.tag-pill {
+    padding: 0.15rem 0.6rem;
+    border-radius: 9999px;
+    background: var(--code-bg);
+    font-size: 0.75rem;
+}
+
+.card-middle p {
+    margin: 0 0 0.75rem 0;
+}
+
+.card-right {
+    display: flex;
+    align-items: center;
+}
+
+.project-thumb {
+    width: 96px;
+    height: 96px;
+    object-fit: cover;
+    border-radius: 6px;
 }

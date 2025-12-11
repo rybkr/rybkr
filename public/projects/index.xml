@@ -20,14 +20,7 @@
       <link>http://localhost:1313/projects/chromasudoku/</link>
       <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/chromasudoku/</guid>
-      <description>&lt;p&gt;ChromaSudoku is a compact Sudoku implementation for the RP2350, replacing numbers with distinct colors for a simple, hardware-friendly UI.
-The project focuses on clear input handling, clean C logic, and minimal rendering for constrained devices.&lt;/p&gt;
-&lt;h2 id=&#34;technical-summary&#34;&gt;Technical Summary&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Written in C with PlatformIO for fast iteration.&lt;/li&gt;
-&lt;li&gt;Color mapping replaces numerical display requirements.&lt;/li&gt;
-&lt;li&gt;Designed for low-memory hardware with simple I/O.&lt;/li&gt;
-&lt;/ul&gt;</description>
+      <description>Color-based Sudoku for embedded hardware</description>
     </item>
     <item>
       <title>Sudoku Generator &amp; Solver</title>

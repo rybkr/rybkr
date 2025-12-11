@@ -6,15 +6,8 @@
     <description>Recent content on Ryan Baker</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 Dec 2025 09:20:32 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 11 Dec 2025 09:09:19 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>ChromaSudoku</title>
-      <link>http://localhost:1313/projects/chromasudoku/</link>
-      <pubDate>Thu, 11 Dec 2025 09:20:32 -0500</pubDate>
-      <guid>http://localhost:1313/projects/chromasudoku/</guid>
-      <description></description>
-    </item>
     <item>
       <title>Juicer</title>
       <link>http://localhost:1313/projects/juicer/</link>
@@ -34,11 +27,32 @@
 &lt;/ol&gt;</description>
     </item>
     <item>
+      <title>ChromaSudoku</title>
+      <link>http://localhost:1313/projects/chromasudoku/</link>
+      <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/chromasudoku/</guid>
+      <description>&lt;p&gt;ChromaSudoku is a compact Sudoku implementation for the RP2350, replacing numbers with distinct colors for a simple, hardware-friendly UI.
+The project focuses on clear input handling, clean C logic, and minimal rendering for constrained devices.&lt;/p&gt;
+&lt;h2 id=&#34;technical-summary&#34;&gt;Technical Summary&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Written in C with PlatformIO for fast iteration.&lt;/li&gt;
+&lt;li&gt;Color mapping replaces numerical display requirements.&lt;/li&gt;
+&lt;li&gt;Designed for low-memory hardware with simple I/O.&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
       <title>Sudoku Generator &amp; Solver</title>
       <link>http://localhost:1313/projects/sudoku/</link>
       <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/sudoku/</guid>
       <description>Command-line Sudoku tool that generates unique puzzles and solves them using backtracking and constraint-based pruning.</description>
+    </item>
+    <item>
+      <title>Onevim</title>
+      <link>http://localhost:1313/projects/onevim/</link>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/onevim/</guid>
+      <description>Compre</description>
     </item>
     <item>
       <title>Messing With Floating Point</title>
@@ -52,6 +66,13 @@
 &lt;h2 id=&#34;abstract&#34;&gt;Abstract&lt;/h2&gt;
 &lt;p&gt;Used in engineering, machine learning, graphics, and more, floating point arithmetic is a cornerstone of modern numerical computing. Despite its widespread application, many developers lack a sufficient understanding of the floating point type and its intricacies. This presentation aims to clarify these concepts.&lt;/p&gt;
 &lt;p&gt;We will walk through the bitwise representation of floating point values, the IEEE 754 Standard, the nuances of arithmetic operations, and some common sources of floating point error. We&amp;rsquo;ll also look at some practical solutions to common pitfalls in C++. A basic familiarity of binary representation (of integers) will be helpful, but no prior experience with floating point arithmetic is necessary.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Search</title>
+      <link>http://localhost:1313/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/search/</guid>
+      <description></description>
     </item>
   </channel>
 </rss>

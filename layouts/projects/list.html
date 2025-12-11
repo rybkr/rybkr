@@ -22,18 +22,43 @@
     <section id="projects">
         {{ range .Pages.ByDate.Reverse }}
         <article class="project-card" data-tags="{{ .Params.tags | jsonify }}">
-            <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-            {{ with .Params.subtitle }}
-            <p class="project-card-subtitle">{{ . }}</p>
-            {{ end }} {{ with .Params.summary }} {{ if ne . "" }}
-            <p>{{ . }}</p>
-            {{ end }} {{ end }}
-            <div class="stack-row">
-                {{ range .Params.stack }}
-                <span class="stack-pill">{{ . }}</span>
+            <div class="card-left">
+                <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+
+                {{ with .Params.subtitle }}
+                <p class="project-card-subtitle">{{ . }}</p>
+                {{ end }}
+
+                <div class="tag-row">
+                    {{ range .Params.tags }}
+                    <span class="tag-pill">{{ . }}</span>
+                    {{ end }}
+                </div>
+            </div>
+
+            <div class="card-middle">
+                {{ with .Params.summary }} {{ if ne . "" }}
+                <p>{{ . }}</p>
+                {{ end }} {{ end }}
+
+                <div class="stack-row">
+                    {{ range .Params.stack }}
+                    <span class="stack-pill">{{ . }}</span>
+                    {{ end }}
+                </div>
+            </div>
+
+            <div class="card-right">
+                {{ with .Params.thumbnail }}
+                <img
+                    class="project-thumb"
+                    src="{{ . }}"
+                    alt="{{ $.Title }} thumbnail"
+                />
                 {{ end }}
             </div>
         </article>
+
         {{ end }}
     </section>
 </main>
