@@ -10,7 +10,7 @@
 <meta name="description" content="Projects - Ryan Baker">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/projects/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.f3136bbb11a7b61851906ce927c1e36733e72de36e331d5dc8a57e767632c83a.css" integrity="sha256-8xNruxGnthhRkGzpJ8HjZzPnLeNuMx1dyKV&#43;dnYyyDo=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.8cdcb0c209c2ee008865f4da75a62bf18f7481dca3377aeb52c7b33af887f6da.css" integrity="sha256-jNywwgnC7gCIZfTadaYr8Y90gdyjN3rrUsezOviH9to=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -119,59 +119,66 @@
     />
 
     <div id="project-filters" class="filter-bar">
-                           
+                                   
         <button class="filter-pill" data-tag="C">C</button>
         
         <button class="filter-pill" data-tag="C&#43;&#43;">C&#43;&#43;</button>
+        
+        <button class="filter-pill" data-tag="Chess">Chess</button>
+        
+        <button class="filter-pill" data-tag="Config">Config</button>
         
         <button class="filter-pill" data-tag="Embedded">Embedded</button>
         
         <button class="filter-pill" data-tag="Game">Game</button>
         
+        <button class="filter-pill" data-tag="Lua">Lua</button>
+        
+        <button class="filter-pill" data-tag="Neovim">Neovim</button>
+        
     </div>
 
     <section id="projects">
-        
-        <article class="project-card" data-tags="[&#34;C&#43;&#43;&#34;]">
-            <div class="card-left">
-                <h2><a href="/projects/juicer/">Juicer</a></h2>
-
-                
-
-                <div class="tag-row">
-                    
-                    <span class="tag-pill">C&#43;&#43;</span>
-                    
-                </div>
-            </div>
-
-            <div class="card-middle">
-                
-
-                <div class="stack-row">
-                    
-                </div>
-            </div>
-
-            <div class="card-right">
-                
-            </div>
-        </article>
-
         
         <article class="project-card" data-tags="[&#34;Embedded&#34;,&#34;C&#34;,&#34;Game&#34;]">
             <div class="card-left">
                 <h2><a href="/projects/chromasudoku/">ChromaSudoku</a></h2>
 
-                
+                          
+                           
 
                 <div class="tag-row">
-                    
-                    <span class="tag-pill">Embedded</span>
-                    
-                    <span class="tag-pill">C</span>
-                    
-                    <span class="tag-pill">Game</span>
+                      
+                    <span class="tag-pill">
+                        
+                        <img
+                            class="tag-icon-img"
+                            src="/icons/tags/c.svg"
+                            alt="C icon"
+                        />
+                        
+                        <span class="tag-label">C</span>
+                    </span>
+                      
+                    <span class="tag-pill">
+                        
+                        <span class="tag-label">PlatformIO</span>
+                    </span>
+                      
+                    <span class="tag-pill">
+                        
+                        <span class="tag-label">RP2350</span>
+                    </span>
+                      
+                    <span class="tag-pill">
+                        
+                        <span class="tag-label">Embedded</span>
+                    </span>
+                      
+                    <span class="tag-pill">
+                        
+                        <span class="tag-label">Game</span>
+                    </span>
                     
                 </div>
             </div>
@@ -180,16 +187,6 @@
                  
                 <p>Color-based Sudoku for embedded hardware</p>
                  
-
-                <div class="stack-row">
-                    
-                    <span class="stack-pill">C</span>
-                    
-                    <span class="stack-pill">PlatformIO</span>
-                    
-                    <span class="stack-pill">RP2350</span>
-                    
-                </div>
             </div>
 
             <div class="card-right">
@@ -208,9 +205,26 @@
             <div class="card-left">
                 <h2><a href="/projects/sudoku/">Sudoku Generator &amp; Solver</a></h2>
 
-                
+                        
+                 
 
                 <div class="tag-row">
+                      
+                    <span class="tag-pill">
+                        
+                        <img
+                            class="tag-icon-img"
+                            src="/icons/tags/go.svg"
+                            alt="Go icon"
+                        />
+                        
+                        <span class="tag-label">Go</span>
+                    </span>
+                      
+                    <span class="tag-pill">
+                        
+                        <span class="tag-label">CLI</span>
+                    </span>
                     
                 </div>
             </div>
@@ -219,14 +233,6 @@
                  
                 <p>Command-line Sudoku tool that generates unique puzzles and solves them using backtracking and constraint-based pruning.</p>
                  
-
-                <div class="stack-row">
-                    
-                    <span class="stack-pill">Go</span>
-                    
-                    <span class="stack-pill">CLI</span>
-                    
-                </div>
             </div>
 
             <div class="card-right">
@@ -235,15 +241,31 @@
         </article>
 
         
-        <article class="project-card" data-tags="null">
+        <article class="project-card" data-tags="[&#34;Neovim&#34;,&#34;Lua&#34;,&#34;Config&#34;]">
             <div class="card-left">
                 <h2><a href="/projects/onevim/">Onevim</a></h2>
 
                 
                 <p class="project-card-subtitle">The Objectively Correct Neovim Config</p>
-                
+                      
+                           
 
                 <div class="tag-row">
+                      
+                    <span class="tag-pill">
+                        
+                        <span class="tag-label">Lua</span>
+                    </span>
+                      
+                    <span class="tag-pill">
+                        
+                        <span class="tag-label">Neovim</span>
+                    </span>
+                      
+                    <span class="tag-pill">
+                        
+                        <span class="tag-label">Config</span>
+                    </span>
                     
                 </div>
             </div>
@@ -252,10 +274,51 @@
                  
                 <p>Compre</p>
                  
+            </div>
 
-                <div class="stack-row">
+            <div class="card-right">
+                
+                <img
+                    class="project-thumb"
+                    src="/images/projects/onevim/thumb.svg"
+                    alt="Projects thumbnail"
+                />
+                
+            </div>
+        </article>
+
+        
+        <article class="project-card" data-tags="[&#34;C&#43;&#43;&#34;,&#34;Chess&#34;]">
+            <div class="card-left">
+                <h2><a href="/projects/juicer/">Juicer</a></h2>
+
+                
+                <p class="project-card-subtitle">Hyper-Performant Chess Move Generator</p>
+                        
+                       
+
+                <div class="tag-row">
+                      
+                    <span class="tag-pill">
+                        
+                        <span class="tag-label">C&#43;&#43;</span>
+                    </span>
+                      
+                    <span class="tag-pill">
+                        
+                        <span class="tag-label">Make</span>
+                    </span>
+                      
+                    <span class="tag-pill">
+                        
+                        <span class="tag-label">Chess</span>
+                    </span>
                     
                 </div>
+            </div>
+
+            <div class="card-middle">
+                
             </div>
 
             <div class="card-right">

@@ -6,15 +6,8 @@
     <description>Recent content on Ryan Baker</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 Dec 2025 09:09:19 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 10 Dec 2025 21:19:01 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Juicer</title>
-      <link>http://localhost:1313/projects/juicer/</link>
-      <pubDate>Thu, 11 Dec 2025 09:09:19 -0500</pubDate>
-      <guid>http://localhost:1313/projects/juicer/</guid>
-      <description></description>
-    </item>
     <item>
       <title>Intro to Modern C&#43;&#43;</title>
       <link>http://localhost:1313/courses/intro-to-modern-cxx/</link>
@@ -31,14 +24,7 @@
       <link>http://localhost:1313/projects/chromasudoku/</link>
       <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/chromasudoku/</guid>
-      <description>&lt;p&gt;ChromaSudoku is a compact Sudoku implementation for the RP2350, replacing numbers with distinct colors for a simple, hardware-friendly UI.
-The project focuses on clear input handling, clean C logic, and minimal rendering for constrained devices.&lt;/p&gt;
-&lt;h2 id=&#34;technical-summary&#34;&gt;Technical Summary&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Written in C with PlatformIO for fast iteration.&lt;/li&gt;
-&lt;li&gt;Color mapping replaces numerical display requirements.&lt;/li&gt;
-&lt;li&gt;Designed for low-memory hardware with simple I/O.&lt;/li&gt;
-&lt;/ul&gt;</description>
+      <description>Color-based Sudoku for embedded hardware</description>
     </item>
     <item>
       <title>Sudoku Generator &amp; Solver</title>
@@ -66,6 +52,13 @@ The project focuses on clear input handling, clean C logic, and minimal renderin
 &lt;h2 id=&#34;abstract&#34;&gt;Abstract&lt;/h2&gt;
 &lt;p&gt;Used in engineering, machine learning, graphics, and more, floating point arithmetic is a cornerstone of modern numerical computing. Despite its widespread application, many developers lack a sufficient understanding of the floating point type and its intricacies. This presentation aims to clarify these concepts.&lt;/p&gt;
 &lt;p&gt;We will walk through the bitwise representation of floating point values, the IEEE 754 Standard, the nuances of arithmetic operations, and some common sources of floating point error. We&amp;rsquo;ll also look at some practical solutions to common pitfalls in C++. A basic familiarity of binary representation (of integers) will be helpful, but no prior experience with floating point arithmetic is necessary.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Juicer</title>
+      <link>http://localhost:1313/projects/juicer/</link>
+      <pubDate>Tue, 23 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/juicer/</guid>
+      <description></description>
     </item>
     <item>
       <title>Search</title>

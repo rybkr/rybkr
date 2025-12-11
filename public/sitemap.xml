@@ -38,6 +38,15 @@
     <loc>http://localhost:1313/projects/sudoku/</loc>
     <lastmod>2025-10-06T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tags/config/</loc>
+    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/lua/</loc>
+    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/neovim/</loc>
+    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/projects/onevim/</loc>
     <lastmod>2025-01-15T00:00:00+00:00</lastmod>
   </url><url>

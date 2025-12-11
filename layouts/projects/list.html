@@ -27,11 +27,26 @@
 
                 {{ with .Params.subtitle }}
                 <p class="project-card-subtitle">{{ . }}</p>
-                {{ end }}
+                {{ end }} {{ $stack := .Params.stack | default slice }} {{ $tags
+                := .Params.tags | default slice }} {{ $allTags := slice }} {{
+                range $stack }} {{ $allTags = $allTags | append . }} {{ end }}
+                {{ range $tags }} {{ if not (in $stack .) }} {{ $allTags =
+                $allTags | append . }} {{ end }} {{ end }} {{ $tagIcons := dict
+                "go" "/icons/tags/go.svg" "c" "/icons/tags/c.svg" }}
 
                 <div class="tag-row">
-                    {{ range .Params.tags }}
-                    <span class="tag-pill">{{ . }}</span>
+                    {{ range $allTags }} {{ $tag := lower . }} {{ $icon := index
+                    $tagIcons $tag }}
+                    <span class="tag-pill">
+                        {{ if $icon }}
+                        <img
+                            class="tag-icon-img"
+                            src="{{ $icon }}"
+                            alt="{{ . }} icon"
+                        />
+                        {{ end }}
+                        <span class="tag-label">{{ . }}</span>
+                    </span>
                     {{ end }}
                 </div>
             </div>
@@ -40,12 +55,6 @@
                 {{ with .Params.summary }} {{ if ne . "" }}
                 <p>{{ . }}</p>
                 {{ end }} {{ end }}
-
-                <div class="stack-row">
-                    {{ range .Params.stack }}
-                    <span class="stack-pill">{{ . }}</span>
-                    {{ end }}
-                </div>
             </div>
 
             <div class="card-right">

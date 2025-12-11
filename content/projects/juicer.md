@@ -1,6 +1,8 @@
 +++
-date = '2025-12-11T09:09:19-05:00'
+date = '2024-01-23'
 draft = false
 title = 'Juicer'
-tags = ["C++"]
+tags = ["C++", "Chess"]
+stack = ["C++", "Make"]
+subtitle = "Hyper-Performant Chess Move Generator"
 +++
