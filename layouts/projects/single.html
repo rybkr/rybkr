@@ -1,0 +1,17 @@
+{{ define "main" }}
+<main class="project-single">
+    <h1 class="project-title">{{ .Title }}</h1>
+    {{ with .Params.subtitle }}
+    <p class="project-subtitle">{{ . }}</p>
+    {{ end }} {{ with .Summary }}
+    <p class="project-summary">{{ . }}</p>
+    {{ end }} {{ with .Params.stack }}
+    <div class="stack-row">
+        {{ range . }}
+        <span class="stack-pill">{{ . }}</span>
+        {{ end }}
+    </div>
+    {{ end }}
+    <section class="project-body">{{ .Content }}</section>
+</main>
+{{ end }}

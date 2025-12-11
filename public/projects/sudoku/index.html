@@ -5,12 +5,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Sudoku Generator &amp; Solver (CLI, Go) | Ryan Baker</title>
+<title>Sudoku Generator &amp; Solver | Ryan Baker</title>
 <meta name="keywords" content="">
 <meta name="description" content="Command-line Sudoku tool that generates unique puzzles and solves them using backtracking and constraint-based pruning.">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/projects/sudoku/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.5839992d1b43434a57fd4658b0c773bafc212fdf290df48f8838f3c7ceb47f1e.css" integrity="sha256-WDmZLRtDQ0pX/UZYsMdzuvwhL98pDfSPiDjzx860fx4=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b399e0f7962eeb8162193c701fe363b0b658f11f39652050aeab0f499ef8bf4f.css" integrity="sha256-s5ng95Yu64FiGTxwH&#43;NjsLZY8R85ZSBQrqsPSZ74v08=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -101,27 +101,24 @@
             </div>
         </div>
         <ul id="menu">
-            <li>
-                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
-                    <span>Search</span>
-                </a>
-            </li>
         </ul>
     </nav>
 </header>
 <main class="main">
-
-<article class="post-single">
-  <header class="post-header">
+<main class="project-single">
+    <h1 class="project-title">Sudoku Generator &amp; Solver</h1>
+     
+    <p class="project-summary">Command-line Sudoku tool that generates unique puzzles and solves them using backtracking and constraint-based pruning.</p>
+     
+    <div class="stack-row">
+        
+        <span class="stack-pill">Go</span>
+        
+        <span class="stack-pill">CLI</span>
+        
+    </div>
     
-    <h1 class="post-title entry-hint-parent">
-      Sudoku Generator &amp; Solver (CLI, Go)
-    </h1>
-    <div class="post-meta"><span title='2025-10-06 00:00:00 +0000 UTC'>October 6, 2025</span>
-
-</div>
-  </header> 
-  <div class="post-content"><h2 id="problem">Problem<a hidden class="anchor" aria-hidden="true" href="#problem">#</a></h2>
+    <section class="project-body"><h2 id="problem">Problem</h2>
 <p>Most Sudoku tools are either GUI toys or online apps. I wanted a <strong>fast, scriptable command-line tool</strong> that could:</p>
 <ul>
 <li>Generate valid Sudoku puzzles with a <strong>unique solution</strong></li>
@@ -130,7 +127,7 @@
 <li>Integrate into scripts, tests, and small tooling workflows</li>
 </ul>
 <p>At the same time, I wanted a concrete project to practice <strong>algorithm design, search, and constraint reasoning</strong> in Go.</p>
-<h2 id="approach">Approach<a hidden class="anchor" aria-hidden="true" href="#approach">#</a></h2>
+<h2 id="approach">Approach</h2>
 <p>I built a <strong>terminal-based Sudoku tool</strong> in Go that supports both generation and solving from the command line.</p>
 <ul>
 <li>The CLI accepts flags for:
@@ -148,7 +145,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="technical-highlights">Technical Highlights<a hidden class="anchor" aria-hidden="true" href="#technical-highlights">#</a></h2>
+<h2 id="technical-highlights">Technical Highlights</h2>
 <ul>
 <li>
 <p><strong>Backtracking Solver</strong></p>
@@ -204,7 +201,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="results">Results<a hidden class="anchor" aria-hidden="true" href="#results">#</a></h2>
+<h2 id="results">Results</h2>
 <ul>
 <li>Generates valid Sudoku puzzles with a <strong>guaranteed unique solution</strong>.</li>
 <li>Solves typical puzzles in <strong>milliseconds</strong> on a normal machine.</li>
@@ -221,26 +218,20 @@
 <li>Writing <strong>testable</strong> command-line tools</li>
 <li>Demonstrating how to move from a simple idea to a robust, scriptable utility</li>
 </ul>
-<h2 id="what-id-improve-next">What I’d Improve Next<a hidden class="anchor" aria-hidden="true" href="#what-id-improve-next">#</a></h2>
+<h2 id="what-id-improve-next">What I’d Improve Next</h2>
 <ul>
 <li>Implement more advanced solving strategies (e.g. naked pairs, X-Wing) to rate difficulty more accurately.</li>
 <li>Expose the core solver as a Go library with a clean API for reuse in other projects.</li>
 <li>Add a <code>--benchmark</code> mode to measure solve times across multiple puzzles.</li>
 <li>Optional TUI (text UI) for interactive play without leaving the terminal.</li>
 </ul>
-<h2 id="links">Links<a hidden class="anchor" aria-hidden="true" href="#links">#</a></h2>
+<h2 id="links">Links</h2>
 <ul>
 <li>GitHub: <a href="https://github.com/yourname/sudoku-cli">https://github.com/yourname/sudoku-cli</a></li>
 </ul>
+</section>
+</main>
 
-
-  </div>
-
-  <footer class="post-footer">
-    <ul class="post-tags">
-    </ul>
-  </footer>
-</article>
     </main>
     
 <footer class="footer">
@@ -317,53 +308,6 @@
         }
     })
 
-</script>
-<script>
-    document.querySelectorAll('pre > code').forEach((codeblock) => {
-        const container = codeblock.parentNode.parentNode;
-
-        const copybutton = document.createElement('button');
-        copybutton.classList.add('copy-code');
-        copybutton.innerHTML = 'copy';
-
-        function copyingDone() {
-            copybutton.innerHTML = 'copied!';
-            setTimeout(() => {
-                copybutton.innerHTML = 'copy';
-            }, 2000);
-        }
-
-        copybutton.addEventListener('click', (cb) => {
-            if ('clipboard' in navigator) {
-                navigator.clipboard.writeText(codeblock.textContent);
-                copyingDone();
-                return;
-            }
-
-            const range = document.createRange();
-            range.selectNodeContents(codeblock);
-            const selection = window.getSelection();
-            selection.removeAllRanges();
-            selection.addRange(range);
-            try {
-                document.execCommand('copy');
-                copyingDone();
-            } catch (e) { };
-            selection.removeRange(range);
-        });
-
-        if (container.classList.contains("highlight")) {
-            container.appendChild(copybutton);
-        } else if (container.parentNode.firstChild == container) {
-            
-        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
-            
-            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
-        } else {
-            
-            codeblock.parentNode.appendChild(copybutton);
-        }
-    });
 </script>
 </body>
 

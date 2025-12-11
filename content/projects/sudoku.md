@@ -1,9 +1,10 @@
----
-title: 'Sudoku Generator & Solver (CLI, Go)'
-summary: "Command-line Sudoku tool that generates unique puzzles and solves them using backtracking and constraint-based pruning."
-date: '2025-10-06'
-draft: false
----
++++
+title = 'Sudoku Generator & Solver'
+summary = "Command-line Sudoku tool that generates unique puzzles and solves them using backtracking and constraint-based pruning."
+date = '2025-10-06'
+stack = ["Go", "CLI"]
+draft = false
++++
 
 ## Problem
 

@@ -1,21 +1,14 @@
 {{ define "main" }}
-<main class="landing">
-  <h1>{{ .Site.Params.name }}</h1>
+<main class="home-intro">
+    <h1 class="home-name">Ryan Baker</h1>
+    <p class="home-tagline">I build things and teach.</p>
 
-  <p class="role">
-    {{ .Site.Params.role }}
-  </p>
-
-  <p class="tagline">
-    {{ .Site.Params.tagline }}
-  </p>
-
-  <nav class="links">
-    <a href="/projects/">Projects</a>
-    <a href="/talks/">Talks</a>
-    <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">GitHub</a>
-    <a href="mailto:{{ .Site.Params.email }}">Contact</a>
-  </nav>
+    <nav class="home-links">
+        <a href="/projects/">Projects</a>
+        <a href="/about/">About</a>
+        <a href="https://github.com/rybkr" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/rybkr" target="_blank">LinkedIn</a>
+        <a href="mailto:rbaker@xtier.com">Email</a>
+    </nav>
 </main>
 {{ end }}
-

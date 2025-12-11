@@ -13,7 +13,13 @@
       <link>http://localhost:1313/talks/messing-with-floating-point/</link>
       <pubDate>Thu, 28 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/talks/messing-with-floating-point/</guid>
-      <description></description>
+      <description>&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/ITbqbzGLIgo?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;h2 id=&#34;abstract&#34;&gt;Abstract&lt;/h2&gt;
+&lt;p&gt;Used in engineering, machine learning, graphics, and more, floating point arithmetic is a cornerstone of modern numerical computing. Despite its widespread application, many developers lack a sufficient understanding of the floating point type and its intricacies. This presentation aims to clarify these concepts.&lt;/p&gt;
+&lt;p&gt;We will walk through the bitwise representation of floating point values, the IEEE 754 Standard, the nuances of arithmetic operations, and some common sources of floating point error. We&amp;rsquo;ll also look at some practical solutions to common pitfalls in C++. A basic familiarity of binary representation (of integers) will be helpful, but no prior experience with floating point arithmetic is necessary.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

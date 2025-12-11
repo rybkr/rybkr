@@ -1,18 +1,41 @@
 {{ define "main" }}
-<h1>Projects</h1>
-<p>Selected systems and software projects.</p>
+<main>
+    <h1>Projects</h1>
+    <p class="project-intro">A selection of work and research.</p>
 
-{{ if .Pages }}
-  {{ range .Pages }}
-    <article style="margin-bottom: 2.5rem;">
-      <h2>
-        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-      </h2>
-      <p>{{ .Summary }}</p>
-    </article>
-  {{ end }}
-{{ else }}
-  <p>No projects found.</p>
-{{ end }}
+    <input
+        id="project-search"
+        class="project-search"
+        type="search"
+        placeholder="Search projects…"
+        aria-label="Search projects"
+    />
 
+    <div id="project-filters" class="filter-bar">
+        {{ $tags := slice }} {{ range .Pages }} {{ range .Params.tags }} {{
+        $tags = $tags | append . }} {{ end }} {{ end }} {{ $unique := $tags |
+        uniq | sort }} {{ range $unique }}
+        <button class="filter-pill" data-tag="{{ . }}">{{ . }}</button>
+        {{ end }}
+    </div>
+
+    <section id="projects">
+        {{ range .Pages.ByDate.Reverse }}
+        <article class="project-card" data-tags="{{ .Params.tags | jsonify }}">
+            <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+            {{ with .Params.subtitle }}
+            <p class="project-card-subtitle">{{ . }}</p>
+            {{ end }} {{ with .Params.summary }} {{ if ne . "" }}
+            <p>{{ . }}</p>
+            {{ end }} {{ end }}
+            <div class="stack-row">
+                {{ range .Params.stack }}
+                <span class="stack-pill">{{ . }}</span>
+                {{ end }}
+            </div>
+        </article>
+        {{ end }}
+    </section>
+</main>
+<script src="/js/projects-filter.js"></script>
 {{ end }}

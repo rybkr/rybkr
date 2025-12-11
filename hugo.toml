@@ -2,26 +2,3 @@ baseURL = 'https://rybkr.com/'
 languageCode = 'en-us'
 title = 'Ryan Baker'
 theme = "PaperMod"
-
-[params]
-  name = "Ryan Baker"
-  role = "Computer Engineering Student and Software Developer"
-  tagline = "Building useful systems; then teaching how they actually work."
-  email = "rbaker@xtier.com"
-  github = "https://github.com/rybkr"
-  defaultTheme = "auto"
-  disableThemeToggle = false
-  ShowReadingTime = false
-  ShowPostNavLinks = false
-  ShowBreadCrumbs = false
-  ShowToc = false
-  ShowCodeCopyButtons = true
-  ShowSearch = true
-
-[outputs]
-  home = ["HTML", "RSS", "JSON"]
-
-[[menu.main]]
-  name = "Search"
-  url = "/search/"
-  weight = 10

@@ -1,0 +1,26 @@
+{{ define "main" }}
+
+<h1>Courses</h1>
+<p>Course material and teaching resources.</p>
+
+<div class="course-grid">
+  {{ range .Pages.ByDate.Reverse }}
+    <div class="course-card">
+      <h2>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </h2>
+
+      <p class="course-summary">{{ .Summary }}</p>
+
+      {{ with .Params.tags }}
+        <div class="course-tags">
+          {{ range . }}
+            <span class="tag">{{ . }}</span>
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+  {{ end }}
+</div>
+
+{{ end }}
