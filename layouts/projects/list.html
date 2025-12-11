@@ -39,11 +39,7 @@
                     $tagIcons $tag }}
                     <span class="tag-pill">
                         {{ if $icon }}
-                        <img
-                            class="tag-icon-img"
-                            src="{{ $icon }}"
-                            alt="{{ . }} icon"
-                        />
+                        <img src="{{ $icon }}" alt="{{ . }} icon" />
                         {{ end }}
                         <span class="tag-label">{{ . }}</span>
                     </span>

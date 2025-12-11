@@ -1,0 +1,12 @@
+{{ define "main" }}
+<div class="single">
+    <h1>{{ .Title }}</h1>
+    <div class="post-content">
+        <ul>
+            <li><a href='{{ "/teaching/talks/" | relURL }}'>Talks</a></li>
+            <li><a href='{{ "/teaching/videos/" | relURL }}'>Videos</a></li>
+            <li><a href='{{ "/teaching/writing/" | relURL }}'>Writing</a></li>
+        </ul>
+    </div>
+</div>
+{{ end }}

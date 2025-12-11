@@ -1,16 +1,40 @@
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 2rem;
+.talk-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
 }
 
-th, td {
-  text-align: left;
-  padding: 0.6rem 0.4rem;
-  border-bottom: 1px solid #ddd;
+.talk-card {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+    background: var(--theme);
 }
 
-th {
-  font-weight: 600;
-  opacity: 0.8;
+.talk-thumb {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 0.7rem;
+}
+
+.talk-title {
+    margin: 0.3rem 0;
+}
+
+.talk-meta {
+    font-size: 0.9rem;
+    color: var(--secondary);
+}
+
+.year-heading {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.3rem;
+}
+
+.talk-video iframe {
+    border-radius: 6px;
+    margin-top: 0.6rem;
 }

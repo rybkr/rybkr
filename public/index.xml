@@ -6,19 +6,8 @@
     <description>Recent content on Ryan Baker</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 10 Dec 2025 21:19:01 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 05 Dec 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Intro to Modern C&#43;&#43;</title>
-      <link>http://localhost:1313/courses/intro-to-modern-cxx/</link>
-      <pubDate>Wed, 10 Dec 2025 21:19:01 -0500</pubDate>
-      <guid>http://localhost:1313/courses/intro-to-modern-cxx/</guid>
-      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
-&lt;h2 id=&#34;topics&#34;&gt;Topics&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Intro to C++&lt;/li&gt;
-&lt;/ol&gt;</description>
-    </item>
     <item>
       <title>ChromaSudoku</title>
       <link>http://localhost:1313/projects/chromasudoku/</link>
@@ -41,17 +30,22 @@
       <description>Compre</description>
     </item>
     <item>
-      <title>Messing With Floating Point</title>
-      <link>http://localhost:1313/talks/messing-with-floating-point/</link>
+      <title>Messing with Floating Point</title>
+      <link>http://localhost:1313/teaching/talks/messing-with-floating-point/</link>
       <pubDate>Thu, 28 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/talks/messing-with-floating-point/</guid>
-      <description>&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      <guid>http://localhost:1313/teaching/talks/messing-with-floating-point/</guid>
+      <description>&lt;p&gt;Cow
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
       &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/ITbqbzGLIgo?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
     &lt;/div&gt;
-
-&lt;h2 id=&#34;abstract&#34;&gt;Abstract&lt;/h2&gt;
-&lt;p&gt;Used in engineering, machine learning, graphics, and more, floating point arithmetic is a cornerstone of modern numerical computing. Despite its widespread application, many developers lack a sufficient understanding of the floating point type and its intricacies. This presentation aims to clarify these concepts.&lt;/p&gt;
-&lt;p&gt;We will walk through the bitwise representation of floating point values, the IEEE 754 Standard, the nuances of arithmetic operations, and some common sources of floating point error. We&amp;rsquo;ll also look at some practical solutions to common pitfalls in C++. A basic familiarity of binary representation (of integers) will be helpful, but no prior experience with floating point arithmetic is necessary.&lt;/p&gt;</description>
+&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Memory Segments in C/C&#43;&#43;</title>
+      <link>http://localhost:1313/teaching/videos/memory-segments/</link>
+      <pubDate>Thu, 11 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/teaching/videos/memory-segments/</guid>
+      <description></description>
     </item>
     <item>
       <title>Juicer</title>

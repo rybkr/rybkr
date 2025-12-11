@@ -8,21 +8,6 @@
     <loc>http://localhost:1313/</loc>
     <lastmod>2025-12-11T09:39:37-05:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/c&#43;&#43;/</loc>
-    <lastmod>2025-12-11T09:09:19-05:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/projects/juicer/</loc>
-    <lastmod>2025-12-11T09:09:19-05:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-12-11T09:09:19-05:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/courses/</loc>
-    <lastmod>2025-12-10T21:19:01-05:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/courses/intro-to-modern-cxx/</loc>
-    <lastmod>2025-12-10T21:19:01-05:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/c/</loc>
     <lastmod>2025-12-05T00:00:00+00:00</lastmod>
   </url><url>
@@ -33,6 +18,9 @@
     <lastmod>2025-12-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/game/</loc>
+    <lastmod>2025-12-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2025-12-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/projects/sudoku/</loc>
@@ -50,14 +38,40 @@
     <loc>http://localhost:1313/projects/onevim/</loc>
     <lastmod>2025-01-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/talks/messing-with-floating-point/</loc>
+    <loc>http://localhost:1313/tags/algorithms/</loc>
     <lastmod>2024-11-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/talks/</loc>
+    <loc>http://localhost:1313/tags/c&#43;&#43;/</loc>
     <lastmod>2024-11-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/teaching/talks/messing-with-floating-point/</loc>
+    <lastmod>2024-11-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/numerics/</loc>
+    <lastmod>2024-11-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/teaching/talks/</loc>
+    <lastmod>2024-11-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/teaching/</loc>
+    <lastmod>2024-11-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/teaching/videos/memory-segments/</loc>
+    <lastmod>2024-04-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/teaching/videos/</loc>
+    <lastmod>2024-04-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/chess/</loc>
+    <lastmod>2024-01-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/juicer/</loc>
+    <lastmod>2024-01-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
   </url><url>
     <loc>http://localhost:1313/search/</loc>
+  </url><url>
+    <loc>http://localhost:1313/teaching/writing/</loc>
   </url>
 </urlset>

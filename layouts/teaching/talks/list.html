@@ -1,0 +1,27 @@
+{{ define "main" }}
+<main class="post-list">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.summary }}
+    <p class="talk-summary">{{ . }}</p>
+    {{ end }}
+
+    <div class="talk-grid">
+        {{ range .Pages.ByDate.Reverse }}
+        <article class="talk-card">
+            {{ with .Params.thumbnail }}
+            <img class="talk-thumb" src="{{ . | relURL }}" alt="" />
+            {{ end }}
+
+            <h2 class="talk-title">
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </h2>
+
+            <div class="talk-meta">
+                {{ .Date.Format "2006" }} {{ with .Params.venue }} · {{ . }}{{
+                end }}
+            </div>
+        </article>
+        {{ end }}
+    </div>
+</main>
+{{ end }}

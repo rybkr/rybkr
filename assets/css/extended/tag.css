@@ -1,0 +1,19 @@
+.tag-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    color: var(--secondary);
+    font-size: 0.75rem;
+    line-height: 1;
+}
+
+.tag-pill img {
+    height: 14px;
+    width: auto;
+    display: block;
+    opacity: 0.95;
+}
