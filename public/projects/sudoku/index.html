@@ -7,10 +7,10 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Sudoku Generator &amp; Solver | Ryan Baker</title>
 <meta name="keywords" content="">
-<meta name="description" content="Command-line Sudoku tool that generates unique puzzles and solves them using backtracking and constraint-based pruning.">
+<meta name="description" content="A fast, scriptable command-line Sudoku tool written in Go.">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/projects/sudoku/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.3cd13331c5b1f50c4ac95077762474b7794c5c2039029f51be827bb357306693.css" integrity="sha256-PNEzMcWx9QxKyVB3diR0t3lMXCA5Ap9RvoJ7s1cwZpM=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.8ffdb2a13f16850fc50975957bbd5f90a96876c883483cb572afb86e479aa28f.css" integrity="sha256-j/2yoT8WhQ/FCXWVe71fkKlodsiDSDy1cq&#43;4bkeaoo8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -108,134 +108,25 @@
 <main class="project-single">
     <h1 class="project-title">Sudoku Generator &amp; Solver</h1>
      
-    <p class="project-summary">Command-line Sudoku tool that generates unique puzzles and solves them using backtracking and constraint-based pruning.</p>
+    <p class="project-summary">A fast, scriptable command-line Sudoku tool written in Go.</p>
      
-    <div class="stack-row">
-        
-        <span class="stack-pill">Go</span>
-        
-        <span class="stack-pill">CLI</span>
-        
-    </div>
-    
-    <section class="project-body"><h2 id="problem">Problem</h2>
-<p>Most Sudoku tools are either GUI toys or online apps. I wanted a <strong>fast, scriptable command-line tool</strong> that could:</p>
-<ul>
-<li>Generate valid Sudoku puzzles with a <strong>unique solution</strong></li>
-<li>Offer different difficulty levels</li>
-<li>Solve arbitrary Sudoku boards reliably</li>
-<li>Integrate into scripts, tests, and small tooling workflows</li>
-</ul>
-<p>At the same time, I wanted a concrete project to practice <strong>algorithm design, search, and constraint reasoning</strong> in Go.</p>
+    <section class="project-body"><p><strong>Links:</strong> <a href="https://github.com/rybkr/sudoku">GitHub</a></p>
+<h2 id="the-problem">The Problem</h2>
+<p>I wanted an ample supply of Sudoku puzzles for road trips and flights, without buying a book or relying on online generators.
+Most existing tools are GUIs or web apps.
+I wanted a <strong>portable CLI tool</strong> that could generate puzzles, control difficulty, and render them to HTML for easy printing.</p>
 <h2 id="approach">Approach</h2>
-<p>I built a <strong>terminal-based Sudoku tool</strong> in Go that supports both generation and solving from the command line.</p>
-<ul>
-<li>The CLI accepts flags for:
-<ul>
-<li><code>--generate</code> with optional difficulty (e.g. <code>easy</code>, <code>medium</code>, <code>hard</code>)</li>
-<li><code>--solve</code> to read a puzzle from stdin or a file</li>
-<li><code>--format</code> to output in a machine-friendly or human-readable grid</li>
-</ul>
-</li>
-<li>Internally, the solver uses a <strong>backtracking search</strong> combined with <strong>constraint-based pruning</strong> (row/column/subgrid checks) to cut down the search space.</li>
-<li>The generator creates a full valid board, then removes clues while:
-<ul>
-<li>Maintaining a <strong>unique solution</strong> (checked by running the solver)</li>
-<li>Stopping when difficulty constraints are reached (max branching, number of givens, etc.)</li>
-</ul>
-</li>
-</ul>
-<h2 id="technical-highlights">Technical Highlights</h2>
-<ul>
-<li>
-<p><strong>Backtracking Solver</strong></p>
-<ul>
-<li>Depth-first search with early pruning when row/column/subgrid constraints are violated</li>
-<li>Deterministic behavior with optional seeding for reproducible runs</li>
-<li>Detects unsolvable or invalid puzzles and exits with a clear error code</li>
-</ul>
-</li>
-<li>
-<p><strong>Puzzle Generation</strong></p>
-<ul>
-<li>Starts from a fully solved board generated via the same solver</li>
-<li>Removes numbers while:
-<ul>
-<li>Checking that the puzzle still has <strong>exactly one solution</strong></li>
-<li>Enforcing minimum clue counts per difficulty tier</li>
-</ul>
-</li>
-<li>Uses randomized removal order so generated puzzles are not identical</li>
-</ul>
-</li>
-<li>
-<p><strong>CLI Design</strong></p>
-<ul>
-<li>Built with the standard library (no heavy dependencies)</li>
-<li>Clear usage help and error messages</li>
-<li>Can read puzzles from:
-<ul>
-<li>Standard input</li>
-<li>Text files in a simple 9×9 ASCII format (e.g. <code>0</code> or <code>.</code> for blanks)</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>Testing &amp; Reliability</strong></p>
-<ul>
-<li>Unit tests for:
-<ul>
-<li>Solver correctness on known puzzles</li>
-<li>Uniqueness detection</li>
-<li>Generator invariants (always solvable)</li>
-</ul>
-</li>
-<li>Fuzz-style tests that:
-<ul>
-<li>Generate random puzzles</li>
-<li>Solve them</li>
-<li>Re-validate the solved board’s constraints</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="results">Results</h2>
-<ul>
-<li>Generates valid Sudoku puzzles with a <strong>guaranteed unique solution</strong>.</li>
-<li>Solves typical puzzles in <strong>milliseconds</strong> on a normal machine.</li>
-<li>Can be used both:
-<ul>
-<li>Interactively in the terminal</li>
-<li>As part of other tools or scripts (e.g. benchmarking, teaching examples, coding exercises)</li>
-</ul>
-</li>
-</ul>
-<p>This project is now my go-to example for:</p>
-<ul>
-<li>Implementing search and constraint algorithms in Go</li>
-<li>Writing <strong>testable</strong> command-line tools</li>
-<li>Demonstrating how to move from a simple idea to a robust, scriptable utility</li>
-</ul>
-<h2 id="what-id-improve-next">What I’d Improve Next</h2>
-<ul>
-<li>Implement more advanced solving strategies (e.g. naked pairs, X-Wing) to rate difficulty more accurately.</li>
-<li>Expose the core solver as a Go library with a clean API for reuse in other projects.</li>
-<li>Add a <code>--benchmark</code> mode to measure solve times across multiple puzzles.</li>
-<li>Optional TUI (text UI) for interactive play without leaving the terminal.</li>
-</ul>
-<h2 id="links">Links</h2>
-<ul>
-<li>GitHub: <a href="https://github.com/yourname/sudoku-cli">https://github.com/yourname/sudoku-cli</a></li>
-</ul>
+<p>I built a terminal-based Sudoku generator and solver in Go.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudoku gen --clueCount<span style="color:#f92672">=</span>17-80 --number<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span> --output<span style="color:#f92672">=</span>out.html
+</span></span></code></pre></div><p>The solver uses backtracking with constraint-based pruning to efficiently search valid boards.
+The generator starts from a solved grid and removes clues while repeatedly verifying unique solvability by re-running the solver.</p>
 </section>
 </main>
 
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="http://localhost:1313/">Ryan Baker</a></span> · 
+        <span>&copy; 2026 <a href="http://localhost:1313/">Ryan Baker</a></span> · 
 
     <span>
         Powered by
@@ -308,6 +199,53 @@
         }
     })
 
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
 </script>
 </body>
 

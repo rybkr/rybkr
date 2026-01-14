@@ -6,10 +6,17 @@
     <description>Recent content in Projects on Ryan Baker</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 05 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 25 Dec 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>ChromaSudoku</title>
+      <title>Byte Courses</title>
+      <link>http://localhost:1313/projects/bytecourses/</link>
+      <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/bytecourses/</guid>
+      <description>Micro LMS to facilitate The Byte Course Project</description>
+    </item>
+    <item>
+      <title>Chroma Sudoku</title>
       <link>http://localhost:1313/projects/chromasudoku/</link>
       <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/chromasudoku/</guid>
@@ -20,7 +27,14 @@
       <link>http://localhost:1313/projects/sudoku/</link>
       <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/sudoku/</guid>
-      <description>Command-line Sudoku tool that generates unique puzzles and solves them using backtracking and constraint-based pruning.</description>
+      <description>A fast, scriptable command-line Sudoku tool written in Go.</description>
+    </item>
+    <item>
+      <title>CPU Raytracer</title>
+      <link>http://localhost:1313/projects/raytracer/</link>
+      <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/raytracer/</guid>
+      <description></description>
     </item>
     <item>
       <title>Onevim</title>
@@ -28,6 +42,13 @@
       <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/onevim/</guid>
       <description>Compre</description>
+    </item>
+    <item>
+      <title>Convolution Visualizer</title>
+      <link>http://localhost:1313/projects/convolution/</link>
+      <pubDate>Thu, 24 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/convolution/</guid>
+      <description>An interactive, step-by-step visualizer for continuous-time signal convolution</description>
     </item>
     <item>
       <title>Juicer</title>

@@ -10,7 +10,7 @@
 <meta name="description" content="Projects - Ryan Baker">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/projects/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.fc01e546308e1c974e33243c0051c5bef00d0679e24431c3b941d5b4705db758.css" integrity="sha256-/AHlRjCOHJdOMyQ8AFHFvvANBnniRDHDuUHVtHBdt1g=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.8ffdb2a13f16850fc50975957bbd5f90a96876c883483cb572afb86e479aa28f.css" integrity="sha256-j/2yoT8WhQ/FCXWVe71fkKlodsiDSDy1cq&#43;4bkeaoo8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -119,7 +119,7 @@
     />
 
     <div id="project-filters" class="filter-bar">
-                                   
+                                                       
         <button class="filter-pill" data-tag="C">C</button>
         
         <button class="filter-pill" data-tag="C&#43;&#43;">C&#43;&#43;</button>
@@ -128,21 +128,78 @@
         
         <button class="filter-pill" data-tag="Config">Config</button>
         
+        <button class="filter-pill" data-tag="CSS">CSS</button>
+        
         <button class="filter-pill" data-tag="Embedded">Embedded</button>
         
         <button class="filter-pill" data-tag="Game">Game</button>
         
+        <button class="filter-pill" data-tag="Go">Go</button>
+        
+        <button class="filter-pill" data-tag="HTML">HTML</button>
+        
+        <button class="filter-pill" data-tag="JS">JS</button>
+        
         <button class="filter-pill" data-tag="Lua">Lua</button>
         
+        <button class="filter-pill" data-tag="Math">Math</button>
+        
         <button class="filter-pill" data-tag="Neovim">Neovim</button>
+        
+        <button class="filter-pill" data-tag="Signal Processing">Signal Processing</button>
         
     </div>
 
     <section id="projects">
         
+        <article class="project-card" data-tags="[&#34;Go&#34;]">
+            <div class="card-left">
+                <h2>
+                    <a
+                        href="/projects/bytecourses/"
+                        
+                    >
+                        Byte Courses
+                    </a>
+                </h2>
+
+                    
+                     
+
+                <div class="tag-row">
+                      
+                    <span class="tag-pill">
+                        
+                        <img src="/icons/tags/go.svg" alt="Go icon" />
+                        
+                        <span class="tag-label">Go</span>
+                    </span>
+                    
+                </div>
+            </div>
+
+            <div class="card-middle">
+                 
+                <p>Micro LMS to facilitate The Byte Course Project</p>
+                 
+            </div>
+
+            <div class="card-right">
+                
+            </div>
+        </article>
+
+        
         <article class="project-card" data-tags="[&#34;Embedded&#34;,&#34;C&#34;,&#34;Game&#34;]">
             <div class="card-left">
-                <h2><a href="/projects/chromasudoku/">ChromaSudoku</a></h2>
+                <h2>
+                    <a
+                        href="/projects/chromasudoku/"
+                        
+                    >
+                        Chroma Sudoku
+                    </a>
+                </h2>
 
                           
                            
@@ -199,7 +256,14 @@
         
         <article class="project-card" data-tags="null">
             <div class="card-left">
-                <h2><a href="/projects/sudoku/">Sudoku Generator &amp; Solver</a></h2>
+                <h2>
+                    <a
+                        href="/projects/sudoku/"
+                        
+                    >
+                        Sudoku Generator &amp; Solver
+                    </a>
+                </h2>
 
                         
                  
@@ -215,6 +279,8 @@
                       
                     <span class="tag-pill">
                         
+                        <img src="/icons/tags/term.svg" alt="CLI icon" />
+                        
                         <span class="tag-label">CLI</span>
                     </span>
                     
@@ -223,11 +289,61 @@
 
             <div class="card-middle">
                  
-                <p>Command-line Sudoku tool that generates unique puzzles and solves them using backtracking and constraint-based pruning.</p>
+                <p>A fast, scriptable command-line Sudoku tool written in Go.</p>
                  
             </div>
 
             <div class="card-right">
+                
+                <img
+                    class="project-thumb"
+                    src="/images/projects/sudoku/thumb.png"
+                    alt="Projects thumbnail"
+                />
+                
+            </div>
+        </article>
+
+        
+        <article class="project-card" data-tags="[&#34;C&#43;&#43;&#34;]">
+            <div class="card-left">
+                <h2>
+                    <a
+                        href="https://github.com/rybkr/raytracer"
+                        target="_blank"
+                        rel="noopener"
+                        
+                    >
+                        CPU Raytracer
+                    </a>
+                </h2>
+
+                    
+                     
+
+                <div class="tag-row">
+                      
+                    <span class="tag-pill">
+                        
+                        <img src="/icons/tags/cpp.svg" alt="C&#43;&#43; icon" />
+                        
+                        <span class="tag-label">C&#43;&#43;</span>
+                    </span>
+                    
+                </div>
+            </div>
+
+            <div class="card-middle">
+                
+            </div>
+
+            <div class="card-right">
+                
+                <img
+                    class="project-thumb"
+                    src="/images/projects/raytracer/thumb.png"
+                    alt="Projects thumbnail"
+                />
                 
             </div>
         </article>
@@ -235,7 +351,14 @@
         
         <article class="project-card" data-tags="[&#34;Neovim&#34;,&#34;Lua&#34;,&#34;Config&#34;]">
             <div class="card-left">
-                <h2><a href="/projects/onevim/">Onevim</a></h2>
+                <h2>
+                    <a
+                        href="/projects/onevim/"
+                        
+                    >
+                        Onevim
+                    </a>
+                </h2>
 
                 
                 <p class="project-card-subtitle">The Objectively Correct Neovim Config</p>
@@ -280,9 +403,84 @@
         </article>
 
         
+        <article class="project-card" data-tags="[&#34;JS&#34;,&#34;HTML&#34;,&#34;CSS&#34;,&#34;Math&#34;,&#34;Signal Processing&#34;]">
+            <div class="card-left">
+                <h2>
+                    <a
+                        href="/projects/convolution/"
+                        
+                    >
+                        Convolution Visualizer
+                    </a>
+                </h2>
+
+                    
+                                     
+
+                <div class="tag-row">
+                      
+                    <span class="tag-pill">
+                        
+                        <img src="/icons/tags/js.svg" alt="JS icon" />
+                        
+                        <span class="tag-label">JS</span>
+                    </span>
+                      
+                    <span class="tag-pill">
+                        
+                        <img src="/icons/tags/html.svg" alt="HTML icon" />
+                        
+                        <span class="tag-label">HTML</span>
+                    </span>
+                      
+                    <span class="tag-pill">
+                        
+                        <img src="/icons/tags/css.svg" alt="CSS icon" />
+                        
+                        <span class="tag-label">CSS</span>
+                    </span>
+                      
+                    <span class="tag-pill">
+                        
+                        <span class="tag-label">Math</span>
+                    </span>
+                      
+                    <span class="tag-pill">
+                        
+                        <span class="tag-label">Signal Processing</span>
+                    </span>
+                    
+                </div>
+            </div>
+
+            <div class="card-middle">
+                 
+                <p>An interactive, step-by-step visualizer for continuous-time signal convolution</p>
+                 
+            </div>
+
+            <div class="card-right">
+                
+                <img
+                    class="project-thumb"
+                    src="/images/projects/convolution/thumb.png"
+                    alt="Projects thumbnail"
+                />
+                
+            </div>
+        </article>
+
+        
         <article class="project-card" data-tags="[&#34;C&#43;&#43;&#34;,&#34;Chess&#34;]">
             <div class="card-left">
-                <h2><a href="/projects/juicer/">Juicer</a></h2>
+                <h2>
+                    <a
+                        href="/projects/juicer/"
+                        
+                    >
+                        Juicer
+                    </a>
+                </h2>
 
                 
                 <p class="project-card-subtitle">Hyper-Performant Chess Move Generator</p>
@@ -292,6 +490,8 @@
                 <div class="tag-row">
                       
                     <span class="tag-pill">
+                        
+                        <img src="/icons/tags/cpp.svg" alt="C&#43;&#43; icon" />
                         
                         <span class="tag-label">C&#43;&#43;</span>
                     </span>
@@ -326,7 +526,7 @@
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="http://localhost:1313/">Ryan Baker</a></span> · 
+        <span>&copy; 2026 <a href="http://localhost:1313/">Ryan Baker</a></span> · 
 
     <span>
         Powered by

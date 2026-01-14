@@ -1,0 +1,13 @@
+{{/* expects a Pages collection */}} {{ $elements := sort . "Weight" "asc" }}
+
+<div class="horizontal-reel">
+    {{ range . }}
+  {{ $p := . }}
+  <a class="reel-card" href="{{ $p.RelPermalink }}">
+    {{ with $p.Params.thumbnail }}
+      <img src="{{ . }}" alt="{{ $p.Title }}">
+    {{ end }}
+    <div class="element-title">{{ $p.Title }}</div>
+  </a>
+{{ end }}
+</div>

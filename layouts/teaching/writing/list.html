@@ -1,0 +1,22 @@
+{{ define "main" }}
+<main class="container">
+    <header>
+        <h1>{{ .Title }}</h1>
+        {{ with .Params.description }}<p>{{ . }}</p>{{ end }}
+    </header>
+    
+    <section id="writing">
+        {{ range .Pages.ByDate.Reverse }}
+        <article class="writing-card">
+            <div class="writing-card-header">
+                <strong><a href="{{ .Params.link }}">{{ .Title }}</a></strong>
+                {{ with .Date }}<time datetime="{{ .Format "2006-01-02" }}">{{ .Format "January 2, 2006" }}</time>{{ end }}
+            </div>
+            {{ with .Params.blurb }}<div class="writing-card-blurb">
+                {{ . }}
+            </div>{{ end }}
+        </article>
+        {{ end }}
+    </section>
+</main>
+{{ end }}

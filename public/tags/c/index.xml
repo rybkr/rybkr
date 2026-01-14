@@ -9,11 +9,18 @@
     <lastBuildDate>Fri, 05 Dec 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/c/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>ChromaSudoku</title>
+      <title>Chroma Sudoku</title>
       <link>http://localhost:1313/projects/chromasudoku/</link>
       <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/chromasudoku/</guid>
       <description>Color-based Sudoku for embedded hardware</description>
+    </item>
+    <item>
+      <title>Memory Segments in C/C&#43;&#43;</title>
+      <link>http://localhost:1313/teaching/videos/memory-segments/</link>
+      <pubDate>Thu, 11 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/teaching/videos/memory-segments/</guid>
+      <description></description>
     </item>
   </channel>
 </rss>

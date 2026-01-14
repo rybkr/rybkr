@@ -150,3 +150,8 @@
     margin-top: 2rem;
     line-height: 1.65;
 }
+
+.project-body p {
+    margin-bottom: 1em;
+    margin-top: 1em;
+}

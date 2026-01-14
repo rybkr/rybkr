@@ -1,0 +1,31 @@
+/* -------------------------------------------------------
+   Layout: Writing List Page
+------------------------------------------------------- */
+
+.writing-card {
+    display: flex;
+    gap: 2rem;
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+}
+
+.writing-card-header {
+    display: flex;
+    flex-direction: column;
+    min-width: 180px;
+    max-width: 180px;
+}
+
+.writing-card-header strong {
+    font-size: 1.35rem;
+}
+
+.writing-card-header time {
+    font-size: 0.85rem;
+    color: var(--secondary);
+}
+
+.writing-card-blurb {
+    margin: auto 0 auto 0.5rem;
+}

@@ -1,0 +1,23 @@
+.highlight pre {
+    padding: 1.25rem !important;
+    border-radius: 8px;
+    scrollbar-width: thin;
+}
+
+.highlight pre,
+pre code {
+    overflow-x: auto;
+    white-space: pre;
+}
+
+pre {
+    white-space: pre;
+}
+
+.highlight table {
+    margin: 0;
+}
+
+.highlight {
+    max-width: 100%;
+}

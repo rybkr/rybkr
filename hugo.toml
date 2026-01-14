@@ -2,3 +2,14 @@ baseURL = 'https://rybkr.com/'
 languageCode = 'en-us'
 title = 'Ryan Baker'
 theme = "PaperMod"
+
+[markup]
+  [highlight]
+    codeFences = true
+    lineNos = true
+    noClasses = false
+    guessSyntax = true
+    style = ""
+
+[params]
+  ShowCodeCopyButtons = true

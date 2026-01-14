@@ -5,10 +5,10 @@
     <p class="project-subtitle">{{ . }}</p>
     {{ end }} {{ with .Summary }}
     <p class="project-summary">{{ . }}</p>
-    {{ end }} {{ with .Params.stack }}
-    <div class="stack-row">
+    {{ end }} {{ with .Params.tags }}
+    <div class="tag-row">
         {{ range . }}
-        <span class="stack-pill">{{ . }}</span>
+        <span class="tag-pill">{{ . }}</span>
         {{ end }}
     </div>
     {{ end }}

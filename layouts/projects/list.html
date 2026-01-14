@@ -23,7 +23,21 @@
         {{ range .Pages.ByDate.Reverse }}
         <article class="project-card" data-tags="{{ .Params.tags | jsonify }}">
             <div class="card-left">
-                <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+                <h2>
+                    <a
+                        href="{{ with .Params.redirect }}{{ . }}{{ else }}{{ .RelPermalink }}{{ end }}"
+                        {{
+                        with
+                        .Params.redirect
+                        }}target="_blank"
+                        rel="noopener"
+                        {{
+                        end
+                        }}
+                    >
+                        {{ .Title }}
+                    </a>
+                </h2>
 
                 {{ with .Params.subtitle }}
                 <p class="project-card-subtitle">{{ . }}</p>
@@ -32,7 +46,10 @@
                 range $stack }} {{ $allTags = $allTags | append . }} {{ end }}
                 {{ range $tags }} {{ if not (in $stack .) }} {{ $allTags =
                 $allTags | append . }} {{ end }} {{ end }} {{ $tagIcons := dict
-                "go" "/icons/tags/go.svg" "c" "/icons/tags/c.svg" }}
+                "go" "/icons/tags/go.svg" "c" "/icons/tags/c.svg" "js"
+                "/icons/tags/js.svg" "html" "/icons/tags/html.svg" "css"
+                "/icons/tags/css.svg" "cli" "/icons/tags/term.svg" "c++"
+                "/icons/tags/cpp.svg" }}
 
                 <div class="tag-row">
                     {{ range $allTags }} {{ $tag := lower . }} {{ $icon := index

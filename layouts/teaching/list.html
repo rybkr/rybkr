@@ -1,12 +1,30 @@
 {{ define "main" }}
 <div class="single">
     <h1>{{ .Title }}</h1>
-    <div class="post-content">
-        <ul>
-            <li><a href='{{ "/teaching/talks/" | relURL }}'>Talks</a></li>
-            <li><a href='{{ "/teaching/videos/" | relURL }}'>Videos</a></li>
-            <li><a href='{{ "/teaching/writing/" | relURL }}'>Writing</a></li>
-        </ul>
-    </div>
+
+    <nav aria-label="Teaching materials">
+        <div class="teaching-cards">
+            <div class="teaching-card">
+            <a href='{{ "/teaching/talks/" | relURL }}'>
+                <h2>Talks</h2>
+                <p>Conference talks, invited lectures, and workshops.</p>
+            </a>
+            </div>
+
+            <div class="teaching-card">
+            <a href='{{ "/teaching/videos/" | relURL }}'>
+                <h2>Videos</h2>
+                <p>Recorded talks, short explainers, and interviews.</p>
+            </a>
+            </div>
+
+            <div class="teaching-card">
+            <a href='{{ "/teaching/writing/" | relURL }}'>
+                <h2>Written</h2>
+                <p>Essays, notes, and teaching-related articles.</p>
+            </a>
+            </div>
+        </div>
+    </nav>
 </div>
 {{ end }}

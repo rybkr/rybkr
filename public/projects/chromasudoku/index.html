@@ -5,12 +5,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>ChromaSudoku | Ryan Baker</title>
+<title>Chroma Sudoku | Ryan Baker</title>
 <meta name="keywords" content="Embedded, C, Game">
 <meta name="description" content="Color-based Sudoku for embedded hardware">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/projects/chromasudoku/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.3cd13331c5b1f50c4ac95077762474b7794c5c2039029f51be827bb357306693.css" integrity="sha256-PNEzMcWx9QxKyVB3diR0t3lMXCA5Ap9RvoJ7s1cwZpM=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.8ffdb2a13f16850fc50975957bbd5f90a96876c883483cb572afb86e479aa28f.css" integrity="sha256-j/2yoT8WhQ/FCXWVe71fkKlodsiDSDy1cq&#43;4bkeaoo8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -106,35 +106,53 @@
 </header>
 <main class="main">
 <main class="project-single">
-    <h1 class="project-title">ChromaSudoku</h1>
+    <h1 class="project-title">Chroma Sudoku</h1>
      
     <p class="project-summary">Color-based Sudoku for embedded hardware</p>
      
-    <div class="stack-row">
+    <div class="tag-row">
         
-        <span class="stack-pill">C</span>
+        <span class="tag-pill">Embedded</span>
         
-        <span class="stack-pill">PlatformIO</span>
+        <span class="tag-pill">C</span>
         
-        <span class="stack-pill">RP2350</span>
+        <span class="tag-pill">Game</span>
         
     </div>
     
-    <section class="project-body"><p>ChromaSudoku is a compact Sudoku implementation for the RP2350, replacing numbers with distinct colors for a simple, hardware-friendly UI.
-The project focuses on clear input handling, clean C logic, and minimal rendering for constrained devices.</p>
-<h2 id="technical-summary">Technical Summary</h2>
+    <section class="project-body"><p><strong>Links:</strong> <a href="https://github.com/rybkr/ChromaSudoku">GitHub</a><br>
+<strong>Recognition:</strong> <em>2nd Place</em>—Purdue SPARK Challenge 2025</p>
+<p><em>I like sudoku.
+I like programming.
+Sometimes, I even program sudoku.</em></p>
+<p>That usually works out—until you try to fit 81 numbers onto a 32×32 RGB LED matrix.</p>
+<h2 id="the-problem">The Problem</h2>
+<p>Digital sudoku breaks down at very small scales.
+Arabic numerals are pixel-hungry, and at this resolution reading them becomes the main challenge instead of the puzzle itself.</p>
+<p><img alt="ChromaSudoku Board" loading="lazy" src="/images/projects/chromasudoku/board.png"></p>
+<blockquote>
+<p>The image exhibits some exposure effects that do not appear on the physical board.</p>
+</blockquote>
+<h2 id="the-idea">The Idea</h2>
+<p>Instead of digits, <strong>ChromaSudoku</strong> uses <strong>nine distinct colors</strong>.
+On a 32×32 RGB matrix, color blocks remain instantly distinguishable without any text rendering.
+Each cell maps directly to a color, eliminating glyph complexity while preserving the core logic of Sudoku.</p>
+<h2 id="implementation">Implementation</h2>
+<p>ChromaSudoku runs on an <strong>RP2350</strong> and is written in <strong>C</strong> using <strong>PlatformIO</strong>.<br>
+The grid, input handling, and validation logic are all designed around tight memory and timing constraints typical of embedded systems.</p>
+<h2 id="what-i-learned">What I Learned</h2>
 <ul>
-<li>Written in C with PlatformIO for fast iteration.</li>
-<li>Color mapping replaces numerical display requirements.</li>
-<li>Designed for low-memory hardware with simple I/O.</li>
+<li>Designing interfaces for extreme resolution limits</li>
+<li>Rethinking familiar problems under hardware constraints</li>
 </ul>
+<p><img alt="ChromaSudoku Complete Device" loading="lazy" src="/images/projects/chromasudoku/device.png"></p>
 </section>
 </main>
 
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="http://localhost:1313/">Ryan Baker</a></span> · 
+        <span>&copy; 2026 <a href="http://localhost:1313/">Ryan Baker</a></span> · 
 
     <span>
         Powered by
@@ -207,6 +225,53 @@ The project focuses on clear input handling, clean C logic, and minimal renderin
         }
     })
 
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
 </script>
 </body>
 
