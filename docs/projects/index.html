@@ -10,7 +10,7 @@
 <meta name="description" content="Projects - Ryan Baker">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/projects/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.4e75334f018d051e6e92c357fcbe83bda8e3e95addea38135dc62f6deaf178ec.css" integrity="sha256-TnUzTwGNBR5uksNX/L6Dvajj6Vrd6jgTXcYvberxeOw=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.a171a74c5e42c95bdbcb82c99480b195113d7cc72993fb7ca3f6e7d74c95e251.css" integrity="sha256-oXGnTF5CyVvby4LJlICxlRE9fMcpk/t8o/bn10yV4lE=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -71,9 +71,10 @@
         document.querySelector("html").dataset.theme = 'light';
     }
 
-</script><link rel="preconnect" href="https://fonts.googleapis.com">
+</script><link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"><meta name="view-transition" content="same-origin">
 
 </head>
 <body class="list" id="top">
@@ -110,64 +111,50 @@
 </header>
 <main class="main">
 <main>
-    <h1>Projects</h1>
-    <p class="project-intro">A selection of work and research.</p>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="/">Home</a>
+  <span class="breadcrumb-separator">/</span>
+  <span class="breadcrumb-current">Projects</span>
+</nav>
+    <div class="page-header">
+        <h1>Projects</h1>
+        <div class="search-hint" role="button" tabindex="0" aria-label="Search">
+  <svg class="search-hint-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <circle cx="11" cy="11" r="8"/>
+    <path d="m21 21-4.35-4.35"/>
+  </svg>
+  <span class="search-hint-text">Search</span>
+  <kbd class="search-hint-key">/</kbd>
+</div>
 
-    <input
-        id="project-search"
-        class="project-search"
-        type="search"
-        placeholder="Search projects…"
-        aria-label="Search projects"
-    />
-
-    <div id="project-filters" class="filter-bar">
-                                                       
-        <button class="filter-pill" data-tag="C">C</button>
-        
-        <button class="filter-pill" data-tag="C&#43;&#43;">C&#43;&#43;</button>
-        
-        <button class="filter-pill" data-tag="Chess">Chess</button>
-        
-        <button class="filter-pill" data-tag="Config">Config</button>
-        
-        <button class="filter-pill" data-tag="CSS">CSS</button>
-        
-        <button class="filter-pill" data-tag="Embedded">Embedded</button>
-        
-        <button class="filter-pill" data-tag="Game">Game</button>
-        
-        <button class="filter-pill" data-tag="Go">Go</button>
-        
-        <button class="filter-pill" data-tag="HTML">HTML</button>
-        
-        <button class="filter-pill" data-tag="JS">JS</button>
-        
-        <button class="filter-pill" data-tag="Lua">Lua</button>
-        
-        <button class="filter-pill" data-tag="Math">Math</button>
-        
-        <button class="filter-pill" data-tag="Neovim">Neovim</button>
-        
-        <button class="filter-pill" data-tag="Signal Processing">Signal Processing</button>
-        
+    </div>
+    <p class="project-intro">A selection of work and research.</p><section class="featured-projects">
+        <h2 class="featured-heading">Featured</h2>
+        <div class="featured-grid"><a href="/projects/chromasudoku/" class="featured-card"><img src="/images/projects/chromasudoku/thumb.png" alt="Projects" class="featured-card-img" /><div class="featured-card-content">
+                    <strong>Chroma Sudoku</strong><p>Color-based Sudoku for embedded hardware</p></div>
+            </a><a href="https://github.com/rybkr/raytracer" class="featured-card" target="_blank" rel="noopener"><img src="/images/projects/raytracer/thumb.png" alt="Projects" class="featured-card-img" /><div class="featured-card-content">
+                    <strong>CPU Raytracer</strong><p>A from-scratch raytracer in C&#43;&#43; implementing reflection, refraction, and Monte Carlo path tracing</p></div>
+            </a><a href="/projects/convolution/" class="featured-card"><img src="/images/projects/convolution/thumb.png" alt="Projects" class="featured-card-img" /><div class="featured-card-content">
+                    <strong>Convolution Visualizer</strong><p>An interactive, step-by-step visualizer for continuous-time signal convolution</p></div>
+            </a></div>
+    </section><div id="project-filters" class="filter-bar">
+        <div class="filter-group">
+            <span class="filter-group-label">Language</span><button class="filter-pill" data-tag="C&#43;&#43;">C&#43;&#43;</button><button class="filter-pill" data-tag="Go">Go</button><button class="filter-pill" data-tag="C">C</button><button class="filter-pill" data-tag="Lua">Lua</button><button class="filter-pill" data-tag="HTML">HTML</button><button class="filter-pill" data-tag="CSS">CSS</button><button class="filter-pill" data-tag="JS">JS</button></div>
+        <div class="filter-group">
+            <span class="filter-group-label">Domain</span><button class="filter-pill" data-tag="Chess">Chess</button><button class="filter-pill" data-tag="Game">Game</button><button class="filter-pill" data-tag="Embedded">Embedded</button><button class="filter-pill" data-tag="Math">Math</button><button class="filter-pill" data-tag="Signal Processing">Signal Processing</button></div>
+        <div class="filter-group">
+            <span class="filter-group-label">Tools</span><button class="filter-pill" data-tag="CLI">CLI</button><button class="filter-pill" data-tag="Neovim">Neovim</button><button class="filter-pill" data-tag="Config">Config</button><button class="filter-pill" data-tag="Make">Make</button><button class="filter-pill" data-tag="PlatformIO">PlatformIO</button></div>
     </div>
 
     <section id="projects">
-        
-        <article class="project-card" data-tags="[&#34;Go&#34;]">
-            <div class="card-left">
-                <h2>
-                    <a
-                        href="/projects/bytecourses/"
-                        
-                    >
+        <article class="project-card" data-tags="[&#34;Go&#34;,&#34;HTML&#34;,&#34;CSS&#34;]">
+            <div class="card-left"><h2>
+                    <a href="https://bytecourses.org" target="_blank" rel="noopener">
                         Byte Courses
-                    </a>
-                </h2>
+                    </a><span class="wip-badge">WIP</span></h2>
 
-                    
-                     
+                          
+                   
 
                 <div class="tag-row">
                       
@@ -177,13 +164,27 @@
                         
                         <span class="tag-label">Go</span>
                     </span>
+                      
+                    <span class="tag-pill">
+                        
+                        <img src="/icons/tags/html.svg" alt="HTML icon" />
+                        
+                        <span class="tag-label">HTML</span>
+                    </span>
+                      
+                    <span class="tag-pill">
+                        
+                        <img src="/icons/tags/css.svg" alt="CSS icon" />
+                        
+                        <span class="tag-label">CSS</span>
+                    </span>
                     
                 </div>
             </div>
 
             <div class="card-middle">
                  
-                <p>Micro LMS to facilitate The Byte Course Project</p>
+                <p>A lightweight LMS built in Go for delivering structured programming courses</p>
                  
             </div>
 
@@ -198,17 +199,11 @@
             </div>
         </article>
 
-        
-        <article class="project-card" data-tags="[&#34;Embedded&#34;,&#34;C&#34;,&#34;Game&#34;]">
-            <div class="card-left">
-                <h2>
-                    <a
-                        href="/projects/chromasudoku/"
-                        
-                    >
+        <article class="project-card" data-tags="[&#34;Embedded&#34;,&#34;C&#34;,&#34;Game&#34;,&#34;PlatformIO&#34;,&#34;RP2350&#34;]">
+            <div class="card-left"><h2>
+                    <a href="/projects/chromasudoku/">
                         Chroma Sudoku
-                    </a>
-                </h2>
+                    </a></h2>
 
                           
                            
@@ -262,17 +257,11 @@
             </div>
         </article>
 
-        
-        <article class="project-card" data-tags="null">
-            <div class="card-left">
-                <h2>
-                    <a
-                        href="/projects/sudoku/"
-                        
-                    >
+        <article class="project-card" data-tags="[&#34;Go&#34;,&#34;CLI&#34;]">
+            <div class="card-left"><h2>
+                    <a href="/projects/sudoku/">
                         Sudoku Generator &amp; Solver
-                    </a>
-                </h2>
+                    </a></h2>
 
                         
                  
@@ -313,22 +302,14 @@
             </div>
         </article>
 
-        
         <article class="project-card" data-tags="[&#34;C&#43;&#43;&#34;]">
-            <div class="card-left">
-                <h2>
-                    <a
-                        href="https://github.com/rybkr/raytracer"
-                        target="_blank"
-                        rel="noopener"
-                        
-                    >
+            <div class="card-left"><h2>
+                    <a href="https://github.com/rybkr/raytracer" target="_blank" rel="noopener">
                         CPU Raytracer
-                    </a>
-                </h2>
+                    </a></h2>
 
-                    
-                     
+                      
+                   
 
                 <div class="tag-row">
                       
@@ -343,7 +324,9 @@
             </div>
 
             <div class="card-middle">
-                
+                 
+                <p>A from-scratch raytracer in C&#43;&#43; implementing reflection, refraction, and Monte Carlo path tracing</p>
+                 
             </div>
 
             <div class="card-right">
@@ -357,17 +340,11 @@
             </div>
         </article>
 
-        
         <article class="project-card" data-tags="[&#34;Neovim&#34;,&#34;Lua&#34;,&#34;Config&#34;]">
-            <div class="card-left">
-                <h2>
-                    <a
-                        href="/projects/onevim/"
-                        
-                    >
+            <div class="card-left"><h2>
+                    <a href="/projects/onevim/">
                         Onevim
-                    </a>
-                </h2>
+                    </a></h2>
 
                 
                 <p class="project-card-subtitle">The Objectively Correct Neovim Config</p>
@@ -396,7 +373,7 @@
 
             <div class="card-middle">
                  
-                <p>Compre</p>
+                <p>A fast, opinionated Neovim configuration built for C&#43;&#43; and systems programming</p>
                  
             </div>
 
@@ -411,17 +388,11 @@
             </div>
         </article>
 
-        
         <article class="project-card" data-tags="[&#34;JS&#34;,&#34;HTML&#34;,&#34;CSS&#34;,&#34;Math&#34;,&#34;Signal Processing&#34;]">
-            <div class="card-left">
-                <h2>
-                    <a
-                        href="/projects/convolution/"
-                        
-                    >
+            <div class="card-left"><h2>
+                    <a href="/projects/convolution/">
                         Convolution Visualizer
-                    </a>
-                </h2>
+                    </a></h2>
 
                     
                                      
@@ -479,17 +450,11 @@
             </div>
         </article>
 
-        
-        <article class="project-card" data-tags="[&#34;C&#43;&#43;&#34;,&#34;Chess&#34;]">
-            <div class="card-left">
-                <h2>
-                    <a
-                        href="/projects/juicer/"
-                        
-                    >
+        <article class="project-card" data-tags="[&#34;C&#43;&#43;&#34;,&#34;Chess&#34;,&#34;Make&#34;]">
+            <div class="card-left"><h2>
+                    <a href="/projects/juicer/">
                         Juicer
-                    </a>
-                </h2>
+                    </a></h2>
 
                 
                 <p class="project-card-subtitle">Hyper-Performant Chess Move Generator</p>
@@ -519,7 +484,9 @@
             </div>
 
             <div class="card-middle">
-                
+                 
+                <p>A high-performance chess move generator written in C&#43;&#43; using bitboard techniques</p>
+                 
             </div>
 
             <div class="card-right">
@@ -571,7 +538,52 @@
     </div>
   </div>
 </div>
-<script src="/js/fuse.basic.min.min.c162a9eb8e75e04bb4921bda4ed71ab7416b4668773bc94fe8a3badf82f31854.js" defer></script><script src="/js/command-palette.min.3328119b6eb4bece2e066f6f38a2436480808a5fdb5b75acbadc9a352cd63054.js" defer></script>
+<div id="shortcuts-modal" class="shortcuts-modal" aria-hidden="true">
+  <div class="shortcuts-modal-backdrop"></div>
+  <div class="shortcuts-modal-content" role="dialog" aria-modal="true" aria-label="Keyboard shortcuts">
+    <div class="shortcuts-modal-header">
+      <h2 class="shortcuts-modal-title">Keyboard Shortcuts</h2>
+      <button class="shortcuts-modal-close" aria-label="Close">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 6 6 18M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+    <div class="shortcuts-list">
+      <div class="shortcut-row">
+        <span class="shortcut-label">Open search</span>
+        <span class="shortcut-keys">
+          <kbd class="shortcut-key">⌘</kbd>
+          <kbd class="shortcut-key">K</kbd>
+        </span>
+      </div>
+      <div class="shortcut-row">
+        <span class="shortcut-label">Quick search</span>
+        <span class="shortcut-keys">
+          <kbd class="shortcut-key">/</kbd>
+        </span>
+      </div>
+      <div class="shortcut-row">
+        <span class="shortcut-label">Show shortcuts</span>
+        <span class="shortcut-keys">
+          <kbd class="shortcut-key">?</kbd>
+        </span>
+      </div>
+      <div class="shortcut-row">
+        <span class="shortcut-label">Close modal</span>
+        <span class="shortcut-keys">
+          <kbd class="shortcut-key">Esc</kbd>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<button id="back-to-top" class="back-to-top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m18 15-6-6-6 6"/>
+  </svg>
+</button>
+<script src="/js/fuse.basic.min.min.c162a9eb8e75e04bb4921bda4ed71ab7416b4668773bc94fe8a3badf82f31854.js" defer></script><script src="/js/command-palette.min.2711f25b945d5244193166b61df57a0c6b9cc06539fee9aa93978d6d21dc3fc5.js" defer></script><script src="/js/ui-enhancements.min.cd6e9ef95e2b9b9bfbb282809e7a4f9e792199aa7732897ad00ef8cdc55c75f6.js" defer></script>
 
 
 <script>

@@ -1,17 +1,46 @@
 {{ define "main" }}
 <main class="project-single">
+    {{ partial "breadcrumb.html" . }}
     <h1 class="project-title">{{ .Title }}</h1>
     {{ with .Params.subtitle }}
     <p class="project-subtitle">{{ . }}</p>
     {{ end }} {{ with .Summary }}
     <p class="project-summary">{{ . }}</p>
-    {{ end }} {{ with .Params.tags }}
-    <div class="tag-row">
-        {{ range . }}
-        <span class="tag-pill">{{ . }}</span>
-        {{ end }}
-    </div>
     {{ end }}
+    {{- $stack := .Params.stack | default slice -}}
+    {{- $tags := .Params.tags | default slice -}}
+    {{- $allTags := slice -}}
+    {{- range $stack -}}
+        {{- $allTags = $allTags | append . -}}
+    {{- end -}}
+    {{- range $tags -}}
+        {{- if not (in $stack .) -}}
+            {{- $allTags = $allTags | append . -}}
+        {{- end -}}
+    {{- end -}}
+    {{- $tagIcons := dict
+        "go" "/icons/tags/go.svg"
+        "c" "/icons/tags/c.svg"
+        "js" "/icons/tags/js.svg"
+        "html" "/icons/tags/html.svg"
+        "css" "/icons/tags/css.svg"
+        "cli" "/icons/tags/term.svg"
+        "c++" "/icons/tags/cpp.svg"
+    -}}
+    {{- if gt (len $allTags) 0 -}}
+    <div class="tag-row">
+        {{- range $allTags -}}
+            {{- $tag := lower . -}}
+            {{- $icon := index $tagIcons $tag -}}
+        <span class="tag-pill">
+            {{- if $icon -}}
+            <img src="{{ $icon }}" alt="{{ . }} icon" />
+            {{- end -}}
+            <span class="tag-label">{{ . }}</span>
+        </span>
+        {{- end -}}
+    </div>
+    {{- end -}}
     <section class="project-body">{{ .Content }}</section>
 </main>
 {{ end }}

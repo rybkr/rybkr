@@ -20,8 +20,7 @@
         keys: [
           { name: 'title', weight: 2 },
           { name: 'summary', weight: 1 },
-          { name: 'tags', weight: 1.5 },
-          { name: 'stack', weight: 1.5 }
+          { name: 'tags', weight: 1.5 }
         ],
         threshold: 0.3,
         ignoreLocation: true,
@@ -45,12 +44,11 @@
     return { tag: null, search: query.trim() };
   }
 
-  // Filter by tag
+  // Filter by tag (strict - only tags, not stack)
   function filterByTag(items, tag) {
     return items.filter(item => {
       const tags = (item.tags || []).map(t => t.toLowerCase());
-      const stack = (item.stack || []).map(s => s.toLowerCase());
-      return tags.includes(tag) || stack.includes(tag);
+      return tags.includes(tag);
     });
   }
 
@@ -93,17 +91,37 @@
   function renderResults() {
     if (results.length === 0) {
       const query = input.value.trim();
+      const { tag } = parseQuery(query);
+
+      if (tag && !query.includes(' ')) {
+        // Show available tags when user types /
+        const allTags = getAllTags();
+        const matchingTags = allTags.filter(t => t.toLowerCase().includes(tag.toLowerCase()));
+
+        if (matchingTags.length > 0) {
+          resultsContainer.innerHTML = `
+            <div class="command-palette-tag-suggestions">
+              <div class="command-palette-hint">Filter by tag:</div>
+              ${matchingTags.slice(0, 8).map(t =>
+                `<button class="command-palette-tag-btn" data-tag="${escapeHtml(t)}">${escapeHtml(t)}</button>`
+              ).join('')}
+            </div>
+          `;
+          return;
+        }
+      }
+
       resultsContainer.innerHTML = query
         ? '<div class="command-palette-empty">No results found</div>'
-        : '<div class="command-palette-empty">Type to search...</div>';
+        : '<div class="command-palette-empty">Type to search, or /tag to filter</div>';
       return;
     }
 
     resultsContainer.innerHTML = results.slice(0, 10).map((result, i) => {
       const item = result.item;
-      const tags = [...(item.tags || []), ...(item.stack || [])];
+      const tags = item.tags || [];
       const tagHtml = tags.length
-        ? `<span class="command-palette-tags">${tags.map(t => `<span class="command-palette-tag">${escapeHtml(t)}</span>`).join('')}</span>`
+        ? `<span class="command-palette-tags">${tags.map(t => `<button class="command-palette-tag" data-tag="${escapeHtml(t)}">${escapeHtml(t)}</button>`).join('')}</span>`
         : '';
 
       return `
@@ -118,6 +136,15 @@
         </a>
       `;
     }).join('');
+  }
+
+  // Get all unique tags from index (strict - only tags, not stack)
+  function getAllTags() {
+    const tagSet = new Set();
+    searchIndex.forEach(item => {
+      (item.tags || []).forEach(t => tagSet.add(t));
+    });
+    return Array.from(tagSet).sort();
   }
 
   function escapeHtml(text) {
@@ -241,6 +268,19 @@
         selectedIndex = index;
         renderResults();
       }
+    }
+  });
+
+  // Click on tag to filter
+  resultsContainer.addEventListener('click', (e) => {
+    const tagBtn = e.target.closest('[data-tag]');
+    if (tagBtn) {
+      e.preventDefault();
+      e.stopPropagation();
+      const tag = tagBtn.dataset.tag;
+      input.value = '/' + tag;
+      input.focus();
+      search(input.value);
     }
   });
 })();

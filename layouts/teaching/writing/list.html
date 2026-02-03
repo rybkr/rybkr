@@ -1,10 +1,14 @@
 {{ define "main" }}
 <main class="container">
+    {{ partial "breadcrumb.html" . }}
     <header>
-        <h1>{{ .Title }}</h1>
+        <div class="page-header">
+            <h1>{{ .Title }}</h1>
+            {{ partial "search-hint.html" . }}
+        </div>
         {{ with .Params.description }}<p>{{ . }}</p>{{ end }}
     </header>
-    
+
     <section id="writing">
         {{ range .Pages.ByDate.Reverse }}
         <article class="writing-card">

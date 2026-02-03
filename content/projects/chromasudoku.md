@@ -6,6 +6,7 @@ tags = ["Embedded", "C", "Game"]
 stack = ["C", "PlatformIO", "RP2350"]
 thumbnail = "/images/projects/chromasudoku/thumb.png"
 draft = false
+featured = true
 +++
 
 **Links:** [GitHub](https://github.com/rybkr/ChromaSudoku)\

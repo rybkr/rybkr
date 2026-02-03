@@ -132,7 +132,48 @@
   font-size: 11px;
   padding: 2px 6px;
   background: var(--code-bg);
+  border: 1px solid transparent;
   border-radius: 4px;
+  color: var(--secondary);
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.command-palette-tag:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Tag suggestions */
+.command-palette-tag-suggestions {
+  padding: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.command-palette-tag-suggestions .command-palette-hint {
+  width: 100%;
+  font-size: 12px;
+  color: var(--secondary);
+  margin-bottom: 4px;
+}
+
+.command-palette-tag-btn {
+  font-size: 13px;
+  padding: 6px 12px;
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--primary);
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.command-palette-tag-btn:hover {
+  border-color: var(--accent);
+  background: var(--accent-subtle);
 }
 
 /* Scrollbar styling */

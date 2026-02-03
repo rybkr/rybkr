@@ -5,6 +5,7 @@ date = '2024-10-24'
 draft = false
 tags = ["JS", "HTML", "CSS", "Math", "Signal Processing"]
 thumbnail = '/images/projects/convolution/thumb.png'
+featured = true
 +++
 
 [![Convolution Visualizer Graph](/images/projects/convolution/graph.png)](https://rybkr.github.io/convolution-visualizer/)

@@ -13,7 +13,7 @@
       <link>http://localhost:1313/projects/bytecourses/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/bytecourses/</guid>
-      <description>Micro LMS to facilitate The Byte Course Project</description>
+      <description>A lightweight LMS built in Go for delivering structured programming courses</description>
     </item>
     <item>
       <title>Chroma Sudoku</title>
@@ -34,14 +34,14 @@
       <link>http://localhost:1313/projects/raytracer/</link>
       <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/raytracer/</guid>
-      <description></description>
+      <description>A from-scratch raytracer in C++ implementing reflection, refraction, and Monte Carlo path tracing</description>
     </item>
     <item>
       <title>Onevim</title>
       <link>http://localhost:1313/projects/onevim/</link>
       <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/onevim/</guid>
-      <description>Compre</description>
+      <description>A fast, opinionated Neovim configuration built for C++ and systems programming</description>
     </item>
     <item>
       <title>Convolution Visualizer</title>
@@ -55,7 +55,7 @@
       <link>http://localhost:1313/projects/juicer/</link>
       <pubDate>Tue, 23 Jan 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/juicer/</guid>
-      <description></description>
+      <description>A high-performance chess move generator written in C++ using bitboard techniques</description>
     </item>
   </channel>
 </rss>
