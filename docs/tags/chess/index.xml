@@ -13,7 +13,7 @@
       <link>http://localhost:1313/projects/juicer/</link>
       <pubDate>Tue, 23 Jan 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/juicer/</guid>
-      <description></description>
+      <description>A high-performance chess move generator written in C++ using bitboard techniques</description>
     </item>
   </channel>
 </rss>

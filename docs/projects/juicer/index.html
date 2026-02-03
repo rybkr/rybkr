@@ -7,10 +7,10 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Juicer | Ryan Baker</title>
 <meta name="keywords" content="C&#43;&#43;, Chess">
-<meta name="description" content="Juicer - Ryan Baker">
+<meta name="description" content="A high-performance chess move generator written in C&#43;&#43; using bitboard techniques">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/projects/juicer/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.4e75334f018d051e6e92c357fcbe83bda8e3e95addea38135dc62f6deaf178ec.css" integrity="sha256-TnUzTwGNBR5uksNX/L6Dvajj6Vrd6jgTXcYvberxeOw=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.a171a74c5e42c95bdbcb82c99480b195113d7cc72993fb7ca3f6e7d74c95e251.css" integrity="sha256-oXGnTF5CyVvby4LJlICxlRE9fMcpk/t8o/bn10yV4lE=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -70,9 +70,10 @@
         document.querySelector("html").dataset.theme = 'light';
     }
 
-</script><link rel="preconnect" href="https://fonts.googleapis.com">
+</script><link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"><meta name="view-transition" content="same-origin">
 
 </head>
 <body id="top">
@@ -109,19 +110,39 @@
 </header>
 <main class="main">
 <main class="project-single">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="/">Home</a>
+    <span class="breadcrumb-separator">/</span>
+    <a href="http://localhost:1313/projects/">Projects</a>
+  <span class="breadcrumb-separator">/</span>
+  <span class="breadcrumb-current">Juicer</span>
+</nav>
     <h1 class="project-title">Juicer</h1>
     
     <p class="project-subtitle">Hyper-Performant Chess Move Generator</p>
-      
-    <div class="tag-row">
-        
-        <span class="tag-pill">C&#43;&#43;</span>
-        
-        <span class="tag-pill">Chess</span>
-        
-    </div>
-    
-    <section class="project-body"></section>
+     
+    <p class="project-summary">A high-performance chess move generator written in C++ using bitboard techniques</p>
+    <div class="tag-row"><span class="tag-pill"><img src="/icons/tags/cpp.svg" alt="C&#43;&#43; icon" /><span class="tag-label">C&#43;&#43;</span>
+        </span><span class="tag-pill"><span class="tag-label">Make</span>
+        </span><span class="tag-pill"><span class="tag-label">Chess</span>
+        </span></div><section class="project-body"><p><strong>Links:</strong> <a href="https://github.com/rybkr/juicer">GitHub</a></p>
+<h2 id="overview">Overview</h2>
+<p>Juicer is a chess move generator focused on raw performance. It generates all legal moves for any given board position using bitboard representations and precomputed attack tables.</p>
+<h2 id="technical-approach">Technical Approach</h2>
+<ul>
+<li><strong>Bitboards</strong>: 64-bit integers represent piece positions, enabling fast bitwise operations for move generation</li>
+<li><strong>Magic bitboards</strong>: Precomputed lookup tables for sliding piece (rook, bishop, queen) attacks</li>
+<li><strong>Perft testing</strong>: Move generation correctness verified against known perft results at various depths</li>
+</ul>
+<h2 id="performance">Performance</h2>
+<p>Move generation is the foundation of any chess engine. Juicer prioritizes speed to enable deeper search in engine development.</p>
+<h2 id="what-i-learned">What I Learned</h2>
+<ul>
+<li>Low-level optimization techniques in C++</li>
+<li>Bitwise operations for game state representation</li>
+<li>The importance of cache-friendly data structures</li>
+</ul>
+</section>
 </main>
 
     </main>
@@ -163,7 +184,52 @@
     </div>
   </div>
 </div>
-<script src="/js/fuse.basic.min.min.c162a9eb8e75e04bb4921bda4ed71ab7416b4668773bc94fe8a3badf82f31854.js" defer></script><script src="/js/command-palette.min.3328119b6eb4bece2e066f6f38a2436480808a5fdb5b75acbadc9a352cd63054.js" defer></script>
+<div id="shortcuts-modal" class="shortcuts-modal" aria-hidden="true">
+  <div class="shortcuts-modal-backdrop"></div>
+  <div class="shortcuts-modal-content" role="dialog" aria-modal="true" aria-label="Keyboard shortcuts">
+    <div class="shortcuts-modal-header">
+      <h2 class="shortcuts-modal-title">Keyboard Shortcuts</h2>
+      <button class="shortcuts-modal-close" aria-label="Close">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 6 6 18M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+    <div class="shortcuts-list">
+      <div class="shortcut-row">
+        <span class="shortcut-label">Open search</span>
+        <span class="shortcut-keys">
+          <kbd class="shortcut-key">⌘</kbd>
+          <kbd class="shortcut-key">K</kbd>
+        </span>
+      </div>
+      <div class="shortcut-row">
+        <span class="shortcut-label">Quick search</span>
+        <span class="shortcut-keys">
+          <kbd class="shortcut-key">/</kbd>
+        </span>
+      </div>
+      <div class="shortcut-row">
+        <span class="shortcut-label">Show shortcuts</span>
+        <span class="shortcut-keys">
+          <kbd class="shortcut-key">?</kbd>
+        </span>
+      </div>
+      <div class="shortcut-row">
+        <span class="shortcut-label">Close modal</span>
+        <span class="shortcut-keys">
+          <kbd class="shortcut-key">Esc</kbd>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<button id="back-to-top" class="back-to-top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m18 15-6-6-6 6"/>
+  </svg>
+</button>
+<script src="/js/fuse.basic.min.min.c162a9eb8e75e04bb4921bda4ed71ab7416b4668773bc94fe8a3badf82f31854.js" defer></script><script src="/js/command-palette.min.2711f25b945d5244193166b61df57a0c6b9cc06539fee9aa93978d6d21dc3fc5.js" defer></script><script src="/js/ui-enhancements.min.cd6e9ef95e2b9b9bfbb282809e7a4f9e792199aa7732897ad00ef8cdc55c75f6.js" defer></script>
 
 
 <script>

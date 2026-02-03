@@ -1,42 +1,133 @@
 {{ define "main" }}
 <main>
-    <h1>Projects</h1>
+    {{ partial "breadcrumb.html" . }}
+    <div class="page-header">
+        <h1>Projects</h1>
+        {{ partial "search-hint.html" . }}
+    </div>
     <p class="project-intro">A selection of work and research.</p>
 
-    <input
-        id="project-search"
-        class="project-search"
-        type="search"
-        placeholder="Search projects…"
-        aria-label="Search projects"
-    />
+    {{- /* Featured Projects */ -}}
+    {{- $featured := where .Pages ".Params.featured" true -}}
+    {{- if gt (len $featured) 0 -}}
+    <section class="featured-projects">
+        <h2 class="featured-heading">Featured</h2>
+        <div class="featured-grid">
+            {{- range $featured -}}
+            <a href="{{ with .Params.redirect }}{{ . }}{{ else }}{{ .RelPermalink }}{{ end }}" class="featured-card"{{ with .Params.redirect }} target="_blank" rel="noopener"{{ end }}>
+                {{- with .Params.thumbnail -}}
+                <img src="{{ . }}" alt="{{ $.Title }}" class="featured-card-img" />
+                {{- end -}}
+                <div class="featured-card-content">
+                    <strong>{{ .Title }}</strong>
+                    {{- with .Params.summary -}}<p>{{ . }}</p>{{- end -}}
+                </div>
+            </a>
+            {{- end -}}
+        </div>
+    </section>
+    {{- end -}}
+
+    {{- /* Define tag categories */ -}}
+    {{- $languages := slice "C" "C++" "Go" "JS" "Lua" "HTML" "CSS" -}}
+    {{- $domains := slice "Chess" "Game" "Embedded" "Math" "Signal Processing" "Algorithms" "Numerics" -}}
+    {{- $tools := slice "CLI" "Neovim" "Config" "Make" "PlatformIO" -}}
+
+    {{- /* Count tag occurrences */ -}}
+    {{- $tagCounts := dict -}}
+    {{- range .Pages -}}
+        {{- range .Params.tags -}}
+            {{- $count := index $tagCounts . | default 0 -}}
+            {{- $tagCounts = merge $tagCounts (dict . (add $count 1)) -}}
+        {{- end -}}
+        {{- range .Params.stack -}}
+            {{- $count := index $tagCounts . | default 0 -}}
+            {{- $tagCounts = merge $tagCounts (dict . (add $count 1)) -}}
+        {{- end -}}
+    {{- end -}}
+
+    {{- /* Sort languages by count */ -}}
+    {{- $langWithCounts := slice -}}
+    {{- range $languages -}}
+        {{- $count := index $tagCounts . | default 0 -}}
+        {{- if gt $count 0 -}}
+            {{- $langWithCounts = $langWithCounts | append (dict "tag" . "count" $count) -}}
+        {{- end -}}
+    {{- end -}}
+    {{- $sortedLangs := sort $langWithCounts "count" "desc" -}}
+
+    {{- /* Sort tools by count */ -}}
+    {{- $toolsWithCounts := slice -}}
+    {{- range $tools -}}
+        {{- $count := index $tagCounts . | default 0 -}}
+        {{- if gt $count 0 -}}
+            {{- $toolsWithCounts = $toolsWithCounts | append (dict "tag" . "count" $count) -}}
+        {{- end -}}
+    {{- end -}}
+    {{- $sortedTools := sort $toolsWithCounts "count" "desc" -}}
+
+    {{- /* Sort domains by count */ -}}
+    {{- $domainsWithCounts := slice -}}
+    {{- range $domains -}}
+        {{- $count := index $tagCounts . | default 0 -}}
+        {{- if gt $count 0 -}}
+            {{- $domainsWithCounts = $domainsWithCounts | append (dict "tag" . "count" $count) -}}
+        {{- end -}}
+    {{- end -}}
+    {{- $sortedDomains := sort $domainsWithCounts "count" "desc" -}}
 
     <div id="project-filters" class="filter-bar">
-        {{ $tags := slice }} {{ range .Pages }} {{ range .Params.tags }} {{
-        $tags = $tags | append . }} {{ end }} {{ end }} {{ $unique := $tags |
-        uniq | sort }} {{ range $unique }}
-        <button class="filter-pill" data-tag="{{ . }}">{{ . }}</button>
-        {{ end }}
+        <div class="filter-group">
+            <span class="filter-group-label">Language</span>
+            {{- range $sortedLangs -}}
+                <button class="filter-pill" data-tag="{{ .tag }}">{{ .tag }}</button>
+            {{- end -}}
+        </div>
+        <div class="filter-group">
+            <span class="filter-group-label">Domain</span>
+            {{- range $sortedDomains -}}
+                <button class="filter-pill" data-tag="{{ .tag }}">{{ .tag }}</button>
+            {{- end -}}
+        </div>
+        <div class="filter-group">
+            <span class="filter-group-label">Tools</span>
+            {{- range $sortedTools -}}
+                <button class="filter-pill" data-tag="{{ .tag }}">{{ .tag }}</button>
+            {{- end -}}
+        </div>
     </div>
 
     <section id="projects">
         {{ range .Pages.ByDate.Reverse }}
-        <article class="project-card" data-tags="{{ .Params.tags | jsonify }}">
+        {{- $cardTags := .Params.tags | default slice -}}
+        {{- range .Params.stack | default slice -}}
+            {{- if not (in $cardTags .) -}}
+                {{- $cardTags = $cardTags | append . -}}
+            {{- end -}}
+        {{- end -}}
+        <article class="project-card" data-tags="{{ $cardTags | jsonify }}">
             <div class="card-left">
+                {{- $projectURL := "" -}}
+                {{- $isExternal := false -}}
+                {{- if .Params.redirect -}}
+                    {{- $projectURL = .Params.redirect -}}
+                    {{- $isExternal = true -}}
+                {{- else if .Params.github -}}
+                    {{- $projectURL = .Params.github -}}
+                    {{- $isExternal = true -}}
+                {{- else if .Content -}}
+                    {{- $projectURL = .RelPermalink -}}
+                {{- else -}}
+                    {{- $projectURL = printf "https://github.com/rybkr/%s" .File.ContentBaseName -}}
+                    {{- $isExternal = true -}}
+                {{- end -}}
                 <h2>
-                    <a
-                        href="{{ with .Params.redirect }}{{ . }}{{ else }}{{ .RelPermalink }}{{ end }}"
-                        {{
-                        with
-                        .Params.redirect
-                        }}target="_blank"
-                        rel="noopener"
-                        {{
-                        end
-                        }}
-                    >
+                    <a href="{{ $projectURL }}"{{ if $isExternal }} target="_blank" rel="noopener"{{ end }}>
                         {{ .Title }}
                     </a>
+                    {{- if .Params.wip -}}
+                    <span class="wip-badge">WIP</span>
+                    {{- end -}}
                 </h2>
 
                 {{ with .Params.subtitle }}

@@ -1,20 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
     const pills = document.querySelectorAll(".filter-pill");
     const cards = document.querySelectorAll(".project-card");
-    const searchInput = document.getElementById("project-search");
 
-    let activeTag = null;
-    let searchTerm = "";
+    let activeTags = new Set();
 
-    function applyFilters() {
+    function applyFilter() {
         cards.forEach((card) => {
-            const tags = JSON.parse(card.dataset.tags || "[]");
-            const text = card.textContent.toLowerCase();
+            const tags = JSON.parse(card.dataset.tags || "[]").map(t => t.toLowerCase());
 
-            const matchesTag = !activeTag || tags.includes(activeTag);
-            const matchesSearch = !searchTerm || text.includes(searchTerm);
+            // Project must have ALL selected tags
+            let matches = true;
+            activeTags.forEach(activeTag => {
+                if (!tags.includes(activeTag.toLowerCase())) {
+                    matches = false;
+                }
+            });
 
-            card.style.display = matchesTag && matchesSearch ? "" : "none";
+            card.style.display = (activeTags.size === 0 || matches) ? "" : "none";
         });
     }
 
@@ -22,23 +24,15 @@ document.addEventListener("DOMContentLoaded", () => {
         pill.addEventListener("click", () => {
             const tag = pill.dataset.tag;
 
-            if (activeTag === tag) {
-                activeTag = null;
-                pills.forEach((p) => p.classList.remove("active"));
+            if (activeTags.has(tag)) {
+                activeTags.delete(tag);
+                pill.classList.remove("active");
             } else {
-                activeTag = tag;
-                pills.forEach((p) => p.classList.remove("active"));
+                activeTags.add(tag);
                 pill.classList.add("active");
             }
 
-            applyFilters();
+            applyFilter();
         });
     });
-
-    if (searchInput) {
-        searchInput.addEventListener("input", () => {
-            searchTerm = searchInput.value.trim().toLowerCase();
-            applyFilters();
-        });
-    }
 });

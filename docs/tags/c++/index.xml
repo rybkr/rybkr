@@ -13,25 +13,21 @@
       <link>http://localhost:1313/projects/raytracer/</link>
       <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/raytracer/</guid>
-      <description></description>
+      <description>A from-scratch raytracer in C++ implementing reflection, refraction, and Monte Carlo path tracing</description>
     </item>
     <item>
       <title>Messing with Floating Point</title>
       <link>http://localhost:1313/teaching/talks/messing-with-floating-point/</link>
       <pubDate>Thu, 28 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/teaching/talks/messing-with-floating-point/</guid>
-      <description>&lt;p&gt;Cow
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/ITbqbzGLIgo?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
-    &lt;/div&gt;
-&lt;/p&gt;</description>
+      <description>A deep dive into IEEE 754 floating point, its quirks, and how to work with it effectively in C++</description>
     </item>
     <item>
       <title>Juicer</title>
       <link>http://localhost:1313/projects/juicer/</link>
       <pubDate>Tue, 23 Jan 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/juicer/</guid>
-      <description></description>
+      <description>A high-performance chess move generator written in C++ using bitboard techniques</description>
     </item>
   </channel>
 </rss>

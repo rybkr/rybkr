@@ -1,0 +1,392 @@
+/* -------------------------------------------------------
+   Back to Top Button
+------------------------------------------------------- */
+
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--theme);
+  border: 1px solid var(--border);
+  color: var(--secondary);
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.2s, transform 0.2s, visibility 0.2s, color 0.15s, border-color 0.15s;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.back-to-top svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* -------------------------------------------------------
+   Keyboard Shortcuts Modal
+------------------------------------------------------- */
+
+.shortcuts-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  display: none;
+}
+
+.shortcuts-modal.open {
+  display: block;
+}
+
+.shortcuts-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+}
+
+.shortcuts-modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 400px;
+  background: var(--theme);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+  padding: 24px;
+}
+
+.shortcuts-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.shortcuts-modal-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary);
+  margin: 0;
+}
+
+.shortcuts-modal-close {
+  background: none;
+  border: none;
+  color: var(--secondary);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: color 0.15s;
+}
+
+.shortcuts-modal-close:hover {
+  color: var(--primary);
+}
+
+.shortcuts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.shortcut-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.shortcut-label {
+  color: var(--primary);
+  font-size: 14px;
+}
+
+.shortcut-keys {
+  display: flex;
+  gap: 4px;
+}
+
+.shortcut-key {
+  font-size: 12px;
+  padding: 4px 8px;
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--secondary);
+  font-family: inherit;
+  min-width: 24px;
+  text-align: center;
+}
+
+/* -------------------------------------------------------
+   Copy Code Button Enhancement
+------------------------------------------------------- */
+
+.highlight {
+  position: relative;
+}
+
+.copy-code {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 6px 10px;
+  font-size: 12px;
+  background: var(--theme);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--secondary);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s, color 0.15s, border-color 0.15s;
+  z-index: 10;
+}
+
+.highlight:hover .copy-code {
+  opacity: 1;
+}
+
+.copy-code:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.copy-code.copied {
+  color: #22c55e;
+  border-color: #22c55e;
+}
+
+/* -------------------------------------------------------
+   Breadcrumb Navigation
+------------------------------------------------------- */
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--secondary);
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.breadcrumb a {
+  color: var(--secondary);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.breadcrumb a:hover {
+  color: var(--accent);
+}
+
+.breadcrumb-separator {
+  color: var(--border);
+  user-select: none;
+}
+
+.breadcrumb-current {
+  color: var(--primary);
+}
+
+/* -------------------------------------------------------
+   Page Transitions (View Transitions API)
+------------------------------------------------------- */
+
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root) {
+  animation: fade-out 0.15s ease-out;
+}
+
+::view-transition-new(root) {
+  animation: fade-in 0.15s ease-in;
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* -------------------------------------------------------
+   External Link Indicator
+   Only shows for truly external links (not rybkr.com or localhost)
+------------------------------------------------------- */
+
+.post-content a[href^="http"]:not([href*="rybkr.com"]):not([href*="localhost"])::after,
+.main a[href^="http"]:not([href*="rybkr.com"]):not([href*="localhost"])::after,
+article a[href^="http"]:not([href*="rybkr.com"]):not([href*="localhost"])::after {
+  content: "";
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  margin-left: 3px;
+  background-color: var(--accent);
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/%3E%3Cpolyline points='15 3 21 3 21 9'/%3E%3Cline x1='10' y1='14' x2='21' y2='3'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/%3E%3Cpolyline points='15 3 21 3 21 9'/%3E%3Cline x1='10' y1='14' x2='21' y2='3'/%3E%3C/svg%3E");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  vertical-align: middle;
+  opacity: 0.8;
+  transition: opacity 0.15s;
+}
+
+.post-content a[href^="http"]:not([href*="rybkr.com"]):not([href*="localhost"]):hover::after,
+.main a[href^="http"]:not([href*="rybkr.com"]):not([href*="localhost"]):hover::after,
+article a[href^="http"]:not([href*="rybkr.com"]):not([href*="localhost"]):hover::after {
+  opacity: 1;
+}
+
+/* -------------------------------------------------------
+   Page Header (title + search inline)
+------------------------------------------------------- */
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.page-header h1 {
+  margin: 0;
+}
+
+.page-header .search-hint {
+  margin-bottom: 0;
+}
+
+/* Home page header */
+.home-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.home-header .home-name {
+  margin: 0;
+}
+
+.home-header .search-hint {
+  margin-bottom: 0;
+}
+
+/* -------------------------------------------------------
+   Search Hint Bar
+------------------------------------------------------- */
+
+.search-hint {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  min-width: 200px;
+  background: var(--theme);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--secondary);
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  font-size: 14px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  flex-shrink: 0;
+}
+
+.search-hint:hover {
+  border-color: var(--accent);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.search-hint:focus-visible {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-subtle);
+}
+
+.search-hint-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  opacity: 0.5;
+}
+
+.search-hint-text {
+  color: var(--secondary);
+}
+
+.search-hint-key {
+  font-size: 11px;
+  padding: 3px 7px;
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  color: var(--secondary);
+  font-family: inherit;
+  font-weight: 500;
+}
+
+/* Hide keyboard hint on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .search-hint-key {
+    display: none;
+  }
+}
+
+/* -------------------------------------------------------
+   Mobile Adjustments
+------------------------------------------------------- */
+
+@media (max-width: 600px) {
+  .back-to-top {
+    bottom: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+  }
+
+  .shortcuts-modal-content {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .breadcrumb {
+    font-size: 13px;
+  }
+}

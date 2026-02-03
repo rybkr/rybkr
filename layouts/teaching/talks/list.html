@@ -1,6 +1,10 @@
 {{ define "main" }}
 <main class="post-list">
-    <h1>{{ .Title }}</h1>
+    {{ partial "breadcrumb.html" . }}
+    <div class="page-header">
+        <h1>{{ .Title }}</h1>
+        {{ partial "search-hint.html" . }}
+    </div>
     {{ with .Params.summary }}
     <p class="talk-summary">{{ . }}</p>
     {{ end }}
