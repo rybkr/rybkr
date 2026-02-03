@@ -1,4 +1,7 @@
 .teaching-card {
-    padding-bottom: 2rem auto;
+    padding: auto;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
     border-bottom: 1px solid var(--border);
+    margin-bottom: 1rem auto;
 }
