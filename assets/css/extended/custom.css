@@ -1,7 +1,90 @@
+/* -------------------------------------------------------
+   Typography: IBM Plex Sans
+------------------------------------------------------- */
+body {
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+/* -------------------------------------------------------
+   Accent Color: Teal
+------------------------------------------------------- */
+:root {
+    --accent: #0891b2;
+    --accent-hover: #0e7490;
+    --accent-subtle: rgba(8, 145, 178, 0.1);
+}
+
+.dark {
+    --accent: #22d3ee;
+    --accent-hover: #67e8f9;
+    --accent-subtle: rgba(34, 211, 238, 0.15);
+}
+
+/* -------------------------------------------------------
+   Links
+------------------------------------------------------- */
+a {
+    color: var(--accent);
+    transition: color 0.15s ease-out;
+}
+
+a:hover {
+    color: var(--accent-hover);
+}
+
+/* Keep nav links subtle */
+.nav a, header a {
+    color: var(--primary);
+}
+
+.nav a:hover, header a:hover {
+    color: var(--accent);
+}
+
+/* -------------------------------------------------------
+   Motion: Project Cards
+------------------------------------------------------- */
+.project-card {
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+.project-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* -------------------------------------------------------
+   Motion: Filter Pills
+------------------------------------------------------- */
+.filter-pill {
+    transition: all 0.15s ease-out;
+}
+
+.filter-pill:active {
+    transform: scale(0.97);
+}
+
+/* -------------------------------------------------------
+   Polish Details
+------------------------------------------------------- */
+
+/* Selection highlight */
+::selection {
+    background: var(--accent-subtle);
+}
+
+/* Code block left border accent */
 .highlight pre {
     padding: 1.25rem !important;
     border-radius: 8px;
     scrollbar-width: thin;
+    border-left: 3px solid var(--accent);
 }
 
 .highlight pre,
@@ -20,4 +103,18 @@ pre {
 
 .highlight {
     max-width: 100%;
+}
+
+/* Focus rings using accent color */
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* Blockquote accent border */
+blockquote {
+    border-left: 3px solid var(--accent);
+    padding-left: 1rem;
+    margin-left: 0;
+    color: var(--secondary);
 }
