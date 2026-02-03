@@ -5,7 +5,7 @@ theme = "PaperMod"
 publishDir = "docs"
 
 [outputs]
-home = ["HTML"]
+home = ["HTML", "JSON"]
 
 [markup]
   [highlight]
