@@ -1,0 +1,15 @@
+{{- $pages := where site.RegularPages "Draft" false -}}
+{{- $index := slice -}}
+{{- range $pages -}}
+  {{- $entry := dict
+    "title" .Title
+    "permalink" .Permalink
+    "summary" (or .Description .Summary "")
+    "section" .Section
+    "date" (.Date.Format "2006-01-02")
+    "tags" (or .Params.tags (slice))
+    "stack" (or .Params.stack (slice))
+  -}}
+  {{- $index = $index | append $entry -}}
+{{- end -}}
+{{- $index | jsonify -}}

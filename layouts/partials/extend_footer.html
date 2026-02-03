@@ -1,0 +1,8 @@
+{{- /* Command Palette */ -}}
+{{ partial "command-palette.html" . }}
+
+{{- $fuseJS := resources.Get "js/fuse.basic.min.js" | minify | fingerprint -}}
+<script src="{{ $fuseJS.RelPermalink }}" defer></script>
+
+{{- $paletteJS := resources.Get "js/command-palette.js" | minify | fingerprint -}}
+<script src="{{ $paletteJS.RelPermalink }}" defer></script>
