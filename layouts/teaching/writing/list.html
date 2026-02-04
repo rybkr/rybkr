@@ -2,14 +2,14 @@
 <main class="container">
     {{ partial "breadcrumb.html" . }}
     <header>
-        <div class="page-header">
+        <div class="page-header enter">
             <h1>{{ .Title }}</h1>
             {{ partial "search-hint.html" . }}
         </div>
         {{ with .Params.description }}<p>{{ . }}</p>{{ end }}
     </header>
 
-    <section id="writing">
+    <section id="writing" class="enter enter-d1">
         {{ range .Pages.ByDate.Reverse }}
         <article class="writing-card">
             <div class="writing-card-header">

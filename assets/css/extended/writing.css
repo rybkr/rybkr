@@ -26,6 +26,27 @@
     color: var(--secondary);
 }
 
+.talk-venue {
+    font-size: 0.85rem;
+    color: var(--secondary);
+}
+
 .writing-card-blurb {
     margin: auto 0 auto 0.5rem;
+}
+
+@media (max-width: 600px) {
+    .writing-card {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .writing-card-header {
+        min-width: unset;
+        max-width: unset;
+    }
+
+    .writing-card-blurb {
+        margin-left: 0;
+    }
 }

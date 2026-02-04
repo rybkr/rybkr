@@ -1,28 +1,28 @@
 {{ define "main" }}
 <div class="single">
     {{ partial "breadcrumb.html" . }}
-    <div class="page-header">
+    <div class="page-header enter">
         <h1>{{ .Title }}</h1>
         {{ partial "search-hint.html" . }}
     </div>
 
     <nav aria-label="Teaching materials">
         <div class="teaching-cards">
-            <div class="teaching-card">
+            <div class="teaching-card enter enter-d1">
             <a href='{{ "/teaching/talks/" | relURL }}'>
                 <h2>Talks</h2>
                 <p>Conference talks, invited lectures, and workshops.</p>
             </a>
             </div>
 
-            <div class="teaching-card">
+            <div class="teaching-card enter enter-d2">
             <a href='{{ "https://www.youtube.com/@rybkr" | relURL }}'>
                 <h2>Videos</h2>
                 <p>Short explainers and lectures.</p>
             </a>
             </div>
 
-            <div class="teaching-card">
+            <div class="teaching-card enter enter-d3">
             <a href='{{ "/teaching/writing/" | relURL }}'>
                 <h2>Written</h2>
                 <p>Essays, notes, and teaching-related articles.</p>

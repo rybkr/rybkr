@@ -1,11 +1,11 @@
 {{ define "main" }}
 <main class="project-single">
     {{ partial "breadcrumb.html" . }}
-    <h1 class="project-title">{{ .Title }}</h1>
+    <h1 class="project-title enter">{{ .Title }}</h1>
     {{ with .Params.subtitle }}
-    <p class="project-subtitle">{{ . }}</p>
+    <p class="project-subtitle enter enter-d1">{{ . }}</p>
     {{ end }} {{ with .Summary }}
-    <p class="project-summary">{{ . }}</p>
+    <p class="project-summary enter enter-d1">{{ . }}</p>
     {{ end }}
     {{- $stack := .Params.stack | default slice -}}
     {{- $tags := .Params.tags | default slice -}}
@@ -19,6 +19,7 @@
         {{- end -}}
     {{- end -}}
     {{- $tagIcons := dict
+        "git" "/icons/tags/git.svg"
         "go" "/icons/tags/go.svg"
         "c" "/icons/tags/c.svg"
         "js" "/icons/tags/js.svg"
@@ -26,9 +27,13 @@
         "css" "/icons/tags/css.svg"
         "cli" "/icons/tags/term.svg"
         "c++" "/icons/tags/cpp.svg"
+        "python" "/icons/tags/python.svg"
+        "lua" "/icons/tags/lua.svg"
+        "sql" "/icons/tags/sql.svg"
+        "neovim" "/icons/tags/nvim.svg"
     -}}
     {{- if gt (len $allTags) 0 -}}
-    <div class="tag-row">
+    <div class="tag-row enter enter-d2">
         {{- range $allTags -}}
             {{- $tag := lower . -}}
             {{- $icon := index $tagIcons $tag -}}
@@ -41,6 +46,6 @@
         {{- end -}}
     </div>
     {{- end -}}
-    <section class="project-body">{{ .Content }}</section>
+    <section class="project-body enter enter-d3">{{ .Content }}</section>
 </main>
 {{ end }}

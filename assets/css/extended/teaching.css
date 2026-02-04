@@ -1,9 +1,7 @@
 .teaching-card {
-    padding: auto;
-    padding-bottom: 1rem;
-    padding-top: 1rem;
+    padding: 1rem 0;
     border-bottom: 1px solid var(--border);
-    margin-bottom: 1rem auto;
+    margin-bottom: 1rem;
 }
 
 /* External link icon inline with heading text - only for truly external links */

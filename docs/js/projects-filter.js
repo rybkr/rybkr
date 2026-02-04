@@ -1,10 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
     const pills = document.querySelectorAll(".filter-pill");
     const cards = document.querySelectorAll(".project-card");
+    const noResults = document.getElementById("no-results");
 
     let activeTags = new Set();
 
     function applyFilter() {
+        let visibleCount = 0;
+
         cards.forEach((card) => {
             const tags = JSON.parse(card.dataset.tags || "[]").map(t => t.toLowerCase());
 
@@ -16,8 +19,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
 
-            card.style.display = (activeTags.size === 0 || matches) ? "" : "none";
+            const visible = activeTags.size === 0 || matches;
+            card.style.display = visible ? "" : "none";
+            if (visible) visibleCount++;
         });
+
+        if (noResults) {
+            noResults.style.display = (activeTags.size > 0 && visibleCount === 0) ? "" : "none";
+        }
     }
 
     pills.forEach((pill) => {

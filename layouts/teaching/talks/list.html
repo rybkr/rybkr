@@ -1,31 +1,27 @@
 {{ define "main" }}
-<main class="post-list">
+<main class="container">
     {{ partial "breadcrumb.html" . }}
-    <div class="page-header">
-        <h1>{{ .Title }}</h1>
-        {{ partial "search-hint.html" . }}
-    </div>
-    {{ with .Params.summary }}
-    <p class="talk-summary">{{ . }}</p>
-    {{ end }}
+    <header>
+        <div class="page-header enter">
+            <h1>{{ .Title }}</h1>
+            {{ partial "search-hint.html" . }}
+        </div>
+        {{ with .Params.summary }}<p>{{ . }}</p>{{ end }}
+    </header>
 
-    <div class="talk-grid">
+    <section id="talks" class="enter enter-d1">
         {{ range .Pages.ByDate.Reverse }}
-        <article class="talk-card">
-            {{ with .Params.thumbnail }}
-            <img class="talk-thumb" src="{{ . | relURL }}" alt="" />
-            {{ end }}
-
-            <h2 class="talk-title">
-                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-            </h2>
-
-            <div class="talk-meta">
-                {{ .Date.Format "2006" }} {{ with .Params.venue }} · {{ . }}{{
-                end }}
+        <article class="writing-card">
+            <div class="writing-card-header">
+                <strong><a href="{{ .RelPermalink }}">{{ .Title }}</a></strong>
+                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+                {{ with .Params.venue }}<span class="talk-venue">{{ . }}</span>{{ end }}
             </div>
+            {{ with .Params.summary }}<div class="writing-card-blurb">
+                {{ . }}
+            </div>{{ end }}
         </article>
         {{ end }}
-    </div>
+    </section>
 </main>
 {{ end }}

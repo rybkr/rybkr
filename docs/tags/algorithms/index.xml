@@ -6,8 +6,15 @@
     <description>Recent content in Algorithms on Ryan Baker</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 28 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 01 Sep 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/algorithms/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Model Registry</title>
+      <link>http://localhost:1313/projects/modelregistry/</link>
+      <pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/modelregistry/</guid>
+      <description>A registry for storing and rating Hugging Face models based on domain-specific reliability and trustworthiness metrics</description>
+    </item>
     <item>
       <title>Messing with Floating Point</title>
       <link>http://localhost:1313/teaching/talks/messing-with-floating-point/</link>

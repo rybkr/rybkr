@@ -17,6 +17,12 @@
     <loc>http://localhost:1313/tags/</loc>
     <lastmod>2025-12-25T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tags/git/</loc>
+    <lastmod>2025-12-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/gitvista/</loc>
+    <lastmod>2025-12-11T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/c/</loc>
     <lastmod>2025-12-05T00:00:00+00:00</lastmod>
   </url><url>
@@ -31,6 +37,15 @@
   </url><url>
     <loc>http://localhost:1313/projects/sudoku/</loc>
     <lastmod>2025-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/markee/</loc>
+    <lastmod>2025-10-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/algorithms/</loc>
+    <lastmod>2025-09-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/modelregistry/</loc>
+    <lastmod>2025-09-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/teaching/writing/safety-in-cpp/</loc>
     <lastmod>2025-03-29T00:00:00+00:00</lastmod>
@@ -50,6 +65,9 @@
     <loc>http://localhost:1313/projects/raytracer/</loc>
     <lastmod>2025-03-17T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tags/math/</loc>
+    <lastmod>2025-03-17T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/teaching/writing/advanced-oop-in-cpp/</loc>
     <lastmod>2025-03-08T00:00:00+00:00</lastmod>
   </url><url>
@@ -65,6 +83,9 @@
     <loc>http://localhost:1313/teaching/writing/intro-to-cpp/</loc>
     <lastmod>2025-02-08T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/projects/artscii/</loc>
+    <lastmod>2025-01-20T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/config/</loc>
     <lastmod>2025-01-15T00:00:00+00:00</lastmod>
   </url><url>
@@ -77,8 +98,11 @@
     <loc>http://localhost:1313/projects/onevim/</loc>
     <lastmod>2025-01-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/algorithms/</loc>
-    <lastmod>2024-11-28T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/projects/neotex/</loc>
+    <lastmod>2024-12-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/vimslides/</loc>
+    <lastmod>2024-12-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/teaching/talks/messing-with-floating-point/</loc>
     <lastmod>2024-11-28T00:00:00+00:00</lastmod>
@@ -101,17 +125,35 @@
     <loc>http://localhost:1313/tags/js/</loc>
     <lastmod>2024-10-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/math/</loc>
-    <lastmod>2024-10-24T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/signal-processing/</loc>
     <lastmod>2024-10-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/passman/</loc>
+    <lastmod>2024-08-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/python/</loc>
+    <lastmod>2024-08-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/sql/</loc>
+    <lastmod>2024-08-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/bignums/</loc>
+    <lastmod>2024-03-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/chess/</loc>
     <lastmod>2024-01-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/projects/juicer/</loc>
     <lastmod>2024-01-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/2048/</loc>
+    <lastmod>2023-09-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/cppchessengine/</loc>
+    <lastmod>2023-07-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/pychessengine/</loc>
+    <lastmod>2023-05-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/about/</loc>
   </url><url>

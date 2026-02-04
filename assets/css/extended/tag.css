@@ -9,11 +9,17 @@
     color: var(--secondary);
     font-size: 0.75rem;
     line-height: 1;
+    white-space: nowrap;
 }
 
 .tag-pill img {
     height: 14px;
     width: auto;
-    display: block;
+    display: inline-block;
+    vertical-align: middle;
     opacity: 0.95;
+}
+
+.tag-pill .tag-label {
+    vertical-align: middle;
 }

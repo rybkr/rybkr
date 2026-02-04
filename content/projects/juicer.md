@@ -2,10 +2,10 @@
 date = '2024-01-23'
 draft = false
 title = 'Juicer'
-tags = ["C++", "Chess"]
+tags = ["C++", "Game Dev"]
 stack = ["C++", "Make"]
 subtitle = "Hyper-Performant Chess Move Generator"
-summary = "A high-performance chess move generator written in C++ using bitboard techniques"
+summary = "A high-performance chess move generator in C++, using magic bitboards for fast legal move enumeration."
 +++
 
 **Links:** [GitHub](https://github.com/rybkr/juicer)

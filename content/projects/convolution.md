@@ -1,11 +1,10 @@
 +++
 title = 'Convolution Visualizer'
-summary = 'An interactive, step-by-step visualizer for continuous-time signal convolution'
+summary = 'An interactive web tool for visualizing continuous-time signal convolution, step by step.'
 date = '2024-10-24'
 draft = false
-tags = ["JS", "HTML", "CSS", "Math", "Signal Processing"]
+tags = ["JS", "HTML", "CSS", "Algorithms", "Web Dev"]
 thumbnail = '/images/projects/convolution/thumb.png'
-featured = true
 +++
 
 [![Convolution Visualizer Graph](/images/projects/convolution/graph.png)](https://rybkr.github.io/convolution-visualizer/)

@@ -126,20 +126,18 @@
   // Search Hint (opens command palette)
   // -------------------------------------------------------
 
-  const searchHint = document.querySelector('.search-hint');
-
-  if (searchHint) {
-    function openCommandPalette() {
-      const palette = document.getElementById('command-palette');
-      if (palette) {
-        palette.classList.add('open');
-        palette.setAttribute('aria-hidden', 'false');
-        const input = document.getElementById('command-palette-input');
-        if (input) input.focus();
-        document.body.style.overflow = 'hidden';
-      }
+  function openCommandPalette() {
+    const palette = document.getElementById('command-palette');
+    if (palette) {
+      palette.classList.add('open');
+      palette.setAttribute('aria-hidden', 'false');
+      const input = document.getElementById('command-palette-input');
+      if (input) input.focus();
+      document.body.style.overflow = 'hidden';
     }
+  }
 
+  document.querySelectorAll('.search-hint').forEach(searchHint => {
     searchHint.addEventListener('click', openCommandPalette);
     searchHint.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
@@ -147,7 +145,7 @@
         openCommandPalette();
       }
     });
-  }
+  });
 
   // -------------------------------------------------------
   // Utility

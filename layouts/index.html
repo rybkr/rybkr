@@ -1,17 +1,19 @@
 {{ define "main" }}
 <main class="home-intro">
-    <div class="home-header">
+    <div class="home-header enter">
         <h1 class="home-name">Ryan Baker</h1>
         {{ partial "search-hint.html" . }}
     </div>
-    <p class="home-tagline">Building software that teaches, and teaching through software.</p>
-
-    <p class="home-bio">
-        Software engineer focused on systems programming, developer tools, and technical education.
-        I write C++, Go, and C, and spend time making complex ideas accessible.
+    <p class="home-tagline enter enter-d1">
+        Helping make complex systems easier to work with.
     </p>
 
-    <nav class="home-links">
+    <p class="home-bio enter enter-d2">
+        I’m a software engineer focused on systems and developer tooling.
+        I enjoy writing clear, maintainable code and building tools that solve real problems and make everyday workflows a little better.
+    </p>
+
+    <nav class="home-links enter enter-d3">
         <a href="/projects/">Projects</a>
         <a href="/teaching/">Teaching</a>
         <a href="/about/">About</a>
@@ -20,25 +22,5 @@
         <a href="mailto:rbaker@xtier.com">Email</a>
     </nav>
 
-    <section class="home-featured">
-        <h2>Featured Work</h2>
-        <div class="home-featured-grid">
-            {{ $featured := slice "chromasudoku" "convolution" "sudoku" }}
-            {{ range $slug := $featured }}
-                {{ with site.GetPage (printf "/projects/%s" $slug) }}
-                <a href="{{ .RelPermalink }}" class="home-featured-card">
-                    {{ with .Params.thumbnail }}
-                    <img src="{{ . }}" alt="{{ $.Title }}" class="home-featured-img" />
-                    {{ end }}
-                    <div class="home-featured-info">
-                        <strong>{{ .Title }}</strong>
-                        {{ with .Params.summary }}<span>{{ . }}</span>{{ end }}
-                    </div>
-                </a>
-                {{ end }}
-            {{ end }}
-        </div>
-        <a href="/projects/" class="home-view-all">View all projects →</a>
-    </section>
 </main>
 {{ end }}

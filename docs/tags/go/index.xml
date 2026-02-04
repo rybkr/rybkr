@@ -15,5 +15,19 @@
       <guid>http://localhost:1313/projects/bytecourses/</guid>
       <description>A lightweight LMS built in Go for delivering structured programming courses</description>
     </item>
+    <item>
+      <title>Git Vista</title>
+      <link>http://localhost:1313/projects/gitvista/</link>
+      <pubDate>Thu, 11 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/gitvista/</guid>
+      <description>A terminal-based tool for visualizing Git repository activity and statistics</description>
+    </item>
+    <item>
+      <title>Markee</title>
+      <link>http://localhost:1313/projects/markee/</link>
+      <pubDate>Wed, 01 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/markee/</guid>
+      <description>A lightweight Markdown parser written from scratch in Go</description>
+    </item>
   </channel>
 </rss>

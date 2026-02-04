@@ -23,11 +23,25 @@
       <description>A deep dive into IEEE 754 floating point, its quirks, and how to work with it effectively in C++</description>
     </item>
     <item>
+      <title>Big Nums</title>
+      <link>http://localhost:1313/projects/bignums/</link>
+      <pubDate>Sat, 02 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/bignums/</guid>
+      <description>Arbitrary-size integer and floating point library for C++</description>
+    </item>
+    <item>
       <title>Juicer</title>
       <link>http://localhost:1313/projects/juicer/</link>
       <pubDate>Tue, 23 Jan 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/juicer/</guid>
       <description>A high-performance chess move generator written in C++ using bitboard techniques</description>
+    </item>
+    <item>
+      <title>C&#43;&#43; Chess Engine V1</title>
+      <link>http://localhost:1313/projects/cppchessengine/</link>
+      <pubDate>Thu, 27 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/cppchessengine/</guid>
+      <description>My first shot as a chess engine in C++</description>
     </item>
   </channel>
 </rss>

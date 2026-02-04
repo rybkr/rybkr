@@ -15,5 +15,19 @@
       <guid>http://localhost:1313/projects/juicer/</guid>
       <description>A high-performance chess move generator written in C++ using bitboard techniques</description>
     </item>
+    <item>
+      <title>C&#43;&#43; Chess Engine V1</title>
+      <link>http://localhost:1313/projects/cppchessengine/</link>
+      <pubDate>Thu, 27 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/cppchessengine/</guid>
+      <description>My first shot as a chess engine in C++</description>
+    </item>
+    <item>
+      <title>Python Chess Engine</title>
+      <link>http://localhost:1313/projects/pychessengine/</link>
+      <pubDate>Fri, 12 May 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/pychessengine/</guid>
+      <description>My first shot at a chess engine</description>
+    </item>
   </channel>
 </rss>

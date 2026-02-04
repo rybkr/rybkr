@@ -6,14 +6,35 @@
     <description>Recent content in Math on Ryan Baker</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 24 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 17 Mar 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/math/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CPU Raytracer</title>
+      <link>http://localhost:1313/projects/raytracer/</link>
+      <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/raytracer/</guid>
+      <description>A from-scratch raytracer in C++ implementing reflection, refraction, and Monte Carlo path tracing</description>
+    </item>
+    <item>
+      <title>Artscii</title>
+      <link>http://localhost:1313/projects/artscii/</link>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/artscii/</guid>
+      <description>An ascii art library written in C</description>
+    </item>
     <item>
       <title>Convolution Visualizer</title>
       <link>http://localhost:1313/projects/convolution/</link>
       <pubDate>Thu, 24 Oct 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/convolution/</guid>
       <description>An interactive, step-by-step visualizer for continuous-time signal convolution</description>
+    </item>
+    <item>
+      <title>Big Nums</title>
+      <link>http://localhost:1313/projects/bignums/</link>
+      <pubDate>Sat, 02 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/bignums/</guid>
+      <description>Arbitrary-size integer and floating point library for C++</description>
     </item>
   </channel>
 </rss>
