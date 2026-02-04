@@ -222,31 +222,50 @@
 }
 
 ::view-transition-old(root) {
-  animation: fade-out 0.15s ease-out;
+  animation: slide-out 0.15s cubic-bezier(0.4, 0, 1, 1);
 }
 
 ::view-transition-new(root) {
-  animation: fade-in 0.15s ease-in;
+  animation: slide-in 0.18s cubic-bezier(0, 0, 0.2, 1);
 }
 
-@keyframes fade-out {
-  from { opacity: 1; }
-  to { opacity: 0; }
+@keyframes slide-out {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-6px); }
 }
 
-@keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+@keyframes slide-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
+
+/* -------------------------------------------------------
+   Content Entrance Animations
+------------------------------------------------------- */
+
+@keyframes enter {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.enter {
+  animation: enter 0.25s cubic-bezier(0, 0, 0.2, 1) both;
+}
+
+.enter-d1 { animation-delay: 0.04s; }
+.enter-d2 { animation-delay: 0.08s; }
+.enter-d3 { animation-delay: 0.12s; }
+.enter-d4 { animation-delay: 0.16s; }
+.enter-d5 { animation-delay: 0.20s; }
 
 /* -------------------------------------------------------
    External Link Indicator
    Only shows for truly external links (not rybkr.com or localhost)
 ------------------------------------------------------- */
 
-.post-content a[href^="http"]:not([href*="rybkr.com"]):not([href*="localhost"])::after,
-.main a[href^="http"]:not([href*="rybkr.com"]):not([href*="localhost"])::after,
-article a[href^="http"]:not([href*="rybkr.com"]):not([href*="localhost"])::after {
+.post-content a[href^="http"]:not([href*="rybkr.com"]):not([href*="localhost"]):not(.featured-card):not(.home-featured-card)::after,
+.main a[href^="http"]:not([href*="rybkr.com"]):not([href*="localhost"]):not(.featured-card):not(.home-featured-card)::after,
+article a[href^="http"]:not([href*="rybkr.com"]):not([href*="localhost"]):not(.featured-card):not(.home-featured-card)::after {
   content: "";
   display: inline-block;
   width: 11px;
@@ -264,9 +283,9 @@ article a[href^="http"]:not([href*="rybkr.com"]):not([href*="localhost"])::after
   transition: opacity 0.15s;
 }
 
-.post-content a[href^="http"]:not([href*="rybkr.com"]):not([href*="localhost"]):hover::after,
-.main a[href^="http"]:not([href*="rybkr.com"]):not([href*="localhost"]):hover::after,
-article a[href^="http"]:not([href*="rybkr.com"]):not([href*="localhost"]):hover::after {
+.post-content a[href^="http"]:not([href*="rybkr.com"]):not([href*="localhost"]):not(.featured-card):not(.home-featured-card):hover::after,
+.main a[href^="http"]:not([href*="rybkr.com"]):not([href*="localhost"]):not(.featured-card):not(.home-featured-card):hover::after,
+article a[href^="http"]:not([href*="rybkr.com"]):not([href*="localhost"]):not(.featured-card):not(.home-featured-card):hover::after {
   opacity: 1;
 }
 
@@ -388,5 +407,22 @@ article a[href^="http"]:not([href*="rybkr.com"]):not([href*="localhost"]):hover:
 
   .breadcrumb {
     font-size: 13px;
+  }
+}
+
+/* -------------------------------------------------------
+   Reduced Motion
+------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+
+  .enter {
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
 }

@@ -9,6 +9,13 @@
     border-radius: 8px;
     padding: 1rem;
     background: var(--theme);
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.talk-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
 }
 
 .talk-thumb {

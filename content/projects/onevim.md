@@ -1,11 +1,11 @@
 +++
 title = 'Onevim'
 subtitle = 'The Objectively Correct Neovim Config'
-summary = "A fast, opinionated Neovim configuration built for C++ and systems programming"
+summary = "A fast, opinionated Neovim configuration built for systems programming and staying out of your way."
 date = '2025-01-15'
 draft = false
 stack = ["Lua"]
-tags = ["Neovim", "Lua", "Config"]
+tags = ["Neovim", "Lua", "Config", "Tools"]
 thumbnail = "/images/projects/onevim/thumb.svg"
 +++
 

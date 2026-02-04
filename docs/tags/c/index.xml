@@ -15,5 +15,12 @@
       <guid>http://localhost:1313/projects/chromasudoku/</guid>
       <description>Color-based Sudoku for embedded hardware</description>
     </item>
+    <item>
+      <title>Artscii</title>
+      <link>http://localhost:1313/projects/artscii/</link>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/artscii/</guid>
+      <description>An ascii art library written in C</description>
+    </item>
   </channel>
 </rss>

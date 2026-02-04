@@ -1,7 +1,8 @@
 +++
 title = 'Sudoku Generator & Solver'
-summary = "A fast, scriptable command-line Sudoku tool written in Go."
+summary = "A command-line Sudoku generator and solver in Go — built so I'd never need to buy another puzzle book."
 date = '2025-10-06'
+tags = ["Tools"]
 stack = ["Go", "CLI"]
 thumbnail = "/images/projects/sudoku/thumb.png"
 draft = false

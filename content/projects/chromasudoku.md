@@ -1,12 +1,11 @@
 +++
 title = 'Chroma Sudoku'
-summary = 'Color-based Sudoku for embedded hardware'
+summary = 'Sudoku reimagined with colors instead of digits, running on an RP2350 with a 32×32 RGB LED matrix.'
 date = '2025-12-05'
-tags = ["Embedded", "C", "Game"]
+tags = ["Embedded", "C", "Game Dev"]
 stack = ["C", "PlatformIO", "RP2350"]
 thumbnail = "/images/projects/chromasudoku/thumb.png"
 draft = false
-featured = true
 +++
 
 **Links:** [GitHub](https://github.com/rybkr/ChromaSudoku)\

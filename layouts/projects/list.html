@@ -1,41 +1,21 @@
 {{ define "main" }}
 <main>
     {{ partial "breadcrumb.html" . }}
-    <div class="page-header">
+    <div class="page-header enter">
         <h1>Projects</h1>
         {{ partial "search-hint.html" . }}
     </div>
-    <p class="project-intro">A selection of work and research.</p>
+    <p class="project-intro enter enter-d1">A selection of work and research.</p>
 
-    {{- /* Featured Projects */ -}}
-    {{- $featured := where .Pages ".Params.featured" true -}}
-    {{- if gt (len $featured) 0 -}}
-    <section class="featured-projects">
-        <h2 class="featured-heading">Featured</h2>
-        <div class="featured-grid">
-            {{- range $featured -}}
-            <a href="{{ with .Params.redirect }}{{ . }}{{ else }}{{ .RelPermalink }}{{ end }}" class="featured-card"{{ with .Params.redirect }} target="_blank" rel="noopener"{{ end }}>
-                {{- with .Params.thumbnail -}}
-                <img src="{{ . }}" alt="{{ $.Title }}" class="featured-card-img" />
-                {{- end -}}
-                <div class="featured-card-content">
-                    <strong>{{ .Title }}</strong>
-                    {{- with .Params.summary -}}<p>{{ . }}</p>{{- end -}}
-                </div>
-            </a>
-            {{- end -}}
-        </div>
-    </section>
-    {{- end -}}
-
-    {{- /* Define tag categories */ -}}
-    {{- $languages := slice "C" "C++" "Go" "JS" "Lua" "HTML" "CSS" -}}
-    {{- $domains := slice "Chess" "Game" "Embedded" "Math" "Signal Processing" "Algorithms" "Numerics" -}}
+    {{- $languages := slice "C" "C++" "Python" "Go" "Lua" "JS" -}}
+    {{- $domains := slice "Embedded" "Algorithms" "Game Dev" "Web Dev" "Tools" -}}
     {{- $tools := slice "CLI" "Neovim" "Config" "Make" "PlatformIO" -}}
+
+    {{- $pages := .Pages -}}
 
     {{- /* Count tag occurrences */ -}}
     {{- $tagCounts := dict -}}
-    {{- range .Pages -}}
+    {{- range $pages -}}
         {{- range .Params.tags -}}
             {{- $count := index $tagCounts . | default 0 -}}
             {{- $tagCounts = merge $tagCounts (dict . (add $count 1)) -}}
@@ -46,17 +26,32 @@
         {{- end -}}
     {{- end -}}
 
-    {{- /* Sort languages by count */ -}}
-    {{- $langWithCounts := slice -}}
+    {{- /* Sort languages by count desc, most recent desc, alpha asc */ -}}
+    {{- $sortedLangs := slice -}}
     {{- range $languages -}}
-        {{- $count := index $tagCounts . | default 0 -}}
+        {{- $tag := . -}}
+        {{- $count := index $tagCounts $tag | default 0 -}}
         {{- if gt $count 0 -}}
-            {{- $langWithCounts = $langWithCounts | append (dict "tag" . "count" $count) -}}
+            {{- $maxUnix := 0 -}}
+            {{- range $pages -}}
+                {{- $hasTag := false -}}
+                {{- range .Params.tags -}}
+                    {{- if eq . $tag -}}{{- $hasTag = true -}}{{- end -}}
+                {{- end -}}
+                {{- range .Params.stack -}}
+                    {{- if eq . $tag -}}{{- $hasTag = true -}}{{- end -}}
+                {{- end -}}
+                {{- if $hasTag -}}
+                    {{- $u := int .Date.Unix -}}
+                    {{- if gt $u $maxUnix -}}{{- $maxUnix = $u -}}{{- end -}}
+                {{- end -}}
+            {{- end -}}
+            {{- $sortKey := printf "%04d-%010d-%s" (sub 9999 $count) (sub 9999999999 $maxUnix) $tag -}}
+            {{- $sortedLangs = $sortedLangs | append (dict "tag" $tag "count" $count "sortKey" $sortKey) -}}
         {{- end -}}
     {{- end -}}
-    {{- $sortedLangs := sort $langWithCounts "count" "desc" -}}
+    {{- $sortedLangs = sort $sortedLangs "sortKey" -}}
 
-    {{- /* Sort tools by count */ -}}
     {{- $toolsWithCounts := slice -}}
     {{- range $tools -}}
         {{- $count := index $tagCounts . | default 0 -}}
@@ -66,7 +61,6 @@
     {{- end -}}
     {{- $sortedTools := sort $toolsWithCounts "count" "desc" -}}
 
-    {{- /* Sort domains by count */ -}}
     {{- $domainsWithCounts := slice -}}
     {{- range $domains -}}
         {{- $count := index $tagCounts . | default 0 -}}
@@ -76,7 +70,7 @@
     {{- end -}}
     {{- $sortedDomains := sort $domainsWithCounts "count" "desc" -}}
 
-    <div id="project-filters" class="filter-bar">
+    <div id="project-filters" class="filter-bar enter enter-d2">
         <div class="filter-group">
             <span class="filter-group-label">Language</span>
             {{- range $sortedLangs -}}
@@ -97,7 +91,9 @@
         </div>
     </div>
 
-    <section id="projects">
+    <p id="no-results" class="no-results" style="display: none;">No projects match the selected filters.</p>
+
+    <section id="projects" class="enter enter-d3">
         {{ range .Pages.ByDate.Reverse }}
         {{- $cardTags := .Params.tags | default slice -}}
         {{- range .Params.stack | default slice -}}
@@ -140,7 +136,9 @@
                 "go" "/icons/tags/go.svg" "c" "/icons/tags/c.svg" "js"
                 "/icons/tags/js.svg" "html" "/icons/tags/html.svg" "css"
                 "/icons/tags/css.svg" "cli" "/icons/tags/term.svg" "c++"
-                "/icons/tags/cpp.svg" }}
+                "/icons/tags/cpp.svg" "git" "/icons/tags/git.svg" "python"
+                "/icons/tags/python.svg" "lua" "/icons/tags/lua.svg" "sql"
+                "/icons/tags/sql.svg" "neovim" "/icons/tags/nvim.svg" }}
 
                 <div class="tag-row">
                     {{ range $allTags }} {{ $tag := lower . }} {{ $icon := index
