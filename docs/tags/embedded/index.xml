@@ -13,7 +13,7 @@
       <link>http://localhost:1313/projects/chromasudoku/</link>
       <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/chromasudoku/</guid>
-      <description>Color-based Sudoku for embedded hardware</description>
+      <description>Sudoku reimagined with colors instead of digits, running on an RP2350 with a 32×32 RGB LED matrix.</description>
     </item>
   </channel>
 </rss>
