@@ -1,0 +1,24 @@
+{{- define "main" }}
+
+<article class="post-single">
+  <header class="post-header">
+    {{ partial "breadcrumbs.html" . }}
+    <h1 class="post-title entry-hint-parent enter">
+      {{ .Title }}
+    </h1>
+    <a href="/resume.pdf" download="Ryan_Baker_Resume_{{ dateFormat "2006-01-02" .Params.Updated }}.pdf" class="resume-download enter enter-d1">Download PDF</a>
+    <center>
+        <small><i>Updated {{ dateFormat "Jan 2, 2006" .Params.Updated }}</i></small>
+    </center>
+  </header>
+
+  {{- if .Content }}
+  <div class="post-content enter enter-d2">
+    {{- if not (.Param "disableAnchoredHeadings") }}
+    {{- partial "anchored_headings.html" .Content -}}
+    {{- else }}{{ .Content }}{{ end }}
+  </div>
+  {{- end }}
+</article>
+
+{{- end }}{{/* end main */}}

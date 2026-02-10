@@ -1,0 +1,28 @@
+.resume-download {
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    background: var(--accent);
+    color: var(--theme) !important;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: opacity 0.15s ease-out, transform 0.15s ease-out;
+    margin-top: 0.5rem;
+}
+
+.resume-download:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
+}
+
+/* Resume section spacing */
+article.post-single .post-content h2 + p strong,
+article.post-single .post-content h2 + p {
+    margin-top: 0;
+}
+
+article.post-single .post-content h2 {
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid var(--border);
+}

@@ -13,7 +13,7 @@
       <link>http://localhost:1313/projects/raytracer/</link>
       <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/raytracer/</guid>
-      <description>A from-scratch raytracer in C++ implementing reflection, refraction, and Monte Carlo path tracing</description>
+      <description>A from-scratch C++ raytracer with reflection, refraction, and Monte Carlo path tracing — no graphics libraries.</description>
     </item>
     <item>
       <title>Messing with Floating Point</title>
@@ -27,21 +27,21 @@
       <link>http://localhost:1313/projects/bignums/</link>
       <pubDate>Sat, 02 Mar 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/bignums/</guid>
-      <description>Arbitrary-size integer and floating point library for C++</description>
+      <description>An arbitrary-precision integer and floating-point arithmetic library for C++, built from scratch.</description>
     </item>
     <item>
       <title>Juicer</title>
       <link>http://localhost:1313/projects/juicer/</link>
       <pubDate>Tue, 23 Jan 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/juicer/</guid>
-      <description>A high-performance chess move generator written in C++ using bitboard techniques</description>
+      <description>A high-performance chess move generator in C++, using magic bitboards for fast legal move enumeration.</description>
     </item>
     <item>
       <title>C&#43;&#43; Chess Engine V1</title>
       <link>http://localhost:1313/projects/cppchessengine/</link>
       <pubDate>Thu, 27 Jul 2023 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/cppchessengine/</guid>
-      <description>My first shot as a chess engine in C++</description>
+      <description>My first chess engine — a from-scratch implementation in C++ with basic search and evaluation.</description>
     </item>
   </channel>
 </rss>

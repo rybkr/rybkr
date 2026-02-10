@@ -13,21 +13,21 @@
       <link>http://localhost:1313/projects/onevim/</link>
       <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/onevim/</guid>
-      <description>A fast, opinionated Neovim configuration built for C++ and systems programming</description>
+      <description>A fast, opinionated Neovim configuration built for systems programming and staying out of your way.</description>
     </item>
     <item>
       <title>NeoTeX</title>
       <link>http://localhost:1313/projects/neotex/</link>
       <pubDate>Tue, 24 Dec 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/neotex/</guid>
-      <description>A Neovim plugin for editing LaTeX with real-time document preview</description>
+      <description>A Neovim plugin for live LaTeX preview — edit and see compiled output update without leaving your editor.</description>
     </item>
     <item>
       <title>VimSlides</title>
       <link>http://localhost:1313/projects/vimslides/</link>
       <pubDate>Fri, 20 Dec 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/vimslides/</guid>
-      <description>A Neovim plugin that converts Markdown files into navigable slideshows</description>
+      <description>A Neovim plugin that turns Markdown files into terminal slideshows — no browser, no export step.</description>
     </item>
   </channel>
 </rss>

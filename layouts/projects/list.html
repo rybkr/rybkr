@@ -7,86 +7,23 @@
     </div>
     <p class="project-intro enter enter-d1">A selection of work and research.</p>
 
-    {{- $languages := slice "C" "C++" "Python" "Go" "Lua" "JS" -}}
-    {{- $domains := slice "Embedded" "Algorithms" "Game Dev" "Web Dev" "Tools" -}}
-    {{- $tools := slice "CLI" "Neovim" "Config" "Make" "PlatformIO" -}}
-
-    {{- $pages := .Pages -}}
-
-    {{- /* Count tag occurrences */ -}}
-    {{- $tagCounts := dict -}}
-    {{- range $pages -}}
-        {{- range .Params.tags -}}
-            {{- $count := index $tagCounts . | default 0 -}}
-            {{- $tagCounts = merge $tagCounts (dict . (add $count 1)) -}}
-        {{- end -}}
-        {{- range .Params.stack -}}
-            {{- $count := index $tagCounts . | default 0 -}}
-            {{- $tagCounts = merge $tagCounts (dict . (add $count 1)) -}}
-        {{- end -}}
-    {{- end -}}
-
-    {{- /* Sort languages by count desc, most recent desc, alpha asc */ -}}
-    {{- $sortedLangs := slice -}}
-    {{- range $languages -}}
-        {{- $tag := . -}}
-        {{- $count := index $tagCounts $tag | default 0 -}}
-        {{- if gt $count 0 -}}
-            {{- $maxUnix := 0 -}}
-            {{- range $pages -}}
-                {{- $hasTag := false -}}
-                {{- range .Params.tags -}}
-                    {{- if eq . $tag -}}{{- $hasTag = true -}}{{- end -}}
-                {{- end -}}
-                {{- range .Params.stack -}}
-                    {{- if eq . $tag -}}{{- $hasTag = true -}}{{- end -}}
-                {{- end -}}
-                {{- if $hasTag -}}
-                    {{- $u := int .Date.Unix -}}
-                    {{- if gt $u $maxUnix -}}{{- $maxUnix = $u -}}{{- end -}}
-                {{- end -}}
-            {{- end -}}
-            {{- $sortKey := printf "%04d-%010d-%s" (sub 9999 $count) (sub 9999999999 $maxUnix) $tag -}}
-            {{- $sortedLangs = $sortedLangs | append (dict "tag" $tag "count" $count "sortKey" $sortKey) -}}
-        {{- end -}}
-    {{- end -}}
-    {{- $sortedLangs = sort $sortedLangs "sortKey" -}}
-
-    {{- $toolsWithCounts := slice -}}
-    {{- range $tools -}}
-        {{- $count := index $tagCounts . | default 0 -}}
-        {{- if gt $count 0 -}}
-            {{- $toolsWithCounts = $toolsWithCounts | append (dict "tag" . "count" $count) -}}
-        {{- end -}}
-    {{- end -}}
-    {{- $sortedTools := sort $toolsWithCounts "count" "desc" -}}
-
-    {{- $domainsWithCounts := slice -}}
-    {{- range $domains -}}
-        {{- $count := index $tagCounts . | default 0 -}}
-        {{- if gt $count 0 -}}
-            {{- $domainsWithCounts = $domainsWithCounts | append (dict "tag" . "count" $count) -}}
-        {{- end -}}
-    {{- end -}}
-    {{- $sortedDomains := sort $domainsWithCounts "count" "desc" -}}
-
     <div id="project-filters" class="filter-bar enter enter-d2">
         <div class="filter-group">
             <span class="filter-group-label">Language</span>
-            {{- range $sortedLangs -}}
-                <button class="filter-pill" data-tag="{{ .tag }}">{{ .tag }}</button>
+            {{- range slice "C" "C++" "Python" "Go" "Lua" "JS" -}}
+                <button class="filter-pill" data-tag="{{ . }}">{{ . }}</button>
             {{- end -}}
         </div>
         <div class="filter-group">
             <span class="filter-group-label">Domain</span>
-            {{- range $sortedDomains -}}
-                <button class="filter-pill" data-tag="{{ .tag }}">{{ .tag }}</button>
+            {{- range slice "Embedded" "Algorithms" "Game Dev" "Web Dev" "Tools" -}}
+                <button class="filter-pill" data-tag="{{ . }}">{{ . }}</button>
             {{- end -}}
         </div>
         <div class="filter-group">
             <span class="filter-group-label">Tools</span>
-            {{- range $sortedTools -}}
-                <button class="filter-pill" data-tag="{{ .tag }}">{{ .tag }}</button>
+            {{- range slice "CLI" "Neovim" "Config" "Make" "PlatformIO" -}}
+                <button class="filter-pill" data-tag="{{ . }}">{{ . }}</button>
             {{- end -}}
         </div>
     </div>

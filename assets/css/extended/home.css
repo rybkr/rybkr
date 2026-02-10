@@ -4,6 +4,20 @@
     padding: 0 1rem;
 }
 
+.home-hero {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.home-headshot {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
 .home-name {
     font-size: 2.8rem;
     font-weight: 700;
