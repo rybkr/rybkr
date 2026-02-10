@@ -7,9 +7,6 @@
       {{ .Title }}
     </h1>
     <a href="/resume.pdf" download="Ryan_Baker_Resume_{{ dateFormat "2006-01-02" .Params.Updated }}.pdf" class="resume-download enter enter-d1">Download PDF</a>
-    <center>
-        <small><i>Updated {{ dateFormat "Jan 2, 2006" .Params.Updated }}</i></small>
-    </center>
   </header>
 
   {{- if .Content }}
@@ -19,6 +16,9 @@
     {{- else }}{{ .Content }}{{ end }}
   </div>
   {{- end }}
+  <center>
+    <small><i>Updated {{ dateFormat "Jan 2, 2006" .Params.Updated }}</i></small>
+  </center>
 </article>
 
 {{- end }}{{/* end main */}}
