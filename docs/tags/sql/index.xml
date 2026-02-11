@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>SQL on Ryan Baker</title>
-    <link>http://localhost:1313/tags/sql/</link>
+    <link>https://rybkr.com/tags/sql/</link>
     <description>Recent content in SQL on Ryan Baker</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 11 Aug 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/sql/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://rybkr.com/tags/sql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Passman</title>
-      <link>http://localhost:1313/projects/passman/</link>
+      <link>https://rybkr.com/projects/passman/</link>
       <pubDate>Sun, 11 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/passman/</guid>
+      <guid>https://rybkr.com/projects/passman/</guid>
       <description>A local-first password manager in Python with SQLite storage and no cloud dependencies.</description>
     </item>
   </channel>

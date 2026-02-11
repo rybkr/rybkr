@@ -2,66 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tools on Ryan Baker</title>
-    <link>http://localhost:1313/tags/tools/</link>
+    <link>https://rybkr.com/tags/tools/</link>
     <description>Recent content in Tools on Ryan Baker</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 11 Dec 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/tools/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://rybkr.com/tags/tools/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git Vista</title>
-      <link>http://localhost:1313/projects/gitvista/</link>
+      <link>https://rybkr.com/projects/gitvista/</link>
       <pubDate>Thu, 11 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/gitvista/</guid>
+      <guid>https://rybkr.com/projects/gitvista/</guid>
       <description>A terminal tool for exploring Git repo history — commit analytics, file churn, and branch visualization without leaving the CLI.</description>
     </item>
     <item>
       <title>Sudoku Generator &amp; Solver</title>
-      <link>http://localhost:1313/projects/sudoku/</link>
+      <link>https://rybkr.com/projects/sudoku/</link>
       <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/sudoku/</guid>
+      <guid>https://rybkr.com/projects/sudoku/</guid>
       <description>A command-line Sudoku generator and solver in Go — built so I&amp;rsquo;d never need to buy another puzzle book.</description>
     </item>
     <item>
       <title>Markee</title>
-      <link>http://localhost:1313/projects/markee/</link>
+      <link>https://rybkr.com/projects/markee/</link>
       <pubDate>Wed, 01 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/markee/</guid>
+      <guid>https://rybkr.com/projects/markee/</guid>
       <description>A zero-dependency Markdown parser written from scratch in Go, focused on the subset of Markdown people actually use.</description>
     </item>
     <item>
       <title>Artscii</title>
-      <link>http://localhost:1313/projects/artscii/</link>
+      <link>https://rybkr.com/projects/artscii/</link>
       <pubDate>Mon, 20 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/artscii/</guid>
+      <guid>https://rybkr.com/projects/artscii/</guid>
       <description>A C library for generating ASCII art from geometric primitives and images.</description>
     </item>
     <item>
       <title>Onevim</title>
-      <link>http://localhost:1313/projects/onevim/</link>
+      <link>https://rybkr.com/projects/onevim/</link>
       <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/onevim/</guid>
+      <guid>https://rybkr.com/projects/onevim/</guid>
       <description>A fast, opinionated Neovim configuration built for systems programming and staying out of your way.</description>
     </item>
     <item>
       <title>NeoTeX</title>
-      <link>http://localhost:1313/projects/neotex/</link>
+      <link>https://rybkr.com/projects/neotex/</link>
       <pubDate>Tue, 24 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/neotex/</guid>
+      <guid>https://rybkr.com/projects/neotex/</guid>
       <description>A Neovim plugin for live LaTeX preview — edit and see compiled output update without leaving your editor.</description>
     </item>
     <item>
       <title>VimSlides</title>
-      <link>http://localhost:1313/projects/vimslides/</link>
+      <link>https://rybkr.com/projects/vimslides/</link>
       <pubDate>Fri, 20 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/vimslides/</guid>
+      <guid>https://rybkr.com/projects/vimslides/</guid>
       <description>A Neovim plugin that turns Markdown files into terminal slideshows — no browser, no export step.</description>
     </item>
     <item>
       <title>Passman</title>
-      <link>http://localhost:1313/projects/passman/</link>
+      <link>https://rybkr.com/projects/passman/</link>
       <pubDate>Sun, 11 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/passman/</guid>
+      <guid>https://rybkr.com/projects/passman/</guid>
       <description>A local-first password manager in Python with SQLite storage and no cloud dependencies.</description>
     </item>
   </channel>

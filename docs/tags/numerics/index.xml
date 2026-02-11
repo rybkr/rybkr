@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Numerics on Ryan Baker</title>
-    <link>http://localhost:1313/tags/numerics/</link>
+    <link>https://rybkr.com/tags/numerics/</link>
     <description>Recent content in Numerics on Ryan Baker</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 28 Nov 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/numerics/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://rybkr.com/tags/numerics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Messing with Floating Point</title>
-      <link>http://localhost:1313/teaching/talks/messing-with-floating-point/</link>
+      <link>https://rybkr.com/teaching/talks/messing-with-floating-point/</link>
       <pubDate>Thu, 28 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/teaching/talks/messing-with-floating-point/</guid>
+      <guid>https://rybkr.com/teaching/talks/messing-with-floating-point/</guid>
       <description>A deep dive into IEEE 754 floating point, its quirks, and how to work with it effectively in C++</description>
     </item>
   </channel>

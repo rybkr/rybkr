@@ -2,136 +2,136 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on Ryan Baker</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://rybkr.com/tags/</link>
     <description>Recent content in Tags on Ryan Baker</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 25 Dec 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://rybkr.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CSS</title>
-      <link>http://localhost:1313/tags/css/</link>
+      <link>https://rybkr.com/tags/css/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/css/</guid>
+      <guid>https://rybkr.com/tags/css/</guid>
       <description></description>
     </item>
     <item>
       <title>Go</title>
-      <link>http://localhost:1313/tags/go/</link>
+      <link>https://rybkr.com/tags/go/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/go/</guid>
+      <guid>https://rybkr.com/tags/go/</guid>
       <description></description>
     </item>
     <item>
       <title>HTML</title>
-      <link>http://localhost:1313/tags/html/</link>
+      <link>https://rybkr.com/tags/html/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/html/</guid>
+      <guid>https://rybkr.com/tags/html/</guid>
       <description></description>
     </item>
     <item>
       <title>JS</title>
-      <link>http://localhost:1313/tags/js/</link>
+      <link>https://rybkr.com/tags/js/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/js/</guid>
+      <guid>https://rybkr.com/tags/js/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
-      <link>http://localhost:1313/tags/python/</link>
+      <link>https://rybkr.com/tags/python/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/python/</guid>
+      <guid>https://rybkr.com/tags/python/</guid>
       <description></description>
     </item>
     <item>
       <title>Web Dev</title>
-      <link>http://localhost:1313/tags/web-dev/</link>
+      <link>https://rybkr.com/tags/web-dev/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/web-dev/</guid>
+      <guid>https://rybkr.com/tags/web-dev/</guid>
       <description></description>
     </item>
     <item>
       <title>Git</title>
-      <link>http://localhost:1313/tags/git/</link>
+      <link>https://rybkr.com/tags/git/</link>
       <pubDate>Thu, 11 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/git/</guid>
+      <guid>https://rybkr.com/tags/git/</guid>
       <description></description>
     </item>
     <item>
       <title>Tools</title>
-      <link>http://localhost:1313/tags/tools/</link>
+      <link>https://rybkr.com/tags/tools/</link>
       <pubDate>Thu, 11 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/tools/</guid>
+      <guid>https://rybkr.com/tags/tools/</guid>
       <description></description>
     </item>
     <item>
       <title>C</title>
-      <link>http://localhost:1313/tags/c/</link>
+      <link>https://rybkr.com/tags/c/</link>
       <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/c/</guid>
+      <guid>https://rybkr.com/tags/c/</guid>
       <description></description>
     </item>
     <item>
       <title>Embedded</title>
-      <link>http://localhost:1313/tags/embedded/</link>
+      <link>https://rybkr.com/tags/embedded/</link>
       <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/embedded/</guid>
+      <guid>https://rybkr.com/tags/embedded/</guid>
       <description></description>
     </item>
     <item>
       <title>Game Dev</title>
-      <link>http://localhost:1313/tags/game-dev/</link>
+      <link>https://rybkr.com/tags/game-dev/</link>
       <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/game-dev/</guid>
+      <guid>https://rybkr.com/tags/game-dev/</guid>
       <description></description>
     </item>
     <item>
       <title>Algorithms</title>
-      <link>http://localhost:1313/tags/algorithms/</link>
+      <link>https://rybkr.com/tags/algorithms/</link>
       <pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/algorithms/</guid>
+      <guid>https://rybkr.com/tags/algorithms/</guid>
       <description></description>
     </item>
     <item>
       <title>C&#43;&#43;</title>
-      <link>http://localhost:1313/tags/c&#43;&#43;/</link>
+      <link>https://rybkr.com/tags/c&#43;&#43;/</link>
       <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/c&#43;&#43;/</guid>
+      <guid>https://rybkr.com/tags/c&#43;&#43;/</guid>
       <description></description>
     </item>
     <item>
       <title>Config</title>
-      <link>http://localhost:1313/tags/config/</link>
+      <link>https://rybkr.com/tags/config/</link>
       <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/config/</guid>
+      <guid>https://rybkr.com/tags/config/</guid>
       <description></description>
     </item>
     <item>
       <title>Lua</title>
-      <link>http://localhost:1313/tags/lua/</link>
+      <link>https://rybkr.com/tags/lua/</link>
       <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/lua/</guid>
+      <guid>https://rybkr.com/tags/lua/</guid>
       <description></description>
     </item>
     <item>
       <title>Neovim</title>
-      <link>http://localhost:1313/tags/neovim/</link>
+      <link>https://rybkr.com/tags/neovim/</link>
       <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/neovim/</guid>
+      <guid>https://rybkr.com/tags/neovim/</guid>
       <description></description>
     </item>
     <item>
       <title>Numerics</title>
-      <link>http://localhost:1313/tags/numerics/</link>
+      <link>https://rybkr.com/tags/numerics/</link>
       <pubDate>Thu, 28 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/numerics/</guid>
+      <guid>https://rybkr.com/tags/numerics/</guid>
       <description></description>
     </item>
     <item>
       <title>SQL</title>
-      <link>http://localhost:1313/tags/sql/</link>
+      <link>https://rybkr.com/tags/sql/</link>
       <pubDate>Sun, 11 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/sql/</guid>
+      <guid>https://rybkr.com/tags/sql/</guid>
       <description></description>
     </item>
   </channel>
