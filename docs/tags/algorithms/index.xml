@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Algorithms on Ryan Baker</title>
-    <link>http://localhost:1313/tags/algorithms/</link>
+    <link>https://rybkr.com/tags/algorithms/</link>
     <description>Recent content in Algorithms on Ryan Baker</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 01 Sep 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/algorithms/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://rybkr.com/tags/algorithms/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Model Registry</title>
-      <link>http://localhost:1313/projects/modelregistry/</link>
+      <link>https://rybkr.com/projects/modelregistry/</link>
       <pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/modelregistry/</guid>
+      <guid>https://rybkr.com/projects/modelregistry/</guid>
       <description>A system for cataloging and scoring Hugging Face models on domain-specific reliability, beyond star counts and downloads.</description>
     </item>
     <item>
       <title>CPU Raytracer</title>
-      <link>http://localhost:1313/projects/raytracer/</link>
+      <link>https://rybkr.com/projects/raytracer/</link>
       <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/raytracer/</guid>
+      <guid>https://rybkr.com/projects/raytracer/</guid>
       <description>A from-scratch C++ raytracer with reflection, refraction, and Monte Carlo path tracing — no graphics libraries.</description>
     </item>
     <item>
       <title>Messing with Floating Point</title>
-      <link>http://localhost:1313/teaching/talks/messing-with-floating-point/</link>
+      <link>https://rybkr.com/teaching/talks/messing-with-floating-point/</link>
       <pubDate>Thu, 28 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/teaching/talks/messing-with-floating-point/</guid>
+      <guid>https://rybkr.com/teaching/talks/messing-with-floating-point/</guid>
       <description>A deep dive into IEEE 754 floating point, its quirks, and how to work with it effectively in C++</description>
     </item>
     <item>
       <title>Convolution Visualizer</title>
-      <link>http://localhost:1313/projects/convolution/</link>
+      <link>https://rybkr.com/projects/convolution/</link>
       <pubDate>Thu, 24 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/convolution/</guid>
+      <guid>https://rybkr.com/projects/convolution/</guid>
       <description>An interactive web tool for visualizing continuous-time signal convolution, step by step.</description>
     </item>
     <item>
       <title>Big Nums</title>
-      <link>http://localhost:1313/projects/bignums/</link>
+      <link>https://rybkr.com/projects/bignums/</link>
       <pubDate>Sat, 02 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/bignums/</guid>
+      <guid>https://rybkr.com/projects/bignums/</guid>
       <description>An arbitrary-precision integer and floating-point arithmetic library for C++, built from scratch.</description>
     </item>
   </channel>

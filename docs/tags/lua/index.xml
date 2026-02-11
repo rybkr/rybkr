@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Lua on Ryan Baker</title>
-    <link>http://localhost:1313/tags/lua/</link>
+    <link>https://rybkr.com/tags/lua/</link>
     <description>Recent content in Lua on Ryan Baker</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 15 Jan 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/lua/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://rybkr.com/tags/lua/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Onevim</title>
-      <link>http://localhost:1313/projects/onevim/</link>
+      <link>https://rybkr.com/projects/onevim/</link>
       <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/onevim/</guid>
+      <guid>https://rybkr.com/projects/onevim/</guid>
       <description>A fast, opinionated Neovim configuration built for systems programming and staying out of your way.</description>
     </item>
     <item>
       <title>NeoTeX</title>
-      <link>http://localhost:1313/projects/neotex/</link>
+      <link>https://rybkr.com/projects/neotex/</link>
       <pubDate>Tue, 24 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/neotex/</guid>
+      <guid>https://rybkr.com/projects/neotex/</guid>
       <description>A Neovim plugin for live LaTeX preview — edit and see compiled output update without leaving your editor.</description>
     </item>
     <item>
       <title>VimSlides</title>
-      <link>http://localhost:1313/projects/vimslides/</link>
+      <link>https://rybkr.com/projects/vimslides/</link>
       <pubDate>Fri, 20 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/vimslides/</guid>
+      <guid>https://rybkr.com/projects/vimslides/</guid>
       <description>A Neovim plugin that turns Markdown files into terminal slideshows — no browser, no export step.</description>
     </item>
   </channel>

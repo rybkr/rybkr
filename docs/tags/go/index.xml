@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Go on Ryan Baker</title>
-    <link>http://localhost:1313/tags/go/</link>
+    <link>https://rybkr.com/tags/go/</link>
     <description>Recent content in Go on Ryan Baker</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 25 Dec 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://rybkr.com/tags/go/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Byte Courses</title>
-      <link>http://localhost:1313/projects/bytecourses/</link>
+      <link>https://rybkr.com/projects/bytecourses/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/bytecourses/</guid>
+      <guid>https://rybkr.com/projects/bytecourses/</guid>
       <description>A lightweight learning management system built in Go for delivering structured programming courses.</description>
     </item>
     <item>
       <title>Git Vista</title>
-      <link>http://localhost:1313/projects/gitvista/</link>
+      <link>https://rybkr.com/projects/gitvista/</link>
       <pubDate>Thu, 11 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/gitvista/</guid>
+      <guid>https://rybkr.com/projects/gitvista/</guid>
       <description>A terminal tool for exploring Git repo history — commit analytics, file churn, and branch visualization without leaving the CLI.</description>
     </item>
     <item>
       <title>Markee</title>
-      <link>http://localhost:1313/projects/markee/</link>
+      <link>https://rybkr.com/projects/markee/</link>
       <pubDate>Wed, 01 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/markee/</guid>
+      <guid>https://rybkr.com/projects/markee/</guid>
       <description>A zero-dependency Markdown parser written from scratch in Go, focused on the subset of Markdown people actually use.</description>
     </item>
   </channel>

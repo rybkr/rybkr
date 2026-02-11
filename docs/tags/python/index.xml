@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Python on Ryan Baker</title>
-    <link>http://localhost:1313/tags/python/</link>
+    <link>https://rybkr.com/tags/python/</link>
     <description>Recent content in Python on Ryan Baker</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 25 Dec 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://rybkr.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Byte Courses</title>
-      <link>http://localhost:1313/projects/bytecourses/</link>
+      <link>https://rybkr.com/projects/bytecourses/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/bytecourses/</guid>
+      <guid>https://rybkr.com/projects/bytecourses/</guid>
       <description>A lightweight learning management system built in Go for delivering structured programming courses.</description>
     </item>
     <item>
       <title>Model Registry</title>
-      <link>http://localhost:1313/projects/modelregistry/</link>
+      <link>https://rybkr.com/projects/modelregistry/</link>
       <pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/modelregistry/</guid>
+      <guid>https://rybkr.com/projects/modelregistry/</guid>
       <description>A system for cataloging and scoring Hugging Face models on domain-specific reliability, beyond star counts and downloads.</description>
     </item>
     <item>
       <title>Passman</title>
-      <link>http://localhost:1313/projects/passman/</link>
+      <link>https://rybkr.com/projects/passman/</link>
       <pubDate>Sun, 11 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/passman/</guid>
+      <guid>https://rybkr.com/projects/passman/</guid>
       <description>A local-first password manager in Python with SQLite storage and no cloud dependencies.</description>
     </item>
     <item>
       <title>2048 Game</title>
-      <link>http://localhost:1313/projects/2048/</link>
+      <link>https://rybkr.com/projects/2048/</link>
       <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/2048/</guid>
+      <guid>https://rybkr.com/projects/2048/</guid>
       <description>A Pygame recreation of the 2048 sliding tile puzzle.</description>
     </item>
     <item>
       <title>Python Chess Engine</title>
-      <link>http://localhost:1313/projects/pychessengine/</link>
+      <link>https://rybkr.com/projects/pychessengine/</link>
       <pubDate>Fri, 12 May 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/pychessengine/</guid>
+      <guid>https://rybkr.com/projects/pychessengine/</guid>
       <description>My first chess engine — a simple implementation in Python that got me hooked on game programming.</description>
     </item>
   </channel>
