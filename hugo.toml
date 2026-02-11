@@ -17,3 +17,23 @@ home = ["HTML", "JSON"]
 
 [params]
   ShowCodeCopyButtons = true
+
+[[menu.main]]
+name = "Projects"
+url = "/projects/"
+weight = 1
+
+[[menu.main]]
+name = "Teaching"
+url = "/teaching/"
+weight = 2
+
+[[menu.main]]
+name = "Resume"
+url = "/resume/"
+weight = 3
+
+[[menu.main]]
+name = "About"
+url = "/about/"
+weight = 4
