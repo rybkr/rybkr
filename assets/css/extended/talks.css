@@ -34,6 +34,10 @@
     color: var(--secondary);
 }
 
+.library-entry-type {
+    color: var(--secondary);
+}
+
 .year-heading {
     margin-top: 3rem;
     margin-bottom: 1rem;
