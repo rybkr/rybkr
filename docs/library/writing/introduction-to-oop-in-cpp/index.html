@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Introduction to OOP in C&#43;&#43; | Ryan Baker</title>
+<meta name="keywords" content="">
+<meta name="description" content="Introduction to OOP in C&#43;&#43; - Ryan Baker">
+<meta name="author" content="Ryan Baker">
+<link rel="canonical" href="https://rybkr.com/library/writing/introduction-to-oop-in-cpp/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.a9c8ac11096dcab100c409fe61566c7d94b1a053111506e9394e345cc069c3ae.css" integrity="sha256-qcisEQltyrEAxAn&#43;YVZsfZSxoFMRFQbpOU40XMBpw64=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://rybkr.com/favicon.svg">
+<link rel="icon" type="image/png" sizes="16x16" href="https://rybkr.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://rybkr.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://rybkr.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://rybkr.com/favicon.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://rybkr.com/library/writing/introduction-to-oop-in-cpp/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"><meta name="view-transition" content="same-origin">
+<meta property="og:url" content="https://rybkr.com/library/writing/introduction-to-oop-in-cpp/">
+  <meta property="og:site_name" content="Ryan Baker">
+  <meta property="og:title" content="Introduction to OOP in C&#43;&#43;">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="library">
+    <meta property="article:published_time" content="2025-03-01T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-03-01T00:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Introduction to OOP in C&#43;&#43;">
+<meta name="twitter:description" content="">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Library",
+      "item": "https://rybkr.com/library/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Writing",
+      "item": "https://rybkr.com/library/writing/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Introduction to OOP in C++",
+      "item": "https://rybkr.com/library/writing/introduction-to-oop-in-cpp/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Introduction to OOP in C++",
+  "name": "Introduction to OOP in C\u002b\u002b",
+  "description": "",
+  "keywords": [
+    
+  ],
+  "articleBody": "",
+  "wordCount" : "0",
+  "inLanguage": "en",
+  "datePublished": "2025-03-01T00:00:00Z",
+  "dateModified": "2025-03-01T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Ryan Baker"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://rybkr.com/library/writing/introduction-to-oop-in-cpp/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Ryan Baker",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://rybkr.com/favicon.svg"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://rybkr.com/" accesskey="h" title="Ryan Baker (Alt + H)">Ryan Baker</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://rybkr.com/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://rybkr.com/library/" title="Library">
+                    <span>Library</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://rybkr.com/resume/" title="Resume">
+                    <span>Resume</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://rybkr.com/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent enter">
+      Introduction to OOP in C&#43;&#43;
+    </h1>
+    <div class="post-meta"><span title='2025-03-01 00:00:00 +0000 UTC'>March 1, 2025</span>&nbsp;·&nbsp;<span>Ryan Baker</span>
+
+</div>
+  </header> 
+
+  <footer class="post-footer enter enter-d3">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://rybkr.com/">Ryan Baker</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a><div id="command-palette" class="command-palette" aria-hidden="true">
+  <div class="command-palette-backdrop"></div>
+  <div class="command-palette-modal" role="dialog" aria-modal="true" aria-label="Search">
+    <div class="command-palette-header">
+      <svg class="command-palette-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"/>
+        <path d="m21 21-4.35-4.35"/>
+      </svg>
+      <input
+        id="command-palette-input"
+        type="text"
+        placeholder="Search... (use /tag to filter)"
+        autocomplete="off"
+        autocorrect="off"
+        autocapitalize="off"
+        spellcheck="false"
+      />
+      <kbd class="command-palette-hint">esc</kbd>
+    </div>
+    <div id="command-palette-results" class="command-palette-results">
+      <div class="command-palette-empty">Type to search...</div>
+    </div>
+  </div>
+</div>
+<div id="shortcuts-modal" class="shortcuts-modal" aria-hidden="true">
+  <div class="shortcuts-modal-backdrop"></div>
+  <div class="shortcuts-modal-content" role="dialog" aria-modal="true" aria-label="Keyboard shortcuts">
+    <div class="shortcuts-modal-header">
+      <h2 class="shortcuts-modal-title">Keyboard Shortcuts</h2>
+      <button class="shortcuts-modal-close" aria-label="Close">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 6 6 18M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+    <div class="shortcuts-list">
+      <div class="shortcut-row">
+        <span class="shortcut-label">Open search</span>
+        <span class="shortcut-keys">
+          <kbd class="shortcut-key">⌘</kbd>
+          <kbd class="shortcut-key">K</kbd>
+        </span>
+      </div>
+      <div class="shortcut-row">
+        <span class="shortcut-label">Quick search</span>
+        <span class="shortcut-keys">
+          <kbd class="shortcut-key">/</kbd>
+        </span>
+      </div>
+      <div class="shortcut-row">
+        <span class="shortcut-label">Show shortcuts</span>
+        <span class="shortcut-keys">
+          <kbd class="shortcut-key">?</kbd>
+        </span>
+      </div>
+      <div class="shortcut-row">
+        <span class="shortcut-label">Close modal</span>
+        <span class="shortcut-keys">
+          <kbd class="shortcut-key">Esc</kbd>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<button id="back-to-top" class="back-to-top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m18 15-6-6-6 6"/>
+  </svg>
+</button>
+<script src="/js/fuse.basic.min.min.4f1b7e4da7f5a09cc3464ccd93ab72aef1f015c8c2e64d97caf7e39408398c23.js" defer></script><script src="/js/command-palette.min.2711f25b945d5244193166b61df57a0c6b9cc06539fee9aa93978d6d21dc3fc5.js" defer></script><script src="/js/ui-enhancements.min.2e6115e3f7c9d9dd26b9c3256c1d2b4971c33efad35fdaeb2a14aea72e2af950.js" defer></script>
+
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

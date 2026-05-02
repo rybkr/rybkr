@@ -4,10 +4,17 @@
     <title>Tools on Ryan Baker</title>
     <link>https://rybkr.com/tags/tools/</link>
     <description>Recent content in Tools on Ryan Baker</description>
-    <generator>Hugo -- 0.152.2</generator>
+    <generator>Hugo -- 0.161.1</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 22 Apr 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://rybkr.com/tags/tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Context Synchronization for Multi-Agent Workflows</title>
+      <link>https://rybkr.com/library/talks-publications/context-synchronization-for-multi-agent-workflows/</link>
+      <pubDate>Wed, 22 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://rybkr.com/library/talks-publications/context-synchronization-for-multi-agent-workflows/</guid>
+      <description>A shared context layer for multi-agent coding workflows that tracks symbol-level observations and reports stale context when concurrent edits invalidate agent assumptions.</description>
+    </item>
     <item>
       <title>Git Vista</title>
       <link>https://rybkr.com/projects/gitvista/</link>

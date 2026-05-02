@@ -1,0 +1,24 @@
+{{ define "main" }}
+<main class="single">
+    {{ partial "breadcrumb.html" . }}
+    <h1>{{ .Title }}</h1>
+
+    <p>
+        {{ with .Params.type }}{{ . }}{{ end }}
+        {{ with .Date }}{{ if $.Params.type }} — {{ end }}{{ .Format "2006-01-02" }}{{ end }}<br />
+        {{ with .Params.venue }}{{ . }}{{ end }}
+        {{ with .Params.publication }}{{ . }}{{ end }}
+        {{ with .Params.location }} — {{ . }}{{ end }}
+        {{ with .Params.authors }}<br />{{ delimit . ", " }}{{ end }}
+    </p>
+
+    <p>
+        {{ with .Params.paper }}<a href="{{ . }}">Paper</a>{{ end }}
+        {{ with .Params.doi }}{{ if $.Params.paper }} · {{ end }}<a href="https://doi.org/{{ . }}">DOI</a>{{ end }}
+        {{ with .Params.link }}{{ if or $.Params.paper $.Params.doi }} · {{ end }}<a href="{{ . }}">Link</a>{{ end }}
+        {{ with .Params.video }}{{ if or $.Params.paper $.Params.doi $.Params.link }} · {{ end }}<a href="{{ . }}">Video</a>{{ end }}
+    </p>
+
+    {{ .Content }}
+</main>
+{{ end }}

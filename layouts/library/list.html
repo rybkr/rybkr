@@ -1,0 +1,34 @@
+{{ define "main" }}
+<div class="single">
+    {{ partial "breadcrumb.html" . }}
+    <div class="page-header enter">
+        <h1>{{ .Title }}</h1>
+        {{ partial "search-hint.html" . }}
+    </div>
+
+    <nav aria-label="Library">
+        <div class="library-cards">
+            <div class="library-card enter enter-d1">
+            <a href='{{ "/library/talks-publications/" | relURL }}'>
+                <h2>Talks & Publications</h2>
+                <p>Conference talks, invited lectures, papers, and published work.</p>
+            </a>
+            </div>
+
+            <div class="library-card enter enter-d2">
+            <a href='{{ "https://www.youtube.com/@rybkr" | relURL }}'>
+                <h2>Videos</h2>
+                <p>Short explainers and lectures.</p>
+            </a>
+            </div>
+
+            <div class="library-card enter enter-d3">
+            <a href='{{ "/library/writing/" | relURL }}'>
+                <h2>Writing</h2>
+                <p>Essays, notes, and technical articles.</p>
+            </a>
+            </div>
+        </div>
+    </nav>
+</div>
+{{ end }}

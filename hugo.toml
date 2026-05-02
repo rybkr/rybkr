@@ -1,5 +1,5 @@
 baseURL = 'https://rybkr.com/'
-languageCode = 'en-us'
+locale = 'en-us'
 title = 'Ryan Baker'
 theme = "PaperMod"
 publishDir = "docs"
@@ -17,6 +17,7 @@ home = ["HTML", "JSON"]
 
 [params]
   ShowCodeCopyButtons = true
+  author = "Ryan Baker"
 
 [[menu.main]]
 name = "Projects"
@@ -24,8 +25,8 @@ url = "/projects/"
 weight = 1
 
 [[menu.main]]
-name = "Teaching"
-url = "/teaching/"
+name = "Library"
+url = "/library/"
 weight = 2
 
 [[menu.main]]
