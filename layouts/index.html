@@ -1,30 +1,54 @@
 {{ define "main" }}
 <main class="home-intro">
-    <div class="home-hero enter">
-        <img src="/images/headshot.png" alt="Ryan Baker" class="home-headshot" />
-        <div>
-            <h1 class="home-name">Ryan Baker</h1>
-            {{ partial "search-hint.html" . }}
-        </div>
-    </div>
-    <p class="home-tagline enter enter-d1">
-        Helping make complex systems easier to work with.
-    </p>
+    <canvas class="home-boids" data-home-boids aria-hidden="true"></canvas>
 
-    <p class="home-bio enter enter-d2">
-        I'm a software engineer focused on systems and developer tooling.
-        I enjoy writing clear, maintainable code and building tools that solve real problems and make everyday workflows a little better.
-    </p>
+    <div class="home-hero enter">
+        <div class="home-identity">
+            <img src="/images/headshot.png" alt="Ryan Baker" class="home-headshot" />
+            <div>
+                <h1 class="home-name">Ryan Baker</h1>
+            </div>
+        </div>
+        {{ partial "search-hint.html" . }}
+    </div>
+    <section class="home-section home-about enter enter-d1" aria-labelledby="home-about-heading">
+        <h2 id="home-about-heading">About</h2>
+        <p>
+            I'm a software engineer specializing in systems and developer tooling.
+            I like to build fast and reliable software across the stack, from embedded platforms and database internals to high-performance AI inference.
+        </p>
+    </section>
+
+    <section class="home-section home-currently enter enter-d3" aria-labelledby="home-currently-heading">
+        <h2 id="home-currently-heading">Currently</h2>
+        <p>
+            Currently I'm interning at Oracle for the database team and building <a href="https://trillim.com" target="_blank" rel="noopener">Trillim</a>, a fully integrated local AI pipeline.
+            I'm also working on producing more technical content for my <a href="https://youtube.com/@rybkr" target="_blank" rel="noopener">YouTube</a> channel.
+        </p>
+    </section>
+
+    <section class="home-section home-hobbies enter enter-d3" aria-labelledby="home-hobbies-heading">
+        <h2 id="home-hobbies-heading">Hobbies</h2>
+        <p>
+            Outside of work, I train Brazilian Jiu-Jitsu, play chess, slowly learn guitar, and unwind on long drives.
+        </p>
+    </section>
 
     <nav class="home-links enter enter-d3">
         <a href="/projects/">Projects</a>
         <a href="/library/">Library</a>
         <a href="/resume/">Resume</a>
-        <a href="/about/">About</a>
         <a href="https://github.com/rybkr" target="_blank" rel="noopener">GitHub</a>
         <a href="https://linkedin.com/in/rybkr" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="#" class="email-copy" onclick="navigator.clipboard.writeText('rbaker@xtier.com').then(()=>{const e=this;e.textContent='Copied!';setTimeout(()=>e.textContent='Email',1500)});return false">Email</a>
+        <a href="https://youtube.com/@rybkr" target="_blank" rel="noopener">YouTube</a>
+        <button type="button" class="email-copy" data-email-copy data-email="rbaker@xtier.com" aria-describedby="home-email-copy-status">Email</button>
+        <span id="home-email-copy-status" class="home-email-status" role="status" aria-live="polite"></span>
     </nav>
 
+    <button type="button" class="home-command-hint enter enter-d3" data-command-help>
+        <span>Type</span>
+        <kbd>:help</kbd>
+        <span>for help navigating</span>
+    </button>
 </main>
 {{ end }}

@@ -1,6 +1,6 @@
 {{- if and .Parent (not .IsHome) -}}
 <nav class="breadcrumb" aria-label="Breadcrumb">
-  <a href="/">Home</a>
+  <a href="/" class="breadcrumb-root">~</a>
   {{- range .Ancestors.Reverse }}
     {{- if not .IsHome }}
     <span class="breadcrumb-separator">/</span>

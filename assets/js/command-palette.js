@@ -5,10 +5,100 @@
   let searchIndex = [];
   let selectedIndex = -1;
   let results = [];
+  let mode = 'search';
 
   const palette = document.getElementById('command-palette');
   const input = document.getElementById('command-palette-input');
   const resultsContainer = document.getElementById('command-palette-results');
+  const COMMANDS = [
+    {
+      name: 'home',
+      aliases: ['h', 'index'],
+      description: 'Go to the home page',
+      run: () => { window.location.href = '/'; }
+    },
+    {
+      name: 'projects',
+      aliases: ['p'],
+      description: 'Open projects',
+      run: () => { window.location.href = '/projects/'; }
+    },
+    {
+      name: 'library',
+      aliases: ['l'],
+      description: 'Open library',
+      run: () => { window.location.href = '/library/'; }
+    },
+    {
+      name: 'writing',
+      aliases: ['w'],
+      description: 'Open writing',
+      run: () => { window.location.href = '/library/writing/'; }
+    },
+    {
+      name: 'resume',
+      aliases: ['r', 'cv'],
+      description: 'Open resume',
+      run: () => { window.location.href = '/resume/'; }
+    },
+    {
+      name: 'search',
+      aliases: ['s', 'find'],
+      description: 'Switch to search',
+      run: () => openPalette({ mode: 'search' })
+    },
+    {
+      name: 'top',
+      aliases: ['gg'],
+      description: 'Scroll to top',
+      run: () => {
+        closePalette();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    },
+    {
+      name: 'theme',
+      aliases: ['toggle-theme'],
+      description: 'Toggle light and dark theme',
+      run: () => {
+        closePalette();
+        const toggle = document.getElementById('theme-toggle');
+        if (toggle) toggle.click();
+      }
+    },
+    {
+      name: 'colorscheme',
+      aliases: ['colo', 'colors'],
+      description: 'Set colorscheme: light or dark',
+      run: (args) => setColorscheme(args)
+    },
+    {
+      name: 'dark',
+      aliases: [],
+      description: 'Use dark theme',
+      run: () => setTheme('dark')
+    },
+    {
+      name: 'light',
+      aliases: [],
+      description: 'Use light theme',
+      run: () => setTheme('light')
+    },
+    {
+      name: 'help',
+      aliases: ['?', 'shortcuts'],
+      description: 'Show navigation help',
+      run: () => {
+        closePalette();
+        const shortcuts = document.getElementById('shortcuts-modal');
+        if (shortcuts) {
+          shortcuts.classList.add('open');
+          shortcuts.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+        }
+      }
+    }
+  ];
 
   // Fetch search index
   async function loadIndex() {
@@ -54,6 +144,11 @@
 
   // Search
   function search(query) {
+    if (mode === 'command') {
+      renderCommands(query, true);
+      return;
+    }
+
     if (!fuse || !query) {
       results = [];
       renderResults();
@@ -153,13 +248,108 @@
     return div.innerHTML;
   }
 
+  function commandTokens(command) {
+    return [command.name].concat(command.aliases);
+  }
+
+  function parseCommandInput(value) {
+    const trimmed = value.trim().replace(/^:/, '');
+    const parts = trimmed.split(/\s+/).filter(Boolean);
+    return {
+      name: (parts[0] || '').toLowerCase(),
+      args: parts.slice(1)
+    };
+  }
+
+  function getMatchingCommands(query) {
+    const parsed = parseCommandInput(query);
+    if (!parsed.name) return COMMANDS;
+
+    return COMMANDS.filter(command => {
+      return commandTokens(command).some(token => token.includes(parsed.name)) ||
+        command.description.toLowerCase().includes(parsed.name);
+    });
+  }
+
+  function renderCommands(query, resetSelection = false) {
+    results = getMatchingCommands(query);
+    if (resetSelection || selectedIndex >= results.length) {
+      selectedIndex = results.length > 0 ? 0 : -1;
+    }
+
+    if (results.length === 0) {
+      resultsContainer.innerHTML = '<div class="command-palette-empty">No command found</div>';
+      return;
+    }
+
+    const isEmpty = !query.trim();
+    resultsContainer.innerHTML = `
+      <div class="command-palette-command-list ${isEmpty ? 'is-muted' : ''}">
+        ${results.map((command, i) => {
+          const aliases = command.aliases.length
+            ? `<span class="command-palette-command-aliases">${command.aliases.map(alias => ':' + escapeHtml(alias)).join(' ')}</span>`
+            : '';
+
+          return `
+            <button
+              type="button"
+              class="command-palette-command ${i === selectedIndex ? 'selected' : ''}"
+              data-command="${escapeHtml(command.name)}"
+            >
+              <span class="command-palette-command-name">:${escapeHtml(command.name)}</span>
+              ${aliases}
+              <span class="command-palette-command-description">${escapeHtml(command.description)}</span>
+            </button>
+          `;
+        }).join('')}
+      </div>
+    `;
+  }
+
+  function setTheme(theme) {
+    document.querySelector('html').dataset.theme = theme;
+    localStorage.setItem('pref-theme', theme);
+    closePalette();
+  }
+
+  function getCurrentTheme() {
+    return document.querySelector('html').dataset.theme || 'light';
+  }
+
+  function setColorscheme(args) {
+    const requested = (args[0] || '').toLowerCase();
+
+    if (requested === 'dark' || requested === 'light') {
+      setTheme(requested);
+      return;
+    }
+
+    if (!requested) {
+      setTheme(getCurrentTheme() === 'dark' ? 'light' : 'dark');
+      return;
+    }
+
+    resultsContainer.innerHTML = '<div class="command-palette-empty">Try :colorscheme light or :colorscheme dark</div>';
+  }
+
   // Open/close palette
-  function openPalette() {
-    loadIndex();
+  function openPalette(options = {}) {
+    mode = options.mode || 'search';
+    const initialValue = options.value || '';
+    palette.dataset.mode = mode;
     palette.classList.add('open');
     palette.setAttribute('aria-hidden', 'false');
+    input.value = initialValue;
+    selectedIndex = -1;
+    input.placeholder = mode === 'command' ? 'command' : 'Search... (use /tag to filter)';
     input.focus();
     document.body.style.overflow = 'hidden';
+
+    if (mode === 'command') {
+      renderCommands(initialValue, true);
+    } else {
+      loadIndex().then(() => search(initialValue));
+    }
   }
 
   function closePalette() {
@@ -168,6 +358,9 @@
     input.value = '';
     results = [];
     selectedIndex = -1;
+    mode = 'search';
+    palette.dataset.mode = mode;
+    input.placeholder = 'Search... (use /tag to filter)';
     renderResults();
     document.body.style.overflow = '';
   }
@@ -176,15 +369,50 @@
   function navigate(direction) {
     if (results.length === 0) return;
     selectedIndex = (selectedIndex + direction + results.length) % results.length;
+    if (mode === 'command') {
+      renderCommands(input.value);
+      scrollSelectedIntoView();
+      return;
+    }
+
     renderResults();
+    scrollSelectedIntoView();
+  }
+
+  function scrollSelectedIntoView() {
     const selected = resultsContainer.querySelector('.selected');
     if (selected) selected.scrollIntoView({ block: 'nearest' });
   }
 
   function selectCurrent() {
+    if (mode === 'command') {
+      const command = results[selectedIndex];
+      if (command) command.run();
+      return;
+    }
+
     if (selectedIndex >= 0 && results[selectedIndex]) {
       window.location.href = results[selectedIndex].item.permalink;
     }
+  }
+
+  function executeTypedCommand() {
+    const parsed = parseCommandInput(input.value);
+    if (!parsed.name) {
+      selectCurrent();
+      return;
+    }
+
+    const exactMatch = COMMANDS.find(command => {
+      return command.name === parsed.name || command.aliases.includes(parsed.name);
+    });
+
+    if (exactMatch) {
+      exactMatch.run(parsed.args);
+      return;
+    }
+
+    selectCurrent();
   }
 
   // Event listeners
@@ -195,15 +423,28 @@
       if (palette.classList.contains('open')) {
         closePalette();
       } else {
-        openPalette();
+        openPalette({ mode: 'search' });
       }
       return;
     }
 
     // Open with / (only when not in input)
     if (e.key === '/' && !isInputFocused()) {
+      const shortcuts = document.getElementById('shortcuts-modal');
+      if (shortcuts && shortcuts.classList.contains('open')) return;
+
       e.preventDefault();
-      openPalette();
+      openPalette({ mode: 'search' });
+      return;
+    }
+
+    // Open Vim-style command mode with : (only when not in input)
+    if (e.key === ':' && !e.metaKey && !e.ctrlKey && !e.altKey && !isInputFocused()) {
+      const shortcuts = document.getElementById('shortcuts-modal');
+      if (shortcuts && shortcuts.classList.contains('open')) return;
+
+      e.preventDefault();
+      openPalette({ mode: 'command' });
       return;
     }
 
@@ -225,7 +466,11 @@
         break;
       case 'Enter':
         e.preventDefault();
-        selectCurrent();
+        if (mode === 'command') {
+          executeTypedCommand();
+        } else {
+          selectCurrent();
+        }
         break;
     }
   });
@@ -249,6 +494,13 @@
 
   // Click on result
   resultsContainer.addEventListener('click', (e) => {
+    const command = e.target.closest('.command-palette-command');
+    if (command) {
+      const found = COMMANDS.find(item => item.name === command.dataset.command);
+      if (found) found.run();
+      return;
+    }
+
     const result = e.target.closest('.command-palette-result');
     if (result) {
       const index = parseInt(result.dataset.index, 10);
@@ -261,6 +513,16 @@
 
   // Hover to select
   resultsContainer.addEventListener('mousemove', (e) => {
+    const command = e.target.closest('.command-palette-command');
+    if (command) {
+      const commandIndex = results.findIndex(item => item.name === command.dataset.command);
+      if (commandIndex >= 0 && commandIndex !== selectedIndex) {
+        selectedIndex = commandIndex;
+        renderCommands(input.value);
+      }
+      return;
+    }
+
     const result = e.target.closest('.command-palette-result');
     if (result) {
       const index = parseInt(result.dataset.index, 10);
@@ -283,4 +545,6 @@
       search(input.value);
     }
   });
+
+  window.rybkrOpenCommandPalette = openPalette;
 })();

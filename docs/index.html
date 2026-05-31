@@ -11,7 +11,7 @@
 <meta name="description" content="">
 <meta name="author" content="Ryan Baker">
 <link rel="canonical" href="https://rybkr.com/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.a9c8ac11096dcab100c409fe61566c7d94b1a053111506e9394e345cc069c3ae.css" integrity="sha256-qcisEQltyrEAxAn&#43;YVZsfZSxoFMRFQbpOU40XMBpw64=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.5e8794d9938d6b64767af740f81ec1f2fec8d0cc07bcaccb1e8f342dd9a8ee45.css" integrity="sha256-XoeU2ZONa2R2evdA&#43;B7B8v7I0MwHvKzLHo80Ldmo7kU=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://rybkr.com/favicon.svg">
 <link rel="icon" type="image/png" sizes="16x16" href="https://rybkr.com/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://rybkr.com/favicon-32x32.png">
@@ -75,7 +75,7 @@
 </script><link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"><meta name="view-transition" content="same-origin">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"><meta name="view-transition" content="same-origin">
 <meta property="og:url" content="https://rybkr.com/">
   <meta property="og:site_name" content="Ryan Baker">
   <meta property="og:title" content="Ryan Baker">
@@ -143,21 +143,21 @@
                     <span>Resume</span>
                 </a>
             </li>
-            <li>
-                <a href="https://rybkr.com/about/" title="About">
-                    <span>About</span>
-                </a>
-            </li>
         </ul>
     </nav>
 </header>
 <main class="main">
 <main class="home-intro">
+    <canvas class="home-boids" data-home-boids aria-hidden="true"></canvas>
+
     <div class="home-hero enter">
-        <img src="/images/headshot.png" alt="Ryan Baker" class="home-headshot" />
-        <div>
-            <h1 class="home-name">Ryan Baker</h1>
-            <div class="search-hint" role="button" tabindex="0" aria-label="Search">
+        <div class="home-identity">
+            <img src="/images/headshot.png" alt="Ryan Baker" class="home-headshot" />
+            <div>
+                <h1 class="home-name">Ryan Baker</h1>
+            </div>
+        </div>
+        <div class="search-hint" role="button" tabindex="0" aria-label="Search">
   <svg class="search-hint-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
     <circle cx="11" cy="11" r="8"/>
     <path d="m21 21-4.35-4.35"/>
@@ -166,27 +166,46 @@
   <kbd class="search-hint-key">/</kbd>
 </div>
 
-        </div>
     </div>
-    <p class="home-tagline enter enter-d1">
-        Helping make complex systems easier to work with.
-    </p>
+    <section class="home-section home-about enter enter-d1" aria-labelledby="home-about-heading">
+        <h2 id="home-about-heading">About</h2>
+        <p>
+            I'm a software engineer specializing in systems and developer tooling.
+            I like to build fast and reliable software across the stack, from embedded platforms and database internals to high-performance AI inference.
+        </p>
+    </section>
 
-    <p class="home-bio enter enter-d2">
-        I'm a software engineer focused on systems and developer tooling.
-        I enjoy writing clear, maintainable code and building tools that solve real problems and make everyday workflows a little better.
-    </p>
+    <section class="home-section home-currently enter enter-d3" aria-labelledby="home-currently-heading">
+        <h2 id="home-currently-heading">Currently</h2>
+        <p>
+            Currently I'm interning at Oracle for the database team and building <a href="https://trillim.com" target="_blank" rel="noopener">Trillim</a>, a fully integrated local AI pipeline.
+            I'm also working on producing more technical content for my <a href="https://youtube.com/@rybkr" target="_blank" rel="noopener">YouTube</a> channel.
+        </p>
+    </section>
+
+    <section class="home-section home-hobbies enter enter-d3" aria-labelledby="home-hobbies-heading">
+        <h2 id="home-hobbies-heading">Hobbies</h2>
+        <p>
+            Outside of work, I train Brazilian Jiu-Jitsu, play chess, slowly learn guitar, and unwind on long drives.
+        </p>
+    </section>
 
     <nav class="home-links enter enter-d3">
         <a href="/projects/">Projects</a>
         <a href="/library/">Library</a>
         <a href="/resume/">Resume</a>
-        <a href="/about/">About</a>
         <a href="https://github.com/rybkr" target="_blank" rel="noopener">GitHub</a>
         <a href="https://linkedin.com/in/rybkr" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="#" class="email-copy" onclick="navigator.clipboard.writeText('rbaker@xtier.com').then(()=>{const e=this;e.textContent='Copied!';setTimeout(()=>e.textContent='Email',1500)});return false">Email</a>
+        <a href="https://youtube.com/@rybkr" target="_blank" rel="noopener">YouTube</a>
+        <button type="button" class="email-copy" data-email-copy data-email="rbaker@xtier.com" aria-describedby="home-email-copy-status">Email</button>
+        <span id="home-email-copy-status" class="home-email-status" role="status" aria-live="polite"></span>
     </nav>
 
+    <button type="button" class="home-command-hint enter enter-d3" data-command-help>
+        <span>Type</span>
+        <kbd>:help</kbd>
+        <span>for help navigating</span>
+    </button>
 </main>
 
     </main>
@@ -212,6 +231,7 @@
         <circle cx="11" cy="11" r="8"/>
         <path d="m21 21-4.35-4.35"/>
       </svg>
+      <span class="command-palette-prompt" aria-hidden="true">:</span>
       <input
         id="command-palette-input"
         type="text"
@@ -230,41 +250,87 @@
 </div>
 <div id="shortcuts-modal" class="shortcuts-modal" aria-hidden="true">
   <div class="shortcuts-modal-backdrop"></div>
-  <div class="shortcuts-modal-content" role="dialog" aria-modal="true" aria-label="Keyboard shortcuts">
+  <div class="shortcuts-modal-content" role="dialog" aria-modal="true" aria-label="Navigation help">
     <div class="shortcuts-modal-header">
-      <h2 class="shortcuts-modal-title">Keyboard Shortcuts</h2>
+      <h2 class="shortcuts-modal-title">Navigation Help</h2>
       <button class="shortcuts-modal-close" aria-label="Close">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M18 6 6 18M6 6l12 12"/>
         </svg>
       </button>
     </div>
-    <div class="shortcuts-list">
-      <div class="shortcut-row">
-        <span class="shortcut-label">Open search</span>
-        <span class="shortcut-keys">
-          <kbd class="shortcut-key">⌘</kbd>
-          <kbd class="shortcut-key">K</kbd>
-        </span>
-      </div>
-      <div class="shortcut-row">
-        <span class="shortcut-label">Quick search</span>
-        <span class="shortcut-keys">
-          <kbd class="shortcut-key">/</kbd>
-        </span>
-      </div>
-      <div class="shortcut-row">
-        <span class="shortcut-label">Show shortcuts</span>
-        <span class="shortcut-keys">
-          <kbd class="shortcut-key">?</kbd>
-        </span>
-      </div>
-      <div class="shortcut-row">
-        <span class="shortcut-label">Close modal</span>
-        <span class="shortcut-keys">
-          <kbd class="shortcut-key">Esc</kbd>
-        </span>
-      </div>
+
+    <div class="shortcuts-help-grid">
+      <section class="shortcuts-section" aria-labelledby="keyboard-help-heading">
+        <h3 id="keyboard-help-heading" class="shortcuts-section-title">Keys</h3>
+        <div class="shortcuts-list">
+          <div class="shortcut-row">
+            <span class="shortcut-label">Open search</span>
+            <span class="shortcut-keys">
+              <kbd class="shortcut-key">⌘</kbd>
+              <kbd class="shortcut-key">K</kbd>
+            </span>
+          </div>
+          <div class="shortcut-row">
+            <span class="shortcut-label">Quick search</span>
+            <span class="shortcut-keys">
+              <kbd class="shortcut-key">/</kbd>
+            </span>
+          </div>
+          <div class="shortcut-row">
+            <span class="shortcut-label">Command mode</span>
+            <span class="shortcut-keys">
+              <kbd class="shortcut-key">:</kbd>
+            </span>
+          </div>
+          <div class="shortcut-row">
+            <span class="shortcut-label">Show this help</span>
+            <span class="shortcut-keys">
+              <kbd class="shortcut-key">?</kbd>
+            </span>
+          </div>
+          <div class="shortcut-row">
+            <span class="shortcut-label">Close</span>
+            <span class="shortcut-keys">
+              <kbd class="shortcut-key">Esc</kbd>
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <section class="shortcuts-section" aria-labelledby="command-help-heading">
+        <h3 id="command-help-heading" class="shortcuts-section-title">Commands</h3>
+        <div class="command-help-list">
+          <div class="command-help-row">
+            <kbd class="shortcut-key command-help-key">:help</kbd>
+            <span>Show this help</span>
+          </div>
+          <div class="command-help-row">
+            <kbd class="shortcut-key command-help-key">:projects</kbd>
+            <span>Open projects</span>
+          </div>
+          <div class="command-help-row">
+            <kbd class="shortcut-key command-help-key">:library</kbd>
+            <span>Open library</span>
+          </div>
+          <div class="command-help-row">
+            <kbd class="shortcut-key command-help-key">:writing</kbd>
+            <span>Open writing</span>
+          </div>
+          <div class="command-help-row">
+            <kbd class="shortcut-key command-help-key">:resume</kbd>
+            <span>Open resume</span>
+          </div>
+          <div class="command-help-row">
+            <kbd class="shortcut-key command-help-key">:theme</kbd>
+            <span>Toggle theme</span>
+          </div>
+          <div class="command-help-row">
+            <kbd class="shortcut-key command-help-key">:top</kbd>
+            <span>Scroll to top</span>
+          </div>
+        </div>
+      </section>
     </div>
   </div>
 </div>
@@ -273,7 +339,7 @@
     <path d="m18 15-6-6-6 6"/>
   </svg>
 </button>
-<script src="/js/fuse.basic.min.min.4f1b7e4da7f5a09cc3464ccd93ab72aef1f015c8c2e64d97caf7e39408398c23.js" defer></script><script src="/js/command-palette.min.2711f25b945d5244193166b61df57a0c6b9cc06539fee9aa93978d6d21dc3fc5.js" defer></script><script src="/js/ui-enhancements.min.2e6115e3f7c9d9dd26b9c3256c1d2b4971c33efad35fdaeb2a14aea72e2af950.js" defer></script>
+<script src="/js/fuse.basic.min.min.4f1b7e4da7f5a09cc3464ccd93ab72aef1f015c8c2e64d97caf7e39408398c23.js" defer></script><script src="/js/command-palette.min.742a10eb85d67bbaa4ea5c395e15720be359fcc33f55984479f0f1f086b77682.js" defer></script><script src="/js/boids-canvas.min.2b7f22d26ab51996bb441383245930b1b3e6eb007c14dce4c3fc6cf39541d358.js" defer></script><script src="/js/ui-enhancements.min.54880cb138af57782e23a432acaf85c78c0838cc08ff590de4b0af7f35b0d57e.js" defer></script>
 
 
 <script>

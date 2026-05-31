@@ -1,0 +1,54 @@
+/* Final page-wide polish overrides. Kept separate so they load after page-specific CSS. */
+
+body,
+body.list {
+    background:
+        linear-gradient(var(--theme), var(--theme)),
+        repeating-linear-gradient(
+            90deg,
+            color-mix(in srgb, var(--border) 32%, transparent) 0 1px,
+            transparent 1px 56px
+        );
+    background-blend-mode: normal, multiply;
+}
+
+.header {
+    background: color-mix(in srgb, var(--theme) 88%, transparent);
+    backdrop-filter: blur(12px);
+}
+
+.project-card:hover,
+.featured-card:hover,
+.search-hint:hover,
+.back-to-top:hover {
+    box-shadow: var(--shadow-tight);
+}
+
+.featured-card,
+.command-palette-modal,
+.shortcuts-modal-content {
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.28) inset, var(--shadow-soft);
+}
+
+.featured-card {
+    border-radius: 8px;
+}
+
+.resume-download {
+    background: var(--primary);
+    border: 1px solid var(--primary);
+    color: var(--theme) !important;
+    box-shadow: var(--shadow-tight);
+}
+
+.resume-download:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    opacity: 1;
+}
+
+@supports not (backdrop-filter: blur(12px)) {
+    .header {
+        background: var(--theme);
+    }
+}

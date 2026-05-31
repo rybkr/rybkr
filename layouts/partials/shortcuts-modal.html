@@ -1,40 +1,86 @@
 <div id="shortcuts-modal" class="shortcuts-modal" aria-hidden="true">
   <div class="shortcuts-modal-backdrop"></div>
-  <div class="shortcuts-modal-content" role="dialog" aria-modal="true" aria-label="Keyboard shortcuts">
+  <div class="shortcuts-modal-content" role="dialog" aria-modal="true" aria-label="Navigation help">
     <div class="shortcuts-modal-header">
-      <h2 class="shortcuts-modal-title">Keyboard Shortcuts</h2>
+      <h2 class="shortcuts-modal-title">Navigation Help</h2>
       <button class="shortcuts-modal-close" aria-label="Close">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M18 6 6 18M6 6l12 12"/>
         </svg>
       </button>
     </div>
-    <div class="shortcuts-list">
-      <div class="shortcut-row">
-        <span class="shortcut-label">Open search</span>
-        <span class="shortcut-keys">
-          <kbd class="shortcut-key">⌘</kbd>
-          <kbd class="shortcut-key">K</kbd>
-        </span>
-      </div>
-      <div class="shortcut-row">
-        <span class="shortcut-label">Quick search</span>
-        <span class="shortcut-keys">
-          <kbd class="shortcut-key">/</kbd>
-        </span>
-      </div>
-      <div class="shortcut-row">
-        <span class="shortcut-label">Show shortcuts</span>
-        <span class="shortcut-keys">
-          <kbd class="shortcut-key">?</kbd>
-        </span>
-      </div>
-      <div class="shortcut-row">
-        <span class="shortcut-label">Close modal</span>
-        <span class="shortcut-keys">
-          <kbd class="shortcut-key">Esc</kbd>
-        </span>
-      </div>
+
+    <div class="shortcuts-help-grid">
+      <section class="shortcuts-section" aria-labelledby="keyboard-help-heading">
+        <h3 id="keyboard-help-heading" class="shortcuts-section-title">Keys</h3>
+        <div class="shortcuts-list">
+          <div class="shortcut-row">
+            <span class="shortcut-label">Open search</span>
+            <span class="shortcut-keys">
+              <kbd class="shortcut-key">⌘</kbd>
+              <kbd class="shortcut-key">K</kbd>
+            </span>
+          </div>
+          <div class="shortcut-row">
+            <span class="shortcut-label">Quick search</span>
+            <span class="shortcut-keys">
+              <kbd class="shortcut-key">/</kbd>
+            </span>
+          </div>
+          <div class="shortcut-row">
+            <span class="shortcut-label">Command mode</span>
+            <span class="shortcut-keys">
+              <kbd class="shortcut-key">:</kbd>
+            </span>
+          </div>
+          <div class="shortcut-row">
+            <span class="shortcut-label">Show this help</span>
+            <span class="shortcut-keys">
+              <kbd class="shortcut-key">?</kbd>
+            </span>
+          </div>
+          <div class="shortcut-row">
+            <span class="shortcut-label">Close</span>
+            <span class="shortcut-keys">
+              <kbd class="shortcut-key">Esc</kbd>
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <section class="shortcuts-section" aria-labelledby="command-help-heading">
+        <h3 id="command-help-heading" class="shortcuts-section-title">Commands</h3>
+        <div class="command-help-list">
+          <div class="command-help-row">
+            <kbd class="shortcut-key command-help-key">:help</kbd>
+            <span>Show this help</span>
+          </div>
+          <div class="command-help-row">
+            <kbd class="shortcut-key command-help-key">:projects</kbd>
+            <span>Open projects</span>
+          </div>
+          <div class="command-help-row">
+            <kbd class="shortcut-key command-help-key">:library</kbd>
+            <span>Open library</span>
+          </div>
+          <div class="command-help-row">
+            <kbd class="shortcut-key command-help-key">:writing</kbd>
+            <span>Open writing</span>
+          </div>
+          <div class="command-help-row">
+            <kbd class="shortcut-key command-help-key">:resume</kbd>
+            <span>Open resume</span>
+          </div>
+          <div class="command-help-row">
+            <kbd class="shortcut-key command-help-key">:theme</kbd>
+            <span>Toggle theme</span>
+          </div>
+          <div class="command-help-row">
+            <kbd class="shortcut-key command-help-key">:top</kbd>
+            <span>Scroll to top</span>
+          </div>
+        </div>
+      </section>
     </div>
   </div>
 </div>
