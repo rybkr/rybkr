@@ -14,5 +14,8 @@
 {{- $paletteJS := resources.Get "js/command-palette.js" | minify | fingerprint -}}
 <script src="{{ $paletteJS.RelPermalink }}" defer></script>
 
+{{- $boidsJS := resources.Get "js/boids-canvas.js" | minify | fingerprint -}}
+<script src="{{ $boidsJS.RelPermalink }}" defer></script>
+
 {{- $uiJS := resources.Get "js/ui-enhancements.js" | minify | fingerprint -}}
 <script src="{{ $uiJS.RelPermalink }}" defer></script>

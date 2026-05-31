@@ -2,6 +2,74 @@
   'use strict';
 
   // -------------------------------------------------------
+  // Localhost Internal Link Guard
+  // -------------------------------------------------------
+
+  const localHostnames = new Set(['localhost', '127.0.0.1', '::1']);
+  const productionHostnames = new Set(['rybkr.com', 'www.rybkr.com']);
+  const isLocalPreview = localHostnames.has(window.location.hostname);
+
+  function localizeInternalUrl(value) {
+    if (!isLocalPreview || !value) return value;
+
+    let url;
+    try {
+      url = new URL(value, window.location.href);
+    } catch (err) {
+      return value;
+    }
+
+    if (!productionHostnames.has(url.hostname)) return value;
+
+    return `${window.location.origin}${url.pathname}${url.search}${url.hash}`;
+  }
+
+  function localizeInternalLinks(root) {
+    if (!isLocalPreview) return;
+
+    const links = root.querySelectorAll ? root.querySelectorAll('a[href]') : [];
+    links.forEach(link => {
+      const localized = localizeInternalUrl(link.getAttribute('href'));
+      if (localized !== link.getAttribute('href')) {
+        link.setAttribute('href', localized);
+      }
+    });
+  }
+
+  if (isLocalPreview) {
+    localizeInternalLinks(document);
+
+    document.addEventListener('click', (event) => {
+      const link = event.target.closest ? event.target.closest('a[href]') : null;
+      if (!link) return;
+
+      const localized = localizeInternalUrl(link.href);
+      if (localized === link.href) return;
+
+      event.preventDefault();
+      window.location.assign(localized);
+    }, true);
+
+    const observer = new MutationObserver(mutations => {
+      mutations.forEach(mutation => {
+        mutation.addedNodes.forEach(node => {
+          if (node.nodeType === Node.ELEMENT_NODE) {
+            if (node.matches && node.matches('a[href]')) {
+              const localized = localizeInternalUrl(node.getAttribute('href'));
+              if (localized !== node.getAttribute('href')) {
+                node.setAttribute('href', localized);
+              }
+            }
+            localizeInternalLinks(node);
+          }
+        });
+      });
+    });
+
+    observer.observe(document.documentElement, { childList: true, subtree: true });
+  }
+
+  // -------------------------------------------------------
   // Back to Top Button
   // -------------------------------------------------------
 
@@ -40,11 +108,13 @@
   if (shortcutsModal) {
     function openShortcuts() {
       shortcutsModal.classList.add('open');
+      shortcutsModal.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
     }
 
     function closeShortcuts() {
       shortcutsModal.classList.remove('open');
+      shortcutsModal.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
     }
 
@@ -127,6 +197,11 @@
   // -------------------------------------------------------
 
   function openCommandPalette() {
+    if (window.rybkrOpenCommandPalette) {
+      window.rybkrOpenCommandPalette({ mode: 'search' });
+      return;
+    }
+
     const palette = document.getElementById('command-palette');
     if (palette) {
       palette.classList.add('open');
@@ -144,6 +219,93 @@
         e.preventDefault();
         openCommandPalette();
       }
+    });
+  });
+
+  document.querySelectorAll('[data-command-help]').forEach(helpHint => {
+    helpHint.addEventListener('click', () => {
+      if (window.rybkrOpenCommandPalette) {
+        window.rybkrOpenCommandPalette({ mode: 'command', value: 'help' });
+      } else {
+        openCommandPalette();
+      }
+    });
+  });
+
+  // -------------------------------------------------------
+  // Homepage Boids
+  // -------------------------------------------------------
+
+  const boidsCanvas = document.querySelector('[data-home-boids]');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  if (boidsCanvas && !reducedMotion.matches && window.rybkrCreateBoidsCanvas) {
+    const avoidElements = document.querySelectorAll('.home-intro > :not(.home-boids)');
+    window.rybkrCreateBoidsCanvas(boidsCanvas, { avoidElements });
+  }
+
+  // -------------------------------------------------------
+  // Email Copy Button
+  // -------------------------------------------------------
+
+  async function copyText(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return;
+    }
+
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.setAttribute('readonly', '');
+    textarea.style.position = 'fixed';
+    textarea.style.top = '-1000px';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    textarea.select();
+
+    try {
+      if (!document.execCommand('copy')) {
+        throw new Error('copy failed');
+      }
+    } finally {
+      document.body.removeChild(textarea);
+    }
+  }
+
+  document.querySelectorAll('[data-email-copy]').forEach(button => {
+    const email = button.dataset.email;
+    const statusId = button.getAttribute('aria-describedby');
+    const status = statusId ? document.getElementById(statusId) : null;
+
+    if (!email) return;
+
+    button.addEventListener('click', async () => {
+      window.clearTimeout(button._emailCopyTimer);
+
+      try {
+        await copyText(email);
+        button.classList.add('is-copied');
+        if (status) {
+          status.textContent = 'Copied email';
+          status.setAttribute('aria-label', `Copied ${email} to clipboard.`);
+          status.classList.add('is-visible');
+        }
+      } catch (err) {
+        if (status) {
+          status.textContent = email;
+          status.setAttribute('aria-label', `Email address: ${email}.`);
+          status.classList.add('is-visible');
+        }
+      }
+
+      button._emailCopyTimer = window.setTimeout(() => {
+        button.classList.remove('is-copied');
+        if (status) {
+          status.classList.remove('is-visible');
+          status.removeAttribute('aria-label');
+          status.textContent = '';
+        }
+      }, 2200);
     });
   });
 

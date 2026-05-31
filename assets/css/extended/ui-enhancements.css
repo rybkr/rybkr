@@ -68,7 +68,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 90%;
-  max-width: 400px;
+  max-width: 460px;
   background: var(--theme);
   border: 1px solid var(--border);
   border-radius: 12px;
@@ -80,7 +80,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .shortcuts-modal-title {
@@ -107,10 +107,29 @@
   color: var(--primary);
 }
 
+.shortcuts-help-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.shortcuts-section {
+  min-width: 0;
+}
+
+.shortcuts-section-title {
+  margin: 0 0 10px;
+  color: var(--secondary);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .shortcuts-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 9px;
 }
 
 .shortcut-row {
@@ -140,6 +159,31 @@
   font-family: inherit;
   min-width: 24px;
   text-align: center;
+}
+
+.command-help-list {
+  display: grid;
+  gap: 7px;
+}
+
+.command-help-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  color: var(--secondary);
+  font-size: 14px;
+}
+
+.command-help-key {
+  color: var(--accent-warm);
+  font-family: var(--mono);
+  flex: 0 0 auto;
+}
+
+.command-help-row span {
+  color: var(--primary);
+  text-align: right;
 }
 
 /* -------------------------------------------------------
@@ -187,11 +231,15 @@
 .breadcrumb {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
+  max-width: 100%;
+  padding: 0;
   font-size: 14px;
   color: var(--secondary);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
   flex-wrap: wrap;
+  font-family: var(--mono);
+  line-height: 1.5;
 }
 
 .breadcrumb a {
@@ -204,13 +252,40 @@
   color: var(--accent);
 }
 
+.breadcrumb-root {
+  color: var(--accent-warm) !important;
+  font-weight: 500;
+}
+
 .breadcrumb-separator {
-  color: var(--border);
+  color: color-mix(in srgb, var(--secondary) 42%, transparent);
   user-select: none;
 }
 
 .breadcrumb-current {
   color: var(--primary);
+}
+
+/* Keep breadcrumb placement consistent across custom list/single templates. */
+.main > main:not(.home-intro),
+.main > .single,
+.main > .post-list {
+  max-width: var(--main-width);
+  margin: 0 auto 3rem;
+}
+
+.main > .project-single {
+  margin-top: 0;
+}
+
+.post-header {
+  margin-top: 0;
+}
+
+.breadcrumb + .page-header,
+.breadcrumb + h1,
+.breadcrumb + .project-title {
+  margin-top: 0;
 }
 
 /* -------------------------------------------------------
@@ -255,17 +330,15 @@
 .enter-d1 { animation-delay: 0.04s; }
 .enter-d2 { animation-delay: 0.08s; }
 .enter-d3 { animation-delay: 0.12s; }
-.enter-d4 { animation-delay: 0.16s; }
-.enter-d5 { animation-delay: 0.20s; }
 
 /* -------------------------------------------------------
    External Link Indicator
    Only shows for truly external links (not rybkr.com or localhost)
 ------------------------------------------------------- */
 
-.post-content a[href^="http"]:not([href*="rybkr.com"]):not([href*="localhost"]):not(.featured-card):not(.home-featured-card)::after,
-.main a[href^="http"]:not([href*="rybkr.com"]):not([href*="localhost"]):not(.featured-card):not(.home-featured-card)::after,
-article a[href^="http"]:not([href*="rybkr.com"]):not([href*="localhost"]):not(.featured-card):not(.home-featured-card)::after {
+.post-content a[href^="http"]:not([href*="rybkr.com"]):not([href*="localhost"]):not(.featured-card)::after,
+.main a[href^="http"]:not([href*="rybkr.com"]):not([href*="localhost"]):not(.featured-card)::after,
+article a[href^="http"]:not([href*="rybkr.com"]):not([href*="localhost"]):not(.featured-card)::after {
   content: "";
   display: inline-block;
   width: 11px;
@@ -283,9 +356,9 @@ article a[href^="http"]:not([href*="rybkr.com"]):not([href*="localhost"]):not(.f
   transition: opacity 0.15s;
 }
 
-.post-content a[href^="http"]:not([href*="rybkr.com"]):not([href*="localhost"]):not(.featured-card):not(.home-featured-card):hover::after,
-.main a[href^="http"]:not([href*="rybkr.com"]):not([href*="localhost"]):not(.featured-card):not(.home-featured-card):hover::after,
-article a[href^="http"]:not([href*="rybkr.com"]):not([href*="localhost"]):not(.featured-card):not(.home-featured-card):hover::after {
+.post-content a[href^="http"]:not([href*="rybkr.com"]):not([href*="localhost"]):not(.featured-card):hover::after,
+.main a[href^="http"]:not([href*="rybkr.com"]):not([href*="localhost"]):not(.featured-card):hover::after,
+article a[href^="http"]:not([href*="rybkr.com"]):not([href*="localhost"]):not(.featured-card):hover::after {
   opacity: 1;
 }
 
@@ -403,6 +476,10 @@ article a[href^="http"]:not([href*="rybkr.com"]):not([href*="localhost"]):not(.f
   .shortcuts-modal-content {
     width: 95%;
     padding: 20px;
+  }
+
+  .shortcuts-help-grid {
+    grid-template-columns: 1fr;
   }
 
   .breadcrumb {

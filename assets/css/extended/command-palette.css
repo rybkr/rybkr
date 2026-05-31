@@ -49,6 +49,28 @@
   flex-shrink: 0;
 }
 
+.command-palette-prompt {
+  display: none;
+  width: 20px;
+  color: var(--accent-warm);
+  flex-shrink: 0;
+  font-family: var(--mono);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+}
+
+.command-palette[data-mode="command"] .command-palette-icon {
+  display: none;
+}
+
+.command-palette[data-mode="command"] .command-palette-prompt {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
 #command-palette-input {
   flex: 1;
   border: none;
@@ -176,6 +198,66 @@
   background: var(--accent-subtle);
 }
 
+/* Command mode */
+.command-palette-command-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 4px;
+}
+
+.command-palette-command-list.is-muted .command-palette-command {
+  opacity: 0.58;
+}
+
+.command-palette-command {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 4px 10px;
+  width: 100%;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--primary);
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+  transition: background 0.1s, opacity 0.1s;
+}
+
+.command-palette-command:hover,
+.command-palette-command.selected {
+  background: var(--accent-subtle);
+  opacity: 1;
+}
+
+.command-palette-command.selected {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+
+.command-palette-command-name {
+  color: var(--accent-warm);
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.command-palette-command-aliases {
+  color: var(--secondary);
+  font-family: var(--mono);
+  font-size: 12px;
+  opacity: 0.72;
+}
+
+.command-palette-command-description {
+  grid-column: 1 / -1;
+  color: var(--secondary);
+  font-size: 13px;
+}
+
 /* Scrollbar styling */
 .command-palette-results::-webkit-scrollbar {
   width: 8px;
@@ -207,6 +289,14 @@
   }
 
   .command-palette-hint {
+    display: none;
+  }
+
+  .command-palette-command {
+    grid-template-columns: 1fr;
+  }
+
+  .command-palette-command-aliases {
     display: none;
   }
 }
