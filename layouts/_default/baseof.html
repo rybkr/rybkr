@@ -1,0 +1,34 @@
+{{- if lt hugo.Version "0.146.0" }}
+{{- errorf "=> hugo v0.146.0 or greater is required for hugo-PaperMod to build " }}
+{{- end -}}
+
+<!DOCTYPE html>
+{{- $theme := site.Params.defaultTheme | default "auto" }}
+{{- if eq $theme "dark" }}
+<html lang="{{ site.Language }}" dir="{{ .Language.Direction | default "auto" }}" data-theme="dark">
+{{- else if eq $theme "light" }}
+<html lang="{{ site.Language }}" dir="{{ .Language.Direction | default "auto" }}" data-theme="light">
+{{- else }}
+<html lang="{{ site.Language }}" dir="{{ .Language.Direction | default "auto" }}" data-theme="auto">
+{{- end }}
+
+<head>
+    {{- partial "head.html" . }}
+</head>
+
+{{- $isList := or (ne .Kind `page` ) (eq .Layout `archives`) (eq .Layout `search`) }}
+{{- $hideChrome := .Param "hideChrome" }}
+<body{{ if or $isList $hideChrome }} class="{{ if $isList }}list{{ end }}{{ if and $isList $hideChrome }} {{ end }}{{ if $hideChrome }}chrome-less{{ end }}"{{ end }} id="top">
+    {{- if not $hideChrome }}
+    {{ partialCached "header.html" . .Page -}}
+    {{- end }}
+    <main class="main">
+        {{- block "main" . }}{{ end }}
+    </main>
+    {{- if not $hideChrome }}
+    {{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") -}}
+    {{ partial "statusline.html" . }}
+    {{- end }}
+</body>
+
+</html>

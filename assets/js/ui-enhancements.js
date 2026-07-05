@@ -73,6 +73,79 @@
   // Back to Top Button
   // -------------------------------------------------------
 
+  // -------------------------------------------------------
+  // Statusline
+  // -------------------------------------------------------
+
+  const statuslineMode = document.querySelector('[data-statusline-mode]');
+  const statuslineCommand = document.querySelector('[data-statusline-command]');
+  const statuslineCommandWrap = document.querySelector('[data-statusline-command-wrap]');
+  const statuslinePosition = document.querySelector('[data-statusline-position]');
+  let statuslineClearTimer = null;
+
+  function setStatuslineMode(mode) {
+    if (statuslineMode) statuslineMode.textContent = mode;
+  }
+
+  function setStatuslineCommand(command, options = {}) {
+    if (!statuslineCommand) return;
+
+    window.clearTimeout(statuslineClearTimer);
+    statuslineCommand.textContent = command || '';
+    statuslineCommand.classList.toggle('is-active', Boolean(command));
+    if (statuslineCommandWrap) {
+      statuslineCommandWrap.classList.toggle('is-active', Boolean(command));
+    }
+
+    if (command && options.clearAfter) {
+      statuslineClearTimer = window.setTimeout(() => {
+        setStatuslineCommand('');
+      }, options.clearAfter);
+    }
+  }
+
+  window.rybkrSetStatuslineMode = setStatuslineMode;
+  window.rybkrSetStatuslineCommand = setStatuslineCommand;
+
+  function updateStatuslinePosition() {
+    if (!statuslinePosition) return;
+
+    const scrollMax = Math.max(
+      document.documentElement.scrollHeight - window.innerHeight,
+      0
+    );
+
+    if (scrollMax <= 0 || window.scrollY <= 0) {
+      statuslinePosition.textContent = 'Top';
+      return;
+    }
+
+    if (window.scrollY >= scrollMax - 2) {
+      statuslinePosition.textContent = 'Bot';
+      return;
+    }
+
+    const percent = Math.min(99, Math.max(1, Math.round((window.scrollY / scrollMax) * 100)));
+    statuslinePosition.textContent = `${percent}%`;
+  }
+
+  if (statuslinePosition) {
+    let statuslinePositionTicking = false;
+    const requestStatuslinePositionUpdate = () => {
+      if (statuslinePositionTicking) return;
+      statuslinePositionTicking = true;
+      window.requestAnimationFrame(() => {
+        updateStatuslinePosition();
+        statuslinePositionTicking = false;
+      });
+    };
+
+    updateStatuslinePosition();
+    window.addEventListener('scroll', requestStatuslinePositionUpdate, { passive: true });
+    window.addEventListener('resize', requestStatuslinePositionUpdate);
+    window.addEventListener('load', requestStatuslinePositionUpdate);
+  }
+
   const backToTop = document.getElementById('back-to-top');
 
   if (backToTop) {
@@ -105,7 +178,172 @@
 
   const shortcutsModal = document.getElementById('shortcuts-modal');
 
+  // -------------------------------------------------------
+  // Vim Navigation
+  // -------------------------------------------------------
+
+  let pendingG = false;
+  let pendingGTimer = null;
+
+  function isPaletteOpen() {
+    const palette = document.getElementById('command-palette');
+    return Boolean(palette && palette.classList.contains('open'));
+  }
+
+  function isShortcutsOpen() {
+    return Boolean(shortcutsModal && shortcutsModal.classList.contains('open'));
+  }
+
+  function clearPendingG() {
+    pendingG = false;
+    window.clearTimeout(pendingGTimer);
+    pendingGTimer = null;
+    setStatuslineCommand('');
+  }
+
+  function scrollPageTo(position) {
+    clearPendingG();
+    window.scrollTo({ top: position, behavior: 'smooth' });
+  }
+
+  function scrollByAmount(amount) {
+    clearPendingG();
+    window.scrollBy({ top: amount, behavior: 'auto' });
+  }
+
+  function flashNavigationCommand(command) {
+    setStatuslineCommand(command, { clearAfter: 850 });
+  }
+
+  function navigatePager(selector, command) {
+    const link = document.querySelector(selector);
+    if (!link) {
+      flashNavigationCommand(`${command}: no target`);
+      return;
+    }
+
+    clearPendingG();
+    window.location.href = link.href;
+  }
+
+  function visibleSectionHeadings() {
+    const headings = document.querySelectorAll(
+      '.post-content h2, .post-content h3, .project-body h2, .project-body h3, main h2, main h3'
+    );
+
+    return Array.from(headings).filter(heading => {
+      const rect = heading.getBoundingClientRect();
+      return rect.width > 0 && rect.height > 0;
+    });
+  }
+
+  function jumpSection(direction) {
+    const headings = visibleSectionHeadings();
+    if (headings.length === 0) {
+      clearPendingG();
+      flashNavigationCommand(direction > 0 ? '}: no section' : '{: no section');
+      return;
+    }
+
+    const viewportOffset = window.innerHeight * 0.18;
+    const currentY = window.scrollY + viewportOffset;
+    const targets = headings
+      .map(heading => ({
+        heading,
+        top: heading.getBoundingClientRect().top + window.scrollY
+      }))
+      .sort((a, b) => a.top - b.top);
+
+    const target = direction > 0
+      ? targets.find(item => item.top > currentY + 8)
+      : targets.slice().reverse().find(item => item.top < currentY - 8);
+
+    if (!target) {
+      clearPendingG();
+      flashNavigationCommand(direction > 0 ? '}: last section' : '{: first section');
+      return;
+    }
+
+    clearPendingG();
+    target.heading.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (isInputFocused() || isPaletteOpen() || isShortcutsOpen()) return;
+    if (e.metaKey || e.altKey) return;
+
+    if (e.ctrlKey && e.key !== 'd' && e.key !== 'u') return;
+    if (e.shiftKey && !['G', 'N', '{', '}'].includes(e.key)) return;
+
+    const lineAmount = Math.max(48, Math.min(72, window.innerHeight * 0.08));
+    const halfPage = Math.max(240, window.innerHeight * 0.5);
+
+    switch (e.key) {
+      case 'j':
+        e.preventDefault();
+        scrollByAmount(lineAmount);
+        return;
+      case 'k':
+        e.preventDefault();
+        scrollByAmount(-lineAmount);
+        return;
+      case 'd':
+        if (!e.ctrlKey) {
+          clearPendingG();
+          return;
+        }
+        e.preventDefault();
+        scrollByAmount(halfPage);
+        return;
+      case 'u':
+        if (!e.ctrlKey) {
+          clearPendingG();
+          return;
+        }
+        e.preventDefault();
+        scrollByAmount(-halfPage);
+        return;
+      case '}':
+        e.preventDefault();
+        jumpSection(1);
+        return;
+      case '{':
+        e.preventDefault();
+        jumpSection(-1);
+        return;
+      case 'n':
+        e.preventDefault();
+        navigatePager('.pagination .next, .paginav .next, a[rel="next"]', 'n');
+        return;
+      case 'N':
+        e.preventDefault();
+        navigatePager('.pagination .prev, .paginav .prev, a[rel="prev"]', 'N');
+        return;
+      case 'G':
+        e.preventDefault();
+        scrollPageTo(document.documentElement.scrollHeight);
+        flashNavigationCommand('G');
+        return;
+      case 'g':
+        e.preventDefault();
+        if (pendingG) {
+          scrollPageTo(0);
+          flashNavigationCommand('gg');
+          return;
+        }
+
+        pendingG = true;
+        setStatuslineCommand('g...');
+        window.clearTimeout(pendingGTimer);
+        pendingGTimer = window.setTimeout(clearPendingG, 900);
+        return;
+      default:
+        clearPendingG();
+    }
+  });
+
   if (shortcutsModal) {
+
     function openShortcuts() {
       shortcutsModal.classList.add('open');
       shortcutsModal.setAttribute('aria-hidden', 'false');
@@ -127,28 +365,35 @@
       const palette = document.getElementById('command-palette');
       if (palette && palette.classList.contains('open')) return;
 
-      if (e.key === '?' && !e.metaKey && !e.ctrlKey) {
-        e.preventDefault();
-        if (shortcutsModal.classList.contains('open')) {
+      if (shortcutsModal.classList.contains('open')) {
+        if (e.key === 'Escape') {
+          e.preventDefault();
+          clearPendingG();
           closeShortcuts();
-        } else {
-          openShortcuts();
         }
+        return;
       }
 
-      if (e.key === 'Escape' && shortcutsModal.classList.contains('open')) {
+      if (e.key === '?' && !e.metaKey && !e.ctrlKey) {
         e.preventDefault();
-        closeShortcuts();
+        clearPendingG();
+        openShortcuts();
       }
     });
 
     // Close on backdrop click
-    shortcutsModal.querySelector('.shortcuts-modal-backdrop').addEventListener('click', closeShortcuts);
+    shortcutsModal.querySelector('.shortcuts-modal-backdrop').addEventListener('click', () => {
+      clearPendingG();
+      closeShortcuts();
+    });
 
     // Close button
     const closeBtn = shortcutsModal.querySelector('.shortcuts-modal-close');
     if (closeBtn) {
-      closeBtn.addEventListener('click', closeShortcuts);
+      closeBtn.addEventListener('click', () => {
+        clearPendingG();
+        closeShortcuts();
+      });
     }
   }
 

@@ -1,9 +1,12 @@
 {{ define "main" }}
 <main class="post-list">
-    <h1>{{ .Title }}</h1>
+    {{ partial "breadcrumbs.html" . }}
+    <div class="page-header enter">
+        <h1>{{ .Title }}</h1>
+    </div>
     <div class="post-content">{{ .Content }}</div>
 
-    <div class="video-grid">
+    <div class="video-grid enter enter-d1">
         {{ range .Pages.ByDate.Reverse }}
         <article class="video-card">
             {{ $raw := .Params.video }} {{ $id := replace (replace $raw

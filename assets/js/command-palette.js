@@ -10,6 +10,13 @@
   const palette = document.getElementById('command-palette');
   const input = document.getElementById('command-palette-input');
   const resultsContainer = document.getElementById('command-palette-results');
+  const statusCommandWrap = document.querySelector('[data-statusline-command-wrap]');
+  const statusCommandInput = document.querySelector('[data-statusline-command-input]');
+  const statusCommandCompletions = document.querySelector('[data-statusline-completions]');
+  let statusCommandOpen = false;
+  let statusCommandMatches = [];
+  let statusCommandSelectedIndex = -1;
+  let statusCommandCompletionPrefix = '';
   const COMMANDS = [
     {
       name: 'home',
@@ -42,19 +49,34 @@
       run: () => { window.location.href = '/resume/'; }
     },
     {
-      name: 'search',
-      aliases: ['s', 'find'],
-      description: 'Switch to search',
-      run: () => openPalette({ mode: 'search' })
+      name: 'next',
+      aliases: ['n'],
+      description: 'Open the next page',
+      run: () => navigatePagerCommand('.pagination .next, .paginav .next, a[rel="next"]', 'next')
+    },
+    {
+      name: 'prev',
+      aliases: ['previous', 'back'],
+      description: 'Open the previous page',
+      run: () => navigatePagerCommand('.pagination .prev, .paginav .prev, a[rel="prev"]', 'prev')
     },
     {
       name: 'top',
       aliases: ['gg'],
       description: 'Scroll to top',
-      run: () => {
-        closePalette();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
+      run: () => scrollToCommand(0, 'top')
+    },
+    {
+      name: 'bot',
+      aliases: ['bottom'],
+      description: 'Scroll to bottom',
+      run: () => scrollToCommand(document.documentElement.scrollHeight, 'bot')
+    },
+    {
+      name: 'search',
+      aliases: ['s', 'find'],
+      description: 'Switch to search',
+      run: () => openPalette({ mode: 'search' })
     },
     {
       name: 'theme',
@@ -70,6 +92,10 @@
       name: 'colorscheme',
       aliases: ['colo', 'colors'],
       description: 'Set colorscheme: light or dark',
+      options: [
+        { value: 'light', description: 'Use light theme' },
+        { value: 'dark', description: 'Use dark theme' }
+      ],
       run: (args) => setColorscheme(args)
     },
     {
@@ -261,6 +287,29 @@
     };
   }
 
+  function flashCommand(command) {
+    if (window.rybkrSetStatuslineCommand) {
+      window.rybkrSetStatuslineCommand(command, { clearAfter: 900 });
+    }
+  }
+
+  function scrollToCommand(position, command) {
+    closePalette();
+    window.scrollTo({ top: position, behavior: 'smooth' });
+    flashCommand(command);
+  }
+
+  function navigatePagerCommand(selector, command) {
+    closePalette();
+    const link = document.querySelector(selector);
+    if (!link) {
+      flashCommand(`${command}: no target`);
+      return;
+    }
+
+    window.location.href = link.href;
+  }
+
   function getMatchingCommands(query) {
     const parsed = parseCommandInput(query);
     if (!parsed.name) return COMMANDS;
@@ -269,6 +318,204 @@
       return commandTokens(command).some(token => token.includes(parsed.name)) ||
         command.description.toLowerCase().includes(parsed.name);
     });
+  }
+
+  function getCommandNamePrefix(value) {
+    const commandText = value.trimStart().replace(/^:/, '');
+    return (commandText.split(/\s+/, 1)[0] || '').toLowerCase();
+  }
+
+  function getPrefixMatchingCommands(query) {
+    const prefix = getCommandNamePrefix(query);
+    if (!prefix) return COMMANDS;
+
+    return COMMANDS.filter(command => {
+      return commandTokens(command).some(token => token.startsWith(prefix));
+    });
+  }
+
+  function findCommandByToken(token) {
+    return COMMANDS.find(command => command.name === token || command.aliases.includes(token));
+  }
+
+  function statusCompletionItems(query) {
+    const commandText = query.trimStart().replace(/^:/, '');
+    const commandMatch = commandText.match(/^(\S+)(\s+)?(.*)$/);
+    const commandToken = commandMatch ? commandMatch[1].toLowerCase() : '';
+    const hasArgPosition = Boolean(commandMatch && commandMatch[2]);
+    const argText = commandMatch ? commandMatch[3] : '';
+    const command = commandToken ? findCommandByToken(commandToken) : null;
+
+    if (command && hasArgPosition && command.options) {
+      const argPrefix = (argText.split(/\s+/).pop() || '').toLowerCase();
+      return command.options
+        .filter(option => option.value.startsWith(argPrefix))
+        .map(option => ({
+          type: 'option',
+          command,
+          value: option.value,
+          insertText: `:${command.name} ${option.value}`,
+          display: option.value,
+          description: option.description
+        }));
+    }
+
+    return getPrefixMatchingCommands(query).map(command => ({
+      type: 'command',
+      command,
+      value: command.name,
+      insertText: `:${command.name}`,
+      display: `:${command.name}`,
+      description: command.description
+    }));
+  }
+
+  function getTextWidth(text, inputElement) {
+    const canvas = getTextWidth.canvas || (getTextWidth.canvas = document.createElement('canvas'));
+    const context = canvas.getContext('2d');
+    const style = window.getComputedStyle(inputElement);
+    context.font = `${style.fontStyle} ${style.fontVariant} ${style.fontWeight} ${style.fontSize} ${style.fontFamily}`;
+    return context.measureText(text).width;
+  }
+
+  function positionStatusCommandCompletions() {
+    if (!statusCommandWrap || !statusCommandInput || !statusCommandCompletions) return;
+
+    const inputStyle = window.getComputedStyle(statusCommandInput);
+    const paddingLeft = parseFloat(inputStyle.paddingLeft) || 0;
+    const caretIndex = statusCommandInput.selectionStart || statusCommandInput.value.length;
+    const textBeforeCaret = statusCommandInput.value.slice(0, caretIndex);
+    const caretLeft = paddingLeft + getTextWidth(textBeforeCaret, statusCommandInput);
+    const popupWidth = Math.min(Math.max(window.innerWidth * 0.36, 272), 512);
+    const maxLeft = Math.max(statusCommandWrap.clientWidth - popupWidth - 8, 0);
+    const left = Math.min(Math.max(caretLeft - 12, 8), maxLeft);
+
+    statusCommandCompletions.style.setProperty('--statusline-completion-left', `${left}px`);
+  }
+
+  function isStatusCommandOpen() {
+    return statusCommandOpen;
+  }
+
+  function renderStatusCommandCompletions() {
+    if (!statusCommandCompletions) return;
+
+    const completionQuery = statusCommandCompletionPrefix || (statusCommandInput ? statusCommandInput.value : '');
+    statusCommandMatches = statusCompletionItems(completionQuery).slice(0, 8);
+    if (statusCommandSelectedIndex >= statusCommandMatches.length) {
+      statusCommandSelectedIndex = statusCommandMatches.length - 1;
+    }
+    if (statusCommandSelectedIndex < 0 && statusCommandMatches.length > 0) {
+      statusCommandSelectedIndex = 0;
+    }
+
+    if (statusCommandMatches.length === 0) {
+      statusCommandCompletions.innerHTML = '<div class="statusline-completion"><span class="statusline-completion-name">no command</span><span class="statusline-completion-description">No matching command</span></div>';
+      positionStatusCommandCompletions();
+      statusCommandCompletions.hidden = false;
+      return;
+    }
+
+    statusCommandCompletions.innerHTML = statusCommandMatches.map((item, i) => `
+      <button
+        type="button"
+        class="statusline-completion ${i === statusCommandSelectedIndex ? 'is-selected' : ''}"
+        data-status-completion-index="${i}"
+      >
+        <span class="statusline-completion-name">${escapeHtml(item.display)}</span>
+        <span class="statusline-completion-description">${escapeHtml(item.description)}</span>
+      </button>
+    `).join('');
+    positionStatusCommandCompletions();
+    statusCommandCompletions.hidden = false;
+  }
+
+  function openStatusCommand(initialValue = '') {
+    if (!statusCommandWrap || !statusCommandInput) {
+      openPalette({ mode: 'command', value: initialValue });
+      return;
+    }
+
+    closePalette();
+    statusCommandOpen = true;
+    statusCommandSelectedIndex = 0;
+    statusCommandWrap.classList.add('is-editing');
+    statusCommandInput.value = ':' + initialValue.replace(/^:/, '');
+    statusCommandCompletionPrefix = statusCommandInput.value;
+    if (window.rybkrSetStatuslineMode) window.rybkrSetStatuslineMode('COMMAND');
+    if (window.rybkrSetStatuslineCommand) window.rybkrSetStatuslineCommand('');
+    statusCommandInput.focus();
+    statusCommandInput.setSelectionRange(statusCommandInput.value.length, statusCommandInput.value.length);
+    renderStatusCommandCompletions();
+  }
+
+  function closeStatusCommand() {
+    if (!statusCommandOpen) return;
+    statusCommandOpen = false;
+    statusCommandSelectedIndex = -1;
+    statusCommandMatches = [];
+    statusCommandCompletionPrefix = '';
+    if (statusCommandWrap) statusCommandWrap.classList.remove('is-editing');
+    if (statusCommandInput) statusCommandInput.value = '';
+    if (statusCommandCompletions) {
+      statusCommandCompletions.hidden = true;
+      statusCommandCompletions.innerHTML = '';
+    }
+    if (window.rybkrSetStatuslineMode) window.rybkrSetStatuslineMode('NORMAL');
+    if (window.rybkrSetStatuslineCommand) window.rybkrSetStatuslineCommand('');
+  }
+
+  function navigateStatusCommand(direction) {
+    if (statusCommandMatches.length === 0) return;
+    statusCommandSelectedIndex = (statusCommandSelectedIndex + direction + statusCommandMatches.length) % statusCommandMatches.length;
+    completeStatusCommand({ preserveMatches: true });
+    renderStatusCommandCompletions();
+  }
+
+  function completeStatusCommand(options = {}) {
+    if (!statusCommandInput || statusCommandMatches.length === 0) return;
+    const selected = statusCommandMatches[statusCommandSelectedIndex] || statusCommandMatches[0];
+    if (!options.preserveMatches) {
+      statusCommandCompletionPrefix = selected.insertText;
+    }
+    statusCommandInput.value = selected.insertText;
+    statusCommandInput.focus();
+    statusCommandInput.setSelectionRange(statusCommandInput.value.length, statusCommandInput.value.length);
+    if (!options.preserveMatches) {
+      renderStatusCommandCompletions();
+    }
+  }
+
+  function runStatusCommand(command, inputValue) {
+    if (!command) return;
+    const currentInput = inputValue || (statusCommandInput ? statusCommandInput.value : '');
+    const parsed = parseCommandInput(currentInput);
+    closeStatusCommand();
+    command.run(parsed.args);
+  }
+
+  function runStatusCompletion(item) {
+    if (!item) return;
+    if (statusCommandInput) {
+      statusCommandInput.value = item.insertText;
+    }
+    runStatusCommand(item.command, item.insertText);
+  }
+
+  function executeStatusCommand() {
+    if (!statusCommandInput) return;
+
+    const parsed = parseCommandInput(statusCommandInput.value);
+    const exactMatch = COMMANDS.find(command => {
+      return command.name === parsed.name || command.aliases.includes(parsed.name);
+    });
+
+    if (exactMatch) {
+      runStatusCommand(exactMatch);
+      return;
+    }
+
+    runStatusCompletion(statusCommandMatches[statusCommandSelectedIndex] || statusCommandMatches[0]);
   }
 
   function renderCommands(query, resetSelection = false) {
@@ -336,6 +583,12 @@
   function openPalette(options = {}) {
     mode = options.mode || 'search';
     const initialValue = options.value || '';
+    if (window.rybkrSetStatuslineMode) {
+      window.rybkrSetStatuslineMode(mode === 'command' ? 'COMMAND' : 'SEARCH');
+    }
+    if (window.rybkrSetStatuslineCommand) {
+      window.rybkrSetStatuslineCommand(mode === 'command' ? ':' : '/');
+    }
     palette.dataset.mode = mode;
     palette.classList.add('open');
     palette.setAttribute('aria-hidden', 'false');
@@ -363,6 +616,8 @@
     input.placeholder = 'Search... (use /tag to filter)';
     renderResults();
     document.body.style.overflow = '';
+    if (window.rybkrSetStatuslineMode) window.rybkrSetStatuslineMode('NORMAL');
+    if (window.rybkrSetStatuslineCommand) window.rybkrSetStatuslineCommand('');
   }
 
   // Navigate results
@@ -444,9 +699,11 @@
       if (shortcuts && shortcuts.classList.contains('open')) return;
 
       e.preventDefault();
-      openPalette({ mode: 'command' });
+      openStatusCommand();
       return;
     }
+
+    if (isStatusCommandOpen()) return;
 
     // Handle keys when palette is open
     if (!palette.classList.contains('open')) return;
@@ -487,8 +744,79 @@
   // Close on backdrop click
   palette.querySelector('.command-palette-backdrop').addEventListener('click', closePalette);
 
+  if (statusCommandInput) {
+    statusCommandInput.addEventListener('keydown', (e) => {
+      switch (e.key) {
+        case 'Escape':
+          e.preventDefault();
+          closeStatusCommand();
+          statusCommandInput.blur();
+          break;
+        case 'ArrowDown':
+          e.preventDefault();
+          navigateStatusCommand(1);
+          break;
+        case 'ArrowUp':
+          e.preventDefault();
+          navigateStatusCommand(-1);
+          break;
+        case 'Tab':
+          e.preventDefault();
+          navigateStatusCommand(e.shiftKey ? -1 : 1);
+          break;
+        case 'Enter':
+          e.preventDefault();
+          executeStatusCommand();
+          break;
+        case 'Backspace':
+          if (statusCommandInput.value === ':') {
+            e.preventDefault();
+            closeStatusCommand();
+            statusCommandInput.blur();
+          }
+          break;
+        case 'ArrowLeft':
+        case 'ArrowRight':
+        case 'Home':
+        case 'End':
+          window.requestAnimationFrame(positionStatusCommandCompletions);
+          break;
+      }
+    });
+
+    statusCommandInput.addEventListener('input', () => {
+      if (!statusCommandInput.value.startsWith(':')) {
+        statusCommandInput.value = ':' + statusCommandInput.value.replace(/^:+/, '');
+      }
+      statusCommandSelectedIndex = 0;
+      statusCommandCompletionPrefix = statusCommandInput.value;
+      renderStatusCommandCompletions();
+    });
+
+    statusCommandInput.addEventListener('click', positionStatusCommandCompletions);
+    statusCommandInput.addEventListener('keyup', (e) => {
+      if (['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(e.key)) {
+        positionStatusCommandCompletions();
+      }
+    });
+    window.addEventListener('resize', positionStatusCommandCompletions);
+  }
+
+  if (statusCommandCompletions) {
+    statusCommandCompletions.addEventListener('mousedown', (e) => {
+      const button = e.target.closest('[data-status-completion-index]');
+      if (!button) return;
+      e.preventDefault();
+      const index = parseInt(button.dataset.statusCompletionIndex, 10);
+      runStatusCompletion(statusCommandMatches[index]);
+    });
+  }
+
   // Search on input
   input.addEventListener('input', (e) => {
+    if (window.rybkrSetStatuslineCommand) {
+      window.rybkrSetStatuslineCommand(mode === 'command' ? ':' + e.target.value.replace(/^:/, '') : '/' + e.target.value.replace(/^\//, ''));
+    }
     search(e.target.value);
   });
 

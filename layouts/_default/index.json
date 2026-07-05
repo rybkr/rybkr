@@ -1,4 +1,4 @@
-{{- $pages := where site.RegularPages "Draft" false -}}
+{{- $pages := where (where site.RegularPages "Draft" false) "Params.searchHidden" "ne" true -}}
 {{- $index := slice -}}
 {{- range $pages -}}
   {{- $tags := or .Params.tags (slice) -}}

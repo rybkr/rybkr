@@ -1,0 +1,20 @@
+{{- $path := strings.TrimPrefix "/" (strings.TrimSuffix "/" .RelPermalink) -}}
+{{- $location := cond .IsHome "~" (printf "~/%s" $path) -}}
+{{- $kind := cond .IsHome "home" (or .Section .Layout .Kind) -}}
+<div class="statusline" role="status" aria-label="Site status">
+    <div class="statusline-main">
+        <div class="statusline-left">
+            <span class="statusline-mode" data-statusline-mode>NORMAL</span>
+            <span class="statusline-section">{{ $kind }}</span>
+            <span class="statusline-path">{{ $location }}</span>
+        </div>
+        <div class="statusline-right">
+            <span class="statusline-position" data-statusline-position>Top</span>
+        </div>
+    </div>
+    <div class="statusline-command-wrap" data-statusline-command-wrap>
+        <div class="statusline-completions" data-statusline-completions hidden></div>
+        <span class="statusline-command" data-statusline-command aria-live="polite"></span>
+        <input class="statusline-command-input" data-statusline-command-input type="text" aria-label="Command" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+    </div>
+</div>

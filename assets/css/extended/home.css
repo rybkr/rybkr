@@ -59,29 +59,50 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 0.55rem 1rem;
+    gap: 0.6rem;
     margin: 1.05rem 0 1rem;
     text-align: center;
 }
 
 .home-links a,
 .home-links button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border: 1px solid color-mix(in srgb, var(--border) 88%, var(--secondary));
+    border-radius: 7px;
+    background: color-mix(in srgb, var(--code-bg) 72%, transparent);
     text-decoration: none;
-    transition: color 0.15s ease-out, transform 0.15s ease-out;
-    display: inline-block;
     color: var(--accent);
-    line-height: inherit;
+    line-height: 1;
+    transition:
+        background 0.15s ease-out,
+        border-color 0.15s ease-out,
+        color 0.15s ease-out,
+        transform 0.15s ease-out;
 }
 
 .home-links a:hover,
 .home-links button:hover {
+    border-color: color-mix(in srgb, var(--accent) 58%, var(--border));
+    background: var(--accent-subtle);
     color: var(--accent-hover);
     transform: translateY(-1px);
 }
 
+.home-links a[href^="http"]::after {
+    display: none !important;
+}
+
+.home-links svg {
+    width: 1.12rem;
+    height: 1.12rem;
+    flex: 0 0 auto;
+}
+
 .home-links button.email-copy {
-    background: none;
-    border: 0;
     cursor: pointer;
 }
 

@@ -10,7 +10,7 @@
 <meta name="description" content="A Pygame recreation of the 2048 sliding tile puzzle.">
 <meta name="author" content="Ryan Baker">
 <link rel="canonical" href="https://rybkr.com/projects/2048/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.5e8794d9938d6b64767af740f81ec1f2fec8d0cc07bcaccb1e8f342dd9a8ee45.css" integrity="sha256-XoeU2ZONa2R2evdA&#43;B7B8v7I0MwHvKzLHo80Ldmo7kU=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.c40bab4504e1355bb6c9f651a7fff33f19f933b1113bb02265f336473ddb67ae.css" integrity="sha256-xAurRQThNVu2yfZRp//zPxn5M7ERO7AiZfM2Rz3bZ64=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://rybkr.com/favicon.svg">
 <link rel="icon" type="image/png" sizes="16x16" href="https://rybkr.com/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://rybkr.com/favicon-32x32.png">
@@ -191,7 +191,8 @@
         </ul>
     </nav>
 </header>
-<main class="main">
+
+    <main class="main">
 <main class="project-single">
     <nav class="breadcrumb" aria-label="Breadcrumb">
   <a href="/" class="breadcrumb-root">~</a>
@@ -252,7 +253,7 @@
   <div class="shortcuts-modal-backdrop"></div>
   <div class="shortcuts-modal-content" role="dialog" aria-modal="true" aria-label="Navigation help">
     <div class="shortcuts-modal-header">
-      <h2 class="shortcuts-modal-title">Navigation Help</h2>
+      <h2 class="shortcuts-modal-title">Shortcuts</h2>
       <button class="shortcuts-modal-close" aria-label="Close">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M18 6 6 18M6 6l12 12"/>
@@ -290,6 +291,59 @@
             </span>
           </div>
           <div class="shortcut-row">
+            <span class="shortcut-label">Scroll</span>
+            <span class="shortcut-keys">
+              <kbd class="shortcut-key">j</kbd>
+              <span class="shortcut-key-separator">/</span>
+              <kbd class="shortcut-key">k</kbd>
+            </span>
+          </div>
+          <div class="shortcut-row">
+            <span class="shortcut-label">Half page</span>
+            <span class="shortcut-keys">
+              <span class="shortcut-combo">
+                <kbd class="shortcut-key">Ctrl</kbd>
+                <kbd class="shortcut-key">d</kbd>
+              </span>
+              <span class="shortcut-key-separator">/</span>
+              <span class="shortcut-combo">
+                <kbd class="shortcut-key">Ctrl</kbd>
+                <kbd class="shortcut-key">u</kbd>
+              </span>
+            </span>
+          </div>
+          <div class="shortcut-row">
+            <span class="shortcut-label">Top</span>
+            <span class="shortcut-keys">
+              <span class="shortcut-combo">
+                <kbd class="shortcut-key">g</kbd>
+                <kbd class="shortcut-key">g</kbd>
+              </span>
+            </span>
+          </div>
+          <div class="shortcut-row">
+            <span class="shortcut-label">Bottom</span>
+            <span class="shortcut-keys">
+              <kbd class="shortcut-key">G</kbd>
+            </span>
+          </div>
+          <div class="shortcut-row">
+            <span class="shortcut-label">Section</span>
+            <span class="shortcut-keys">
+              <kbd class="shortcut-key">{</kbd>
+              <span class="shortcut-key-separator">/</span>
+              <kbd class="shortcut-key">}</kbd>
+            </span>
+          </div>
+          <div class="shortcut-row">
+            <span class="shortcut-label">Next / previous</span>
+            <span class="shortcut-keys">
+              <kbd class="shortcut-key">n</kbd>
+              <span class="shortcut-key-separator">/</span>
+              <kbd class="shortcut-key">N</kbd>
+            </span>
+          </div>
+          <div class="shortcut-row">
             <span class="shortcut-label">Close</span>
             <span class="shortcut-keys">
               <kbd class="shortcut-key">Esc</kbd>
@@ -304,6 +358,10 @@
           <div class="command-help-row">
             <kbd class="shortcut-key command-help-key">:help</kbd>
             <span>Show this help</span>
+          </div>
+          <div class="command-help-row">
+            <kbd class="shortcut-key command-help-key">:home</kbd>
+            <span>Open home</span>
           </div>
           <div class="command-help-row">
             <kbd class="shortcut-key command-help-key">:projects</kbd>
@@ -322,12 +380,24 @@
             <span>Open resume</span>
           </div>
           <div class="command-help-row">
-            <kbd class="shortcut-key command-help-key">:theme</kbd>
-            <span>Toggle theme</span>
+            <kbd class="shortcut-key command-help-key">:next</kbd>
+            <span>Open next page</span>
+          </div>
+          <div class="command-help-row">
+            <kbd class="shortcut-key command-help-key">:prev</kbd>
+            <span>Open previous page</span>
           </div>
           <div class="command-help-row">
             <kbd class="shortcut-key command-help-key">:top</kbd>
             <span>Scroll to top</span>
+          </div>
+          <div class="command-help-row">
+            <kbd class="shortcut-key command-help-key">:bot</kbd>
+            <span>Scroll to bottom</span>
+          </div>
+          <div class="command-help-row">
+            <kbd class="shortcut-key command-help-key">:theme</kbd>
+            <span>Toggle theme</span>
           </div>
         </div>
       </section>
@@ -339,7 +409,7 @@
     <path d="m18 15-6-6-6 6"/>
   </svg>
 </button>
-<script src="/js/fuse.basic.min.min.4f1b7e4da7f5a09cc3464ccd93ab72aef1f015c8c2e64d97caf7e39408398c23.js" defer></script><script src="/js/command-palette.min.742a10eb85d67bbaa4ea5c395e15720be359fcc33f55984479f0f1f086b77682.js" defer></script><script src="/js/boids-canvas.min.2b7f22d26ab51996bb441383245930b1b3e6eb007c14dce4c3fc6cf39541d358.js" defer></script><script src="/js/ui-enhancements.min.54880cb138af57782e23a432acaf85c78c0838cc08ff590de4b0af7f35b0d57e.js" defer></script>
+<script src="/js/fuse.basic.min.min.4f1b7e4da7f5a09cc3464ccd93ab72aef1f015c8c2e64d97caf7e39408398c23.js" defer></script><script src="/js/boids-canvas.min.2b7f22d26ab51996bb441383245930b1b3e6eb007c14dce4c3fc6cf39541d358.js" defer></script><script src="/js/ui-enhancements.min.0deef5b0829186a998be9616e43a39df1f064c08edfa196868050931fe892b66.js" defer></script><script src="/js/command-palette.min.af0593bb207dd2366dea3692bc732a3013d7e03603b0305f351c930ba313e4b3.js" defer></script>
 
 
 <script>
@@ -449,6 +519,24 @@
         }
     });
 </script>
+<div class="statusline" role="status" aria-label="Site status">
+    <div class="statusline-main">
+        <div class="statusline-left">
+            <span class="statusline-mode" data-statusline-mode>NORMAL</span>
+            <span class="statusline-section">projects</span>
+            <span class="statusline-path">~/projects/2048</span>
+        </div>
+        <div class="statusline-right">
+            <span class="statusline-position" data-statusline-position>Top</span>
+        </div>
+    </div>
+    <div class="statusline-command-wrap" data-statusline-command-wrap>
+        <div class="statusline-completions" data-statusline-completions hidden></div>
+        <span class="statusline-command" data-statusline-command aria-live="polite"></span>
+        <input class="statusline-command-input" data-statusline-command-input type="text" aria-label="Command" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+    </div>
+</div>
+
 </body>
 
 </html>
