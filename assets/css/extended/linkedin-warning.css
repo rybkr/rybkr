@@ -1,0 +1,109 @@
+.chrome-less .main {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    max-width: none;
+    min-height: 100vh;
+    padding: clamp(1.25rem, 4vw, 3rem);
+}
+
+.linkedin-warning {
+    width: min(100%, 560px);
+    margin: 0 auto;
+    padding: 0;
+}
+
+.linkedin-warning-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--border));
+    border-radius: 9999px;
+    background: var(--accent-subtle);
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.linkedin-warning-mark span {
+    transform: translateY(-0.02em);
+}
+
+.linkedin-warning h1 {
+    margin: 0 0 0.85rem;
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    line-height: 1.15;
+}
+
+.linkedin-warning p {
+    margin: 0 0 0.75rem;
+    color: var(--secondary);
+    line-height: 1.65;
+}
+
+.linkedin-warning-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin-top: 1.65rem;
+}
+
+.linkedin-warning-actions a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.35rem;
+    padding: 0.45rem 0.85rem;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition:
+        background 0.15s ease-out,
+        border-color 0.15s ease-out,
+        color 0.15s ease-out,
+        transform 0.15s ease-out;
+}
+
+.linkedin-warning-actions a:hover {
+    transform: translateY(-1px);
+}
+
+.linkedin-warning-primary {
+    background: color-mix(in srgb, var(--entry) 84%, var(--accent-subtle));
+    border-color: color-mix(in srgb, var(--accent) 58%, var(--border)) !important;
+    color: var(--accent);
+}
+
+.linkedin-warning-primary:hover {
+    background: var(--accent-subtle);
+    border-color: var(--accent) !important;
+    color: var(--accent-hover);
+}
+
+:root[data-theme="dark"] .linkedin-warning-primary {
+    background: color-mix(in srgb, var(--entry) 84%, var(--accent-subtle));
+    border-color: color-mix(in srgb, var(--accent) 64%, var(--border)) !important;
+    color: var(--accent);
+}
+
+:root[data-theme="dark"] .linkedin-warning-primary:hover {
+    background: var(--accent-subtle);
+    border-color: var(--accent) !important;
+    color: var(--accent-hover);
+}
+
+.linkedin-warning-secondary {
+    background: color-mix(in srgb, var(--code-bg) 72%, transparent);
+    color: var(--accent);
+}
+
+.linkedin-warning-secondary:hover {
+    border-color: color-mix(in srgb, var(--accent) 58%, var(--border));
+    background: var(--accent-subtle);
+    color: var(--accent-hover);
+}

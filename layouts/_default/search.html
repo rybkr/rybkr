@@ -1,5 +1,9 @@
 {{ define "main" }}
 <main id="search-page">
+    {{ partial "breadcrumbs.html" . }}
+    <div class="page-header enter">
+        <h1>{{ .Title }}</h1>
+    </div>
     <input
         id="live-search"
         type="search"

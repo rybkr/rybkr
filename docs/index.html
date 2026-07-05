@@ -11,7 +11,7 @@
 <meta name="description" content="">
 <meta name="author" content="Ryan Baker">
 <link rel="canonical" href="https://rybkr.com/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.5e8794d9938d6b64767af740f81ec1f2fec8d0cc07bcaccb1e8f342dd9a8ee45.css" integrity="sha256-XoeU2ZONa2R2evdA&#43;B7B8v7I0MwHvKzLHo80Ldmo7kU=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.c40bab4504e1355bb6c9f651a7fff33f19f933b1113bb02265f336473ddb67ae.css" integrity="sha256-xAurRQThNVu2yfZRp//zPxn5M7ERO7AiZfM2Rz3bZ64=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://rybkr.com/favicon.svg">
 <link rel="icon" type="image/png" sizes="16x16" href="https://rybkr.com/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://rybkr.com/favicon-32x32.png">
@@ -146,7 +146,8 @@
         </ul>
     </nav>
 </header>
-<main class="main">
+
+    <main class="main">
 <main class="home-intro">
     <canvas class="home-boids" data-home-boids aria-hidden="true"></canvas>
 
@@ -170,16 +171,16 @@
     <section class="home-section home-about enter enter-d1" aria-labelledby="home-about-heading">
         <h2 id="home-about-heading">About</h2>
         <p>
-            I'm a software engineer specializing in systems and developer tooling.
-            I like to build fast and reliable software across the stack, from embedded platforms and database internals to high-performance AI inference.
+            I'm a software engineer interested in systems, developer tools, and practical software that is fast, reliable, and easy to reason about.
+            I like working close to the machine, but I care just as much about making tools pleasant to use.
         </p>
     </section>
 
     <section class="home-section home-currently enter enter-d3" aria-labelledby="home-currently-heading">
         <h2 id="home-currently-heading">Currently</h2>
         <p>
-            Currently I'm interning at Oracle for the database team and building <a href="https://trillim.com" target="_blank" rel="noopener">Trillim</a>, a fully integrated local AI pipeline.
-            I'm also working on producing more technical content for my <a href="https://youtube.com/@rybkr" target="_blank" rel="noopener">YouTube</a> channel.
+            I'm interning on Oracle's database team and building <a href="https://trillim.com" target="_blank" rel="noopener">Trillim</a>, a local AI pipeline for running and wiring models close to the machine.
+            I'm also trying to make more technical videos for my <a href="https://youtube.com/@rybkr" target="_blank" rel="noopener">YouTube</a> channel when time allows.
         </p>
     </section>
 
@@ -190,14 +191,28 @@
         </p>
     </section>
 
-    <nav class="home-links enter enter-d3">
-        <a href="/projects/">Projects</a>
-        <a href="/library/">Library</a>
-        <a href="/resume/">Resume</a>
-        <a href="https://github.com/rybkr" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://linkedin.com/in/rybkr" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://youtube.com/@rybkr" target="_blank" rel="noopener">YouTube</a>
-        <button type="button" class="email-copy" data-email-copy data-email="rbaker@xtier.com" aria-describedby="home-email-copy-status">Email</button>
+    <nav class="home-links enter enter-d3" aria-label="Contact links">
+        <a href="https://github.com/rybkr" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.58 2 12.24c0 4.53 2.87 8.37 6.84 9.73.5.09.68-.22.68-.49v-1.74c-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.56 2.35 1.11 2.92.85.09-.66.35-1.11.64-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.37 9.37 0 0 1 12 6.98c.85 0 1.7.12 2.5.34 1.9-1.33 2.74-1.05 2.74-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.8-4.57 5.05.36.32.68.94.68 1.9v2.8c0 .27.18.59.69.49A10.08 10.08 0 0 0 22 12.24C22 6.58 17.52 2 12 2Z" />
+            </svg>
+        </a>
+        <a href="/linkedin/" aria-label="LinkedIn">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M6.94 8.98H3.72v10.3h3.22V8.98ZM5.33 4a1.86 1.86 0 1 0 0 3.72A1.86 1.86 0 0 0 5.33 4Zm13.95 9.56c0-3.1-1.65-4.54-3.86-4.54-1.78 0-2.58.98-3.03 1.67V8.98H9.31v10.3h3.22v-5.1c0-1.35.25-2.66 1.93-2.66 1.65 0 1.67 1.55 1.67 2.75v5.01h3.15v-5.72Z" />
+            </svg>
+        </a>
+        <a href="https://youtube.com/@rybkr" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M21.58 7.19a2.74 2.74 0 0 0-1.93-1.94C17.95 4.8 12 4.8 12 4.8s-5.95 0-7.65.45a2.74 2.74 0 0 0-1.93 1.94C1.97 8.91 1.97 12.5 1.97 12.5s0 3.59.45 5.31a2.7 2.7 0 0 0 1.93 1.9c1.7.46 7.65.46 7.65.46s5.95 0 7.65-.46a2.7 2.7 0 0 0 1.93-1.9c.45-1.72.45-5.31.45-5.31s0-3.59-.45-5.31ZM9.95 15.77V9.23l5.17 3.27-5.17 3.27Z" />
+            </svg>
+        </a>
+        <button type="button" class="email-copy" data-email-copy data-email="rbaker@xtier.com" aria-label="Copy email address" aria-describedby="home-email-copy-status">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="5" width="18" height="14" rx="2" />
+                <path d="m3 7 9 6 9-6" />
+            </svg>
+        </button>
         <span id="home-email-copy-status" class="home-email-status" role="status" aria-live="polite"></span>
     </nav>
 
@@ -252,7 +267,7 @@
   <div class="shortcuts-modal-backdrop"></div>
   <div class="shortcuts-modal-content" role="dialog" aria-modal="true" aria-label="Navigation help">
     <div class="shortcuts-modal-header">
-      <h2 class="shortcuts-modal-title">Navigation Help</h2>
+      <h2 class="shortcuts-modal-title">Shortcuts</h2>
       <button class="shortcuts-modal-close" aria-label="Close">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M18 6 6 18M6 6l12 12"/>
@@ -290,6 +305,59 @@
             </span>
           </div>
           <div class="shortcut-row">
+            <span class="shortcut-label">Scroll</span>
+            <span class="shortcut-keys">
+              <kbd class="shortcut-key">j</kbd>
+              <span class="shortcut-key-separator">/</span>
+              <kbd class="shortcut-key">k</kbd>
+            </span>
+          </div>
+          <div class="shortcut-row">
+            <span class="shortcut-label">Half page</span>
+            <span class="shortcut-keys">
+              <span class="shortcut-combo">
+                <kbd class="shortcut-key">Ctrl</kbd>
+                <kbd class="shortcut-key">d</kbd>
+              </span>
+              <span class="shortcut-key-separator">/</span>
+              <span class="shortcut-combo">
+                <kbd class="shortcut-key">Ctrl</kbd>
+                <kbd class="shortcut-key">u</kbd>
+              </span>
+            </span>
+          </div>
+          <div class="shortcut-row">
+            <span class="shortcut-label">Top</span>
+            <span class="shortcut-keys">
+              <span class="shortcut-combo">
+                <kbd class="shortcut-key">g</kbd>
+                <kbd class="shortcut-key">g</kbd>
+              </span>
+            </span>
+          </div>
+          <div class="shortcut-row">
+            <span class="shortcut-label">Bottom</span>
+            <span class="shortcut-keys">
+              <kbd class="shortcut-key">G</kbd>
+            </span>
+          </div>
+          <div class="shortcut-row">
+            <span class="shortcut-label">Section</span>
+            <span class="shortcut-keys">
+              <kbd class="shortcut-key">{</kbd>
+              <span class="shortcut-key-separator">/</span>
+              <kbd class="shortcut-key">}</kbd>
+            </span>
+          </div>
+          <div class="shortcut-row">
+            <span class="shortcut-label">Next / previous</span>
+            <span class="shortcut-keys">
+              <kbd class="shortcut-key">n</kbd>
+              <span class="shortcut-key-separator">/</span>
+              <kbd class="shortcut-key">N</kbd>
+            </span>
+          </div>
+          <div class="shortcut-row">
             <span class="shortcut-label">Close</span>
             <span class="shortcut-keys">
               <kbd class="shortcut-key">Esc</kbd>
@@ -304,6 +372,10 @@
           <div class="command-help-row">
             <kbd class="shortcut-key command-help-key">:help</kbd>
             <span>Show this help</span>
+          </div>
+          <div class="command-help-row">
+            <kbd class="shortcut-key command-help-key">:home</kbd>
+            <span>Open home</span>
           </div>
           <div class="command-help-row">
             <kbd class="shortcut-key command-help-key">:projects</kbd>
@@ -322,12 +394,24 @@
             <span>Open resume</span>
           </div>
           <div class="command-help-row">
-            <kbd class="shortcut-key command-help-key">:theme</kbd>
-            <span>Toggle theme</span>
+            <kbd class="shortcut-key command-help-key">:next</kbd>
+            <span>Open next page</span>
+          </div>
+          <div class="command-help-row">
+            <kbd class="shortcut-key command-help-key">:prev</kbd>
+            <span>Open previous page</span>
           </div>
           <div class="command-help-row">
             <kbd class="shortcut-key command-help-key">:top</kbd>
             <span>Scroll to top</span>
+          </div>
+          <div class="command-help-row">
+            <kbd class="shortcut-key command-help-key">:bot</kbd>
+            <span>Scroll to bottom</span>
+          </div>
+          <div class="command-help-row">
+            <kbd class="shortcut-key command-help-key">:theme</kbd>
+            <span>Toggle theme</span>
           </div>
         </div>
       </section>
@@ -339,7 +423,7 @@
     <path d="m18 15-6-6-6 6"/>
   </svg>
 </button>
-<script src="/js/fuse.basic.min.min.4f1b7e4da7f5a09cc3464ccd93ab72aef1f015c8c2e64d97caf7e39408398c23.js" defer></script><script src="/js/command-palette.min.742a10eb85d67bbaa4ea5c395e15720be359fcc33f55984479f0f1f086b77682.js" defer></script><script src="/js/boids-canvas.min.2b7f22d26ab51996bb441383245930b1b3e6eb007c14dce4c3fc6cf39541d358.js" defer></script><script src="/js/ui-enhancements.min.54880cb138af57782e23a432acaf85c78c0838cc08ff590de4b0af7f35b0d57e.js" defer></script>
+<script src="/js/fuse.basic.min.min.4f1b7e4da7f5a09cc3464ccd93ab72aef1f015c8c2e64d97caf7e39408398c23.js" defer></script><script src="/js/boids-canvas.min.2b7f22d26ab51996bb441383245930b1b3e6eb007c14dce4c3fc6cf39541d358.js" defer></script><script src="/js/ui-enhancements.min.0deef5b0829186a998be9616e43a39df1f064c08edfa196868050931fe892b66.js" defer></script><script src="/js/command-palette.min.af0593bb207dd2366dea3692bc732a3013d7e03603b0305f351c930ba313e4b3.js" defer></script>
 
 
 <script>
@@ -402,6 +486,24 @@
     })
 
 </script>
+<div class="statusline" role="status" aria-label="Site status">
+    <div class="statusline-main">
+        <div class="statusline-left">
+            <span class="statusline-mode" data-statusline-mode>NORMAL</span>
+            <span class="statusline-section">home</span>
+            <span class="statusline-path">~</span>
+        </div>
+        <div class="statusline-right">
+            <span class="statusline-position" data-statusline-position>Top</span>
+        </div>
+    </div>
+    <div class="statusline-command-wrap" data-statusline-command-wrap>
+        <div class="statusline-completions" data-statusline-completions hidden></div>
+        <span class="statusline-command" data-statusline-command aria-live="polite"></span>
+        <input class="statusline-command-input" data-statusline-command-input type="text" aria-label="Command" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+    </div>
+</div>
+
 </body>
 
 </html>

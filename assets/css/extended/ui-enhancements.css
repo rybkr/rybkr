@@ -69,6 +69,8 @@
   transform: translate(-50%, -50%);
   width: 90%;
   max-width: 460px;
+  max-height: min(82vh, 680px);
+  overflow-y: auto;
   background: var(--theme);
   border: 1px solid var(--border);
   border-radius: 12px;
@@ -146,7 +148,22 @@
 
 .shortcut-keys {
   display: flex;
+  align-items: center;
   gap: 4px;
+}
+
+.shortcut-combo {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.shortcut-key-separator {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 2px;
+  color: var(--secondary);
+  opacity: 0.55;
+  font-size: 12px;
 }
 
 .shortcut-key {
