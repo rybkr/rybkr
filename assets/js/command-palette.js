@@ -17,6 +17,12 @@
   let statusCommandMatches = [];
   let statusCommandSelectedIndex = -1;
   let statusCommandCompletionPrefix = '';
+  const compactNavigationMedia = window.matchMedia('(max-width: 700px), (hover: none) and (pointer: coarse)');
+
+  function isCompactNavigationViewport() {
+    return compactNavigationMedia.matches;
+  }
+
   const COMMANDS = [
     {
       name: 'home',
@@ -431,6 +437,11 @@
   }
 
   function openStatusCommand(initialValue = '') {
+    if (isCompactNavigationViewport()) {
+      openPalette({ mode: 'search', value: initialValue.replace(/^:/, '') });
+      return;
+    }
+
     if (!statusCommandWrap || !statusCommandInput) {
       openPalette({ mode: 'command', value: initialValue });
       return;
@@ -581,7 +592,7 @@
 
   // Open/close palette
   function openPalette(options = {}) {
-    mode = options.mode || 'search';
+    mode = isCompactNavigationViewport() && options.mode === 'command' ? 'search' : (options.mode || 'search');
     const initialValue = options.value || '';
     if (window.rybkrSetStatuslineMode) {
       window.rybkrSetStatuslineMode(mode === 'command' ? 'COMMAND' : 'SEARCH');

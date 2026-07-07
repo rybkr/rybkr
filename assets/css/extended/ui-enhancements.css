@@ -471,10 +471,17 @@ article a[href^="http"]:not([href*="rybkr.com"]):not([href*="localhost"]):not(.f
   font-weight: 500;
 }
 
-/* Hide keyboard hint on touch devices */
+/* Hide keyboard hints where the keyboard-driven UI is not the primary surface. */
 @media (hover: none) and (pointer: coarse) {
   .search-hint-key {
     display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .search-hint-key,
+  .shortcuts-modal {
+    display: none !important;
   }
 }
 

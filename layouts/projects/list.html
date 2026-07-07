@@ -1,5 +1,5 @@
 {{ define "main" }}
-<main>
+<main class="project-index">
     {{ partial "breadcrumbs.html" . }}
     <div class="page-header enter">
         <h1>Projects</h1>
@@ -7,30 +7,33 @@
     </div>
     <p class="project-intro enter enter-d1">A selection of work and research.</p>
 
-    <div id="project-filters" class="filter-bar enter enter-d2">
-        <div class="filter-group">
-            <span class="filter-group-label">Language</span>
-            {{- range slice "C" "C++" "Python" "Go" "Lua" "JS" -}}
-                <button class="filter-pill" data-tag="{{ . }}">{{ . }}</button>
-            {{- end -}}
+    <div class="project-toolbar enter enter-d2">
+        <div id="project-filters" class="filter-bar" aria-label="Project filters">
+            <div class="filter-group">
+                <span class="filter-group-label">Language</span>
+                {{- range slice "C" "C++" "Python" "Go" "Lua" "JS" -}}
+                    <button class="filter-pill" data-tag="{{ . }}">{{ . }}</button>
+                {{- end -}}
+            </div>
+            <div class="filter-group">
+                <span class="filter-group-label">Domain</span>
+                {{- range slice "Embedded" "Algorithms" "Game Dev" "Web Dev" "Tools" -}}
+                    <button class="filter-pill" data-tag="{{ . }}">{{ . }}</button>
+                {{- end -}}
+            </div>
+            <div class="filter-group">
+                <span class="filter-group-label">Tools</span>
+                {{- range slice "CLI" "Neovim" "Config" "Make" "PlatformIO" -}}
+                    <button class="filter-pill" data-tag="{{ . }}">{{ . }}</button>
+                {{- end -}}
+            </div>
         </div>
-        <div class="filter-group">
-            <span class="filter-group-label">Domain</span>
-            {{- range slice "Embedded" "Algorithms" "Game Dev" "Web Dev" "Tools" -}}
-                <button class="filter-pill" data-tag="{{ . }}">{{ . }}</button>
-            {{- end -}}
-        </div>
-        <div class="filter-group">
-            <span class="filter-group-label">Tools</span>
-            {{- range slice "CLI" "Neovim" "Config" "Make" "PlatformIO" -}}
-                <button class="filter-pill" data-tag="{{ . }}">{{ . }}</button>
-            {{- end -}}
-        </div>
+        <p class="project-count" data-project-count aria-live="polite">{{ len .Pages }} projects</p>
     </div>
 
     <p id="no-results" class="no-results" style="display: none;">No projects match the selected filters.</p>
 
-    <section id="projects" class="enter enter-d3">
+    <section id="projects" class="project-list enter enter-d3">
         {{ range .Pages.ByDate.Reverse }}
         {{- $cardTags := .Params.tags | default slice -}}
         {{- range .Params.stack | default slice -}}
@@ -38,7 +41,7 @@
                 {{- $cardTags = $cardTags | append . -}}
             {{- end -}}
         {{- end -}}
-        <article class="project-card" data-tags="{{ $cardTags | jsonify }}">
+        <article class="project-card{{ if .Params.thumbnail }} has-thumbnail{{ end }}" data-tags="{{ $cardTags | jsonify }}">
             <div class="card-left">
                 {{- $projectURL := "" -}}
                 {{- $isExternal := false -}}
@@ -54,18 +57,25 @@
                     {{- $projectURL = printf "https://github.com/rybkr/%s" .File.ContentBaseName -}}
                     {{- $isExternal = true -}}
                 {{- end -}}
-                <h2>
-                    <a href="{{ $projectURL }}"{{ if $isExternal }} target="_blank" rel="noopener"{{ end }}>
-                        {{ .Title }}
-                    </a>
+                <div class="project-card-heading">
+                    <h2>
+                        <a href="{{ $projectURL }}"{{ if $isExternal }} target="_blank" rel="noopener"{{ end }}>
+                            {{ .Title }}
+                        </a>
+                    </h2>
                     {{- if .Params.wip -}}
                     <span class="wip-badge">WIP</span>
                     {{- end -}}
-                </h2>
+                    <span class="project-link-kind">{{ cond $isExternal "External" "Page" }}</span>
+                </div>
 
                 {{ with .Params.subtitle }}
                 <p class="project-card-subtitle">{{ . }}</p>
-                {{ end }} {{ $stack := .Params.stack | default slice }} {{ $tags
+                {{ end }}
+                {{ with .Params.summary }} {{ if ne . "" }}
+                <p class="project-card-summary">{{ . }}</p>
+                {{ end }} {{ end }}
+                {{ $stack := .Params.stack | default slice }} {{ $tags
                 := .Params.tags | default slice }} {{ $allTags := slice }} {{
                 range $stack }} {{ $allTags = $allTags | append . }} {{ end }}
                 {{ range $tags }} {{ if not (in $stack .) }} {{ $allTags =
@@ -90,21 +100,15 @@
                 </div>
             </div>
 
-            <div class="card-middle">
-                {{ with .Params.summary }} {{ if ne . "" }}
-                <p>{{ . }}</p>
-                {{ end }} {{ end }}
-            </div>
-
+            {{ with .Params.thumbnail }}
             <div class="card-right">
-                {{ with .Params.thumbnail }}
                 <img
                     class="project-thumb"
                     src="{{ . }}"
                     alt="{{ $.Title }} thumbnail"
                 />
-                {{ end }}
             </div>
+            {{ end }}
         </article>
 
         {{ end }}

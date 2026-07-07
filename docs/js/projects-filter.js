@@ -2,8 +2,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const pills = document.querySelectorAll(".filter-pill");
     const cards = document.querySelectorAll(".project-card");
     const noResults = document.getElementById("no-results");
+    const projectCount = document.querySelector("[data-project-count]");
 
     let activeTags = new Set();
+
+    function formatCount(count) {
+        return `${count} ${count === 1 ? "project" : "projects"}`;
+    }
 
     function applyFilter() {
         let visibleCount = 0;
@@ -26,6 +31,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (noResults) {
             noResults.style.display = (activeTags.size > 0 && visibleCount === 0) ? "" : "none";
+        }
+
+        if (projectCount) {
+            projectCount.textContent = activeTags.size > 0
+                ? `${formatCount(visibleCount)} shown`
+                : formatCount(cards.length);
         }
     }
 

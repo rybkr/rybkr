@@ -2,136 +2,136 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Projects on Ryan Baker</title>
-    <link>https://rybkr.com/projects/</link>
+    <link>http://127.0.0.1:1318/projects/</link>
     <description>Recent content in Projects on Ryan Baker</description>
     <generator>Hugo -- 0.161.1</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 25 Dec 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://rybkr.com/projects/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://127.0.0.1:1318/projects/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Byte Courses</title>
-      <link>https://rybkr.com/projects/bytecourses/</link>
+      <link>http://127.0.0.1:1318/projects/bytecourses/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/bytecourses/</guid>
+      <guid>http://127.0.0.1:1318/projects/bytecourses/</guid>
       <description>A lightweight learning management system built in Go for delivering structured programming courses.</description>
     </item>
     <item>
       <title>Git Vista</title>
-      <link>https://rybkr.com/projects/gitvista/</link>
+      <link>http://127.0.0.1:1318/projects/gitvista/</link>
       <pubDate>Thu, 11 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/gitvista/</guid>
+      <guid>http://127.0.0.1:1318/projects/gitvista/</guid>
       <description>A terminal tool for exploring Git repo history — commit analytics, file churn, and branch visualization without leaving the CLI.</description>
     </item>
     <item>
       <title>Chroma Sudoku</title>
-      <link>https://rybkr.com/projects/chromasudoku/</link>
+      <link>http://127.0.0.1:1318/projects/chromasudoku/</link>
       <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/chromasudoku/</guid>
+      <guid>http://127.0.0.1:1318/projects/chromasudoku/</guid>
       <description>Sudoku reimagined with colors instead of digits, running on an RP2350 with a 32×32 RGB LED matrix.</description>
     </item>
     <item>
       <title>Sudoku Generator &amp; Solver</title>
-      <link>https://rybkr.com/projects/sudoku/</link>
+      <link>http://127.0.0.1:1318/projects/sudoku/</link>
       <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/sudoku/</guid>
+      <guid>http://127.0.0.1:1318/projects/sudoku/</guid>
       <description>A command-line Sudoku generator and solver in Go — built so I&amp;rsquo;d never need to buy another puzzle book.</description>
     </item>
     <item>
       <title>Markee</title>
-      <link>https://rybkr.com/projects/markee/</link>
+      <link>http://127.0.0.1:1318/projects/markee/</link>
       <pubDate>Wed, 01 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/markee/</guid>
+      <guid>http://127.0.0.1:1318/projects/markee/</guid>
       <description>A zero-dependency Markdown parser written from scratch in Go, focused on the subset of Markdown people actually use.</description>
     </item>
     <item>
       <title>Model Registry</title>
-      <link>https://rybkr.com/projects/modelregistry/</link>
+      <link>http://127.0.0.1:1318/projects/modelregistry/</link>
       <pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/modelregistry/</guid>
+      <guid>http://127.0.0.1:1318/projects/modelregistry/</guid>
       <description>A system for cataloging and scoring Hugging Face models on domain-specific reliability, beyond star counts and downloads.</description>
     </item>
     <item>
       <title>CPU Raytracer</title>
-      <link>https://rybkr.com/projects/raytracer/</link>
+      <link>http://127.0.0.1:1318/projects/raytracer/</link>
       <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/raytracer/</guid>
+      <guid>http://127.0.0.1:1318/projects/raytracer/</guid>
       <description>A from-scratch C++ raytracer with reflection, refraction, and Monte Carlo path tracing — no graphics libraries.</description>
     </item>
     <item>
       <title>Artscii</title>
-      <link>https://rybkr.com/projects/artscii/</link>
+      <link>http://127.0.0.1:1318/projects/artscii/</link>
       <pubDate>Mon, 20 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/artscii/</guid>
+      <guid>http://127.0.0.1:1318/projects/artscii/</guid>
       <description>A C library for generating ASCII art from geometric primitives and images.</description>
     </item>
     <item>
       <title>Onevim</title>
-      <link>https://rybkr.com/projects/onevim/</link>
+      <link>http://127.0.0.1:1318/projects/onevim/</link>
       <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/onevim/</guid>
+      <guid>http://127.0.0.1:1318/projects/onevim/</guid>
       <description>A fast, opinionated Neovim configuration built for systems programming and staying out of your way.</description>
     </item>
     <item>
       <title>NeoTeX</title>
-      <link>https://rybkr.com/projects/neotex/</link>
+      <link>http://127.0.0.1:1318/projects/neotex/</link>
       <pubDate>Tue, 24 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/neotex/</guid>
+      <guid>http://127.0.0.1:1318/projects/neotex/</guid>
       <description>A Neovim plugin for live LaTeX preview — edit and see compiled output update without leaving your editor.</description>
     </item>
     <item>
       <title>VimSlides</title>
-      <link>https://rybkr.com/projects/vimslides/</link>
+      <link>http://127.0.0.1:1318/projects/vimslides/</link>
       <pubDate>Fri, 20 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/vimslides/</guid>
+      <guid>http://127.0.0.1:1318/projects/vimslides/</guid>
       <description>A Neovim plugin that turns Markdown files into terminal slideshows — no browser, no export step.</description>
     </item>
     <item>
       <title>Convolution Visualizer</title>
-      <link>https://rybkr.com/projects/convolution/</link>
+      <link>http://127.0.0.1:1318/projects/convolution/</link>
       <pubDate>Thu, 24 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/convolution/</guid>
+      <guid>http://127.0.0.1:1318/projects/convolution/</guid>
       <description>An interactive web tool for visualizing continuous-time signal convolution, step by step.</description>
     </item>
     <item>
       <title>Passman</title>
-      <link>https://rybkr.com/projects/passman/</link>
+      <link>http://127.0.0.1:1318/projects/passman/</link>
       <pubDate>Sun, 11 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/passman/</guid>
+      <guid>http://127.0.0.1:1318/projects/passman/</guid>
       <description>A local-first password manager in Python with SQLite storage and no cloud dependencies.</description>
     </item>
     <item>
       <title>Big Nums</title>
-      <link>https://rybkr.com/projects/bignums/</link>
+      <link>http://127.0.0.1:1318/projects/bignums/</link>
       <pubDate>Sat, 02 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/bignums/</guid>
+      <guid>http://127.0.0.1:1318/projects/bignums/</guid>
       <description>An arbitrary-precision integer and floating-point arithmetic library for C++, built from scratch.</description>
     </item>
     <item>
       <title>Juicer</title>
-      <link>https://rybkr.com/projects/juicer/</link>
+      <link>http://127.0.0.1:1318/projects/juicer/</link>
       <pubDate>Tue, 23 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/juicer/</guid>
+      <guid>http://127.0.0.1:1318/projects/juicer/</guid>
       <description>A high-performance chess move generator in C++, using magic bitboards for fast legal move enumeration.</description>
     </item>
     <item>
       <title>2048 Game</title>
-      <link>https://rybkr.com/projects/2048/</link>
+      <link>http://127.0.0.1:1318/projects/2048/</link>
       <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/2048/</guid>
+      <guid>http://127.0.0.1:1318/projects/2048/</guid>
       <description>A Pygame recreation of the 2048 sliding tile puzzle.</description>
     </item>
     <item>
       <title>C&#43;&#43; Chess Engine V1</title>
-      <link>https://rybkr.com/projects/cppchessengine/</link>
+      <link>http://127.0.0.1:1318/projects/cppchessengine/</link>
       <pubDate>Thu, 27 Jul 2023 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/cppchessengine/</guid>
+      <guid>http://127.0.0.1:1318/projects/cppchessengine/</guid>
       <description>My first chess engine — a from-scratch implementation in C++ with basic search and evaluation.</description>
     </item>
     <item>
       <title>Python Chess Engine</title>
-      <link>https://rybkr.com/projects/pychessengine/</link>
+      <link>http://127.0.0.1:1318/projects/pychessengine/</link>
       <pubDate>Fri, 12 May 2023 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/pychessengine/</guid>
+      <guid>http://127.0.0.1:1318/projects/pychessengine/</guid>
       <description>My first chess engine — a simple implementation in Python that got me hooked on game programming.</description>
     </item>
   </channel>
