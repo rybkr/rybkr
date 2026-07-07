@@ -58,13 +58,13 @@
       name: 'next',
       aliases: ['n'],
       description: 'Open the next page',
-      run: () => navigatePagerCommand('.pagination .next, .paginav .next, a[rel="next"]', 'next')
+      run: () => navigatePagerCommand('.project-pagination .next, .pagination .next, .paginav .next, a[rel="next"]', 'next')
     },
     {
       name: 'prev',
       aliases: ['previous', 'back'],
       description: 'Open the previous page',
-      run: () => navigatePagerCommand('.pagination .prev, .paginav .prev, a[rel="prev"]', 'prev')
+      run: () => navigatePagerCommand('.project-pagination .prev, .pagination .prev, .paginav .prev, a[rel="prev"]', 'prev')
     },
     {
       name: 'top',

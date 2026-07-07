@@ -17,7 +17,6 @@ body.list {
     backdrop-filter: blur(12px);
 }
 
-.project-card:hover,
 .featured-card:hover,
 .search-hint:hover,
 .back-to-top:hover {

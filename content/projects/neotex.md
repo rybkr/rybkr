@@ -3,6 +3,7 @@ title = 'NeoTeX'
 subtitle = 'Live LaTeX Preview in Neovim'
 summary = 'A Neovim plugin for live LaTeX preview — edit and see compiled output update without leaving your editor.'
 date = '2024-12-24'
+rank = 100
 tags = ["Neovim", "Lua", "Config", "Tools"]
 stack = ["Lua"]
 draft = false

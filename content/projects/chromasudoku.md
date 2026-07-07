@@ -2,6 +2,7 @@
 title = 'Chroma Sudoku'
 summary = 'Sudoku reimagined with colors instead of digits, running on an RP2350 with a 32×32 RGB LED matrix.'
 date = '2025-12-05'
+rank = 20
 tags = ["Embedded", "C", "Game Dev"]
 stack = ["C", "PlatformIO", "RP2350"]
 thumbnail = "/images/projects/chromasudoku/thumb.png"

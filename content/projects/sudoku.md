@@ -2,6 +2,7 @@
 title = 'Sudoku Generator & Solver'
 summary = "A command-line Sudoku generator and solver in Go — built so I'd never need to buy another puzzle book."
 date = '2025-10-06'
+rank = 40
 tags = ["Tools"]
 stack = ["Go", "CLI"]
 thumbnail = "/images/projects/sudoku/thumb.png"

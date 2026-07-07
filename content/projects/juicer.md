@@ -1,5 +1,6 @@
 +++
 date = '2024-01-23'
+rank = 120
 draft = false
 title = 'Juicer'
 tags = ["C++", "Game Dev"]

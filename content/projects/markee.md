@@ -3,6 +3,7 @@ title = 'Markee'
 subtitle = 'Minimal Markdown Parser'
 summary = 'A zero-dependency Markdown parser written from scratch in Go, focused on the subset of Markdown people actually use.'
 date = '2025-10-01'
+rank = 90
 tags = ["Go", "Tools"]
 stack = ["Go"]
 wip = true

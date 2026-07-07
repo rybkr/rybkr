@@ -1,6 +1,7 @@
 +++
 title = 'CPU Raytracer'
 date = '2025-03-17'
+rank = 50
 tags = ["C++", "Algorithms"]
 stack = ["C++"]
 summary = "A from-scratch C++ raytracer with reflection, refraction, and Monte Carlo path tracing — no graphics libraries."

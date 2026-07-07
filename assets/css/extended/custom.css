@@ -196,8 +196,8 @@ a:hover {
     transform: scale(0.97);
 }
 
-.filter-pill:hover,
-.filter-pill.active {
+.filter-pill:not([data-filter-group]):hover,
+.filter-pill:not([data-filter-group]).active {
     background: var(--primary);
     border-color: var(--primary);
     color: var(--theme);

@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Talks &amp; Publications on Ryan Baker</title>
-    <link>http://127.0.0.1:1318/library/talks-publications/</link>
+    <link>https://rybkr.com/library/talks-publications/</link>
     <description>Recent content in Talks &amp; Publications on Ryan Baker</description>
     <generator>Hugo -- 0.161.1</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 22 Apr 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://127.0.0.1:1318/library/talks-publications/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://rybkr.com/library/talks-publications/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Context Synchronization for Multi-Agent Workflows</title>
-      <link>http://127.0.0.1:1318/library/talks-publications/context-synchronization-for-multi-agent-workflows/</link>
+      <link>https://rybkr.com/library/talks-publications/context-synchronization-for-multi-agent-workflows/</link>
       <pubDate>Wed, 22 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://127.0.0.1:1318/library/talks-publications/context-synchronization-for-multi-agent-workflows/</guid>
+      <guid>https://rybkr.com/library/talks-publications/context-synchronization-for-multi-agent-workflows/</guid>
       <description>A shared context layer for multi-agent coding workflows that tracks symbol-level observations and reports stale context when concurrent edits invalidate agent assumptions.</description>
     </item>
     <item>
       <title>Messing with Floating Point</title>
-      <link>http://127.0.0.1:1318/library/talks-publications/messing-with-floating-point/</link>
+      <link>https://rybkr.com/library/talks-publications/messing-with-floating-point/</link>
       <pubDate>Thu, 28 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://127.0.0.1:1318/library/talks-publications/messing-with-floating-point/</guid>
+      <guid>https://rybkr.com/library/talks-publications/messing-with-floating-point/</guid>
       <description>A deep dive into IEEE 754 floating point, its quirks, and how to work with it effectively in C++</description>
     </item>
   </channel>
