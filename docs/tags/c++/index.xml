@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>C&#43;&#43; on Ryan Baker</title>
-    <link>https://rybkr.com/tags/c&#43;&#43;/</link>
+    <link>http://127.0.0.1:1318/tags/c&#43;&#43;/</link>
     <description>Recent content in C&#43;&#43; on Ryan Baker</description>
     <generator>Hugo -- 0.161.1</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 17 Mar 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://rybkr.com/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://127.0.0.1:1318/tags/c++/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CPU Raytracer</title>
-      <link>https://rybkr.com/projects/raytracer/</link>
+      <link>http://127.0.0.1:1318/projects/raytracer/</link>
       <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/raytracer/</guid>
+      <guid>http://127.0.0.1:1318/projects/raytracer/</guid>
       <description>A from-scratch C++ raytracer with reflection, refraction, and Monte Carlo path tracing — no graphics libraries.</description>
     </item>
     <item>
       <title>Messing with Floating Point</title>
-      <link>https://rybkr.com/library/talks-publications/messing-with-floating-point/</link>
+      <link>http://127.0.0.1:1318/library/talks-publications/messing-with-floating-point/</link>
       <pubDate>Thu, 28 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/library/talks-publications/messing-with-floating-point/</guid>
+      <guid>http://127.0.0.1:1318/library/talks-publications/messing-with-floating-point/</guid>
       <description>A deep dive into IEEE 754 floating point, its quirks, and how to work with it effectively in C++</description>
     </item>
     <item>
       <title>Big Nums</title>
-      <link>https://rybkr.com/projects/bignums/</link>
+      <link>http://127.0.0.1:1318/projects/bignums/</link>
       <pubDate>Sat, 02 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/bignums/</guid>
+      <guid>http://127.0.0.1:1318/projects/bignums/</guid>
       <description>An arbitrary-precision integer and floating-point arithmetic library for C++, built from scratch.</description>
     </item>
     <item>
       <title>Juicer</title>
-      <link>https://rybkr.com/projects/juicer/</link>
+      <link>http://127.0.0.1:1318/projects/juicer/</link>
       <pubDate>Tue, 23 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/juicer/</guid>
+      <guid>http://127.0.0.1:1318/projects/juicer/</guid>
       <description>A high-performance chess move generator in C++, using magic bitboards for fast legal move enumeration.</description>
     </item>
     <item>
       <title>C&#43;&#43; Chess Engine V1</title>
-      <link>https://rybkr.com/projects/cppchessengine/</link>
+      <link>http://127.0.0.1:1318/projects/cppchessengine/</link>
       <pubDate>Thu, 27 Jul 2023 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/cppchessengine/</guid>
+      <guid>http://127.0.0.1:1318/projects/cppchessengine/</guid>
       <description>My first chess engine — a from-scratch implementation in C++ with basic search and evaluation.</description>
     </item>
   </channel>

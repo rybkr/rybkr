@@ -284,7 +284,25 @@ body:not(.chrome-less) .footer {
     }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 700px), (hover: none) and (pointer: coarse) {
+    body:not(.chrome-less) {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+
+    body:not(.chrome-less) .main {
+        min-height: calc(100vh - var(--header-height) - var(--footer-height));
+    }
+
+    body:not(.chrome-less) .footer {
+        margin-bottom: 0;
+    }
+
+    .statusline {
+        display: none;
+    }
+}
+
+@media (min-width: 701px) and (max-width: 760px) {
     .statusline,
     .statusline-main {
         grid-template-columns: minmax(0, 1fr) auto;

@@ -2,52 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Python on Ryan Baker</title>
-    <link>https://rybkr.com/tags/python/</link>
+    <link>http://127.0.0.1:1318/tags/python/</link>
     <description>Recent content in Python on Ryan Baker</description>
     <generator>Hugo -- 0.161.1</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 22 Apr 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://rybkr.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://127.0.0.1:1318/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Context Synchronization for Multi-Agent Workflows</title>
-      <link>https://rybkr.com/library/talks-publications/context-synchronization-for-multi-agent-workflows/</link>
+      <link>http://127.0.0.1:1318/library/talks-publications/context-synchronization-for-multi-agent-workflows/</link>
       <pubDate>Wed, 22 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/library/talks-publications/context-synchronization-for-multi-agent-workflows/</guid>
+      <guid>http://127.0.0.1:1318/library/talks-publications/context-synchronization-for-multi-agent-workflows/</guid>
       <description>A shared context layer for multi-agent coding workflows that tracks symbol-level observations and reports stale context when concurrent edits invalidate agent assumptions.</description>
     </item>
     <item>
       <title>Byte Courses</title>
-      <link>https://rybkr.com/projects/bytecourses/</link>
+      <link>http://127.0.0.1:1318/projects/bytecourses/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/bytecourses/</guid>
+      <guid>http://127.0.0.1:1318/projects/bytecourses/</guid>
       <description>A lightweight learning management system built in Go for delivering structured programming courses.</description>
     </item>
     <item>
       <title>Model Registry</title>
-      <link>https://rybkr.com/projects/modelregistry/</link>
+      <link>http://127.0.0.1:1318/projects/modelregistry/</link>
       <pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/modelregistry/</guid>
+      <guid>http://127.0.0.1:1318/projects/modelregistry/</guid>
       <description>A system for cataloging and scoring Hugging Face models on domain-specific reliability, beyond star counts and downloads.</description>
     </item>
     <item>
       <title>Passman</title>
-      <link>https://rybkr.com/projects/passman/</link>
+      <link>http://127.0.0.1:1318/projects/passman/</link>
       <pubDate>Sun, 11 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/passman/</guid>
+      <guid>http://127.0.0.1:1318/projects/passman/</guid>
       <description>A local-first password manager in Python with SQLite storage and no cloud dependencies.</description>
     </item>
     <item>
       <title>2048 Game</title>
-      <link>https://rybkr.com/projects/2048/</link>
+      <link>http://127.0.0.1:1318/projects/2048/</link>
       <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/2048/</guid>
+      <guid>http://127.0.0.1:1318/projects/2048/</guid>
       <description>A Pygame recreation of the 2048 sliding tile puzzle.</description>
     </item>
     <item>
       <title>Python Chess Engine</title>
-      <link>https://rybkr.com/projects/pychessengine/</link>
+      <link>http://127.0.0.1:1318/projects/pychessengine/</link>
       <pubDate>Fri, 12 May 2023 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/pychessengine/</guid>
+      <guid>http://127.0.0.1:1318/projects/pychessengine/</guid>
       <description>My first chess engine — a simple implementation in Python that got me hooked on game programming.</description>
     </item>
   </channel>

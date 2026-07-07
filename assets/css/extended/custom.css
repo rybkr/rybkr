@@ -130,7 +130,6 @@ a:hover {
 /* -------------------------------------------------------
    Cards and Controls
 ------------------------------------------------------- */
-.project-card,
 .featured-card,
 .search-hint,
 .command-palette-modal,
@@ -140,13 +139,11 @@ a:hover {
     box-shadow: 0 1px 0 rgba(255, 255, 255, 0.32) inset;
 }
 
-.project-card,
 .writing-card,
 .library-card {
     border-bottom-color: color-mix(in srgb, var(--border) 80%, transparent);
 }
 
-.project-card,
 .featured-card {
     transition:
         transform 0.2s ease-out,
@@ -155,7 +152,6 @@ a:hover {
         background 0.2s ease-out;
 }
 
-.project-card:hover,
 .featured-card:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-tight);

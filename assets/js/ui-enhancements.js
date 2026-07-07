@@ -8,6 +8,11 @@
   const localHostnames = new Set(['localhost', '127.0.0.1', '::1']);
   const productionHostnames = new Set(['rybkr.com', 'www.rybkr.com']);
   const isLocalPreview = localHostnames.has(window.location.hostname);
+  const compactNavigationMedia = window.matchMedia('(max-width: 700px), (hover: none) and (pointer: coarse)');
+
+  function isCompactNavigationViewport() {
+    return compactNavigationMedia.matches;
+  }
 
   function localizeInternalUrl(value) {
     if (!isLocalPreview || !value) return value;
@@ -345,6 +350,7 @@
   if (shortcutsModal) {
 
     function openShortcuts() {
+      if (isCompactNavigationViewport()) return;
       shortcutsModal.classList.add('open');
       shortcutsModal.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
@@ -375,6 +381,7 @@
       }
 
       if (e.key === '?' && !e.metaKey && !e.ctrlKey) {
+        if (isCompactNavigationViewport()) return;
         e.preventDefault();
         clearPendingG();
         openShortcuts();

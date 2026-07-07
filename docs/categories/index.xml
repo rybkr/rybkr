@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Categories on Ryan Baker</title>
-    <link>https://rybkr.com/categories/</link>
+    <link>http://127.0.0.1:1318/categories/</link>
     <description>Recent content in Categories on Ryan Baker</description>
     <generator>Hugo -- 0.161.1</generator>
     <language>en-us</language>
-    <atom:link href="https://rybkr.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://127.0.0.1:1318/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

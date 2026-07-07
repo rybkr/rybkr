@@ -275,8 +275,7 @@
     }
 
     .home-command-hint {
-        align-items: center;
-        flex-wrap: wrap;
+        display: none;
     }
 }
 

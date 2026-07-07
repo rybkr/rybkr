@@ -1,10 +1,9 @@
 /* -------------------------------------------------------
    Layout: Project List Page
 ------------------------------------------------------- */
-.project-list {
-    max-width: 720px;
-    margin: 3rem auto;
-    padding: 0 1rem;
+.project-index {
+    max-width: var(--main-width);
+    margin: 0 auto 3rem;
 }
 
 /* -------------------------------------------------------
@@ -119,19 +118,35 @@
     padding: 0.4rem 0.6rem;
 }
 
-/* Filter bar with groups */
+.project-intro {
+    max-width: 42rem;
+    margin-top: 0;
+    color: var(--secondary);
+}
+
+.project-toolbar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 1rem;
+    align-items: end;
+    margin: 1.25rem 0 1.6rem;
+    padding: 0.85rem 0;
+    border-top: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+    border-bottom: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+}
+
 .filter-bar {
-    margin: 1.5rem 0 2rem;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.5rem;
+    min-width: 0;
 }
 
 .filter-group {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.35rem;
 }
 
 .filter-group-label {
@@ -140,17 +155,26 @@
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: var(--secondary);
-    min-width: 70px;
+    min-width: 5.25rem;
+}
+
+.project-count {
+    margin: 0;
+    color: var(--secondary);
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
 }
 
 /* Filter pills */
 .filter-pill {
-    padding: 0.3rem 0.9rem;
+    padding: 0.22rem 0.62rem;
     border-radius: 9999px;
     border: 1px solid var(--secondary);
     background: var(--code-bg);
     cursor: pointer;
-    font-size: 0.85rem;
+    font-size: 0.78rem;
     transition: background 0.15s ease, color 0.15s ease;
 }
 
@@ -194,41 +218,77 @@
     opacity: 0.85;
 }
 
+.project-list {
+    display: grid;
+    gap: 0;
+}
+
 /* -------------------------------------------------------
-   Project Cards (3-column layout)
+   Project List Rows
 ------------------------------------------------------- */
 .project-card {
     display: grid;
-    grid-template-columns: 1fr 1.3fr auto;
-    gap: 2rem;
-    padding: 1.75rem 0;
-    border-bottom: 1px solid var(--border);
-    align-items: start;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.35rem;
+    align-items: center;
+    padding: 1.35rem 0 1.4rem;
+    border-bottom: 1px solid color-mix(in srgb, var(--border) 78%, transparent);
+    background: transparent;
+    box-shadow: none;
+    transition:
+        border-color 0.15s ease-out,
+        background 0.15s ease-out;
+}
+
+.project-card.has-thumbnail {
+    grid-template-columns: minmax(0, 1fr) 6.5rem;
+}
+
+.project-card:hover {
+    border-bottom-color: color-mix(in srgb, var(--accent) 54%, var(--border));
+    background: color-mix(in srgb, var(--entry) 48%, transparent);
+}
+
+.card-left {
+    min-width: 0;
+}
+
+.project-card-heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.45rem;
+    margin-bottom: 0.22rem;
 }
 
 .card-left h2 {
-    margin: 0 0 0.3rem 0;
-    font-size: 1.35rem;
+    margin: 0;
+    font-size: 1.25rem;
     line-height: 1.25;
 }
 
+.card-left h2 a {
+    text-decoration: none;
+}
+
 .project-card-subtitle {
-    margin: 0 0 0.6rem 0;
+    margin: 0.05rem 0 0.38rem;
     font-size: 0.95rem;
     color: var(--secondary);
+}
+
+.project-card-summary {
+    max-width: 48rem;
+    margin: 0 0 0.68rem;
+    color: var(--content);
+    line-height: 1.55;
 }
 
 .tag-row,
 .stack-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.35rem;
-}
-
-.card-middle p {
-    margin: 0 0 0.75rem 0;
-    color: var(--secondary);
-    line-height: 1.5;
+    gap: 0.28rem;
 }
 
 .stack-row {
@@ -250,29 +310,69 @@
 .card-right {
     display: flex;
     justify-content: flex-end;
-    align-items: flex-start;
+    align-items: center;
+    min-height: 5.6rem;
 }
 
 .project-thumb {
-    width: 110px;
-    height: 110px;
-    border-radius: 8px;
+    width: 6.5rem;
+    height: 5.6rem;
+    border-radius: 6px;
+    object-fit: cover;
     box-shadow: 0 1px 3px rgb(0 0 0 / 10%);
 }
 
-/* Cleaner hover state (optional) */
 .project-card:hover h2 a {
-    color: var(--primary);
+    color: var(--accent-hover);
+}
+
+.project-link-kind {
+    color: var(--secondary);
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.project-link-kind::before {
+    content: "[";
+    opacity: 0.5;
+}
+
+.project-link-kind::after {
+    content: "]";
+    opacity: 0.5;
 }
 
 @media (max-width: 700px) {
+    .project-toolbar {
+        grid-template-columns: 1fr;
+        gap: 0.7rem;
+        align-items: start;
+    }
+
+    .filter-group-label {
+        width: 100%;
+    }
+
     .project-card {
         grid-template-columns: 1fr;
-        gap: 1rem;
+        gap: 0.85rem;
+    }
+
+    .project-card.has-thumbnail {
+        grid-template-columns: 1fr;
     }
 
     .card-right {
         justify-content: flex-start;
+        min-height: 0;
+    }
+
+    .project-thumb {
+        width: min(100%, 14rem);
+        height: auto;
+        aspect-ratio: 16 / 9;
     }
 }
 
