@@ -3,6 +3,7 @@ title = 'Onevim'
 subtitle = 'The Objectively Correct Neovim Config'
 summary = "A fast, opinionated Neovim configuration built for systems programming and staying out of your way."
 date = '2025-01-15'
+rank = 70
 draft = false
 stack = ["Lua"]
 tags = ["Neovim", "Lua", "Config", "Tools"]

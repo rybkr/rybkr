@@ -121,16 +121,17 @@
 .project-intro {
     max-width: 42rem;
     margin-top: 0;
+    margin-bottom: 0;
     color: var(--secondary);
 }
 
 .project-toolbar {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    gap: 1rem;
-    align-items: end;
-    margin: 1.25rem 0 1.6rem;
-    padding: 0.85rem 0;
+    grid-template-columns: minmax(0, 1fr) max-content;
+    gap: 1rem 1.35rem;
+    align-items: start;
+    margin: 1.2rem 0 1.4rem;
+    padding: 0.9rem 0 1rem;
     border-top: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
     border-bottom: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
 }
@@ -138,28 +139,35 @@
 .filter-bar {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.46rem;
     min-width: 0;
 }
 
 .filter-group {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.35rem;
+    display: grid;
+    grid-template-columns: 4.6rem minmax(0, 1fr);
+    gap: 0.45rem 0.7rem;
+    align-items: start;
 }
 
 .filter-group-label {
+    padding-top: 0.32rem;
     font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0;
     color: var(--secondary);
-    min-width: 5.25rem;
+}
+
+.filter-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.32rem;
+    min-width: 0;
 }
 
 .project-count {
-    margin: 0;
+    margin: 0.2rem 0 0;
     color: var(--secondary);
     font-family: var(--mono);
     font-size: 0.78rem;
@@ -169,24 +177,50 @@
 
 /* Filter pills */
 .filter-pill {
-    padding: 0.22rem 0.62rem;
-    border-radius: 9999px;
-    border: 1px solid var(--secondary);
-    background: var(--code-bg);
+    min-height: 1.62rem;
+    padding: 0.2rem 0.58rem;
+    border: 1px solid color-mix(in srgb, var(--border) 82%, var(--secondary));
+    border-radius: 6px;
+    background: color-mix(in srgb, var(--entry) 70%, transparent);
+    color: var(--secondary);
     cursor: pointer;
-    font-size: 0.78rem;
-    transition: background 0.15s ease, color 0.15s ease;
+    font-size: 0.76rem;
+    line-height: 1.2;
+    transition:
+        background 0.15s ease-out,
+        border-color 0.15s ease-out,
+        color 0.15s ease-out,
+        transform 0.15s ease-out;
 }
 
 .filter-pill:hover {
-    background: var(--accent);
-    color: var(--theme);
+    border-color: color-mix(in srgb, var(--accent) 55%, var(--border));
+    background: var(--accent-subtle);
+    color: var(--primary);
 }
 
 .filter-pill.active {
-    background: var(--accent);
-    color: var(--theme);
-    border-color: var(--accent);
+    border-color: color-mix(in srgb, var(--accent) 70%, var(--border));
+    background: color-mix(in srgb, var(--accent-subtle) 86%, var(--entry));
+    color: var(--accent-hover);
+    transform: translateY(-1px);
+}
+
+.filter-pill.active:hover {
+    border-color: color-mix(in srgb, var(--accent) 82%, var(--border));
+    background: color-mix(in srgb, var(--accent-subtle) 100%, var(--entry));
+    color: var(--accent-hover);
+}
+
+:root[data-theme="dark"] .filter-pill.active {
+    border-color: color-mix(in srgb, var(--accent) 68%, var(--border));
+    background: color-mix(in srgb, var(--accent) 22%, var(--entry));
+    color: var(--primary);
+}
+
+:root[data-theme="dark"] .filter-pill.active:hover {
+    background: color-mix(in srgb, var(--accent) 30%, var(--entry));
+    color: var(--primary);
 }
 
 /* Empty filter state */
@@ -204,18 +238,16 @@
     font-size: 0.6rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    padding: 0.15rem 0.55rem;
-    margin-left: 0.4rem;
+    letter-spacing: 0;
+    padding: 0.08rem 0.42rem;
     background: var(--accent-subtle);
     color: var(--accent);
-    border: 1px solid var(--accent);
-    border-radius: 9999px;
+    border: 1px solid color-mix(in srgb, var(--accent) 52%, var(--border));
+    border-radius: 5px;
     vertical-align: middle;
     line-height: 1.4;
     white-space: nowrap;
     flex-shrink: 0;
-    opacity: 0.85;
 }
 
 .project-list {
@@ -229,10 +261,13 @@
 .project-card {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
-    gap: 1.35rem;
-    align-items: center;
-    padding: 1.35rem 0 1.4rem;
+    gap: 1.25rem;
+    align-items: start;
+    min-height: 6.6rem;
+    margin-inline: -0.75rem;
+    padding: 1.28rem 0.75rem;
     border-bottom: 1px solid color-mix(in srgb, var(--border) 78%, transparent);
+    border-radius: 7px;
     background: transparent;
     box-shadow: none;
     transition:
@@ -241,12 +276,12 @@
 }
 
 .project-card.has-thumbnail {
-    grid-template-columns: minmax(0, 1fr) 6.5rem;
+    grid-template-columns: minmax(0, 1fr) 6.75rem;
 }
 
 .project-card:hover {
     border-bottom-color: color-mix(in srgb, var(--accent) 54%, var(--border));
-    background: color-mix(in srgb, var(--entry) 48%, transparent);
+    background: color-mix(in srgb, var(--entry) 38%, transparent);
 }
 
 .card-left {
@@ -256,14 +291,14 @@
 .project-card-heading {
     display: flex;
     flex-wrap: wrap;
-    align-items: baseline;
-    gap: 0.45rem;
+    align-items: center;
+    gap: 0.5rem;
     margin-bottom: 0.22rem;
 }
 
 .card-left h2 {
     margin: 0;
-    font-size: 1.25rem;
+    font-size: 1.18rem;
     line-height: 1.25;
 }
 
@@ -271,24 +306,33 @@
     text-decoration: none;
 }
 
+.project-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    min-height: 1.1rem;
+    margin-bottom: 0.35rem;
+}
+
 .project-card-subtitle {
-    margin: 0.05rem 0 0.38rem;
-    font-size: 0.95rem;
+    margin: 0 0 0.32rem;
+    font-size: 0.9rem;
     color: var(--secondary);
 }
 
 .project-card-summary {
     max-width: 48rem;
-    margin: 0 0 0.68rem;
+    margin: 0 0 0.62rem;
     color: var(--content);
-    line-height: 1.55;
+    font-size: 0.95rem;
+    line-height: 1.5;
 }
 
 .tag-row,
 .stack-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.28rem;
+    gap: 0.26rem;
 }
 
 .stack-row {
@@ -310,54 +354,112 @@
 .card-right {
     display: flex;
     justify-content: flex-end;
-    align-items: center;
-    min-height: 5.6rem;
+    align-items: flex-start;
+    min-height: 6.75rem;
 }
 
 .project-thumb {
-    width: 6.5rem;
-    height: 5.6rem;
+    width: 6.75rem;
+    height: 6.75rem;
     border-radius: 6px;
     object-fit: cover;
-    box-shadow: 0 1px 3px rgb(0 0 0 / 10%);
+    border: 1px solid color-mix(in srgb, var(--border) 80%, transparent);
+    background: var(--code-bg);
+    box-shadow: none;
 }
 
 .project-card:hover h2 a {
     color: var(--accent-hover);
 }
 
-.project-link-kind {
+.project-pagination {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    gap: 1rem;
+    align-items: center;
+    margin: 1.35rem 0 0;
+    padding-top: 1rem;
+    border-top: 1px solid color-mix(in srgb, var(--border) 72%, transparent);
+}
+
+.project-pagination-edge {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.project-pagination-edge.is-right {
+    justify-content: flex-end;
+}
+
+.project-pagination-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 4.2rem;
+    min-height: 2rem;
+    padding: 0.32rem 0.78rem;
+    border: 1px solid color-mix(in srgb, var(--border) 84%, var(--secondary));
+    border-radius: 6px;
+    background: color-mix(in srgb, var(--entry) 70%, transparent);
+    color: var(--secondary);
+    font-size: 0.82rem;
+    text-decoration: none;
+    transition:
+        background 0.15s ease-out,
+        border-color 0.15s ease-out,
+        color 0.15s ease-out,
+        transform 0.15s ease-out;
+}
+
+.project-pagination-link:hover {
+    border-color: color-mix(in srgb, var(--accent) 55%, var(--border));
+    background: var(--accent-subtle);
+    color: var(--primary);
+    transform: translateY(-1px);
+}
+
+.project-pagination-link.is-disabled {
+    opacity: 0.42;
+    pointer-events: none;
+}
+
+.project-pagination-status {
     color: var(--secondary);
     font-family: var(--mono);
-    font-size: 0.68rem;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-}
-
-.project-link-kind::before {
-    content: "[";
-    opacity: 0.5;
-}
-
-.project-link-kind::after {
-    content: "]";
-    opacity: 0.5;
+    font-size: 0.78rem;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
 }
 
 @media (max-width: 700px) {
     .project-toolbar {
         grid-template-columns: 1fr;
-        gap: 0.7rem;
+        gap: 0.85rem;
         align-items: start;
+        margin-top: 1rem;
+    }
+
+    .filter-group {
+        grid-template-columns: 1fr;
+        gap: 0.28rem;
     }
 
     .filter-group-label {
-        width: 100%;
+        padding-top: 0;
+        font-size: 0.68rem;
+    }
+
+    .project-count {
+        margin-top: 0;
+        justify-self: start;
     }
 
     .project-card {
         grid-template-columns: 1fr;
-        gap: 0.85rem;
+        gap: 0.75rem;
+        min-height: 0;
+        margin-inline: -0.65rem;
+        padding: 1.12rem 0.65rem;
     }
 
     .project-card.has-thumbnail {
@@ -370,9 +472,24 @@
     }
 
     .project-thumb {
-        width: min(100%, 14rem);
+        width: min(100%, 10.5rem);
         height: auto;
-        aspect-ratio: 16 / 9;
+        aspect-ratio: 1;
+    }
+
+    .project-pagination {
+        grid-template-columns: 1fr;
+        gap: 0.55rem;
+        justify-items: start;
+    }
+
+    .project-pagination-status {
+        order: -1;
+    }
+
+    .project-pagination-edge,
+    .project-pagination-edge.is-right {
+        justify-content: flex-start;
     }
 }
 

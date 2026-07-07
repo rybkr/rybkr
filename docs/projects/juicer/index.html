@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto" data-theme="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1318&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Juicer | Ryan Baker</title>
 <meta name="keywords" content="C&#43;&#43;, Game Dev">
 <meta name="description" content="A high-performance chess move generator in C&#43;&#43;, using magic bitboards for fast legal move enumeration.">
 <meta name="author" content="Ryan Baker">
-<link rel="canonical" href="http://127.0.0.1:1318/projects/juicer/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.e879c961060429eb8b60f7db9868e1e741a4350e365f4964c40dbf94ea4e2f5e.css" integrity="sha256-6HnJYQYEKeuLYPfbmGjh50GkNQ42X0lkxA2/lOpOL14=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://127.0.0.1:1318/favicon.svg">
-<link rel="icon" type="image/png" sizes="16x16" href="http://127.0.0.1:1318/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://127.0.0.1:1318/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://127.0.0.1:1318/apple-touch-icon.png">
-<link rel="mask-icon" href="http://127.0.0.1:1318/favicon.svg">
+<link rel="canonical" href="https://rybkr.com/projects/juicer/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.2d4c065ef886851e15db8d40ecd6acd1a2ee52712d96a3666bc5b1178fbada29.css" integrity="sha256-LUwGXviGhR4V241A7Nas0aLuUnEtlqNma8WxF4&#43;62ik=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://rybkr.com/favicon.svg">
+<link rel="icon" type="image/png" sizes="16x16" href="https://rybkr.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://rybkr.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://rybkr.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://rybkr.com/favicon.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://127.0.0.1:1318/projects/juicer/">
+<link rel="alternate" hreflang="en" href="https://rybkr.com/projects/juicer/">
 <noscript>
     <style>
         #theme-toggle,
@@ -74,13 +74,81 @@
 <link rel="apple-touch-icon" href="/favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"><meta name="view-transition" content="same-origin">
+<meta property="og:url" content="https://rybkr.com/projects/juicer/">
+  <meta property="og:site_name" content="Ryan Baker">
+  <meta property="og:title" content="Juicer">
+  <meta property="og:description" content="A high-performance chess move generator in C&#43;&#43;, using magic bitboards for fast legal move enumeration.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="projects">
+    <meta property="article:published_time" content="2024-01-23T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-01-23T00:00:00+00:00">
+    <meta property="article:tag" content="C&#43;&#43;">
+    <meta property="article:tag" content="Game Dev">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Juicer">
+<meta name="twitter:description" content="A high-performance chess move generator in C&#43;&#43;, using magic bitboards for fast legal move enumeration.">
 
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Projects",
+      "item": "https://rybkr.com/projects/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Juicer",
+      "item": "https://rybkr.com/projects/juicer/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Juicer",
+  "name": "Juicer",
+  "description": "A high-performance chess move generator in C++, using magic bitboards for fast legal move enumeration.",
+  "keywords": [
+    "C++", "Game Dev"
+  ],
+  "articleBody": "Links: GitHub\nOverview Juicer is a chess move generator focused on raw performance. It generates all legal moves for any given board position using bitboard representations and precomputed attack tables.\nTechnical Approach Bitboards: 64-bit integers represent piece positions, enabling fast bitwise operations for move generation Magic bitboards: Precomputed lookup tables for sliding piece (rook, bishop, queen) attacks Perft testing: Move generation correctness verified against known perft results at various depths Performance Move generation is the foundation of any chess engine. Juicer prioritizes speed to enable deeper search in engine development.\nWhat I Learned Low-level optimization techniques in C++ Bitwise operations for game state representation The importance of cache-friendly data structures ",
+  "wordCount" : "110",
+  "inLanguage": "en",
+  "datePublished": "2024-01-23T00:00:00Z",
+  "dateModified": "2024-01-23T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Ryan Baker"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://rybkr.com/projects/juicer/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Ryan Baker",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://rybkr.com/favicon.svg"
+    }
+  }
+}
+</script>
 </head>
 <body id="top">
     <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://127.0.0.1:1318/" accesskey="h" title="Ryan Baker (Alt + H)">Ryan Baker</a>
+            <a href="https://rybkr.com/" accesskey="h" title="Ryan Baker (Alt + H)">Ryan Baker</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -106,17 +174,17 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="http://127.0.0.1:1318/projects/" title="Projects">
+                <a href="https://rybkr.com/projects/" title="Projects">
                     <span>Projects</span>
                 </a>
             </li>
             <li>
-                <a href="http://127.0.0.1:1318/library/" title="Library">
+                <a href="https://rybkr.com/library/" title="Library">
                     <span>Library</span>
                 </a>
             </li>
             <li>
-                <a href="http://127.0.0.1:1318/resume/" title="Resume">
+                <a href="https://rybkr.com/resume/" title="Resume">
                     <span>Resume</span>
                 </a>
             </li>
@@ -129,7 +197,7 @@
     <nav class="breadcrumb" aria-label="Breadcrumb">
   <a href="/" class="breadcrumb-root">~</a>
     <span class="breadcrumb-separator">/</span>
-    <a href="http://127.0.0.1:1318/projects/">Projects</a>
+    <a href="https://rybkr.com/projects/">Projects</a>
   <span class="breadcrumb-separator">/</span>
   <span class="breadcrumb-current">Juicer</span>
 </nav>
@@ -164,7 +232,7 @@
     </main>
     
 <footer class="footer">
-        <span>&copy; 2026 <a href="http://127.0.0.1:1318/">Ryan Baker</a></span> · 
+        <span>&copy; 2026 <a href="https://rybkr.com/">Ryan Baker</a></span> · 
 
     <span>
         Powered by
@@ -361,7 +429,7 @@
     <path d="m18 15-6-6-6 6"/>
   </svg>
 </button>
-<script src="/js/fuse.basic.min.min.4f1b7e4da7f5a09cc3464ccd93ab72aef1f015c8c2e64d97caf7e39408398c23.js" defer></script><script src="/js/boids-canvas.min.2b7f22d26ab51996bb441383245930b1b3e6eb007c14dce4c3fc6cf39541d358.js" defer></script><script src="/js/ui-enhancements.min.6aba917e200c6c7417bc290570adf10f68ec0c28bc839bc5547e1b1a05cb7ed6.js" defer></script><script src="/js/command-palette.min.e2749543bd827c1783838892f0c7202ee90a4951a16d71b79117678b0998c7a4.js" defer></script>
+<script src="/js/fuse.basic.min.min.4f1b7e4da7f5a09cc3464ccd93ab72aef1f015c8c2e64d97caf7e39408398c23.js" defer></script><script src="/js/boids-canvas.min.2b7f22d26ab51996bb441383245930b1b3e6eb007c14dce4c3fc6cf39541d358.js" defer></script><script src="/js/ui-enhancements.min.284d262c563b3e1c5937b59a387417851be9de0865b0a5ce10381a27ba74ef80.js" defer></script><script src="/js/command-palette.min.eeb1c39a82bad0a570df6bd974e6918caefb6d96282ae427e69cae6a49554358.js" defer></script>
 
 
 <script>

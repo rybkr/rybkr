@@ -318,11 +318,11 @@
         return;
       case 'n':
         e.preventDefault();
-        navigatePager('.pagination .next, .paginav .next, a[rel="next"]', 'n');
+        navigatePager('.project-pagination .next, .pagination .next, .paginav .next, a[rel="next"]', 'n');
         return;
       case 'N':
         e.preventDefault();
-        navigatePager('.pagination .prev, .paginav .prev, a[rel="prev"]', 'N');
+        navigatePager('.project-pagination .prev, .pagination .prev, .paginav .prev, a[rel="prev"]', 'N');
         return;
       case 'G':
         e.preventDefault();

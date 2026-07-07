@@ -11,21 +11,27 @@
         <div id="project-filters" class="filter-bar" aria-label="Project filters">
             <div class="filter-group">
                 <span class="filter-group-label">Language</span>
+                <div class="filter-options">
                 {{- range slice "C" "C++" "Python" "Go" "Lua" "JS" -}}
-                    <button class="filter-pill" data-tag="{{ . }}">{{ . }}</button>
+                    <button type="button" class="filter-pill" data-filter-group="language" data-tag="{{ . }}" aria-pressed="false">{{ . }}</button>
                 {{- end -}}
+                </div>
             </div>
             <div class="filter-group">
                 <span class="filter-group-label">Domain</span>
+                <div class="filter-options">
                 {{- range slice "Embedded" "Algorithms" "Game Dev" "Web Dev" "Tools" -}}
-                    <button class="filter-pill" data-tag="{{ . }}">{{ . }}</button>
+                    <button type="button" class="filter-pill" data-filter-group="domain" data-tag="{{ . }}" aria-pressed="false">{{ . }}</button>
                 {{- end -}}
+                </div>
             </div>
             <div class="filter-group">
                 <span class="filter-group-label">Tools</span>
+                <div class="filter-options">
                 {{- range slice "CLI" "Neovim" "Config" "Make" "PlatformIO" -}}
-                    <button class="filter-pill" data-tag="{{ . }}">{{ . }}</button>
+                    <button type="button" class="filter-pill" data-filter-group="tools" data-tag="{{ . }}" aria-pressed="false">{{ . }}</button>
                 {{- end -}}
+                </div>
             </div>
         </div>
         <p class="project-count" data-project-count aria-live="polite">{{ len .Pages }} projects</p>
@@ -33,8 +39,11 @@
 
     <p id="no-results" class="no-results" style="display: none;">No projects match the selected filters.</p>
 
+    {{- $projects := sort .Pages "Params.rank" "asc" -}}
+    {{- $paginator := .Paginate $projects 8 -}}
+
     <section id="projects" class="project-list enter enter-d3">
-        {{ range .Pages.ByDate.Reverse }}
+        {{ range $page := $paginator.Pages }}
         {{- $cardTags := .Params.tags | default slice -}}
         {{- range .Params.stack | default slice -}}
             {{- if not (in $cardTags .) -}}
@@ -66,7 +75,6 @@
                     {{- if .Params.wip -}}
                     <span class="wip-badge">WIP</span>
                     {{- end -}}
-                    <span class="project-link-kind">{{ cond $isExternal "External" "Page" }}</span>
                 </div>
 
                 {{ with .Params.subtitle }}
@@ -105,7 +113,7 @@
                 <img
                     class="project-thumb"
                     src="{{ . }}"
-                    alt="{{ $.Title }} thumbnail"
+                    alt="{{ $page.Title }} thumbnail"
                 />
             </div>
             {{ end }}
@@ -113,6 +121,28 @@
 
         {{ end }}
     </section>
+
+    {{- if gt $paginator.TotalPages 1 }}
+    <nav class="project-pagination enter enter-d3" aria-label="Project pages">
+        <div class="project-pagination-edge">
+            {{- if $paginator.HasPrev }}
+            <a class="project-pagination-link prev" rel="prev" href="{{ $paginator.Prev.URL }}">Prev</a>
+            {{- else }}
+            <span class="project-pagination-link is-disabled" aria-disabled="true">Prev</span>
+            {{- end }}
+        </div>
+        <span class="project-pagination-status">
+            Page {{ $paginator.PageNumber }} of {{ $paginator.TotalPages }}
+        </span>
+        <div class="project-pagination-edge is-right">
+            {{- if $paginator.HasNext }}
+            <a class="project-pagination-link next" rel="next" href="{{ $paginator.Next.URL }}">Next</a>
+            {{- else }}
+            <span class="project-pagination-link is-disabled" aria-disabled="true">Next</span>
+            {{- end }}
+        </div>
+    </nav>
+    {{- end }}
 </main>
 <script src="/js/projects-filter.js"></script>
 {{ end }}

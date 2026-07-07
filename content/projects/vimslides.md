@@ -3,6 +3,7 @@ title = 'VimSlides'
 subtitle = 'Markdown to Slideshow in Neovim'
 summary = 'A Neovim plugin that turns Markdown files into terminal slideshows — no browser, no export step.'
 date = '2024-12-20'
+rank = 110
 tags = ["Neovim", "Lua", "Config", "Tools"]
 stack = ["Lua"]
 draft = false

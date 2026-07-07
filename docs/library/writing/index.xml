@@ -2,59 +2,59 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Writing on Ryan Baker</title>
-    <link>http://127.0.0.1:1318/library/writing/</link>
+    <link>https://rybkr.com/library/writing/</link>
     <description>Recent content in Writing on Ryan Baker</description>
     <generator>Hugo -- 0.161.1</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 29 Mar 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://127.0.0.1:1318/library/writing/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://rybkr.com/library/writing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Safety in C&#43;&#43;</title>
-      <link>http://127.0.0.1:1318/library/writing/safety-in-cpp/</link>
+      <link>https://rybkr.com/library/writing/safety-in-cpp/</link>
       <pubDate>Sat, 29 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://127.0.0.1:1318/library/writing/safety-in-cpp/</guid>
+      <guid>https://rybkr.com/library/writing/safety-in-cpp/</guid>
       <description></description>
     </item>
     <item>
       <title>C&#43;&#43; Templates</title>
-      <link>http://127.0.0.1:1318/library/writing/templates-in-cpp/</link>
+      <link>https://rybkr.com/library/writing/templates-in-cpp/</link>
       <pubDate>Sat, 22 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://127.0.0.1:1318/library/writing/templates-in-cpp/</guid>
+      <guid>https://rybkr.com/library/writing/templates-in-cpp/</guid>
       <description></description>
     </item>
     <item>
       <title>Advanced C&#43;&#43; OOP</title>
-      <link>http://127.0.0.1:1318/library/writing/advanced-oop-in-cpp/</link>
+      <link>https://rybkr.com/library/writing/advanced-oop-in-cpp/</link>
       <pubDate>Sat, 08 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://127.0.0.1:1318/library/writing/advanced-oop-in-cpp/</guid>
+      <guid>https://rybkr.com/library/writing/advanced-oop-in-cpp/</guid>
       <description></description>
     </item>
     <item>
       <title>Introduction to OOP in C&#43;&#43;</title>
-      <link>http://127.0.0.1:1318/library/writing/introduction-to-oop-in-cpp/</link>
+      <link>https://rybkr.com/library/writing/introduction-to-oop-in-cpp/</link>
       <pubDate>Sat, 01 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://127.0.0.1:1318/library/writing/introduction-to-oop-in-cpp/</guid>
+      <guid>https://rybkr.com/library/writing/introduction-to-oop-in-cpp/</guid>
       <description></description>
     </item>
     <item>
       <title>How C&#43;&#43; Works</title>
-      <link>http://127.0.0.1:1318/library/writing/how-cpp-works/</link>
+      <link>https://rybkr.com/library/writing/how-cpp-works/</link>
       <pubDate>Sat, 22 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://127.0.0.1:1318/library/writing/how-cpp-works/</guid>
+      <guid>https://rybkr.com/library/writing/how-cpp-works/</guid>
       <description></description>
     </item>
     <item>
       <title>C&#43;&#43; Programming Basics</title>
-      <link>http://127.0.0.1:1318/library/writing/cpp-programming-basics/</link>
+      <link>https://rybkr.com/library/writing/cpp-programming-basics/</link>
       <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://127.0.0.1:1318/library/writing/cpp-programming-basics/</guid>
+      <guid>https://rybkr.com/library/writing/cpp-programming-basics/</guid>
       <description></description>
     </item>
     <item>
       <title>Introduction to C&#43;&#43;</title>
-      <link>http://127.0.0.1:1318/library/writing/intro-to-cpp/</link>
+      <link>https://rybkr.com/library/writing/intro-to-cpp/</link>
       <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://127.0.0.1:1318/library/writing/intro-to-cpp/</guid>
+      <guid>https://rybkr.com/library/writing/intro-to-cpp/</guid>
       <description></description>
     </item>
   </channel>

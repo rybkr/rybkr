@@ -3,6 +3,7 @@ title = 'Model Registry'
 subtitle = 'Trust Scoring for Hugging Face Models'
 summary = 'A system for cataloging and scoring Hugging Face models on domain-specific reliability, beyond star counts and downloads.'
 date = '2025-09-01'
+rank = 80
 tags = ["Python", "Algorithms"]
 draft = false
 +++
