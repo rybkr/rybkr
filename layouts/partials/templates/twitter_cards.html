@@ -1,0 +1,31 @@
+{{- $image := "" -}}
+{{- $imageAlt := "" -}}
+{{- if .Params.cover.image -}}
+  {{- if ne .Params.cover.relative true -}}
+    {{- $image = .Params.cover.image | absURL -}}
+  {{- else -}}
+    {{- $image = path.Join .RelPermalink .Params.cover.image | absURL -}}
+  {{- end -}}
+{{- else -}}
+  {{- $images := partial "templates/_funcs/get-page-images" . -}}
+  {{- with index $images 0 -}}
+    {{- $image = .Permalink -}}
+  {{- else -}}
+    {{- with site.Params.sharing.image -}}
+      {{- $image = . | absURL -}}
+      {{- $imageAlt = site.Params.sharing.imageAlt | default site.Title -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if $image -}}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{{ $image }}">
+{{- with $imageAlt }}
+<meta name="twitter:image:alt" content="{{ . }}">
+{{- end }}
+{{- else -}}
+<meta name="twitter:card" content="summary">
+{{- end }}
+<meta name="twitter:title" content="{{ or .Title site.Title }}">
+<meta name="twitter:description" content="{{ with or .Description .Summary site.Params.description }}{{ . | plainify | htmlUnescape | chomp }}{{ end }}">
