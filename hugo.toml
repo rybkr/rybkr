@@ -18,6 +18,19 @@ home = ["HTML", "JSON"]
 [params]
   ShowCodeCopyButtons = true
   author = "Ryan Baker"
+  description = "Ryan Baker is a software engineer focused on systems, developer tools, and practical software that is fast, reliable, and easy to reason about."
+
+  [params.sharing]
+    image = "/images/headshot-formal.png"
+    imageAlt = "Ryan Baker, software engineer"
+
+  [params.schema]
+    publisherType = "Person"
+    sameAs = [
+      "https://github.com/rybkr",
+      "https://www.linkedin.com/in/rybkr",
+      "https://www.youtube.com/@rybkr"
+    ]
 
 [[menu.main]]
 name = "Projects"

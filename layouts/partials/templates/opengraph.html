@@ -46,6 +46,11 @@
     {{- range . | first 6 }}
       <meta property="og:image" content="{{ .Permalink }}">
     {{- end }}
+  {{- else }}
+    {{- with site.Params.sharing.image }}
+      <meta property="og:image" content="{{ . | absURL }}">
+      <meta property="og:image:alt" content="{{ site.Params.sharing.imageAlt | default site.Title }}">
+    {{- end }}
   {{- end }}
 {{- end }}
 
