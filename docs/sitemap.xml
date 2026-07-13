@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://rybkr.com/tags/go/</loc>
+    <lastmod>2026-07-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rybkr.com/projects/</loc>
+    <lastmod>2026-07-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rybkr.com/</loc>
+    <lastmod>2026-07-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rybkr.com/tags/</loc>
+    <lastmod>2026-07-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rybkr.com/tags/tools/</loc>
+    <lastmod>2026-07-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rybkr.com/projects/totally/</loc>
+    <lastmod>2026-07-12T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://rybkr.com/library/talks-publications/context-synchronization-for-multi-agent-workflows/</loc>
     <lastmod>2026-04-22T00:00:00+00:00</lastmod>
   </url><url>
@@ -11,16 +29,7 @@
     <loc>https://rybkr.com/tags/python/</loc>
     <lastmod>2026-04-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://rybkr.com/</loc>
-    <lastmod>2026-04-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://rybkr.com/tags/</loc>
-    <lastmod>2026-04-22T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://rybkr.com/library/talks-publications/</loc>
-    <lastmod>2026-04-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://rybkr.com/tags/tools/</loc>
     <lastmod>2026-04-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://rybkr.com/projects/bytecourses/</loc>
@@ -29,16 +38,10 @@
     <loc>https://rybkr.com/tags/css/</loc>
     <lastmod>2025-12-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://rybkr.com/tags/go/</loc>
-    <lastmod>2025-12-25T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://rybkr.com/tags/html/</loc>
     <lastmod>2025-12-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://rybkr.com/tags/js/</loc>
-    <lastmod>2025-12-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://rybkr.com/projects/</loc>
     <lastmod>2025-12-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://rybkr.com/tags/web-dev/</loc>

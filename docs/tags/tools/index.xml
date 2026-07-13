@@ -6,8 +6,15 @@
     <description>Recent content in Tools on Ryan Baker</description>
     <generator>Hugo -- 0.161.1</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 12 Jul 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://rybkr.com/tags/tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Totally</title>
+      <link>https://rybkr.com/projects/totally/</link>
+      <pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
+      <guid>https://rybkr.com/projects/totally/</guid>
+      <description>A local CLI for finding agent sessions, inspecting transcript provenance, and estimating token usage and cost.</description>
+    </item>
     <item>
       <title>Context Synchronization for Multi-Agent Workflows</title>
       <link>https://rybkr.com/library/talks-publications/context-synchronization-for-multi-agent-workflows/</link>
