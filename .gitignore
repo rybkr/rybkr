@@ -1,0 +1,21 @@
+# Hugo caches and temporary build output
+/.hugo_build.lock
+/.hugo_cache/
+/resources/_gen/
+/public/
+# /docs/ is the configured publishDir and is intentionally tracked.
+
+# Local environment settings (keep example files trackable)
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# OS metadata and editor temporary files
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
