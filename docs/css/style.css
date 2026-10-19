@@ -1,0 +1,62 @@
+/* Shared theme and typography. */
+:root {
+  color-scheme: light dark;
+  --background: #fafbfc;
+  --text: #17212b;
+  --border: #d6dce1;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "FiraCode Nerd Font", "Fira Code", monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #111820;
+    --text: #e8edf2;
+    --border: #36424e;
+  }
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+main {
+  width: min(100% - 3rem, 64rem);
+  min-height: 100svh;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: 4rem;
+}
+h1 {
+  margin: 0 0 2.5rem;
+  font-size: clamp(3.5rem, 12vw, 9rem);
+  font-weight: 650;
+  line-height: 1.05;
+  letter-spacing: -0.075em;
+}
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+  margin: 0;
+  padding: 1.25rem 0 0;
+  border-top: 1px solid var(--border);
+  list-style: none;
+}
+a {
+  display: inline-block;
+  padding-block: 0.75rem;
+  color: inherit;
+  font-family: var(--font-mono);
+  font-size: 0.9375rem;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 0.35em;
+}
+a:hover { text-decoration-color: currentColor; }
+a:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
