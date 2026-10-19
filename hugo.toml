@@ -1,28 +1,24 @@
-baseURL = 'https://rybkr.com/'
-locale = 'en-us'
-title = 'Ryan Baker'
+baseURL = "https://rybkr.com/"
+title = "Ryan Baker"
 theme = "PaperMod"
 publishDir = "docs"
+enableRobotsTXT = true
+locale = "en-us"
+defaultContentLanguage = "en"
 
-[outputs]
-home = ["HTML", "JSON"]
-
-[markup]
-  [highlight]
-    codeFences = true
-    lineNos = true
-    noClasses = false
-    guessSyntax = true
-    style = ""
+# Filters use project metadata, without separate taxonomy pages.
+disableKinds = ["taxonomy", "term"]
 
 [params]
-  ShowCodeCopyButtons = true
+  defaultTheme = "auto"
+  disableThemeToggle = true
   author = "Ryan Baker"
   description = "Ryan Baker is a software engineer focused on systems, developer tools, and practical software that is fast, reliable, and easy to reason about."
+  ShowCodeCopyButtons = true
 
   [params.sharing]
-    image = "/images/headshot-formal.png"
-    imageAlt = "Ryan Baker, software engineer"
+    image = "/images/headshot.png"
+    imageAlt = "Ryan Baker"
 
   [params.schema]
     publisherType = "Person"
@@ -32,17 +28,28 @@ home = ["HTML", "JSON"]
       "https://www.youtube.com/@rybkr"
     ]
 
-[[menu.main]]
-name = "Projects"
-url = "/projects/"
-weight = 1
+[outputs]
+  home = ["HTML", "RSS"]
 
-[[menu.main]]
-name = "Library"
-url = "/library/"
-weight = 2
+[markup]
+  [highlight]
+    codeFences = true
+    lineNos = true
+    noClasses = false
+    guessSyntax = true
+    style = ""
 
-[[menu.main]]
-name = "Resume"
-url = "/resume/"
-weight = 3
+[[menus.main]]
+  name = "Projects"
+  pageRef = "/projects"
+  weight = 10
+
+[[menus.main]]
+  name = "Library"
+  pageRef = "/library"
+  weight = 20
+
+[[menus.main]]
+  name = "Resume"
+  pageRef = "/resume"
+  weight = 30

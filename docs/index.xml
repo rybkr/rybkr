@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Ryan Baker</title>
+    <link>https://rybkr.com/</link>
+    <description>Recent content on Ryan Baker</description>
+    <generator>Hugo -- 0.161.1</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 12 Jul 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://rybkr.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Totally</title>
+      <link>https://rybkr.com/projects/totally/</link>
+      <pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
+      <guid>https://rybkr.com/projects/totally/</guid>
+      <description>A local CLI for finding agent sessions, inspecting transcript provenance, and estimating token usage and cost.</description>
+    </item>
+    <item>
+      <title>Context Synchronization for Multi-Agent Workflows</title>
+      <link>https://rybkr.com/library/talks-publications/context-synchronization-for-multi-agent-workflows/</link>
+      <pubDate>Wed, 22 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://rybkr.com/library/talks-publications/context-synchronization-for-multi-agent-workflows/</guid>
+      <description>A shared context layer for multi-agent coding workflows that tracks symbol-level observations and reports stale context when concurrent edits invalidate agent assumptions.</description>
+    </item>
+    <item>
+      <title>Byte Courses</title>
+      <link>https://rybkr.com/projects/bytecourses/</link>
+      <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://rybkr.com/projects/bytecourses/</guid>
+      <description>A lightweight learning management system built in Go for delivering structured programming courses.</description>
+    </item>
+    <item>
+      <title>Git Vista</title>
+      <link></link>
+      <pubDate>Thu, 11 Dec 2025 00:00:00 +0000</pubDate>
+      <guid></guid>
+      <description>A terminal tool for exploring Git repo history — commit analytics, file churn, and branch visualization without leaving the CLI.</description>
+    </item>
+    <item>
+      <title>Chroma Sudoku</title>
+      <link>https://rybkr.com/projects/chromasudoku/</link>
+      <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://rybkr.com/projects/chromasudoku/</guid>
+      <description>Sudoku reimagined with colors instead of digits, running on an RP2350 with a 32×32 RGB LED matrix.</description>
+    </item>
+    <item>
+      <title>Sudoku Generator &amp; Solver</title>
+      <link>https://rybkr.com/projects/sudoku/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://rybkr.com/projects/sudoku/</guid>
+      <description>A command-line Sudoku generator and solver in Go — built so I&amp;rsquo;d never need to buy another puzzle book.</description>
+    </item>
+    <item>
+      <title>Markee</title>
+      <link>https://rybkr.com/projects/markee/</link>
+      <pubDate>Wed, 01 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://rybkr.com/projects/markee/</guid>
+      <description>A zero-dependency Markdown parser written from scratch in Go, focused on the subset of Markdown people actually use.</description>
+    </item>
+    <item>
+      <title>Model Registry</title>
+      <link>https://rybkr.com/projects/modelregistry/</link>
+      <pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://rybkr.com/projects/modelregistry/</guid>
+      <description>A system for cataloging and scoring Hugging Face models on domain-specific reliability, beyond star counts and downloads.</description>
+    </item>
+    <item>
+      <title>Safety in C&#43;&#43;</title>
+      <link>https://rybkr.com/library/writing/safety-in-cpp/</link>
+      <pubDate>Sat, 29 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://rybkr.com/library/writing/safety-in-cpp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>C&#43;&#43; Templates</title>
+      <link>https://rybkr.com/library/writing/templates-in-cpp/</link>
+      <pubDate>Sat, 22 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://rybkr.com/library/writing/templates-in-cpp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CPU Raytracer</title>
+      <link>https://rybkr.com/projects/raytracer/</link>
+      <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://rybkr.com/projects/raytracer/</guid>
+      <description>A from-scratch C++ raytracer with reflection, refraction, and Monte Carlo path tracing — no graphics libraries.</description>
+    </item>
+    <item>
+      <title>Advanced C&#43;&#43; OOP</title>
+      <link>https://rybkr.com/library/writing/advanced-oop-in-cpp/</link>
+      <pubDate>Sat, 08 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://rybkr.com/library/writing/advanced-oop-in-cpp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Introduction to OOP in C&#43;&#43;</title>
+      <link>https://rybkr.com/library/writing/introduction-to-oop-in-cpp/</link>
+      <pubDate>Sat, 01 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://rybkr.com/library/writing/introduction-to-oop-in-cpp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>How C&#43;&#43; Works</title>
+      <link>https://rybkr.com/library/writing/how-cpp-works/</link>
+      <pubDate>Sat, 22 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://rybkr.com/library/writing/how-cpp-works/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>C&#43;&#43; Programming Basics</title>
+      <link>https://rybkr.com/library/writing/cpp-programming-basics/</link>
+      <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://rybkr.com/library/writing/cpp-programming-basics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Introduction to C&#43;&#43;</title>
+      <link>https://rybkr.com/library/writing/intro-to-cpp/</link>
+      <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://rybkr.com/library/writing/intro-to-cpp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Artscii</title>
+      <link>https://rybkr.com/projects/artscii/</link>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://rybkr.com/projects/artscii/</guid>
+      <description>A C library for generating ASCII art from geometric primitives and images.</description>
+    </item>
+    <item>
+      <title>Onevim</title>
+      <link>https://rybkr.com/projects/onevim/</link>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://rybkr.com/projects/onevim/</guid>
+      <description>A fast, opinionated Neovim configuration built for systems programming and staying out of your way.</description>
+    </item>
+    <item>
+      <title>NeoTeX</title>
+      <link>https://rybkr.com/projects/neotex/</link>
+      <pubDate>Tue, 24 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://rybkr.com/projects/neotex/</guid>
+      <description>A Neovim plugin for live LaTeX preview — edit and see compiled output update without leaving your editor.</description>
+    </item>
+    <item>
+      <title>VimSlides</title>
+      <link>https://rybkr.com/projects/vimslides/</link>
+      <pubDate>Fri, 20 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://rybkr.com/projects/vimslides/</guid>
+      <description>A Neovim plugin that turns Markdown files into terminal slideshows — no browser, no export step.</description>
+    </item>
+    <item>
+      <title>Messing with Floating Point</title>
+      <link>https://rybkr.com/library/talks-publications/messing-with-floating-point/</link>
+      <pubDate>Thu, 28 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>https://rybkr.com/library/talks-publications/messing-with-floating-point/</guid>
+      <description>A deep dive into IEEE 754 floating point, its quirks, and how to work with it effectively in C++</description>
+    </item>
+    <item>
+      <title>Convolution Visualizer</title>
+      <link>https://rybkr.com/projects/convolution/</link>
+      <pubDate>Thu, 24 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://rybkr.com/projects/convolution/</guid>
+      <description>An interactive web tool for visualizing continuous-time signal convolution, step by step.</description>
+    </item>
+    <item>
+      <title>Passman</title>
+      <link>https://rybkr.com/projects/passman/</link>
+      <pubDate>Sun, 11 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>https://rybkr.com/projects/passman/</guid>
+      <description>A local-first password manager in Python with SQLite storage and no cloud dependencies.</description>
+    </item>
+    <item>
+      <title>Big Nums</title>
+      <link>https://rybkr.com/projects/bignums/</link>
+      <pubDate>Sat, 02 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://rybkr.com/projects/bignums/</guid>
+      <description>An arbitrary-precision integer and floating-point arithmetic library for C++, built from scratch.</description>
+    </item>
+    <item>
+      <title>Juicer</title>
+      <link>https://rybkr.com/projects/juicer/</link>
+      <pubDate>Tue, 23 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://rybkr.com/projects/juicer/</guid>
+      <description>A high-performance chess move generator in C++, using magic bitboards for fast legal move enumeration.</description>
+    </item>
+    <item>
+      <title>2048 Game</title>
+      <link>https://rybkr.com/projects/2048/</link>
+      <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://rybkr.com/projects/2048/</guid>
+      <description>A Pygame recreation of the 2048 sliding tile puzzle.</description>
+    </item>
+    <item>
+      <title>C&#43;&#43; Chess Engine V1</title>
+      <link>https://rybkr.com/projects/cppchessengine/</link>
+      <pubDate>Thu, 27 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://rybkr.com/projects/cppchessengine/</guid>
+      <description>My first chess engine — a from-scratch implementation in C++ with basic search and evaluation.</description>
+    </item>
+    <item>
+      <title>Python Chess Engine</title>
+      <link>https://rybkr.com/projects/pychessengine/</link>
+      <pubDate>Fri, 12 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://rybkr.com/projects/pychessengine/</guid>
+      <description>My first chess engine — a simple implementation in Python that got me hooked on game programming.</description>
+    </item>
+    <item>
+      <title>LinkedIn</title>
+      <link>https://rybkr.com/linkedin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://rybkr.com/linkedin/</guid>
+      <description>A small warning before leaving for LinkedIn.</description>
+    </item>
+    <item>
+      <title>Resume</title>
+      <link>https://rybkr.com/resume/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://rybkr.com/resume/</guid>
+      <description>&lt;h2 id=&#34;experience&#34;&gt;Experience&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Database Software Engineer Intern&lt;/strong&gt;, Oracle | &lt;em&gt;May 2026 - Aug 2026&lt;/em&gt; | &lt;em&gt;Redwood Shores, CA&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Improving performance monitoring infrastructure within the Oracle Database team, focusing on AWR snapshots.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Designed an intelligent timeout policy for table flushing in the AWR snapshot process to improve reliability and performance.&lt;/li&gt;
+&lt;li&gt;Built internal tooling and scripts to streamline debugging, testing, and performance analysis workflows.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Course Instructor&lt;/strong&gt; (Intro to Modern C++), Purdue University | &lt;em&gt;Jan 2025 - Dec 2025&lt;/em&gt; | &lt;em&gt;West Lafayette, IN&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Search</title>
+      <link>https://rybkr.com/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://rybkr.com/search/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

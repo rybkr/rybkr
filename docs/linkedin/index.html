@@ -60,11 +60,7 @@
     </style>
 </noscript>
 <script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else if (localStorage.getItem("pref-theme") === "light") {
-       document.querySelector("html").dataset.theme = 'light';
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
         document.querySelector("html").dataset.theme = 'dark';
     } else {
         document.querySelector("html").dataset.theme = 'light';
@@ -80,11 +76,11 @@
   <meta property="og:description" content="A small warning before leaving for LinkedIn.">
   <meta property="og:locale" content="en-us">
   <meta property="og:type" content="article">
-      <meta property="og:image" content="https://rybkr.com/images/headshot-formal.png">
-      <meta property="og:image:alt" content="Ryan Baker, software engineer">
+      <meta property="og:image" content="https://rybkr.com/images/headshot.png">
+      <meta property="og:image:alt" content="Ryan Baker">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://rybkr.com/images/headshot-formal.png">
-<meta name="twitter:image:alt" content="Ryan Baker, software engineer">
+<meta name="twitter:image" content="https://rybkr.com/images/headshot.png">
+<meta name="twitter:image:alt" content="Ryan Baker">
 <meta name="twitter:title" content="LinkedIn">
 <meta name="twitter:description" content="A small warning before leaving for LinkedIn.">
 
