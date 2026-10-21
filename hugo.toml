@@ -5,48 +5,14 @@ enableRobotsTXT = true
 locale = "en-us"
 defaultContentLanguage = "en"
 
-# Filters use project metadata, without separate taxonomy pages.
 disableKinds = ["taxonomy", "term"]
 
 [params]
-  author = "Ryan Baker"
   description = "Ryan Baker is a software engineer focused on systems, developer tools, and practical software that is fast, reliable, and easy to reason about."
-  ShowCodeCopyButtons = true
-
-  [params.sharing]
-    image = "/images/headshot.png"
-    imageAlt = "Ryan Baker"
-
-  [params.schema]
-    publisherType = "Person"
-    sameAs = [
-      "https://github.com/rybkr",
-      "https://www.linkedin.com/in/rybkr",
-      "https://www.youtube.com/@rybkr"
-    ]
 
 [outputs]
   home = ["HTML", "RSS"]
 
 [markup]
-  [highlight]
-    codeFences = true
-    lineNos = true
-    noClasses = false
-    guessSyntax = true
-    style = ""
-
-[[menus.main]]
-  name = "Projects"
-  pageRef = "/projects"
-  weight = 10
-
-[[menus.main]]
-  name = "Library"
-  pageRef = "/library"
-  weight = 20
-
-[[menus.main]]
-  name = "Resume"
-  pageRef = "/resume"
-  weight = 30
+  [markup.goldmark.parser.attribute]
+    block = true
