@@ -64,7 +64,14 @@ main > ul {
 }
 main > ul > li {
   font-family: var(--font-mono);
+}
+main > ul > li:not(:has(> a)) {
   padding-block: 0.5rem;
+}
+main[data-rainbow-links] > ul > li > a {
+  display: block;
+  padding-block: 0.5rem;
+  padding-inline-end: 2rem;
 }
 a {
   color: inherit;
