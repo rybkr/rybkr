@@ -15,7 +15,7 @@ title: Ryan Baker
 
 ## More
 
-- [Technical Notes]({{< relref "/" >}})
+- [Technical Notes]({{< relref "/technical-notes" >}})
 - [Résumé]({{< relref "/resume" >}})
 
 [![YouTube](/icons/youtube.svg)](https://youtube.com/@rybkr)
