@@ -5,8 +5,6 @@ hideMeta: true
 updated: 2026-10-22
 ---
 
-[<- Back to home]({{< relref "/" >}})
-
 ## Experience
 
 ### Teaching Assistant, Computer Communication Networks
@@ -107,7 +105,7 @@ Assisted with course content development; helped students complete assignments o
 - Feb 2024 - Present
 {.metadata}
 
-- Produce high-quality technical programming content for 8,000+ subscribers, with 250,000+ total views.
+- Produce high-quality technical programming content for 27,000+ subscribers, with 1,000,000+ views.
 
 ### [Juicer](/projects/juicer/)
 

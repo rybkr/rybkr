@@ -1,18 +1,29 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Ryan Baker</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content on Ryan Baker</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Resume</title>
-      <link>http://localhost:1313/resume/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/resume/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://localhost:1313/&#34;&gt;&amp;lt;- Back to home&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;experience&#34;&gt;Experience&lt;/h2&gt;&#xA;&lt;h3 id=&#34;teaching-assistant-computer-communication-networks&#34;&gt;Teaching Assistant, Computer Communication Networks&lt;/h3&gt;&#xA;&lt;ul class=&#34;metadata&#34;&gt;&#xA;&lt;li&gt;August 2026 - December 2026&lt;/li&gt;&#xA;&lt;li&gt;Purdue University&lt;/li&gt;&#xA;&lt;li&gt;ECE 46300&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Guide students through internet architecture, routing, and TCP/IP concepts during weekly office hours.&lt;/li&gt;&#xA;&lt;li&gt;Help students debug C and Python networking assignments involving socket programming, HTTP, and distributed protocols.&lt;/li&gt;&#xA;&lt;li&gt;Grade programming assignments and exams.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;database-software-engineer-intern--oracle&#34;&gt;Database Software Engineer Intern @ Oracle&lt;/h3&gt;&#xA;&lt;ul class=&#34;metadata&#34;&gt;&#xA;&lt;li&gt;May 2026 - August 2026&lt;/li&gt;&#xA;&lt;li&gt;Redwood Shores, CA&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Designed and implemented a resource checker for retiring worker processes, identifying several dozen processes retaining resources for further investigation.&lt;/li&gt;&#xA;&lt;li&gt;Improved per-section timeout handling for Automatic Workload Repository (AWR) report generation and added an optional API override for large reports, addressing an internal Exadata issue before customer reports.&lt;/li&gt;&#xA;&lt;li&gt;Reworked timeout handling for performance-data flushing during AWR snapshots.&lt;/li&gt;&#xA;&lt;li&gt;Prevented excessive ORA-00942 log errors by allowing logger clients to register as uninitialized while under development.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;course-instructor-modern-c&#34;&gt;Course Instructor, Modern C++&lt;/h3&gt;&#xA;&lt;ul class=&#34;metadata&#34;&gt;&#xA;&lt;li&gt;Jan 2025 - May 2025&lt;/li&gt;&#xA;&lt;li&gt;Purdue IEEE&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Developed and taught a Modern C++ course at Purdue on behalf of IEEE, certifying successful students.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ryan Baker</title><link>https://rybkr.com/</link><description>Recent content on Ryan Baker</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://rybkr.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Resume</title><link>https://rybkr.com/resume/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://rybkr.com/resume/</guid><description>&lt;h2 id="experience"&gt;Experience&lt;/h2&gt;
+&lt;h3 id="teaching-assistant-computer-communication-networks"&gt;Teaching Assistant, Computer Communication Networks&lt;/h3&gt;
+&lt;ul class="metadata"&gt;
+&lt;li&gt;August 2026 - December 2026&lt;/li&gt;
+&lt;li&gt;Purdue University&lt;/li&gt;
+&lt;li&gt;ECE 46300&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;Guide students through internet architecture, routing, and TCP/IP concepts during weekly office hours.&lt;/li&gt;
+&lt;li&gt;Help students debug C and Python networking assignments involving socket programming, HTTP, and distributed protocols.&lt;/li&gt;
+&lt;li&gt;Grade programming assignments and exams.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="database-software-engineer-intern--oracle"&gt;Database Software Engineer Intern @ Oracle&lt;/h3&gt;
+&lt;ul class="metadata"&gt;
+&lt;li&gt;May 2026 - August 2026&lt;/li&gt;
+&lt;li&gt;Redwood Shores, CA&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;Designed and implemented a resource checker for retiring worker processes, identifying several dozen processes retaining resources for further investigation.&lt;/li&gt;
+&lt;li&gt;Improved per-section timeout handling for Automatic Workload Repository (AWR) report generation and added an optional API override for large reports, addressing an internal Exadata issue before customer reports.&lt;/li&gt;
+&lt;li&gt;Reworked timeout handling for performance-data flushing during AWR snapshots.&lt;/li&gt;
+&lt;li&gt;Prevented excessive ORA-00942 log errors by allowing logger clients to register as uninitialized while under development.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="course-instructor-modern-c"&gt;Course Instructor, Modern C++&lt;/h3&gt;
+&lt;ul class="metadata"&gt;
+&lt;li&gt;Jan 2025 - May 2025&lt;/li&gt;
+&lt;li&gt;Purdue IEEE&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Developed and taught a Modern C++ course at Purdue on behalf of IEEE, certifying successful students.&lt;/p&gt;</description></item></channel></rss>
