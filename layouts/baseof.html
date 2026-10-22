@@ -6,12 +6,21 @@
     <meta name="description" content="{{ site.Params.description }}">
     <title>{{ .Title }}</title>
     <link rel="canonical" href="{{ .Permalink }}">
+    {{ if eq .Layout "resume" }}
+      <script>
+        if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          document.documentElement.classList.add("reveal-ready");
+        }
+      </script>
+    {{ end }}
     <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
-    <script src="{{ "js/reveal.js" | relURL }}" defer></script>
-    <script src="{{ "js/rainbow-links.js" | relURL }}" defer></script>
+    <script src="{{ "js/reveal.js" | relURL }}" defer onerror="document.documentElement.classList.remove('reveal-ready')"></script>
+    {{ if .IsHome }}
+      <script src="{{ "js/rainbow-links.js" | relURL }}" defer></script>
+    {{ end }}
   </head>
   <body>
-    <main data-rainbow-links>
+    <main{{ if .IsHome }} data-rainbow-links{{ else }} class="document"{{ end }}>
       {{ block "main" . }}{{ .Content }}{{ end }}
     </main>
   </body>
