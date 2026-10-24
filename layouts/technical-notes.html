@@ -1,0 +1,9 @@
+{{ define "main" }}
+  <article class="technical-notes" data-rainbow-links>
+    <a class="notes-back" href="{{ "/" | relURL }}">&lt;- Back to home</a>
+    <h1>{{ .Title }}</h1>
+    <div class="notes-content">
+      {{ .Content }}
+    </div>
+  </article>
+{{ end }}

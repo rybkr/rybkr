@@ -1,238 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ryan Baker</title>
     <link>https://rybkr.com/</link>
     <description>Recent content on Ryan Baker</description>
-    <generator>Hugo -- 0.161.1</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 12 Jul 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://rybkr.com/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Totally</title>
-      <link>https://rybkr.com/projects/totally/</link>
-      <pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/totally/</guid>
-      <description>A local CLI for finding agent sessions, inspecting transcript provenance, and estimating token usage and cost.</description>
-    </item>
-    <item>
-      <title>Context Synchronization for Multi-Agent Workflows</title>
-      <link>https://rybkr.com/library/talks-publications/context-synchronization-for-multi-agent-workflows/</link>
-      <pubDate>Wed, 22 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/library/talks-publications/context-synchronization-for-multi-agent-workflows/</guid>
-      <description>A shared context layer for multi-agent coding workflows that tracks symbol-level observations and reports stale context when concurrent edits invalidate agent assumptions.</description>
-    </item>
-    <item>
-      <title>Byte Courses</title>
-      <link>https://rybkr.com/projects/bytecourses/</link>
-      <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/bytecourses/</guid>
-      <description>A lightweight learning management system built in Go for delivering structured programming courses.</description>
-    </item>
-    <item>
-      <title>Git Vista</title>
-      <link></link>
-      <pubDate>Thu, 11 Dec 2025 00:00:00 +0000</pubDate>
-      <guid></guid>
-      <description>A terminal tool for exploring Git repo history — commit analytics, file churn, and branch visualization without leaving the CLI.</description>
-    </item>
-    <item>
-      <title>Chroma Sudoku</title>
-      <link>https://rybkr.com/projects/chromasudoku/</link>
-      <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/chromasudoku/</guid>
-      <description>Sudoku reimagined with colors instead of digits, running on an RP2350 with a 32×32 RGB LED matrix.</description>
-    </item>
-    <item>
-      <title>Sudoku Generator &amp; Solver</title>
-      <link>https://rybkr.com/projects/sudoku/</link>
-      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/sudoku/</guid>
-      <description>A command-line Sudoku generator and solver in Go — built so I&amp;rsquo;d never need to buy another puzzle book.</description>
-    </item>
-    <item>
-      <title>Markee</title>
-      <link>https://rybkr.com/projects/markee/</link>
-      <pubDate>Wed, 01 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/markee/</guid>
-      <description>A zero-dependency Markdown parser written from scratch in Go, focused on the subset of Markdown people actually use.</description>
-    </item>
-    <item>
-      <title>Model Registry</title>
-      <link>https://rybkr.com/projects/modelregistry/</link>
-      <pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/modelregistry/</guid>
-      <description>A system for cataloging and scoring Hugging Face models on domain-specific reliability, beyond star counts and downloads.</description>
-    </item>
-    <item>
-      <title>Safety in C&#43;&#43;</title>
-      <link>https://rybkr.com/library/writing/safety-in-cpp/</link>
-      <pubDate>Sat, 29 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/library/writing/safety-in-cpp/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>C&#43;&#43; Templates</title>
-      <link>https://rybkr.com/library/writing/templates-in-cpp/</link>
-      <pubDate>Sat, 22 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/library/writing/templates-in-cpp/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>CPU Raytracer</title>
-      <link>https://rybkr.com/projects/raytracer/</link>
-      <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/raytracer/</guid>
-      <description>A from-scratch C++ raytracer with reflection, refraction, and Monte Carlo path tracing — no graphics libraries.</description>
-    </item>
-    <item>
-      <title>Advanced C&#43;&#43; OOP</title>
-      <link>https://rybkr.com/library/writing/advanced-oop-in-cpp/</link>
-      <pubDate>Sat, 08 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/library/writing/advanced-oop-in-cpp/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Introduction to OOP in C&#43;&#43;</title>
-      <link>https://rybkr.com/library/writing/introduction-to-oop-in-cpp/</link>
-      <pubDate>Sat, 01 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/library/writing/introduction-to-oop-in-cpp/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>How C&#43;&#43; Works</title>
-      <link>https://rybkr.com/library/writing/how-cpp-works/</link>
-      <pubDate>Sat, 22 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/library/writing/how-cpp-works/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>C&#43;&#43; Programming Basics</title>
-      <link>https://rybkr.com/library/writing/cpp-programming-basics/</link>
-      <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/library/writing/cpp-programming-basics/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Introduction to C&#43;&#43;</title>
-      <link>https://rybkr.com/library/writing/intro-to-cpp/</link>
-      <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/library/writing/intro-to-cpp/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Artscii</title>
-      <link>https://rybkr.com/projects/artscii/</link>
-      <pubDate>Mon, 20 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/artscii/</guid>
-      <description>A C library for generating ASCII art from geometric primitives and images.</description>
-    </item>
-    <item>
-      <title>Onevim</title>
-      <link>https://rybkr.com/projects/onevim/</link>
-      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/onevim/</guid>
-      <description>A fast, opinionated Neovim configuration built for systems programming and staying out of your way.</description>
-    </item>
-    <item>
-      <title>NeoTeX</title>
-      <link>https://rybkr.com/projects/neotex/</link>
-      <pubDate>Tue, 24 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/neotex/</guid>
-      <description>A Neovim plugin for live LaTeX preview — edit and see compiled output update without leaving your editor.</description>
-    </item>
-    <item>
-      <title>VimSlides</title>
-      <link>https://rybkr.com/projects/vimslides/</link>
-      <pubDate>Fri, 20 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/vimslides/</guid>
-      <description>A Neovim plugin that turns Markdown files into terminal slideshows — no browser, no export step.</description>
-    </item>
-    <item>
-      <title>Messing with Floating Point</title>
-      <link>https://rybkr.com/library/talks-publications/messing-with-floating-point/</link>
-      <pubDate>Thu, 28 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/library/talks-publications/messing-with-floating-point/</guid>
-      <description>A deep dive into IEEE 754 floating point, its quirks, and how to work with it effectively in C++</description>
-    </item>
-    <item>
-      <title>Convolution Visualizer</title>
-      <link>https://rybkr.com/projects/convolution/</link>
-      <pubDate>Thu, 24 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/convolution/</guid>
-      <description>An interactive web tool for visualizing continuous-time signal convolution, step by step.</description>
-    </item>
-    <item>
-      <title>Passman</title>
-      <link>https://rybkr.com/projects/passman/</link>
-      <pubDate>Sun, 11 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/passman/</guid>
-      <description>A local-first password manager in Python with SQLite storage and no cloud dependencies.</description>
-    </item>
-    <item>
-      <title>Big Nums</title>
-      <link>https://rybkr.com/projects/bignums/</link>
-      <pubDate>Sat, 02 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/bignums/</guid>
-      <description>An arbitrary-precision integer and floating-point arithmetic library for C++, built from scratch.</description>
-    </item>
-    <item>
-      <title>Juicer</title>
-      <link>https://rybkr.com/projects/juicer/</link>
-      <pubDate>Tue, 23 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/juicer/</guid>
-      <description>A high-performance chess move generator in C++, using magic bitboards for fast legal move enumeration.</description>
-    </item>
-    <item>
-      <title>2048 Game</title>
-      <link>https://rybkr.com/projects/2048/</link>
-      <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/2048/</guid>
-      <description>A Pygame recreation of the 2048 sliding tile puzzle.</description>
-    </item>
-    <item>
-      <title>C&#43;&#43; Chess Engine V1</title>
-      <link>https://rybkr.com/projects/cppchessengine/</link>
-      <pubDate>Thu, 27 Jul 2023 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/cppchessengine/</guid>
-      <description>My first chess engine — a from-scratch implementation in C++ with basic search and evaluation.</description>
-    </item>
-    <item>
-      <title>Python Chess Engine</title>
-      <link>https://rybkr.com/projects/pychessengine/</link>
-      <pubDate>Fri, 12 May 2023 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/projects/pychessengine/</guid>
-      <description>My first chess engine — a simple implementation in Python that got me hooked on game programming.</description>
-    </item>
-    <item>
-      <title>LinkedIn</title>
-      <link>https://rybkr.com/linkedin/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/linkedin/</guid>
-      <description>A small warning before leaving for LinkedIn.</description>
-    </item>
     <item>
       <title>Resume</title>
       <link>https://rybkr.com/resume/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://rybkr.com/resume/</guid>
-      <description>&lt;h2 id=&#34;experience&#34;&gt;Experience&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Database Software Engineer Intern&lt;/strong&gt;, Oracle | &lt;em&gt;May 2026 - Aug 2026&lt;/em&gt; | &lt;em&gt;Redwood Shores, CA&lt;/em&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Improving performance monitoring infrastructure within the Oracle Database team, focusing on AWR snapshots.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;Designed an intelligent timeout policy for table flushing in the AWR snapshot process to improve reliability and performance.&lt;/li&gt;
-&lt;li&gt;Built internal tooling and scripts to streamline debugging, testing, and performance analysis workflows.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Course Instructor&lt;/strong&gt; (Intro to Modern C++), Purdue University | &lt;em&gt;Jan 2025 - Dec 2025&lt;/em&gt; | &lt;em&gt;West Lafayette, IN&lt;/em&gt;&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;experience&#34;&gt;Experience&lt;/h2&gt;&#xA;&lt;h3 id=&#34;database-software-engineer-intern--oracle&#34;&gt;Database Software Engineer Intern @ Oracle&lt;/h3&gt;&#xA;&lt;ul class=&#34;metadata&#34;&gt;&#xA;&lt;li&gt;May 2026 – August 2026&lt;/li&gt;&#xA;&lt;li&gt;Redwood Shores, CA&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Designed and implemented a resource checker in C to detect resources retained by retiring worker processes, identifying several dozen offending processes for investigation.&lt;/li&gt;&#xA;&lt;li&gt;Added an API option to disable Automatic Workload Repository (AWR) report-generation timeouts, resolving missing report sections encountered by the Exadata team.&lt;/li&gt;&#xA;&lt;li&gt;Enhanced per-table timeout handling for performance-data flushing during AWR snapshots.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;embedded-software-engineer-intern--matrix&#34;&gt;Embedded Software Engineer Intern @ Matrix&lt;/h3&gt;&#xA;&lt;ul class=&#34;metadata&#34;&gt;&#xA;&lt;li&gt;May 2025 – August 2025&lt;/li&gt;&#xA;&lt;li&gt;Newburgh, IN&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Developed and shipped a deferred logging system in C for FreeRTOS, packing variadic arguments into a compact byte buffer to move formatting work off the calling thread.&lt;/li&gt;&#xA;&lt;li&gt;Parallelized CI jobs, reducing pipeline runtime from approximately 2 minutes to 30 seconds per push.&lt;/li&gt;&#xA;&lt;li&gt;Built a Python tool to visualize finite state machines by parsing source code into an abstract syntax tree, uncovering multiple state-machine bugs.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;teaching--speaking&#34;&gt;Teaching &amp;amp; Speaking&lt;/h2&gt;&#xA;&lt;h3 id=&#34;technical-educator-youtube&#34;&gt;Technical Educator, &lt;a href=&#34;https://www.youtube.com/@rybkr&#34;&gt;YouTube&lt;/a&gt;&lt;/h3&gt;&#xA;&lt;ul class=&#34;metadata&#34;&gt;&#xA;&lt;li&gt;February 2024 – Present&lt;/li&gt;&#xA;&lt;li&gt;Ryan Baker&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Create educational content on Unix, operating systems, low-level programming, and AI systems for 27K+ subscribers, reaching over 1M views.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;teaching-assistant-computer-networks&#34;&gt;Teaching Assistant, Computer Networks&lt;/h3&gt;&#xA;&lt;ul class=&#34;metadata&#34;&gt;&#xA;&lt;li&gt;August 2026 – Present&lt;/li&gt;&#xA;&lt;li&gt;Purdue University&lt;/li&gt;&#xA;&lt;li&gt;ECE 46300&lt;/li&gt;&#xA;&lt;li&gt;West Lafayette, IN&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Support ~60 students in networking fundamentals through weekly office hours covering internet architecture, routing, and TCP/IP.&lt;/li&gt;&#xA;&lt;li&gt;Help students debug C and Python networking assignments involving socket programming, HTTP, and distributed protocols.&lt;/li&gt;&#xA;&lt;li&gt;Grade programming assignments and exams.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;course-instructor-modern-c&#34;&gt;Course Instructor, Modern C++&lt;/h3&gt;&#xA;&lt;ul class=&#34;metadata&#34;&gt;&#xA;&lt;li&gt;January 2025 – May 2025&lt;/li&gt;&#xA;&lt;li&gt;Purdue IEEE&lt;/li&gt;&#xA;&lt;li&gt;West Lafayette, IN&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Designed and taught a Modern C++ course for 40 students through Purdue IEEE&lt;/li&gt;&#xA;&lt;li&gt;Delivered weekly 90-minute lectures from C++ fundamentals through templates, compile-time programming, and safety.&lt;/li&gt;&#xA;&lt;li&gt;Authored all course materials, assignments, and assessments.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;speaker--core-c-conference&#34;&gt;Speaker @ Core C++ Conference&lt;/h3&gt;&#xA;&lt;ul class=&#34;metadata&#34;&gt;&#xA;&lt;li&gt;November 2024&lt;/li&gt;&#xA;&lt;li&gt;Core C++ Group&lt;/li&gt;&#xA;&lt;li&gt;Tel Aviv, Israel&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Delivered &amp;ldquo;&lt;a href=&#34;https://youtu.be/ITbqbzGLIgo?si=7hA4Jb8aee5PGkPD&#34;&gt;Messing with Floating Point&lt;/a&gt;,&amp;rdquo; a 60-minute talk to approximately 100 attendees at Core C++ on types of floating-point error and techniques for mitigating them.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;teaching-assistant-linux--bash-purdue-university&#34;&gt;Teaching Assistant (Linux &amp;amp; Bash), Purdue University&lt;/h3&gt;&#xA;&lt;ul class=&#34;metadata&#34;&gt;&#xA;&lt;li&gt;August 2024 – December 2024&lt;/li&gt;&#xA;&lt;li&gt;Purdue IEEE&lt;/li&gt;&#xA;&lt;li&gt;West Lafayette, IN&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Supported 30 students through eight programming assignments covering Bash scripting and Linux fundamentals.&lt;/li&gt;&#xA;&lt;li&gt;Reviewed course materials and recommended improvements to explanations and assignment instructions.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;education&#34;&gt;Education&lt;/h2&gt;&#xA;&lt;h3 id=&#34;mse-in-electrical--computer-engineering-purdue-university&#34;&gt;M.S.E. in Electrical &amp;amp; Computer Engineering, Purdue University&lt;/h3&gt;&#xA;&lt;ul class=&#34;metadata&#34;&gt;&#xA;&lt;li&gt;August 2026 – May 2027 &lt;em&gt;(expected)&lt;/em&gt;&lt;/li&gt;&#xA;&lt;li&gt;West Lafayette, IN&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Concentration in Artificial Intelligence and Computer Systems&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;bse-in-computer-engineering-purdue-university&#34;&gt;B.S.E. in Computer Engineering, Purdue University&lt;/h3&gt;&#xA;&lt;ul class=&#34;metadata&#34;&gt;&#xA;&lt;li&gt;August 2023 – May 2026&lt;/li&gt;&#xA;&lt;li&gt;West Lafayette, IN&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Concentration in Computer Systems&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;projects&#34;&gt;Projects&lt;/h2&gt;&#xA;&lt;h3 id=&#34;trillim-ai&#34;&gt;&lt;a href=&#34;https://trillim.com&#34;&gt;Trillim AI&lt;/a&gt;&lt;/h3&gt;&#xA;&lt;ul class=&#34;metadata&#34;&gt;&#xA;&lt;li&gt;December 2025 – Present&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Co-developed a C++ inference engine using SIMD optimizations, achieving ~1.5-2x the inference speed of Microsoft’s BitNet and llama.cpp for low-bit models.&lt;/li&gt;&#xA;&lt;li&gt;Shipped and maintain a Python SDK for downloading and running models locally.&lt;/li&gt;&#xA;&lt;li&gt;Added support for image generation models before llama.cpp.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;totally&#34;&gt;&lt;a href=&#34;https://totally.sh&#34;&gt;Totally&lt;/a&gt;&lt;/h3&gt;&#xA;&lt;ul class=&#34;metadata&#34;&gt;&#xA;&lt;li&gt;December 2025 - Present&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Built a Go CLI that estimates OpenAI and Anthropic agent costs from local transcripts using regularly updated model pricing.&lt;/li&gt;&#xA;&lt;li&gt;Implemented cost breakdowns by model, session, time period, and provider to help developers track usage.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;gitvista&#34;&gt;&lt;a href=&#34;https://gitvista.io&#34;&gt;GitVista&lt;/a&gt;&lt;/h3&gt;&#xA;&lt;ul class=&#34;metadata&#34;&gt;&#xA;&lt;li&gt;October 2025 – Present&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Built a Git engine in Go and an interactive JavaScript canvas visualizer for exploring repository history, inspecting files at any revision, and analyzing repository activity.&lt;/li&gt;&#xA;&lt;li&gt;Designed data transfer between the Go backend and browser to prioritize information needed for the current view while handling large volumes of repository data.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
-      <title>Search</title>
-      <link>https://rybkr.com/search/</link>
+      <title>Technical Notes</title>
+      <link>https://rybkr.com/technical-notes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://rybkr.com/search/</guid>
-      <description></description>
+      <guid>https://rybkr.com/technical-notes/</guid>
+      <description>&lt;h2 id=&#34;unix&#34;&gt;Unix&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://rybkr.com/pdfs/unix-processes.pdf&#34;&gt;Unix Processes&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;ai&#34;&gt;AI&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://rybkr.com/pdfs/context-synchronization-for-multi-agent-workflows.pdf&#34;&gt;A Solution to Context Drift&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;c&#34;&gt;C++&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://rybkr.com/pdfs/intro-to-cpp.pdf&#34;&gt;Introduction to C++&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://rybkr.com/pdfs/cpp-programming-basics.pdf&#34;&gt;C++ Programming Basics&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://rybkr.com/pdfs/how-cpp-works.pdf&#34;&gt;How C++ Works&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://rybkr.com/pdfs/introduction-to-oop-in-cpp.pdf&#34;&gt;Object-Oriented Programming in C++ (1)&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://rybkr.com/pdfs/advanced-cpp-oop.pdf&#34;&gt;Object-Oriented Programming in C++ (2)&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://rybkr.com/pdfs/cpp-templates.pdf&#34;&gt;C++ Templates&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://rybkr.com/pdfs/safety-in-cpp.pdf&#34;&gt;Safety in C++&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
   </channel>
 </rss>
