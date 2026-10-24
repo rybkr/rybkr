@@ -1,0 +1,1 @@
+<a href="{{ .Destination | safeURL }}"{{ if eq .Title "runaway" }} class="runaway"{{ else }}{{ with .Title }} title="{{ . }}"{{ end }}{{ end }}>{{ .Text | safeHTML }}</a>{{- /* Trim trailing whitespace. */ -}}
