@@ -3,10 +3,7 @@
     <header class="resume-header">
       <a class="resume-back" href="{{ "/" | relURL }}">&lt;- Back to home</a>
       <nav class="resume-sections" aria-label="Resume sections">
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
+        {{ partial "resume-sections.html" .Fragments.Headings }}
       </nav>
     </header>
     {{ .Content }}

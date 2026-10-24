@@ -15,7 +15,7 @@
     {{ end }}
     <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
     <script src="{{ "js/reveal.js" | relURL }}" defer onerror="document.documentElement.classList.remove('reveal-ready')"></script>
-    {{ if or .IsHome (in (slice "resume" "technical-notes") .Layout) }}
+    {{ if or .IsHome (in (slice "resume" "technical-notes" "blog") .Layout) }}
       <script src="{{ "js/rainbow-links.js" | relURL }}" defer></script>
     {{ end }}
   </head>

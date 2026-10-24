@@ -1,0 +1,8 @@
+{{- range . -}}
+  {{- if eq .Level 2 -}}
+    <a href="#{{ .ID }}">{{ .Title | plainify | htmlUnescape }}</a>
+  {{- end -}}
+  {{- with .Headings -}}
+    {{- partial "resume-sections.html" . -}}
+  {{- end -}}
+{{- end -}}
