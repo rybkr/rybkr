@@ -317,7 +317,3 @@ main > p:has(> a.runaway) {
 @media (prefers-reduced-motion: reduce) {
   main > p:has(> a.runaway) { display: none; }
 }
-
-.upside-down body {
-  transform: rotate(180deg);
-}

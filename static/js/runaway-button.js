@@ -6,10 +6,12 @@ if (runawayButton) {
   let frame;
   let previousTime;
   let position;
+  let pressed = false;
   let obstacles = [];
   let velocity = { x: 0, y: 0 };
+
   const margin = 16;
-  const dangerRadius = 130;
+  const dangerRadius = 150;
   const initialDangerRadius = 1;
   const initialFrameDurationMs = 16;
   const maxFrameDurationSeconds = 0.032;
@@ -24,6 +26,7 @@ if (runawayButton) {
   const momentumScoreWeight = 0.06;
   const velocityBlendRate = 12;
   const stoppingSpeed = 1;
+
   const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
 
   function clearance(a, b) {
@@ -43,16 +46,13 @@ if (runawayButton) {
   }
 
   function place() {
-    const flipped = document.documentElement.classList.contains("upside-down");
-    const body = document.body.getBoundingClientRect();
-    const rect = runawayButton.getBoundingClientRect();
-    runawayButton.style.left = `${flipped ? body.right - position.x - rect.width : position.x}px`;
-    runawayButton.style.top = `${flipped ? body.bottom - position.y - rect.height : position.y}px`;
+    runawayButton.style.left = `${position.x}px`;
+    runawayButton.style.top = `${position.y}px`;
   }
 
   function animate(time) {
     frame = undefined;
-    if (!pointer || !runawayEnabled.matches || runawayButton.matches(":focus-visible")) {
+    if (pressed || !pointer || document.querySelector("[data-falling]") || !runawayEnabled.matches || runawayButton.matches(":focus-visible")) {
       velocity = { x: 0, y: 0 };
       previousTime = undefined;
       return;
@@ -122,13 +122,24 @@ if (runawayButton) {
     }
   }
 
+  // Catching it on mouse-down must leave time to release and complete the click.
+  runawayButton.addEventListener("pointerdown", (event) => {
+    if (event.button !== 0) return;
+    pressed = true;
+    stop();
+  });
+  document.addEventListener("pointerup", () => { pressed = false; });
+  document.addEventListener("pointercancel", () => { pressed = false; });
+  window.addEventListener("blur", () => { pressed = false; stop(); });
+
   document.addEventListener("pointermove", (event) => {
+    if (pressed) return;
     if (event.pointerType !== "mouse") return;
     pointer = { x: event.clientX, y: event.clientY };
     if (!frame) frame = requestAnimationFrame(animate);
   });
   document.addEventListener("pointerleave", () => { pointer = undefined; });
-  // The site-wide click handler flips the page before we resync coordinates.
+  // Stop the escape animation while the page content is falling.
   document.addEventListener("click", (event) => {
     if (!event.target.closest("a.runaway")) return;
     stop();
@@ -137,7 +148,7 @@ if (runawayButton) {
       position = { x: rect.left, y: rect.top };
       updateObstacles();
     }
-    if (event.detail > 0) {
+    if (event.detail > 0 && !document.querySelector("[data-falling]")) {
       pointer = { x: event.clientX, y: event.clientY };
       frame = requestAnimationFrame(animate);
     }
@@ -151,7 +162,7 @@ if (runawayButton) {
 
   function updateLayout() {
     stop();
-    if (!position) return;
+    if (!position || document.querySelector("[data-falling]")) return;
     updateObstacles();
     const rect = runawayButton.getBoundingClientRect();
     // Keep its position unless the viewport has become too small to contain it.
