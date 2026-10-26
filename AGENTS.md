@@ -15,6 +15,8 @@ Maintain a **strict separation between content and presentation**:
 
 ## Development
 
+- Install the commit hook after cloning: `git config core.hooksPath .githooks` (requires Python 3).
+- The hook checks staged Markdown under `content/`: if YAML front matter has an `updated` field, it must equal the committer's date (`YYYY-MM-DD`, using Git's committer timezone). Update and stage the field whenever changing that file.
 - Preview: `hugo server -D`.
 - Build: `hugo --gc --minify`.
 - Treat `docs/` as generated output; edit sources and rebuild.

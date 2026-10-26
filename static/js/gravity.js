@@ -9,14 +9,14 @@ const INITIAL_HORIZONTAL_SPEED = 180; // total random range, px/s
 const INITIAL_SPIN = 4; // total random range, rad/s
 
 // Settling: lower speed or longer delay lets pieces move longer before sleeping.
-const SLEEP_SPEED = 10; // px/s, including motion at the corners
+const SLEEP_SPEED = 20; // px/s, including motion at the corners
 const SLEEP_DELAY = 1; // seconds continuously below SLEEP_SPEED
 const WAKE_SPEED = 20; // px/s impact needed to wake a sleeping piece
 const MAX_SIMULATION_TIME = 15; // seconds; fallback cap for pathological piles
 
 // Solver accuracy and spacing; these usually do not need adjustment.
 const STEP_DURATION = 1 / 120; // seconds
-const SOLVER_PASSES = 8;
+const SOLVER_PASSES = 32;
 const MAX_FRAME_DURATION = 0.05; // seconds; cap catch-up work after a paused tab
 const INITIAL_FRAME_DURATION = 1 / 60; // seconds
 const VIEWPORT_PADDING = 8; // px
@@ -158,16 +158,42 @@ document.addEventListener("click", (event) => {
     for (const point of contacts) resolve(p, null, normal, point);
   }
 
-  function contactPoint(a, b, normal) {
-    const tangent = { x: -normal.y, y: normal.x };
-    const project = (p, axis) => p.x * axis.x + p.y * axis.y;
-    const aa = axes(a), ba = axes(b);
-    const an = radius(a, aa, normal), bn = radius(b, ba, normal);
-    const at = radius(a, aa, tangent), bt = radius(b, ba, tangent);
-    const along = (project(a, normal) + an + project(b, normal) - bn) / 2;
-    const side = (Math.max(project(a, tangent) - at, project(b, tangent) - bt) +
-      Math.min(project(a, tangent) + at, project(b, tangent) + bt)) / 2;
-    return { x: normal.x * along + tangent.x * side, y: normal.y * along + tangent.y * side };
+  // Clip the incident face to the reference face. A projected bounding-box
+  // midpoint can lie outside either rectangle and create artificial torque.
+  function contactPoints(a, b, normal) {
+    const dot = (p, q) => p.x * q.x + p.y * q.y;
+    const face = (p, direction) => {
+      const basis = axes(p);
+      const index = Math.abs(dot(basis[0], direction)) > Math.abs(dot(basis[1], direction)) ? 0 : 1;
+      const sign = dot(basis[index], direction) >= 0 ? 1 : -1;
+      const n = { x: basis[index].x * sign, y: basis[index].y * sign };
+      const tangent = basis[1 - index];
+      const extent = (index === 0 ? p.w : p.h) / 2;
+      const halfLength = (index === 0 ? p.h : p.w) / 2;
+      const center = { x: p.x + n.x * extent, y: p.y + n.y * extent };
+      return { n, tangent, center, halfLength, alignment: dot(n, direction) };
+    };
+    const af = face(a, normal);
+    const bf = face(b, { x: -normal.x, y: -normal.y });
+    const reference = af.alignment >= bf.alignment ? af : bf;
+    const incident = reference === af ? bf : af;
+    let points = [-1, 1].map(sign => ({
+      x: incident.center.x + sign * incident.tangent.x * incident.halfLength,
+      y: incident.center.y + sign * incident.tangent.y * incident.halfLength,
+    }));
+    for (const sign of [-1, 1]) {
+      const distance = p => sign * dot({ x: p.x - reference.center.x, y: p.y - reference.center.y }, reference.tangent) - reference.halfLength;
+      const [p, q] = points;
+      if (!q) return [];
+      const dp = distance(p), dq = distance(q);
+      if (dp > 0 && dq > 0) return [];
+      if ((dp > 0) !== (dq > 0)) {
+        const t = dp / (dp - dq);
+        const intersection = { x: p.x + t * (q.x - p.x), y: p.y + t * (q.y - p.y) };
+        points = dp > 0 ? [intersection, q] : [p, intersection];
+      }
+    }
+    return points.filter(p => dot({ x: p.x - reference.center.x, y: p.y - reference.center.y }, reference.n) <= COLLISION_MARGIN);
   }
 
   function constrain(p) {
@@ -196,8 +222,18 @@ document.addEventListener("click", (event) => {
     while (accumulator >= STEP_DURATION) {
       accumulator -= STEP_DURATION;
       elapsed += STEP_DURATION;
+      // Wake a body if any piece it rested on moves or loses contact.
+      for (const p of pieces) {
+        if (p.asleep && p.supports.some(support => !support.asleep || !collision(p, support))) {
+          p.asleep = false;
+          p.quietFor = 0;
+        }
+      }
       for (const p of pieces) {
         if (p.asleep) continue;
+        p.previousX = p.x;
+        p.previousY = p.y;
+        p.previousAngle = p.angle;
         p.vy += GRAVITY * STEP_DURATION;
         p.vx *= Math.exp(-AIR_DRAG * STEP_DURATION);
         p.spin *= Math.exp(-AIR_DRAG * STEP_DURATION);
@@ -226,7 +262,7 @@ document.addEventListener("click", (event) => {
             a.y -= normal.y * correction * ma;
             b.x += normal.x * correction * mb;
             b.y += normal.y * correction * mb;
-            resolve(a, b, normal, contactPoint(a, b, normal));
+            for (const point of contactPoints(a, b, normal)) resolve(a, b, normal, point);
           }
         }
         pieces.forEach(constrain);
@@ -234,9 +270,15 @@ document.addEventListener("click", (event) => {
       // Sleep each body once its center and corners have stayed slow.
       for (const p of pieces) {
         if (p.asleep) continue;
-        const speed = Math.hypot(p.vx, p.vy) + Math.abs(p.spin) * Math.hypot(p.w, p.h) / 2;
+        // Position correction cancels some solver velocity in resting stacks.
+        // Measure actual motion so that residual impulses cannot keep them awake.
+        const speed = (Math.hypot(p.x - p.previousX, p.y - p.previousY) +
+          Math.abs(p.angle - p.previousAngle) * Math.hypot(p.w, p.h) / 2) / STEP_DURATION;
         p.quietFor = speed < SLEEP_SPEED ? p.quietFor + STEP_DURATION : 0;
         if (p.quietFor > SLEEP_DELAY) {
+          p.supports = pieces.filter(other => other !== p && other.y > p.y && collision(p, other));
+          // Let moving supports finish settling before freezing this body.
+          if (p.supports.some(other => !other.asleep)) continue;
           p.asleep = true;
           p.vx = p.vy = p.spin = 0;
         }

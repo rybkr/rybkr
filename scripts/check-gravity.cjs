@@ -2,8 +2,8 @@
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const vm = require('node:vm');
-function simulate(count, interval = 1000 / 60) {
-  let seed = 42, click, queued, time = 0;
+function simulate(count, interval = 1000 / 60, seed = 42) {
+  let click, queued, time = 0;
   const random = Object.create(Math);
   random.random = () => ((seed = (seed * 1664525 + 1013904223) >>> 0) / 2 ** 32);
   const elements = Array.from({ length: count }, (_, i) => ({
@@ -34,6 +34,10 @@ function simulate(count, interval = 1000 / 60) {
   assert.ok(button.style.transform?.includes('rotate'), 'The trigger must rotate');
   for (const el of elements) assert.ok(!/NaN|Infinity/.test(el.style.transform));
   const final = elements.map(el => el.style.transform);
+  if (count === 1) {
+    const angle = Number(final[0].match(/rotate\(([^)]+)rad\)/)[1]);
+    assert.ok(Math.abs(Math.sin(angle)) < 0.01, `An isolated piece must lie flat, got ${angle}rad`);
+  }
   assert.ok(!queued, 'Settled pile must stop requesting frames');
   click(event);
   assert.ok(!('falling' in main.dataset), 'Reset restores normal layout');
@@ -42,4 +46,14 @@ function simulate(count, interval = 1000 / 60) {
 for (const count of [2, 14]) for (const interval of [1000 / 60, 1000 / 30, 1000 / 120]) {
   const result = simulate(count, interval);
   console.log(`${count} pieces at ${Math.round(1000 / interval)}fps settled in ${result.time}ms`);
+}
+
+// A lone rectangle has no support that could justify resting at an angle.
+for (const seed of [1, 7, 42, 123, 9876]) simulate(1, 1000 / 60, seed);
+console.log('Isolated pieces settle flat across five seeded drops');
+
+// Different pile arrangements must settle before the emergency cutoff too.
+for (const seed of [1, 7, 123, 9876]) {
+  const result = simulate(14, 1000 / 60, seed);
+  console.log(`14 pieces with seed ${seed} settled in ${result.time}ms`);
 }

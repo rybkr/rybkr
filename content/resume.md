@@ -2,7 +2,7 @@
 title: "Resume"
 layout: "resume"
 hideMeta: true
-updated: 2026-10-23
+updated: 2026-10-26
 ---
 
 ## Experience
@@ -69,7 +69,7 @@ updated: 2026-10-23
 
 - Delivered "[Messing with Floating Point](https://youtu.be/ITbqbzGLIgo?si=7hA4Jb8aee5PGkPD)," a 60-minute talk to approximately 100 attendees at Core C++ on types of floating-point error and techniques for mitigating them.
 
-### Teaching Assistant (Linux & Bash), Purdue University
+### Teaching Assistant, Linux & Bash
 
 - August 2024 – December 2024
 - Purdue IEEE
@@ -81,7 +81,7 @@ updated: 2026-10-23
 
 ## Education
 
-### M.S.E. in Electrical & Computer Engineering, Purdue University
+### M.S.E. in Electrical & Computer Engineering @ Purdue
 
 - August 2026 – May 2027 _(expected)_
 - West Lafayette, IN
@@ -89,7 +89,7 @@ updated: 2026-10-23
 
 - Concentration in Artificial Intelligence and Computer Systems
 
-### B.S.E. in Computer Engineering, Purdue University
+### B.S.E. in Computer Engineering @ Purdue
 
 - August 2023 – May 2026
 - West Lafayette, IN

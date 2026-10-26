@@ -7,5 +7,10 @@
       </nav>
     </header>
     {{ .Content }}
+    {{ with .Params.updated }}
+      <footer class="resume-updated">
+        Last Updated: <time datetime="{{ time.Format "2006-01-02" . }}">{{ time.Format "January 2, 2006" . }}</time>
+      </footer>
+    {{ end }}
   </article>
 {{ end }}
