@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Ryan Baker — Terminal R</title>
+  <desc id="desc">An off-white geometric letter R beside an emerald-green terminal chevron.</desc>
+  <rect width="512" height="512" fill="#0D1117"/>
+  <path id="prompt-chevron" d="M 89 212 H 168 L 251 309 L 168 409 H 89 L 175 309 Z" fill="#34D399"/>
+  <path id="letter-r" d="M 89 103
+H 301
+C 357 103 401 146 401 202
+C 401 244 383 274 344 294
+L 423 409
+H 345
+L 234 246
+H 287
+C 314 246 331 228 331 204
+C 331 181 314 165 287 165
+H 89
+Z" fill="#F9FAFB"/>
+</svg>
