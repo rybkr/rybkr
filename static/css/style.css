@@ -91,10 +91,15 @@ img { max-width: 100%; height: auto; }
 .document {
   width: min(100% - 3rem, 60rem);
   justify-content: flex-start;
+}
+.document, .not-found-page {
   font-size: 1.0625rem;
   line-height: 1.8;
 }
 .technical-notes, .blog { width: min(100%, 38rem); margin-inline: auto; }
+.not-found-page { width: min(100% - 3rem, 28rem); }
+.not-found { overflow-wrap: anywhere; }
+.not-found a { text-decoration-color: currentColor; }
 .notes-back {
   margin-bottom: 2rem;
   padding-block: 0.5rem;
