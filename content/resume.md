@@ -2,7 +2,10 @@
 title: "Resume"
 layout: "resume"
 hideMeta: true
-updated: 2026-10-26
+updated: 2026-10-30
+pdf:
+  label: "View PDF"
+  url: "/pdfs/resume.pdf"
 ---
 
 ## Experience
@@ -23,9 +26,54 @@ updated: 2026-10-26
 - Newburgh, IN
 {.metadata}
 
-- Developed and shipped a deferred logging system in C for FreeRTOS, packing variadic arguments into a compact byte buffer to move formatting work off the calling thread.
+- Shipped a deferred logging system for FreeRTOS that packed variadic arguments into compact byte buffers, offloading log processing from safety-critical calling threads.
 - Parallelized CI jobs, reducing pipeline runtime from approximately 2 minutes to 30 seconds per push.
 - Built a Python tool to visualize finite state machines by parsing source code into an abstract syntax tree, uncovering multiple state-machine bugs.
+
+## Projects
+
+### [Trillim AI](https://trillim.com)
+
+- December 2025 – Present
+{.metadata}
+
+- Co-developed a SIMD-optimized inference engine, achieving ~1.5–2× the speed of Microsoft’s BitNet in benchmark testing.
+- Enabled local inference for both language and image-generation models, filling a gap in llama.cpp’s model support.
+- Built a Python SDK and WebAssembly integration to enable model inference in Python applications and web browsers.
+
+### [GitVista](https://gitvista.io)
+
+- October 2025 – Present
+{.metadata}
+
+- Built a Git engine in Go and an interactive JavaScript canvas visualizer for exploring repository history, inspecting files at any revision, and analyzing repository activity.
+- Designed data transfer between the Go backend and browser to prioritize information needed for the current view while handling large volumes of repository data.
+
+### [Totally](https://totally.sh)
+
+- December 2025 - Present
+{.metadata}
+
+- Built a Go CLI that estimates OpenAI and Anthropic agent costs from local transcripts using regularly updated model pricing.
+- Implemented cost breakdowns by model, session, time period, and provider to help developers track usage.
+
+## Education
+
+### M.S.E. in Electrical & Computer Engineering @ Purdue
+
+- August 2026 – May 2027 _(expected)_
+- West Lafayette, IN
+{.metadata}
+
+- Concentration in Artificial Intelligence and Computer Systems
+
+### B.S.E. in Computer Engineering @ Purdue
+
+- August 2023 – May 2026
+- West Lafayette, IN
+{.metadata}
+
+- Concentration in Computer Systems
 
 ## Teaching & Speaking
 
@@ -78,48 +126,3 @@ updated: 2026-10-26
 
 - Supported 30 students through eight programming assignments covering Bash scripting and Linux fundamentals.
 - Reviewed course materials and recommended improvements to explanations and assignment instructions.
-
-## Education
-
-### M.S.E. in Electrical & Computer Engineering @ Purdue
-
-- August 2026 – May 2027 _(expected)_
-- West Lafayette, IN
-{.metadata}
-
-- Concentration in Artificial Intelligence and Computer Systems
-
-### B.S.E. in Computer Engineering @ Purdue
-
-- August 2023 – May 2026
-- West Lafayette, IN
-{.metadata}
-
-- Concentration in Computer Systems
-
-## Projects
-
-### [Trillim AI](https://trillim.com)
-
-- December 2025 – Present
-{.metadata}
-
-- Co-developed a C++ inference engine using SIMD optimizations, achieving ~1.5-2x the inference speed of Microsoft’s BitNet and llama.cpp for low-bit models.
-- Shipped and maintain a Python SDK for downloading and running models locally.
-- Added support for image generation models before llama.cpp.
-
-### [Totally](https://totally.sh)
-
-- December 2025 - Present
-{.metadata}
-
-- Built a Go CLI that estimates OpenAI and Anthropic agent costs from local transcripts using regularly updated model pricing.
-- Implemented cost breakdowns by model, session, time period, and provider to help developers track usage.
-
-### [GitVista](https://gitvista.io)
-
-- October 2025 – Present
-{.metadata}
-
-- Built a Git engine in Go and an interactive JavaScript canvas visualizer for exploring repository history, inspecting files at any revision, and analyzing repository activity.
-- Designed data transfer between the Go backend and browser to prioritize information needed for the current view while handling large volumes of repository data.

@@ -185,6 +185,24 @@ img { max-width: 100%; height: auto; }
   text-decoration-thickness: 1px;
   text-underline-offset: 0.25em;
 }
+.resume-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+}
+.resume .resume-pdf {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid currentColor;
+  border-radius: 0.25rem;
+  font: 400 0.875rem/1.5 var(--font-mono);
+  text-decoration: none;
+}
+.resume .resume-pdf::before { display: none; }
 .resume .resume-back {
   display: inline-flex;
   align-items: center;

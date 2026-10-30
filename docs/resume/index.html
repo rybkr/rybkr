@@ -26,9 +26,14 @@
       
   <article class="resume" data-rainbow-links>
     <header class="resume-header">
-      <a class="resume-back" href="/">&lt;- Back to home</a>
+      <div class="resume-actions">
+        <a class="resume-back" href="/">&lt;- Back to home</a>
+        
+          <a class="resume-pdf" href="/pdfs/resume.pdf">View PDF</a>
+        
+      </div>
       <nav class="resume-sections" aria-label="Resume sections">
-        <a href="#experience">Experience</a><a href="#teaching--speaking">Teaching &amp; Speaking</a><a href="#education">Education</a><a href="#projects">Projects</a>
+        <a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#teaching--speaking">Teaching &amp; Speaking</a>
       </nav>
     </header>
     <h2 id="experience">Experience</h2>
@@ -48,9 +53,52 @@
 <li>Newburgh, IN</li>
 </ul>
 <ul>
-<li>Developed and shipped a deferred logging system in C for FreeRTOS, packing variadic arguments into a compact byte buffer to move formatting work off the calling thread.</li>
+<li>Shipped a deferred logging system for FreeRTOS that packed variadic arguments into compact byte buffers, offloading log processing from safety-critical calling threads.</li>
 <li>Parallelized CI jobs, reducing pipeline runtime from approximately 2 minutes to 30 seconds per push.</li>
 <li>Built a Python tool to visualize finite state machines by parsing source code into an abstract syntax tree, uncovering multiple state-machine bugs.</li>
+</ul>
+<h2 id="projects">Projects</h2>
+<h3 id="trillim-ai"><a href="https://trillim.com">Trillim AI</a></h3>
+<ul class="metadata">
+<li>December 2025 – Present</li>
+</ul>
+<ul>
+<li>Co-developed a SIMD-optimized inference engine, achieving ~1.5–2× the speed of Microsoft’s BitNet in benchmark testing.</li>
+<li>Enabled local inference for both language and image-generation models, filling a gap in llama.cpp’s model support.</li>
+<li>Built a Python SDK and WebAssembly integration to enable model inference in Python applications and web browsers.</li>
+</ul>
+<h3 id="gitvista"><a href="https://gitvista.io">GitVista</a></h3>
+<ul class="metadata">
+<li>October 2025 – Present</li>
+</ul>
+<ul>
+<li>Built a Git engine in Go and an interactive JavaScript canvas visualizer for exploring repository history, inspecting files at any revision, and analyzing repository activity.</li>
+<li>Designed data transfer between the Go backend and browser to prioritize information needed for the current view while handling large volumes of repository data.</li>
+</ul>
+<h3 id="totally"><a href="https://totally.sh">Totally</a></h3>
+<ul class="metadata">
+<li>December 2025 - Present</li>
+</ul>
+<ul>
+<li>Built a Go CLI that estimates OpenAI and Anthropic agent costs from local transcripts using regularly updated model pricing.</li>
+<li>Implemented cost breakdowns by model, session, time period, and provider to help developers track usage.</li>
+</ul>
+<h2 id="education">Education</h2>
+<h3 id="mse-in-electrical--computer-engineering--purdue">M.S.E. in Electrical &amp; Computer Engineering @ Purdue</h3>
+<ul class="metadata">
+<li>August 2026 – May 2027 <em>(expected)</em></li>
+<li>West Lafayette, IN</li>
+</ul>
+<ul>
+<li>Concentration in Artificial Intelligence and Computer Systems</li>
+</ul>
+<h3 id="bse-in-computer-engineering--purdue">B.S.E. in Computer Engineering @ Purdue</h3>
+<ul class="metadata">
+<li>August 2023 – May 2026</li>
+<li>West Lafayette, IN</li>
+</ul>
+<ul>
+<li>Concentration in Computer Systems</li>
 </ul>
 <h2 id="teaching--speaking">Teaching &amp; Speaking</h2>
 <h3 id="technical-educator-youtube">Technical Educator, <a href="https://www.youtube.com/@rybkr">YouTube</a></h3>
@@ -103,53 +151,10 @@
 <li>Supported 30 students through eight programming assignments covering Bash scripting and Linux fundamentals.</li>
 <li>Reviewed course materials and recommended improvements to explanations and assignment instructions.</li>
 </ul>
-<h2 id="education">Education</h2>
-<h3 id="mse-in-electrical--computer-engineering--purdue">M.S.E. in Electrical &amp; Computer Engineering @ Purdue</h3>
-<ul class="metadata">
-<li>August 2026 – May 2027 <em>(expected)</em></li>
-<li>West Lafayette, IN</li>
-</ul>
-<ul>
-<li>Concentration in Artificial Intelligence and Computer Systems</li>
-</ul>
-<h3 id="bse-in-computer-engineering--purdue">B.S.E. in Computer Engineering @ Purdue</h3>
-<ul class="metadata">
-<li>August 2023 – May 2026</li>
-<li>West Lafayette, IN</li>
-</ul>
-<ul>
-<li>Concentration in Computer Systems</li>
-</ul>
-<h2 id="projects">Projects</h2>
-<h3 id="trillim-ai"><a href="https://trillim.com">Trillim AI</a></h3>
-<ul class="metadata">
-<li>December 2025 – Present</li>
-</ul>
-<ul>
-<li>Co-developed a C++ inference engine using SIMD optimizations, achieving ~1.5-2x the inference speed of Microsoft’s BitNet and llama.cpp for low-bit models.</li>
-<li>Shipped and maintain a Python SDK for downloading and running models locally.</li>
-<li>Added support for image generation models before llama.cpp.</li>
-</ul>
-<h3 id="totally"><a href="https://totally.sh">Totally</a></h3>
-<ul class="metadata">
-<li>December 2025 - Present</li>
-</ul>
-<ul>
-<li>Built a Go CLI that estimates OpenAI and Anthropic agent costs from local transcripts using regularly updated model pricing.</li>
-<li>Implemented cost breakdowns by model, session, time period, and provider to help developers track usage.</li>
-</ul>
-<h3 id="gitvista"><a href="https://gitvista.io">GitVista</a></h3>
-<ul class="metadata">
-<li>October 2025 – Present</li>
-</ul>
-<ul>
-<li>Built a Git engine in Go and an interactive JavaScript canvas visualizer for exploring repository history, inspecting files at any revision, and analyzing repository activity.</li>
-<li>Designed data transfer between the Go backend and browser to prioritize information needed for the current view while handling large volumes of repository data.</li>
-</ul>
 
     
       <footer class="resume-updated">
-        Last Updated: <time datetime="2026-10-26">October 26, 2026</time>
+        Last Updated: <time datetime="2026-10-30">October 30, 2026</time>
       </footer>
     
   </article>
