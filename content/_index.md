@@ -20,7 +20,7 @@ title: Ryan Baker
 
 [![YouTube](/icons/youtube.svg)](https://youtube.com/@rybkr)
 [![GitHub](/icons/github.svg)](https://github.com/rybkr)
-[![Discord](/icons/discord.svg)](https://discord.gg/fZ357bNDM)
+[![Discord](/icons/discord.svg)](https://discord.gg/mPr8SQC63J)
 [![Email](/icons/email.svg)](mailto:hello@rybkr.com)
 {.social-links}
 
