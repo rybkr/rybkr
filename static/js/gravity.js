@@ -356,7 +356,11 @@ document.addEventListener("click", (event) => {
       element.style.pointerEvents = "none";
     }
     pieces = fragments;
-    main.querySelector("a.gravity-reset")?.focus({ preventScroll: true });
+    const resetLink = main.querySelector("a.gravity-reset");
+    if (resetLink) {
+      resetLink.hidden = false;
+      resetLink.focus({ preventScroll: true });
+    }
     previous = undefined;
     elapsed = accumulator = 0;
     settled = false;
@@ -391,10 +395,14 @@ document.addEventListener("click", (event) => {
       else element.setAttribute("style", style);
     });
     delete main.dataset.falling;
+    const resetLink = main.querySelector("a.gravity-reset");
+    const restoreFocus = resetLink === document.activeElement;
+    if (resetLink) resetLink.hidden = true;
     delete main.dataset.exploded;
     window.removeEventListener("resize", resizeSimulation);
     resetGravity = explodeGravity = undefined;
     document.dispatchEvent(new Event("gravity-reset"));
+    if (restoreFocus) main.querySelector("a.runaway")?.focus({ preventScroll: true });
   };
   window.addEventListener("resize", resizeSimulation);
   draw();

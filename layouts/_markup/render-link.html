@@ -1,1 +1,1 @@
-<a href="{{ .Destination | safeURL }}"{{ if eq .Title "runaway" }} class="runaway"{{ else if eq .Title "gravity-reset" }} class="gravity-reset"{{ else }}{{ with .Title }} title="{{ . }}"{{ end }}{{ end }}>{{ .Text | safeHTML }}</a>{{- /* Trim trailing whitespace. */ -}}
+<a href="{{ .Destination | safeURL }}"{{ if eq .Title "runaway" }} class="runaway"{{ else if eq .Title "gravity-reset" }} class="gravity-reset" hidden{{ else }}{{ with .Title }} title="{{ . }}"{{ end }}{{ end }}>{{ .Text | safeHTML }}</a>{{- /* Trim trailing whitespace. */ -}}

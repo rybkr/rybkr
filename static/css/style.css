@@ -389,21 +389,30 @@ a.page-back:is(:hover, :focus-visible) {
 }
 a.page-back::before, a.page-back::after { display: none; }
 
-/* The reset control appears only after the words burst into letters. */
-main > p:has(> .gravity-reset) { display: none; }
-main[data-exploded] > p:has(> .gravity-reset) {
+/* Native hidden state wins over the shared link display rules. */
+[hidden] { display: none !important; }
+.gravity-reset-slot { display: none; }
+main[data-exploded] > .gravity-reset-slot {
   display: block;
   position: fixed;
-  top: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
+  top: max(1rem, env(safe-area-inset-top, 0px));
+  inset-inline: 1rem;
   margin: 0;
+  text-align: center;
   z-index: 20;
+  pointer-events: none;
 }
 a.gravity-reset {
+  display: inline-block;
+  max-width: 100%;
+  min-height: 2.75rem;
   padding: 0.75rem 1rem;
   background: var(--background);
-  font-size: 0.875rem;
+  font: 400 0.875rem/1.5 var(--font-mono);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  overflow-wrap: anywhere;
+  pointer-events: auto;
   text-decoration: none;
 }
 a.gravity-reset::before, a.gravity-reset::after { display: none; }

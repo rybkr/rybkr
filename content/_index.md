@@ -29,3 +29,4 @@ title: Ryan Baker
 [don't click this](# "runaway")
 
 [please click this](# "gravity-reset")
+{.gravity-reset-slot}
