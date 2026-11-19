@@ -1,12 +1,17 @@
 {{ define "main" }}
-  <article class="blog">
-    <a class="notes-back" href="{{ "/blog/" | relURL }}">&lt;- Back to blog</a>
+  <article class="blog blog-post">
+    {{ partial "back-link.html" (dict "url" "/blog/" "label" "blog") }}
     <header>
       <h1>{{ .Title }}</h1>
       {{ if not .Date.IsZero }}
         <time class="blog-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
       {{ end }}
     </header>
+    {{ if .Fragments.Headings }}
+      <aside class="blog-toc" aria-label="Table of contents">
+        {{ .TableOfContents }}
+      </aside>
+    {{ end }}
     <div class="blog-content">
       {{ .Content }}
     </div>

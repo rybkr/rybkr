@@ -2,6 +2,8 @@ const runawayButton = document.querySelector("a.runaway");
 const runawayEnabled = matchMedia("(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)");
 
 if (runawayButton) {
+  const initialStyle = runawayButton.getAttribute("style");
+  const initialParentStyle = runawayButton.parentElement.getAttribute("style");
   let pointer;
   let frame;
   let previousTime;
@@ -159,6 +161,18 @@ if (runawayButton) {
     frame = previousTime = pointer = undefined;
     velocity = { x: 0, y: 0 };
   }
+
+  document.addEventListener("gravity-reset", () => {
+    stop();
+    position = undefined;
+    pressed = false;
+    obstacles = [];
+    runawayButton.classList.remove("is-running");
+    if (initialStyle === null) runawayButton.removeAttribute("style");
+    else runawayButton.setAttribute("style", initialStyle);
+    if (initialParentStyle === null) runawayButton.parentElement.removeAttribute("style");
+    else runawayButton.parentElement.setAttribute("style", initialParentStyle);
+  });
 
   function updateLayout() {
     stop();

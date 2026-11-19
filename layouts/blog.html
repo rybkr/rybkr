@@ -1,16 +1,18 @@
 {{ define "main" }}
   <article class="blog" data-rainbow-links>
-    <a class="notes-back" href="{{ "/" | relURL }}">&lt;- Back to home</a>
+    {{ partial "back-link.html" (dict "url" "/" "label" "home") }}
     <h1>{{ .Title }}</h1>
     {{ .Content }}
     {{ with .RegularPages.ByDate.Reverse }}
       <ul class="blog-list">
         {{ range . }}
           <li>
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-            {{ if not .Date.IsZero }}
-              <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
-            {{ end }}
+            <a href="{{ .RelPermalink }}">
+              {{ .Title }}
+              {{ if not .Date.IsZero }}
+                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+              {{ end }}
+            </a>
           </li>
         {{ end }}
       </ul>

@@ -8,7 +8,7 @@ defaultContentLanguage = "en"
 disableKinds = ["taxonomy", "term"]
 
 [params]
-  description = "Ryan Baker is a software engineer focused on systems, developer tools, and practical software that is fast, reliable, and easy to reason about."
+  description = "Ryan Baker is a software engineer and educator who teaches how computers work through animated videos, written guides, and hands-on projects."
 
 [outputs]
   home = ["HTML", "RSS"]

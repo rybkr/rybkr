@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://rybkr.com/resume/</loc>
+    <loc>https://rybkr.com/blog/</loc>
+    <lastmod>2026-11-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rybkr.com/blog/how-i-configure-a-mac/</loc>
+    <lastmod>2026-11-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://rybkr.com/</loc>
+    <lastmod>2026-11-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rybkr.com/resume/</loc>
   </url><url>
     <loc>https://rybkr.com/technical-notes/</loc>
   </url>

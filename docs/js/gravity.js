@@ -28,10 +28,20 @@ const POSITION_CORRECTION = 0.8; // fraction of excess overlap corrected each pa
 const PIECE_Z_INDEX = 5;
 
 let resetGravity;
+let explodeGravity;
 
 document.addEventListener("click", (event) => {
-  if (!event.target.closest("a.runaway")) return;
+  if (event.target.closest("a.gravity-reset")) {
+    event.preventDefault();
+    resetGravity?.();
+    return;
+  }
+  if (!event.target.closest("a.runaway") || document.querySelector("[data-exploded]")) return;
   event.preventDefault();
+  if (explodeGravity) {
+    explodeGravity();
+    return;
+  }
   if (resetGravity) {
     resetGravity();
     return;
@@ -41,7 +51,7 @@ document.addEventListener("click", (event) => {
   const main = document.querySelector("main");
   const elements = [...main.querySelectorAll("h1, h2, li > a, .social-links a, a.runaway")];
   // Measure everything before removing the pieces from normal layout.
-  const pieces = elements.map((element) => {
+  let pieces = elements.map((element) => {
     const range = document.createRange();
     range.selectNodeContents(element);
     const rect = range.getBoundingClientRect();
@@ -64,6 +74,9 @@ document.addEventListener("click", (event) => {
     element.style.setProperty("--bar-width", "100%");
   });
 
+  const originals = pieces.slice();
+  const letters = [];
+  let exploded = false;
   let frame;
   let previous;
   let elapsed = 0;
@@ -242,7 +255,7 @@ document.addEventListener("click", (event) => {
         p.angle += p.spin * STEP_DURATION;
       }
       // Revisit contacts to propagate support from the floor through the pile.
-      for (let pass = 0; pass < SOLVER_PASSES; pass++) {
+      for (let pass = 0; pass < (exploded ? 8 : SOLVER_PASSES); pass++) {
         for (let i = 0; i < pieces.length; i++) {
           for (let j = i + 1; j < pieces.length; j++) {
             const a = pieces[i], b = pieces[j];
@@ -291,17 +304,99 @@ document.addEventListener("click", (event) => {
     else pieces.forEach(({ element }) => element.style.removeProperty("will-change"));
   }
 
+  explodeGravity = () => {
+    explodeGravity = undefined;
+    exploded = true;
+    main.dataset.exploded = "";
+    cancelAnimationFrame(frame);
+    const fragments = [];
+    for (const piece of pieces) {
+      const { element } = piece;
+      // Icons remain whole; text fragments start at their current screen positions.
+      if (!element.textContent.trim()) {
+        piece.asleep = false;
+        piece.quietFor = 0;
+        fragments.push(piece);
+        continue;
+      }
+      const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
+      let node;
+      while ((node = walker.nextNode())) {
+        let offset = 0;
+        for (const character of node.textContent) {
+          const range = document.createRange();
+          range.setStart(node, offset);
+          offset += character.length;
+          range.setEnd(node, offset);
+          if (!character.trim()) continue;
+          const rect = range.getBoundingClientRect();
+          const letter = document.createElement("span");
+          letter.textContent = character;
+          letter.setAttribute("aria-hidden", "true");
+          const font = getComputedStyle(node.parentElement);
+          Object.assign(letter.style, {
+            position: "fixed", left: "0", top: "0", margin: "0", padding: "0",
+            font: font.font, color: font.color, lineHeight: "1", textDecoration: "none",
+            width: `${rect.width}px`, height: `${rect.height}px`, zIndex: String(PIECE_Z_INDEX),
+            pointerEvents: "none",
+            willChange: "transform",
+          });
+          document.body.append(letter);
+          letters.push(letter);
+          fragments.push({
+            element: letter, x: rect.left + rect.width / 2, y: rect.top + rect.height / 2,
+            w: rect.width, h: rect.height, angle: 0,
+            vx: (Math.random() - 0.5) * 900, vy: -300 - Math.random() * 450,
+            spin: (Math.random() - 0.5) * 18, quietFor: 0, asleep: false,
+          });
+        }
+      }
+      element.inert = true;
+      element.style.opacity = "0";
+      element.style.pointerEvents = "none";
+    }
+    pieces = fragments;
+    main.querySelector("a.gravity-reset")?.focus({ preventScroll: true });
+    previous = undefined;
+    elapsed = accumulator = 0;
+    settled = false;
+    draw();
+    frame = requestAnimationFrame(tick);
+  };
+
+  function resizeSimulation() {
+    cancelAnimationFrame(frame);
+    // A changed floor or wall invalidates every resting contact. Keep the
+    // bodies and their momentum, then let them settle against the new bounds.
+    pieces.forEach((piece) => {
+      piece.asleep = false;
+      piece.quietFor = 0;
+      piece.supports = [];
+      piece.element.style.willChange = "transform";
+      constrain(piece);
+    });
+    previous = undefined;
+    elapsed = accumulator = 0;
+    settled = false;
+    draw();
+    frame = requestAnimationFrame(tick);
+  }
+
   resetGravity = () => {
     cancelAnimationFrame(frame);
-    pieces.forEach(({ element, style }) => {
+    letters.forEach(letter => letter.remove());
+    originals.forEach(({ element, style }) => {
+      element.inert = false;
       if (style === null) element.removeAttribute("style");
       else element.setAttribute("style", style);
     });
     delete main.dataset.falling;
-    window.removeEventListener("resize", resetGravity);
-    resetGravity = undefined;
+    delete main.dataset.exploded;
+    window.removeEventListener("resize", resizeSimulation);
+    resetGravity = explodeGravity = undefined;
+    document.dispatchEvent(new Event("gravity-reset"));
   };
-  window.addEventListener("resize", resetGravity);
+  window.addEventListener("resize", resizeSimulation);
   draw();
   frame = requestAnimationFrame(tick);
 });

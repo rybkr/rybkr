@@ -1,5 +1,6 @@
 {{ define "main" }}
     <article class="not-found">
+      {{ partial "back-link.html" (dict "url" "/" "label" "home") }}
       <h1 style="font-size: 80px; text-align: center;">{{ .Title }}</h1>
       {{ .Content }}
     </article>

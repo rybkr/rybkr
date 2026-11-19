@@ -24,4 +24,8 @@ title: Ryan Baker
 [![Email](/icons/email.svg)](mailto:hello@rybkr.com)
 {.social-links}
 
+<!-- This is just silliness. -->
+
 [don't click this](# "runaway")
+
+[please click this](# "gravity-reset")

@@ -1,12 +1,10 @@
 {{ define "main" }}
   <article class="resume" data-rainbow-links>
     <header class="resume-header">
-      <div class="resume-actions">
-        <a class="resume-back" href="{{ "/" | relURL }}">&lt;- Back to home</a>
-        {{ with .Params.pdf }}
-          <a class="resume-pdf" href="{{ .url | relURL }}">{{ .label }}</a>
-        {{ end }}
-      </div>
+      {{ partial "back-link.html" (dict "url" "/" "label" "home") }}
+      {{ with .Params.pdf }}
+        <a class="resume-pdf" href="{{ .url | relURL }}">{{ .label }}</a>
+      {{ end }}
       <nav class="resume-sections" aria-label="Resume sections">
         {{ partial "resume-sections.html" .Fragments.Headings }}
       </nav>

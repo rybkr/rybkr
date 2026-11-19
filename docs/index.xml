@@ -6,7 +6,15 @@
     <description>Recent content on Ryan Baker</description>
     <generator>Hugo</generator>
     <language>en-us</language>
+    <lastBuildDate>Wed, 11 Nov 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://rybkr.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How I configure a Mac</title>
+      <link>https://rybkr.com/blog/how-i-configure-a-mac/</link>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 +0000</pubDate>
+      <guid>https://rybkr.com/blog/how-i-configure-a-mac/</guid>
+      <description>&lt;h2 id=&#34;system-settings&#34;&gt;System Settings&lt;/h2&gt;&#xA;&lt;h3 id=&#34;desktop--dock&#34;&gt;Desktop &amp;amp; Dock&lt;/h3&gt;&#xA;&lt;p&gt;I &lt;strong&gt;put the Dock on the left side&lt;/strong&gt; of the screen and &lt;strong&gt;enable automatic hiding&lt;/strong&gt;.&#xA;The dock is still there when I need it, but doesn&amp;rsquo;t occupy and precious screen real estate otherwise.&lt;/p&gt;&#xA;&lt;p&gt;I &lt;strong&gt;hide items on my desktop&lt;/strong&gt;, too.&#xA;This doesn&amp;rsquo;t alter or delete any files, it only stops showing their icons over the wallpaper.&#xA;I prefer to locate and open files either through the command line or via Finder.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Resume</title>
       <link>https://rybkr.com/resume/</link>
